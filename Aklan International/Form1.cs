@@ -16,5 +16,10 @@ namespace Aklan_International
         {
             InitializeComponent();
         }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Success!!!");
+        }
     }
 }
