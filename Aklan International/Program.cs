@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Aklan_International
 {
-    static class Program//hi from Chameera
+    static class Program//hello
     {
         /// <summary>
         /// The main entry point for the application.
