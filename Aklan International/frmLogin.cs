@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Aklan_International
 {
     public partial class frmLogin : Form
     {
+        SqlConnection conn;
+        SqlConnection conn1;
+        SqlCommand cmd;
+        SqlDataReader reader;
+
         public frmLogin()
         {
             InitializeComponent();
@@ -19,12 +25,45 @@ namespace Aklan_International
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Success!!!");
+            cmd = new SqlCommand("select * from dtLogin where username = '" + txtUserName.Text.Trim() + "'", conn);
+            try
+            {
+                conn.Open();
+                reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    if (reader["password"].ToString().Trim() == txtPassword.Text.Trim())
+                    {
+
+                        MessageBox.Show("Login success...");
+                        //frmMain obj = new frmMain(reader["userName"].ToString());
+                        //obj.Show();
+                        this.Hide();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Login failed...");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Login failed...");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chathuranga\documents\visual studio 2015\Projects\Aklan International\Aklan International\dbCore.mdf;Integrated Security=True");
         }
     }
 }
