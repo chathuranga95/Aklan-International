@@ -1,6 +1,6 @@
 ﻿namespace Aklan_International
 {
-    partial class Form1
+    partial class frmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -41,14 +41,14 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // Form1
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 308);
             this.Controls.Add(this.btnLogin);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmLogin";
+            this.Text = "Login";
             this.ResumeLayout(false);
 
         }
