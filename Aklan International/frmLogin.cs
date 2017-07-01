@@ -12,14 +12,20 @@ namespace Aklan_International
 {
     public partial class frmLogin : Form
     {
+        
         public frmLogin()
         {
-            InitializeComponent();//onnna comment kara
+            
+            InitializeComponent();
+            new CreateOrder.FrmCreateOrder().Show();
+
+
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Success!!!");
+            
         }
     }
 }
