@@ -21,5 +21,10 @@ namespace Aklan_International
         {
             MessageBox.Show("Success!!!");
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
