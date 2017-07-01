@@ -14,7 +14,7 @@ namespace Aklan_International
     {
         public frmLogin()
         {
-            InitializeComponent();
+            InitializeComponent();//onnna comment kara
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
