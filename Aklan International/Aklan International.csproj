@@ -61,6 +61,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewWorker.Designer.cs">
+      <DependentUpon>AddNewWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frnChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frnChangePassword.Designer.cs">
+      <DependentUpon>frnChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +87,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddNewWorker.resx">
+      <DependentUpon>AddNewWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frnChangePassword.resx">
+      <DependentUpon>frnChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
