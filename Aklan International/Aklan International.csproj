@@ -102,6 +102,9 @@
     <EmbeddedResource Include="AddNewWorker.resx">
       <DependentUpon>AddNewWorker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewOrder\FrmCreateOrder.resx">
+      <DependentUpon>FrmCreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frnChangePassword.resx">
       <DependentUpon>frnChangePassword.cs</DependentUpon>
     </EmbeddedResource>
