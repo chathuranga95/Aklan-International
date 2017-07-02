@@ -62,7 +62,7 @@ namespace Aklan_International
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chathuranga\documents\visual studio 2015\Projects\Aklan International\Aklan International\dbCore.mdf;Integrated Security=True");
+            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Chameera\Source\Repos\Aklan - International\Aklan International\dbCore.mdf;Integrated Security=True");
         }
 
         private void btnClear_Click(object sender, EventArgs e)
