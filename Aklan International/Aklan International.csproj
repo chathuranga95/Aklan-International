@@ -67,6 +67,18 @@
     <Compile Include="AddNewWorker.Designer.cs">
       <DependentUpon>AddNewWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewOrder\FrmAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmAddItem.Designer.cs">
+      <DependentUpon>FrmAddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmCreateOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmCreateOrder.Designer.cs">
+      <DependentUpon>FrmCreateOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="frnChangePassword.cs">
       <SubType>Form</SubType>
     </Compile>
