@@ -14,7 +14,6 @@ namespace Aklan_International
     public partial class frmLogin : Form
     {
         SqlConnection conn;
-        SqlConnection conn1;
         SqlCommand cmd;
         SqlDataReader reader;
 
@@ -64,6 +63,13 @@ namespace Aklan_International
         private void frmLogin_Load(object sender, EventArgs e)
         {
             conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chathuranga\documents\visual studio 2015\Projects\Aklan International\Aklan International\dbCore.mdf;Integrated Security=True");
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtUserName.Clear();
+            txtPassword.Clear();
+            txtUserName.Focus();
         }
     }
 }

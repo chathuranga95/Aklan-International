@@ -38,36 +38,37 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(89, 146);
+            this.btnLogin.Location = new System.Drawing.Point(231, 146);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 0;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(231, 146);
+            this.btnClear.Location = new System.Drawing.Point(103, 146);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 1;
+            this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtUserName
             // 
             this.txtUserName.Location = new System.Drawing.Point(206, 38);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(100, 20);
-            this.txtUserName.TabIndex = 2;
+            this.txtUserName.TabIndex = 0;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(206, 83);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtPassword.TabIndex = 3;
+            this.txtPassword.TabIndex = 1;
             // 
             // label1
             // 
