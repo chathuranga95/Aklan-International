@@ -206,6 +206,7 @@
             this.btnAdd.TabIndex = 18;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnClear
             // 
@@ -230,9 +231,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 404);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbxNic);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
