@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -61,6 +61,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewWorker.Designer.cs">
+      <DependentUpon>AddNewWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmAddItem.Designer.cs">
+      <DependentUpon>FrmAddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmCreateOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmCreateOrder.Designer.cs">
+      <DependentUpon>FrmCreateOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frnChangePassword.cs" />
+    <Compile Include="frnChangePassword.Designer.cs">
+      <DependentUpon>frnChangePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +97,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddNewWorker.resx">
+      <DependentUpon>AddNewWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewOrder\FrmAddItem.resx">
+      <DependentUpon>FrmAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewOrder\FrmCreateOrder.resx">
+      <DependentUpon>FrmCreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frnChangePassword.resx">
+      <DependentUpon>frnChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,15 +138,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dbCore.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="dbCore_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>dbCore.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
@@ -123,6 +148,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dbCore.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="dbCore_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>dbCore.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
