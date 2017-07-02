@@ -26,5 +26,11 @@ namespace Aklan_International.CreateNewOrder
         {
 
         }
+
+        private void btnAddItem_Click(object sender, EventArgs e)
+        {
+            FrmAddItem frmAddItem = new FrmAddItem();
+            frmAddItem.Show();
+        }
     }
 }
