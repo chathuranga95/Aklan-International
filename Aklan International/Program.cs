@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Aklan_International
 {
-    static class Program//hello
+    static class Program//hi from Chameera
     {
         /// <summary>
         /// The main entry point for the application.
@@ -16,8 +16,8 @@ namespace Aklan_International
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
-            Application.Run(new CreateNewOrder.FrmCreateOrder());
+            //Application.Run(new frmLogin());
+            Application.Run(new frmNewSalesRecord());
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Aklan_International
         public frmNewSalesRecord()
         {
             InitializeComponent();
+            btnAdd.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)

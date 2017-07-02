@@ -79,9 +79,7 @@
     <Compile Include="CreateNewOrder\FrmCreateOrder.Designer.cs">
       <DependentUpon>FrmCreateOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="frnChangePassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frnChangePassword.cs" />
     <Compile Include="frnChangePassword.Designer.cs">
       <DependentUpon>frnChangePassword.cs</DependentUpon>
     </Compile>

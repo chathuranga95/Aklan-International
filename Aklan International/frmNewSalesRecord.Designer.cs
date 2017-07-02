@@ -31,24 +31,24 @@
             this.lblCustName = new System.Windows.Forms.Label();
             this.lblTel = new System.Windows.Forms.Label();
             this.tbxCustName = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox3 = new System.Windows.Forms.MaskedTextBox();
+            this.tbxQty = new System.Windows.Forms.MaskedTextBox();
+            this.tbxUprice = new System.Windows.Forms.MaskedTextBox();
+            this.tbxTel = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.grid1 = new System.Windows.Forms.DataGridView();
+            this.tbxNic = new System.Windows.Forms.MaskedTextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnClr = new System.Windows.Forms.Button();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grid1)).BeginInit();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCustName
@@ -78,16 +78,16 @@
             this.tbxCustName.Size = new System.Drawing.Size(194, 20);
             this.tbxCustName.TabIndex = 2;
             // 
-            // comboBox1
+            // cmbType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
             "Single",
             "12 sheets"});
-            this.comboBox1.Location = new System.Drawing.Point(130, 58);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbType.Location = new System.Drawing.Point(130, 58);
+            this.cmbType.Name = "cmbType";
+            this.cmbType.Size = new System.Drawing.Size(121, 21);
+            this.cmbType.TabIndex = 4;
             // 
             // label1
             // 
@@ -116,32 +116,32 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Unit Price";
             // 
-            // maskedTextBox1
+            // tbxQty
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(130, 85);
-            this.maskedTextBox1.Mask = "00000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 11;
-            this.maskedTextBox1.ValidatingType = typeof(int);
+            this.tbxQty.Location = new System.Drawing.Point(130, 85);
+            this.tbxQty.Mask = "00000";
+            this.tbxQty.Name = "tbxQty";
+            this.tbxQty.Size = new System.Drawing.Size(100, 20);
+            this.tbxQty.TabIndex = 11;
+            this.tbxQty.ValidatingType = typeof(int);
             // 
-            // maskedTextBox2
+            // tbxUprice
             // 
-            this.maskedTextBox2.Location = new System.Drawing.Point(130, 111);
-            this.maskedTextBox2.Mask = "00000";
-            this.maskedTextBox2.Name = "maskedTextBox2";
-            this.maskedTextBox2.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox2.TabIndex = 12;
-            this.maskedTextBox2.ValidatingType = typeof(int);
-            this.maskedTextBox2.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            this.tbxUprice.Location = new System.Drawing.Point(130, 111);
+            this.tbxUprice.Mask = "00000";
+            this.tbxUprice.Name = "tbxUprice";
+            this.tbxUprice.Size = new System.Drawing.Size(100, 20);
+            this.tbxUprice.TabIndex = 12;
+            this.tbxUprice.ValidatingType = typeof(int);
+            this.tbxUprice.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
-            // maskedTextBox3
+            // tbxTel
             // 
-            this.maskedTextBox3.Location = new System.Drawing.Point(130, 32);
-            this.maskedTextBox3.Mask = "(999) 000-0000";
-            this.maskedTextBox3.Name = "maskedTextBox3";
-            this.maskedTextBox3.Size = new System.Drawing.Size(195, 20);
-            this.maskedTextBox3.TabIndex = 13;
+            this.tbxTel.Location = new System.Drawing.Point(130, 32);
+            this.tbxTel.Mask = "(999) 000-0000";
+            this.tbxTel.Name = "tbxTel";
+            this.tbxTel.Size = new System.Drawing.Size(195, 20);
+            this.tbxTel.TabIndex = 13;
             // 
             // label5
             // 
@@ -152,27 +152,27 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "NIC No";
             // 
-            // maskedTextBox4
+            // tbxNic
             // 
-            this.maskedTextBox4.Location = new System.Drawing.Point(419, 8);
-            this.maskedTextBox4.Mask = "000000000V";
-            this.maskedTextBox4.Name = "maskedTextBox4";
-            this.maskedTextBox4.Size = new System.Drawing.Size(153, 20);
-            this.maskedTextBox4.TabIndex = 17;
+            this.tbxNic.Location = new System.Drawing.Point(419, 8);
+            this.tbxNic.Mask = "000000000V";
+            this.tbxNic.Name = "tbxNic";
+            this.tbxNic.Size = new System.Drawing.Size(153, 20);
+            this.tbxNic.TabIndex = 17;
             // 
-            // grid1
+            // dataGridView1
             // 
-            this.grid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Type,
             this.Qty,
             this.Unit_Price,
             this.Amount});
-            this.grid1.Location = new System.Drawing.Point(6, 213);
-            this.grid1.Name = "grid1";
-            this.grid1.Size = new System.Drawing.Size(443, 43);
-            this.grid1.TabIndex = 14;
-            this.grid1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 213);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(443, 95);
+            this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Type
             // 
@@ -208,48 +208,48 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnClr
+            // btnClear
             // 
-            this.btnClr.Location = new System.Drawing.Point(374, 152);
-            this.btnClr.Name = "btnClr";
-            this.btnClr.Size = new System.Drawing.Size(75, 23);
-            this.btnClr.TabIndex = 19;
-            this.btnClr.Text = "Clear";
-            this.btnClr.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(374, 152);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 19;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
-            // btnSubmit
+            // button3
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(374, 348);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 20;
-            this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(374, 348);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 20;
+            this.button3.Text = "Enter";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // frmNewSalesRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 404);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.btnClr);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.maskedTextBox4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.tbxNic);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.grid1);
-            this.Controls.Add(this.maskedTextBox3);
-            this.Controls.Add(this.maskedTextBox2);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tbxTel);
+            this.Controls.Add(this.tbxUprice);
+            this.Controls.Add(this.tbxQty);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbType);
             this.Controls.Add(this.tbxCustName);
             this.Controls.Add(this.lblTel);
             this.Controls.Add(this.lblCustName);
             this.Name = "frmNewSalesRecord";
             this.Text = "New Sales Record";
-            ((System.ComponentModel.ISupportInitialize)(this.grid1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,22 +260,22 @@
         private System.Windows.Forms.Label lblCustName;
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.TextBox tbxCustName;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox3;
+        private System.Windows.Forms.MaskedTextBox tbxQty;
+        private System.Windows.Forms.MaskedTextBox tbxUprice;
+        private System.Windows.Forms.MaskedTextBox tbxTel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox4;
-        private System.Windows.Forms.DataGridView grid1;
+        private System.Windows.Forms.MaskedTextBox tbxNic;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewComboBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnClr;
-        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button button3;
     }
 }
