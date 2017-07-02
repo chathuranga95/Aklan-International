@@ -39,16 +39,16 @@
             this.tbxUprice = new System.Windows.Forms.MaskedTextBox();
             this.tbxTel = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbxNic = new System.Windows.Forms.MaskedTextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.grd = new System.Windows.Forms.DataGridView();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnClear = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tbxNic = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCustName
@@ -77,6 +77,7 @@
             this.tbxCustName.Name = "tbxCustName";
             this.tbxCustName.Size = new System.Drawing.Size(194, 20);
             this.tbxCustName.TabIndex = 2;
+            this.tbxCustName.TextChanged += new System.EventHandler(this.tbxCustName_TextChanged);
             // 
             // cmbType
             // 
@@ -88,6 +89,7 @@
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(121, 21);
             this.cmbType.TabIndex = 4;
+            this.cmbType.TextChanged += new System.EventHandler(this.cmbType_TextChanged);
             // 
             // label1
             // 
@@ -124,6 +126,7 @@
             this.tbxQty.Size = new System.Drawing.Size(100, 20);
             this.tbxQty.TabIndex = 11;
             this.tbxQty.ValidatingType = typeof(int);
+            this.tbxQty.TextChanged += new System.EventHandler(this.tbxQty_TextChanged);
             // 
             // tbxUprice
             // 
@@ -134,6 +137,7 @@
             this.tbxUprice.TabIndex = 12;
             this.tbxUprice.ValidatingType = typeof(int);
             this.tbxUprice.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
+            this.tbxUprice.TextChanged += new System.EventHandler(this.tbxUprice_TextChanged);
             // 
             // tbxTel
             // 
@@ -152,32 +156,55 @@
             this.label5.TabIndex = 16;
             this.label5.Text = "NIC No";
             // 
-            // tbxNic
+            // grd
             // 
-            this.tbxNic.Location = new System.Drawing.Point(419, 8);
-            this.tbxNic.Mask = "000000000V";
-            this.tbxNic.Name = "tbxNic";
-            this.tbxNic.Size = new System.Drawing.Size(153, 20);
-            this.tbxNic.TabIndex = 17;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Type,
             this.Qty,
             this.Unit_Price,
             this.Amount});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 213);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 95);
-            this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.grd.Location = new System.Drawing.Point(6, 213);
+            this.grd.Name = "grd";
+            this.grd.Size = new System.Drawing.Size(443, 95);
+            this.grd.TabIndex = 14;
+            this.grd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(15, 152);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 18;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(374, 152);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 19;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.Location = new System.Drawing.Point(374, 348);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.Text = "Submit";
+            this.btnSubmit.UseVisualStyleBackColor = true;
             // 
             // Type
             // 
             this.Type.HeaderText = "Type";
             this.Type.Name = "Type";
+            this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Type.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // Qty
             // 
@@ -198,45 +225,25 @@
             this.Amount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // btnAdd
+            // tbxNic
             // 
-            this.btnAdd.Location = new System.Drawing.Point(15, 152);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 18;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // btnClear
-            // 
-            this.btnClear.Location = new System.Drawing.Point(374, 152);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 19;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(374, 348);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 20;
-            this.button3.Text = "Enter";
-            this.button3.UseVisualStyleBackColor = true;
+            this.tbxNic.Location = new System.Drawing.Point(424, 8);
+            this.tbxNic.Name = "tbxNic";
+            this.tbxNic.Size = new System.Drawing.Size(148, 20);
+            this.tbxNic.TabIndex = 21;
+            this.tbxNic.TextChanged += new System.EventHandler(this.tbxNic_TextChanged_1);
             // 
             // frmNewSalesRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 404);
-            this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.tbxNic);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grd);
             this.Controls.Add(this.tbxTel);
             this.Controls.Add(this.tbxUprice);
             this.Controls.Add(this.tbxQty);
@@ -249,7 +256,7 @@
             this.Controls.Add(this.lblCustName);
             this.Name = "frmNewSalesRecord";
             this.Text = "New Sales Record";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,14 +275,14 @@
         private System.Windows.Forms.MaskedTextBox tbxUprice;
         private System.Windows.Forms.MaskedTextBox tbxTel;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox tbxNic;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Type;
+        private System.Windows.Forms.DataGridView grd;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox tbxNic;
     }
 }
