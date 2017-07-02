@@ -31,13 +31,13 @@
             this.lblItemType = new System.Windows.Forms.Label();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.cmbStripeType = new System.Windows.Forms.ComboBox();
+            this.tbxQty = new System.Windows.Forms.TextBox();
             this.lblUnitPrice = new System.Windows.Forms.Label();
+            this.tbxUnitPrice = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblTotalAmount = new System.Windows.Forms.Label();
-            this.tbxTotalAmount = new System.Windows.Forms.TextBox();
-            this.mtbQty = new System.Windows.Forms.MaskedTextBox();
-            this.tbxUnitPrice = new System.Windows.Forms.TextBox();
+            this.tbTotalAmount = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblItemType
@@ -70,7 +70,14 @@
             this.cmbStripeType.Location = new System.Drawing.Point(101, 34);
             this.cmbStripeType.Name = "cmbStripeType";
             this.cmbStripeType.Size = new System.Drawing.Size(250, 21);
-            this.cmbStripeType.TabIndex = 1;
+            this.cmbStripeType.TabIndex = 2;
+            // 
+            // tbxQty
+            // 
+            this.tbxQty.Location = new System.Drawing.Point(101, 121);
+            this.tbxQty.Name = "tbxQty";
+            this.tbxQty.Size = new System.Drawing.Size(250, 20);
+            this.tbxQty.TabIndex = 3;
             // 
             // lblUnitPrice
             // 
@@ -81,22 +88,28 @@
             this.lblUnitPrice.TabIndex = 4;
             this.lblUnitPrice.Text = "Unit Price";
             // 
+            // tbxUnitPrice
+            // 
+            this.tbxUnitPrice.Location = new System.Drawing.Point(101, 81);
+            this.tbxUnitPrice.Name = "tbxUnitPrice";
+            this.tbxUnitPrice.Size = new System.Drawing.Size(250, 20);
+            this.tbxUnitPrice.TabIndex = 5;
+            // 
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(19, 215);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 3;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(276, 215);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 4;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -110,45 +123,25 @@
             this.lblTotalAmount.TabIndex = 8;
             this.lblTotalAmount.Text = "Total Amount";
             // 
-            // tbxTotalAmount
+            // tbTotalAmount
             // 
-            this.tbxTotalAmount.Location = new System.Drawing.Point(101, 163);
-            this.tbxTotalAmount.Name = "tbxTotalAmount";
-            this.tbxTotalAmount.Size = new System.Drawing.Size(250, 20);
-            this.tbxTotalAmount.TabIndex = 9;
-            // 
-            // mtbQty
-            // 
-            this.mtbQty.Location = new System.Drawing.Point(101, 125);
-            this.mtbQty.Mask = "00000";
-            this.mtbQty.Name = "mtbQty";
-            this.mtbQty.PromptChar = ' ';
-            this.mtbQty.Size = new System.Drawing.Size(250, 20);
-            this.mtbQty.TabIndex = 2;
-            this.mtbQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.mtbQty.ValidatingType = typeof(int);
-            // 
-            // tbxUnitPrice
-            // 
-            this.tbxUnitPrice.Location = new System.Drawing.Point(101, 81);
-            this.tbxUnitPrice.Name = "tbxUnitPrice";
-            this.tbxUnitPrice.Size = new System.Drawing.Size(250, 20);
-            this.tbxUnitPrice.TabIndex = 0;
-            this.tbxUnitPrice.TabStop = false;
-            this.tbxUnitPrice.TextChanged += new System.EventHandler(this.tbxUnitPrice_TextChanged);
+            this.tbTotalAmount.Location = new System.Drawing.Point(101, 163);
+            this.tbTotalAmount.Name = "tbTotalAmount";
+            this.tbTotalAmount.Size = new System.Drawing.Size(250, 20);
+            this.tbTotalAmount.TabIndex = 9;
             // 
             // FrmAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 250);
-            this.Controls.Add(this.mtbQty);
-            this.Controls.Add(this.tbxTotalAmount);
+            this.Controls.Add(this.tbTotalAmount);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbxUnitPrice);
             this.Controls.Add(this.lblUnitPrice);
+            this.Controls.Add(this.tbxQty);
             this.Controls.Add(this.cmbStripeType);
             this.Controls.Add(this.lblQuantity);
             this.Controls.Add(this.lblItemType);
@@ -169,12 +162,12 @@
         private System.Windows.Forms.Label lblItemType;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.ComboBox cmbStripeType;
+        private System.Windows.Forms.TextBox tbxQty;
         private System.Windows.Forms.Label lblUnitPrice;
+        private System.Windows.Forms.TextBox tbxUnitPrice;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblTotalAmount;
-        private System.Windows.Forms.TextBox tbxTotalAmount;
-        private System.Windows.Forms.MaskedTextBox mtbQty;
-        private System.Windows.Forms.TextBox tbxUnitPrice;
+        private System.Windows.Forms.TextBox tbTotalAmount;
     }
 }
