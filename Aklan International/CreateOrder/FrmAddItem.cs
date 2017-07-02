@@ -32,5 +32,30 @@ namespace Aklan_International.CreateOrder
             this.Close();
 
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmCreateOrder frmCreateOrder = (FrmCreateOrder)this.Owner;
+            frmCreateOrder.addDgwRow(cmbStripeType.Text,tbxUnitPrice.Text ,mtbQty.Text, tbxTotalAmount.Text);
+            mtbQty.Clear();
+            tbxTotalAmount.Clear();
+            tbxUnitPrice.Clear();
+            cmbStripeType.Text = null;
+
+        }
+
+        private void tbxUnitPrice_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxQty_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void tbxQty_KeyPress(object sender, KeyEventArgs e)
+        {
+            e.Handled = true;
+        }
     }
 }
