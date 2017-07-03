@@ -29,7 +29,7 @@ namespace Aklan_International
             reader = cmd.ExecuteReader();
             if (reader.Read())
             {
-                if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empID") == cmbWorkerName.Text.Trim())
+                if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
                 {
                     MessageBox.Show("success...");
                     this.Hide();
@@ -53,7 +53,7 @@ namespace Aklan_International
 
             while (reader.Read())
             {
-                cmbWorkerName.Items.Add(reader.GetString("empID"));
+                cmbWorkerName.Items.Add(reader.GetString("empName"));
             }
             conn.Close();
         }
