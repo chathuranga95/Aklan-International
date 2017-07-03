@@ -92,6 +92,12 @@
     <Compile Include="frmNewSalesRecord.Designer.cs">
       <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRequestJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRequestJob.Designer.cs">
+      <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmWorkerWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewSalesRecord.resx">
       <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRequestJob.resx">
+      <DependentUpon>frmRequestJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkerWindow.resx">
       <DependentUpon>frmWorkerWindow.cs</DependentUpon>
