@@ -6,86 +6,53 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace Aklan_International
 {
     public partial class frmWorkerWindow : Form
     {
-        SqlConnection conn;
-        SqlCommand cmd;
-        SqlDataReader reader;
+        MySqlCommand cmd;
+        MySqlConnection conn;
+        MySqlDataReader reader;
 
         public frmWorkerWindow()
         {
             InitializeComponent();
         }
 
-        private void frmWorkerWindow_Load(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chathuranga\documents\visual studio 2015\Projects\Aklan International\Aklan International\dbCore.mdf;Integrated Security=True");
-            cmd = new SqlCommand("select * from dtLogin", conn);
-
-            try
+            conn.Open();
+            cmd = new MySqlCommand("select * from dtlogin", conn);
+            reader = cmd.ExecuteReader();
+            if (reader.Read())
             {
-                conn.Open();
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
+                if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empID") == cmbWorkerName.Text.Trim())
                 {
-                    cmbWorkerName.Items.Add(reader["userName"]);
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-
-        }
-
-        private void btnEnter_Click(object sender, EventArgs e)
-        {
-            cmd = new SqlCommand("select * from dtLogin where username = '" + cmbWorkerName.Text.Trim() + "'", conn);
-            try
-            {
-                conn.Open();
-                reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    if (reader["password"].ToString().Trim() == txtPassword.Text.Trim())
-                    {
-
-                        MessageBox.Show("Login success...");
-                        frmRequestFinish obj = new frmRequestFinish(reader["userName"].ToString());
-                        obj.Show();
-                        this.Hide();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Login failed...");
-                    }
+                    MessageBox.Show("success...");
                 }
                 else
                 {
-                    MessageBox.Show("Login failed...");
+                    MessageBox.Show("Failed...");
                 }
             }
+            conn.Close();
+        }
 
-            catch (Exception ex)
+        private void frmWorkerWindow_Load(object sender, EventArgs e)
+        {
+            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+            conn.Open();
+            cmd = new MySqlCommand("select * from dtlogin", conn);
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
             {
-                MessageBox.Show(ex.ToString());
+                cmbWorkerName.Items.Add(reader.GetString("empID"));
             }
-            finally
-            {
-                conn.Close();
-            }
+            conn.Close();
         }
     }
 }

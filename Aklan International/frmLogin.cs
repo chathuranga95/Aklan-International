@@ -30,7 +30,7 @@ namespace Aklan_International
 
             if (reader.Read())
             {
-                if(reader.GetString("empNo")==txtUserName.Text.Trim() && reader.GetString("psw") == txtPassword.Text.Trim())
+                if(reader.GetString("empID")==txtUserName.Text.Trim() && reader.GetString("psw") == txtPassword.Text.Trim())
                 {
                     MessageBox.Show("success!!!");
                 }
@@ -44,7 +44,7 @@ namespace Aklan_International
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=Mahesh@1994");
+            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
 
         }
 
