@@ -8,10 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Aklan_International
 {
     public partial class frmNewSalesRecord : Form
     {
+        
         public frmNewSalesRecord()
         {
             InitializeComponent();
@@ -92,10 +94,12 @@ namespace Aklan_International
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            
             if (this.grd.SelectedRows.Count > 0)
             {
                grd.Rows.RemoveAt(this.grd.SelectedRows[0].Index);
             }
+            
         }
     }
 }
