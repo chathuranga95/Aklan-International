@@ -32,6 +32,9 @@ namespace Aklan_International
                 if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empID") == cmbWorkerName.Text.Trim())
                 {
                     MessageBox.Show("success...");
+                    this.Hide();
+                    frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(),this);
+                    obj.Show();
                 }
                 else
                 {
