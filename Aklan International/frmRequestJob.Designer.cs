@@ -30,18 +30,18 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.cmb = new System.Windows.Forms.ComboBox();
+            this.btnRequest = new System.Windows.Forms.Button();
+            this.spnQty = new System.Windows.Forms.NumericUpDown();
+            this.cmbMachineType = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.lblWorkerName = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnRequest = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnQty)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +58,8 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.btnRequest);
-            this.tabPage1.Controls.Add(this.numericUpDown1);
-            this.tabPage1.Controls.Add(this.cmb);
+            this.tabPage1.Controls.Add(this.spnQty);
+            this.tabPage1.Controls.Add(this.cmbMachineType);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -70,20 +70,35 @@
             this.tabPage1.Text = "Request Job";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // numericUpDown1
+            // btnRequest
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(145, 87);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 3;
+            this.btnRequest.Location = new System.Drawing.Point(360, 205);
+            this.btnRequest.Name = "btnRequest";
+            this.btnRequest.Size = new System.Drawing.Size(75, 23);
+            this.btnRequest.TabIndex = 4;
+            this.btnRequest.Text = "Request";
+            this.btnRequest.UseVisualStyleBackColor = true;
+            this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
             // 
-            // cmb
+            // spnQty
             // 
-            this.cmb.FormattingEnabled = true;
-            this.cmb.Location = new System.Drawing.Point(145, 44);
-            this.cmb.Name = "cmb";
-            this.cmb.Size = new System.Drawing.Size(121, 21);
-            this.cmb.TabIndex = 2;
+            this.spnQty.Location = new System.Drawing.Point(145, 87);
+            this.spnQty.Name = "spnQty";
+            this.spnQty.Size = new System.Drawing.Size(120, 20);
+            this.spnQty.TabIndex = 3;
+            // 
+            // cmbMachineType
+            // 
+            this.cmbMachineType.FormattingEnabled = true;
+            this.cmbMachineType.Items.AddRange(new object[] {
+            "Cutting",
+            "Clip Cutting",
+            "Folding",
+            "Rimming"});
+            this.cmbMachineType.Location = new System.Drawing.Point(145, 44);
+            this.cmbMachineType.Name = "cmbMachineType";
+            this.cmbMachineType.Size = new System.Drawing.Size(121, 21);
+            this.cmbMachineType.TabIndex = 2;
             // 
             // label2
             // 
@@ -141,15 +156,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnRequest
-            // 
-            this.btnRequest.Location = new System.Drawing.Point(360, 205);
-            this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(75, 23);
-            this.btnRequest.TabIndex = 4;
-            this.btnRequest.Text = "Request";
-            this.btnRequest.UseVisualStyleBackColor = true;
-            // 
             // frmRequestJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,7 +170,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spnQty)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -175,8 +181,8 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox cmb;
+        private System.Windows.Forms.NumericUpDown spnQty;
+        private System.Windows.Forms.ComboBox cmbMachineType;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
