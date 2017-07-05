@@ -36,7 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbxJobs = new System.Windows.Forms.ListBox();
             this.lblWorkerName = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -54,6 +54,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(485, 290);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
             // tabPage1
             // 
@@ -120,7 +121,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.listBox1);
+            this.tabPage2.Controls.Add(this.lbxJobs);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -129,13 +130,13 @@
             this.tabPage2.Text = "Current Jobs";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // listBox1
+            // lbxJobs
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(15, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(417, 225);
-            this.listBox1.TabIndex = 0;
+            this.lbxJobs.FormattingEnabled = true;
+            this.lbxJobs.Location = new System.Drawing.Point(15, 19);
+            this.lbxJobs.Name = "lbxJobs";
+            this.lbxJobs.Size = new System.Drawing.Size(417, 225);
+            this.lbxJobs.TabIndex = 0;
             // 
             // lblWorkerName
             // 
@@ -186,7 +187,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbxJobs;
         private System.Windows.Forms.Label lblWorkerName;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnRequest;
