@@ -34,9 +34,11 @@ namespace Aklan_International
                     if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
                     {
                         MessageBox.Show("success...");
+                        
                         this.Hide();
                         frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(), this,reader.GetString("empID"));
                         obj.Show();
+                        clearComponents(); 
                     }
                     else
                     {
@@ -78,6 +80,18 @@ namespace Aklan_International
             {
                 conn.Close();
             }
+        }
+
+        private void clearComponents()
+        {
+            txtPassword.Clear();
+            cmbWorkerName.Text = "";
+            cmbWorkerName.Focus();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearComponents();
         }
     }
 }
