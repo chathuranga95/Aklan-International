@@ -7,15 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Aklan_International
 {
     public partial class frmLogin : Form
     {
-        SqlConnection conn;
-        SqlCommand cmd;
-        SqlDataReader reader;
+        MySqlCommand cmd;
+        MySqlConnection conn;
+        MySqlDataReader reader;
 
         public frmLogin()
         {
@@ -23,46 +23,29 @@ namespace Aklan_International
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {
-            cmd = new SqlCommand("select * from dtLogin where username = '" + txtUserName.Text.Trim() + "'", conn);
-            try
-            {
-                conn.Open();
-                reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    if (reader["password"].ToString().Trim() == txtPassword.Text.Trim())
-                    {
+        {   
+            conn.Open();
+            cmd = new MySqlCommand("select * from dtlogin",conn);
+            reader = cmd.ExecuteReader();
 
-                        MessageBox.Show("Login success...");
-                        //frmMain obj = new frmMain(reader["userName"].ToString());
-                        //obj.Show();
-                        this.Hide();
-                        
-                    }
-                    else
-                    {
-                        MessageBox.Show("Login failed...");
-                    }
+            if (reader.Read())
+            {
+                if(reader.GetString("empID")==txtUserName.Text.Trim() && reader.GetString("psw") == txtPassword.Text.Trim())
+                {
+                    MessageBox.Show("success!!!");
                 }
                 else
                 {
-                    MessageBox.Show("Login failed...");
+                    MessageBox.Show("failed");
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                conn.Close();
-            }
+            conn.Clone();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C: \Users\Chameera\Source\Repos\Aklan - International\Aklan International\dbCore.mdf;Integrated Security=True");
+            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)

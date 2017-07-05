@@ -48,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,12 +80,6 @@
     <Compile Include="CreateNewOrder\FrmCreateOrder.Designer.cs">
       <DependentUpon>FrmCreateOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="frnChangePassword.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frnChangePassword.Designer.cs">
-      <DependentUpon>frnChangePassword.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +92,18 @@
     <Compile Include="frmNewSalesRecord.Designer.cs">
       <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRequestJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRequestJob.Designer.cs">
+      <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkerWindow.Designer.cs">
+      <DependentUpon>frmWorkerWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddNewWorker.resx">
@@ -108,14 +115,17 @@
     <EmbeddedResource Include="CreateNewOrder\FrmCreateOrder.resx">
       <DependentUpon>FrmCreateOrder.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frnChangePassword.resx">
-      <DependentUpon>frnChangePassword.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewSalesRecord.resx">
       <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRequestJob.resx">
+      <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkerWindow.resx">
+      <DependentUpon>frmWorkerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -152,13 +162,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="dbCore.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="dbCore_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>dbCore.mdf</DependentUpon>
-    </Content>
+    <Content Include="database script\dbfile.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
