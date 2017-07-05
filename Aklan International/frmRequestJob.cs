@@ -58,8 +58,18 @@ namespace Aklan_International
                 }
                 else
                 {
-                    //retrieve index
-                    index++;
+                    reader.Close();
+                    conn.Close();
+                    //retrieve index from the table's last record 
+                    cmd = new MySqlCommand("select * from dt"+empID.ToString(),conn);
+                    conn.Open();
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        index = reader.GetInt32("index");
+                    }
+
+                    index++; //increament index
                 }
 
                 conn.Close();
