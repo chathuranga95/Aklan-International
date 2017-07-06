@@ -48,9 +48,9 @@ namespace Aklan_International
             int index = 0;
             //retrieve index from the table's last record 
             cmd = new MySqlCommand("select * from dt" + empID.ToString(), conn);
-            
+
             reader = cmd.ExecuteReader();
-            
+
             while (reader.Read())
             {
                 index = reader.GetInt32("index");
@@ -73,35 +73,109 @@ namespace Aklan_International
                 reader.Close();
                 cmd.ExecuteNonQuery();
             }
-            
+
             conn1.Close();
+        }
+
+        private int[] retrieveMaterial()
+        {
+            //array of material consists of the current
+            //available material with the order,
+            //sheet, cut strip, folded strip(single sheet), folded strip(12 sheets), clip cut strip
+            int[] materialArray = new int[5];
+            MySqlConnection conn1 = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+            conn1.Open();
+            cmd = new MySqlCommand("select material from dtmaterial", conn1);
+            reader = cmd.ExecuteReader();
+            string res = "";
+            if (reader.Read())
+            {
+                res = reader.GetString(0);
+            }
+            conn1.Close();
+            for (int i = 0; i < 5; i++)
+            {
+                materialArray[i] = int.Parse(res.Split(',')[i]);
+            }
+
+            return materialArray;
+        }
+
+        private bool validateRequest(string matType, int qty)
+        {
+            int[] matArray = retrieveMaterial();
+
+            if (matType == "sheet" && matArray[0] > qty)
+            {
+                return true;
+            }
+            else if (matType == "cut strip" && matArray[1] > qty)
+            {
+                return true;
+            }
+            else if (matType == "folded single" && matArray[2] > qty)
+            {
+                return true;
+            }
+            else if (matType == "folded 12" && matArray[3] > qty)
+            {
+                return true;
+            }
+            else if (matType == "clip cut" && matArray[4] > qty)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
-            try
+
+            int index = retrieveIndex();
+
+            Dictionary<String, String> mydic = new Dictionary<string, string>();
+            mydic.Add("Cutting", "sheet");
+            mydic.Add("Clip Cutting", "cut strip");
+            mydic.Add("Folding", "clip cut");
+            mydic.Add("Rimming", "Folded strip");
+            string matType;
+            mydic.TryGetValue(cmbMachineType.Text.Trim(), out matType);
+
+            if (matType == "Folded strip")
             {
-                int index = retrieveIndex();   
-                conn.Open();
-                Dictionary<String, String> mydic = new Dictionary<string, string>();
-                mydic.Add("Cutting", "Sheet");
-                mydic.Add("Clip Cutting", "Cut strip");
-                mydic.Add("Folding", "Clip cut strip");
-                mydic.Add("Rimming", "Folded strip");
-                string matType;
-                mydic.TryGetValue(cmbMachineType.Text.Trim(),out matType);
-                cmd = new MySqlCommand("INSERT INTO `dbcore`.`dt"+empID.ToString()+"` (`index`, `date`, `matType`, `Qty`, `finished`) VALUES ('"+index+"', '"+DateTime.Today.Date.ToShortDateString()+"', '"+matType+"', '"+spnQty.Value.ToString()+"', 'no')",conn);
-                cmd.ExecuteNonQuery();
+                if (cmbSingleOr12.Text == "Single")
+                    matType = "folded single";
+                if (cmbSingleOr12.Text == "12")
+                    matType = "folded 12";
             }
-            catch 
+
+            if (validateRequest(matType, (int)spnQty.Value))
             {
-                //MessageBox.Show(ee.ToString());
-                throw;
+                try
+                {
+                    cmd = new MySqlCommand("INSERT INTO `dbcore`.`dt" + empID.ToString() + "` (`index`, `date`, `matType`, `Qty`, `finished`) VALUES ('" + index + "', '" + DateTime.Today.Date.ToShortDateString() + "', '" + matType + "', '" + spnQty.Value.ToString() + "', 'no')", conn);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    //MessageBox.Show(ee.ToString());
+                    throw;
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            finally
-            {
-                conn.Close();
-            }
+            else
+                MessageBox.Show("Request can't obtained. Please try another material or fewer Qty!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+
         }
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
@@ -111,18 +185,26 @@ namespace Aklan_International
             {
                 int index = retrieveIndex();
                 conn.Open();
-                cmd = new MySqlCommand("select * from dt"+empID.ToString(), conn);
+                cmd = new MySqlCommand("select * from dt" + empID.ToString(), conn);
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    if(reader.GetInt32("index") + 3 >= index)
+                    if (reader.GetInt32("index") + 3 >= index)
                     {
-                        lbxJobs.Items.Insert(0,reader.GetString("Qty") +  " of " + reader.GetString("matType") + " taken. finish status :" + reader.GetString("finished")); ;
+                        lbxJobs.Items.Insert(0, reader.GetString("Qty") + " of " + reader.GetString("matType") + " taken. finish status :" + reader.GetString("finished")); ;
                     }
                 }
                 conn.Close();
-                
+
             }
+        }
+
+        private void cmbMachineType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbMachineType.Text == "Folding")
+                cmbSingleOr12.Visible = true;
+            else
+                cmbSingleOr12.Visible = false;
         }
     }
 }

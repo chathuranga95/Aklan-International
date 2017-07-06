@@ -39,6 +39,7 @@
             this.lbxJobs = new System.Windows.Forms.ListBox();
             this.lblWorkerName = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
+            this.cmbSingleOr12 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnQty)).BeginInit();
@@ -58,6 +59,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.cmbSingleOr12);
             this.tabPage1.Controls.Add(this.btnRequest);
             this.tabPage1.Controls.Add(this.spnQty);
             this.tabPage1.Controls.Add(this.cmbMachineType);
@@ -100,6 +102,7 @@
             this.cmbMachineType.Name = "cmbMachineType";
             this.cmbMachineType.Size = new System.Drawing.Size(121, 21);
             this.cmbMachineType.TabIndex = 2;
+            this.cmbMachineType.SelectedIndexChanged += new System.EventHandler(this.cmbMachineType_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -157,6 +160,18 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // cmbSingleOr12
+            // 
+            this.cmbSingleOr12.FormattingEnabled = true;
+            this.cmbSingleOr12.Items.AddRange(new object[] {
+            "Single",
+            "12"});
+            this.cmbSingleOr12.Location = new System.Drawing.Point(320, 43);
+            this.cmbSingleOr12.Name = "cmbSingleOr12";
+            this.cmbSingleOr12.Size = new System.Drawing.Size(121, 21);
+            this.cmbSingleOr12.TabIndex = 5;
+            this.cmbSingleOr12.Visible = false;
+            // 
             // frmRequestJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,5 +206,6 @@
         private System.Windows.Forms.Label lblWorkerName;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnRequest;
+        private System.Windows.Forms.ComboBox cmbSingleOr12;
     }
 }
