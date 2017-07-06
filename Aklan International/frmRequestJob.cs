@@ -160,6 +160,7 @@ namespace Aklan_International
                     cmd = new MySqlCommand("INSERT INTO `dbcore`.`dt" + empID.ToString() + "` (`index`, `date`, `matType`, `Qty`, `finished`) VALUES ('" + index + "', '" + DateTime.Today.Date.ToShortDateString() + "', '" + matType + "', '" + spnQty.Value.ToString() + "', 'no')", conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
+                    MessageBox.Show("success...");
                 }
                 catch
                 {
