@@ -30,9 +30,16 @@ namespace Aklan_International
 
             if (reader.Read())
             {
-                if(reader.GetString("empID")==txtUserName.Text.Trim() && reader.GetString("psw") == txtPassword.Text.Trim())
+                if(reader.GetString("empID")==txtEmpID.Text.Trim() && reader.GetString("psw") == txtPassword.Text.Trim())
                 {
-                    MessageBox.Show("success!!!");
+                    if (txtEmpID.Text.Substring(0, 1) == "a")
+                    {
+                        MessageBox.Show("Admin access granted!!!");
+                        frmAdminWindow obj = new frmAdminWindow(reader.GetString("empName"));
+                        obj.Show();
+                        this.Hide();
+                    }
+                    
                 }
                 else
                 {
@@ -50,9 +57,9 @@ namespace Aklan_International
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtUserName.Clear();
+            txtEmpID.Clear();
             txtPassword.Clear();
-            txtUserName.Focus();
+            txtEmpID.Focus();
         }
     }
 }

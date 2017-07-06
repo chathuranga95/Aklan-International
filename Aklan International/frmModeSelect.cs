@@ -19,15 +19,16 @@ namespace Aklan_International
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //admin window to work on
-            this.Close();
+            frmLogin obj = new frmLogin();
+            obj.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             frmWorkerWindow obj = new frmWorkerWindow();
             obj.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }

@@ -18,7 +18,8 @@ namespace Aklan_International
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmLogin());
             //Application.Run(new CreateNewOrder.FrmCreateOrder());
-            Application.Run(new frmWorkerWindow());
+            Application.Run(new frmModeSelect());
+
         }
     }
 }
