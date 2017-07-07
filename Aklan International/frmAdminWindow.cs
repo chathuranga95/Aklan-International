@@ -21,5 +21,7 @@ namespace Aklan_International
             InitializeComponent();
             this.Text = adminName;
         }
+
+        
     }
 }
