@@ -39,7 +39,6 @@
             this.lblAddress = new System.Windows.Forms.Label();
             this.tbxFirstName = new System.Windows.Forms.TextBox();
             this.tbxACNumber = new System.Windows.Forms.TextBox();
-            this.tbxDOB = new System.Windows.Forms.TextBox();
             this.tbxContactNumber = new System.Windows.Forms.TextBox();
             this.tbxNIC = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
@@ -52,6 +51,11 @@
             this.lblConfirmPassword = new System.Windows.Forms.Label();
             this.tbxConfirmPassword = new System.Windows.Forms.TextBox();
             this.tbxAddress = new System.Windows.Forms.TextBox();
+            this.nudDate = new System.Windows.Forms.NumericUpDown();
+            this.dudMonth = new System.Windows.Forms.DomainUpDown();
+            this.nudYear = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudYear)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -150,13 +154,6 @@
             this.tbxACNumber.Name = "tbxACNumber";
             this.tbxACNumber.Size = new System.Drawing.Size(120, 20);
             this.tbxACNumber.TabIndex = 11;
-            // 
-            // tbxDOB
-            // 
-            this.tbxDOB.Location = new System.Drawing.Point(127, 274);
-            this.tbxDOB.Name = "tbxDOB";
-            this.tbxDOB.Size = new System.Drawing.Size(121, 20);
-            this.tbxDOB.TabIndex = 9;
             // 
             // tbxContactNumber
             // 
@@ -257,11 +254,80 @@
             this.tbxAddress.Size = new System.Drawing.Size(121, 71);
             this.tbxAddress.TabIndex = 8;
             // 
+            // nudDate
+            // 
+            this.nudDate.Location = new System.Drawing.Point(127, 274);
+            this.nudDate.Maximum = new decimal(new int[] {
+            31,
+            0,
+            0,
+            0});
+            this.nudDate.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudDate.Name = "nudDate";
+            this.nudDate.Size = new System.Drawing.Size(37, 20);
+            this.nudDate.TabIndex = 25;
+            this.nudDate.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // dudMonth
+            // 
+            this.dudMonth.Items.Add("Jan");
+            this.dudMonth.Items.Add("Feb");
+            this.dudMonth.Items.Add("Mar");
+            this.dudMonth.Items.Add("Apr");
+            this.dudMonth.Items.Add("May");
+            this.dudMonth.Items.Add("Jun");
+            this.dudMonth.Items.Add("Jul");
+            this.dudMonth.Items.Add("Aug");
+            this.dudMonth.Items.Add("Sep");
+            this.dudMonth.Items.Add("Oct");
+            this.dudMonth.Items.Add("Nov");
+            this.dudMonth.Items.Add("Dec");
+            this.dudMonth.Location = new System.Drawing.Point(170, 274);
+            this.dudMonth.Name = "dudMonth";
+            this.dudMonth.Size = new System.Drawing.Size(40, 20);
+            this.dudMonth.TabIndex = 26;
+            this.dudMonth.Text = "Jan";
+            // 
+            // nudYear
+            // 
+            this.nudYear.Location = new System.Drawing.Point(216, 274);
+            this.nudYear.Maximum = new decimal(new int[] {
+            2020,
+            0,
+            0,
+            0});
+            this.nudYear.Minimum = new decimal(new int[] {
+            1940,
+            0,
+            0,
+            0});
+            this.nudYear.Name = "nudYear";
+            this.nudYear.Size = new System.Drawing.Size(47, 20);
+            this.nudYear.TabIndex = 27;
+            this.nudYear.Tag = "";
+            this.nudYear.Value = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.nudYear.ValueChanged += new System.EventHandler(this.nudYear_ValueChanged);
+            // 
             // frmAddNewWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 393);
+            this.ClientSize = new System.Drawing.Size(279, 393);
+            this.Controls.Add(this.nudYear);
+            this.Controls.Add(this.dudMonth);
+            this.Controls.Add(this.nudDate);
             this.Controls.Add(this.tbxAddress);
             this.Controls.Add(this.tbxConfirmPassword);
             this.Controls.Add(this.lblConfirmPassword);
@@ -274,7 +340,6 @@
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxNIC);
             this.Controls.Add(this.tbxContactNumber);
-            this.Controls.Add(this.tbxDOB);
             this.Controls.Add(this.tbxACNumber);
             this.Controls.Add(this.tbxFirstName);
             this.Controls.Add(this.lblAddress);
@@ -289,6 +354,8 @@
             this.Name = "frmAddNewWorker";
             this.Text = "Add New Worker";
             this.Load += new System.EventHandler(this.frmAddNewWorker_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nudDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudYear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,7 +374,6 @@
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.TextBox tbxFirstName;
         private System.Windows.Forms.TextBox tbxACNumber;
-        private System.Windows.Forms.TextBox tbxDOB;
         private System.Windows.Forms.TextBox tbxContactNumber;
         private System.Windows.Forms.TextBox tbxNIC;
         private System.Windows.Forms.TextBox tbxPassword;
@@ -320,5 +386,8 @@
         private System.Windows.Forms.Label lblConfirmPassword;
         private System.Windows.Forms.TextBox tbxConfirmPassword;
         private System.Windows.Forms.TextBox tbxAddress;
+        private System.Windows.Forms.NumericUpDown nudDate;
+        private System.Windows.Forms.DomainUpDown dudMonth;
+        private System.Windows.Forms.NumericUpDown nudYear;
     }
 }
