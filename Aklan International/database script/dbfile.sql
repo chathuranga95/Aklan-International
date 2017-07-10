@@ -43,6 +43,30 @@ INSERT INTO `dta001` VALUES (1,'7/4/2017','Sheet',2,'no'),(2,'5/8/2017','sheet',
 UNLOCK TABLES;
 
 --
+-- Table structure for table `dtjobrates`
+--
+
+DROP TABLE IF EXISTS `dtjobrates`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dtjobrates` (
+  `job` varchar(20) NOT NULL,
+  `rate` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`job`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dtjobrates`
+--
+
+LOCK TABLES `dtjobrates` WRITE;
+/*!40000 ALTER TABLE `dtjobrates` DISABLE KEYS */;
+INSERT INTO `dtjobrates` VALUES ('clip cutting',5),('cutting',5),('folding 12',5),('folding single',5),('rimming',5);
+/*!40000 ALTER TABLE `dtjobrates` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `dtlogin`
 --
 
@@ -122,6 +146,29 @@ INSERT INTO `dts001` VALUES (1,'7/6/2017','sheet',1,'no');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `dtsalary`
+--
+
+DROP TABLE IF EXISTS `dtsalary`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dtsalary` (
+  `index` varchar(30) NOT NULL,
+  `salary` decimal(10,0) DEFAULT NULL,
+  PRIMARY KEY (`index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dtsalary`
+--
+
+LOCK TABLES `dtsalary` WRITE;
+/*!40000 ALTER TABLE `dtsalary` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dtsalary` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `dtsm001`
 --
 
@@ -183,4 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-07 20:58:16
+-- Dump completed on 2017-07-10 15:43:32
