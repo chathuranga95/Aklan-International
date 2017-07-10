@@ -52,9 +52,7 @@
     <Compile Include="CreateOrder\FrmAddItem.Designer.cs">
       <DependentUpon>FrmAddItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateOrder\FrmCreateOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="CreateOrder\FrmCreateOrder.cs" />
     <Compile Include="CreateOrder\FrmCreateOrder.Designer.cs">
       <DependentUpon>FrmCreateOrder.cs</DependentUpon>
     </Compile>
