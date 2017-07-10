@@ -22,6 +22,10 @@ namespace Aklan_International
             this.Text = adminName;
         }
 
-        
+        private void btnCreateOrder_Click(object sender, EventArgs e)
+        {
+            CreateNewOrder.FrmCreateOrder createrOrderFrm = new CreateNewOrder.FrmCreateOrder();
+            createrOrderFrm.Show();
+        }
     }
 }

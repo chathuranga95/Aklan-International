@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCreateOrder = new System.Windows.Forms.Button();
             this.btnManageOrder = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnManageSales = new System.Windows.Forms.Button();
+            this.btnViewSales = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnManageStock = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btnManageSales = new System.Windows.Forms.Button();
-            this.btnViewSales = new System.Windows.Forms.Button();
             this.btnManageWorkers = new System.Windows.Forms.Button();
             this.btnViewWorkers = new System.Windows.Forms.Button();
-            this.btnCreateOrder = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -58,6 +58,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders";
+            // 
+            // btnCreateOrder
+            // 
+            this.btnCreateOrder.Location = new System.Drawing.Point(183, 33);
+            this.btnCreateOrder.Name = "btnCreateOrder";
+            this.btnCreateOrder.Size = new System.Drawing.Size(85, 37);
+            this.btnCreateOrder.TabIndex = 1;
+            this.btnCreateOrder.Text = "Create Order";
+            this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
             // btnManageOrder
             // 
@@ -87,6 +97,24 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sales";
+            // 
+            // btnManageSales
+            // 
+            this.btnManageSales.Location = new System.Drawing.Point(166, 39);
+            this.btnManageSales.Name = "btnManageSales";
+            this.btnManageSales.Size = new System.Drawing.Size(85, 38);
+            this.btnManageSales.TabIndex = 1;
+            this.btnManageSales.Text = "Manage Sales orders";
+            this.btnManageSales.UseVisualStyleBackColor = true;
+            // 
+            // btnViewSales
+            // 
+            this.btnViewSales.Location = new System.Drawing.Point(16, 39);
+            this.btnViewSales.Name = "btnViewSales";
+            this.btnViewSales.Size = new System.Drawing.Size(85, 38);
+            this.btnViewSales.TabIndex = 2;
+            this.btnViewSales.Text = "View Sales Orders";
+            this.btnViewSales.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -128,24 +156,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Work";
             // 
-            // btnManageSales
-            // 
-            this.btnManageSales.Location = new System.Drawing.Point(166, 39);
-            this.btnManageSales.Name = "btnManageSales";
-            this.btnManageSales.Size = new System.Drawing.Size(85, 38);
-            this.btnManageSales.TabIndex = 1;
-            this.btnManageSales.Text = "Manage Sales orders";
-            this.btnManageSales.UseVisualStyleBackColor = true;
-            // 
-            // btnViewSales
-            // 
-            this.btnViewSales.Location = new System.Drawing.Point(16, 39);
-            this.btnViewSales.Name = "btnViewSales";
-            this.btnViewSales.Size = new System.Drawing.Size(85, 38);
-            this.btnViewSales.TabIndex = 2;
-            this.btnViewSales.Text = "View Sales Orders";
-            this.btnViewSales.UseVisualStyleBackColor = true;
-            // 
             // btnManageWorkers
             // 
             this.btnManageWorkers.Location = new System.Drawing.Point(166, 47);
@@ -163,15 +173,6 @@
             this.btnViewWorkers.TabIndex = 4;
             this.btnViewWorkers.Text = "View Workers";
             this.btnViewWorkers.UseVisualStyleBackColor = true;
-            // 
-            // btnCreateOrder
-            // 
-            this.btnCreateOrder.Location = new System.Drawing.Point(183, 33);
-            this.btnCreateOrder.Name = "btnCreateOrder";
-            this.btnCreateOrder.Size = new System.Drawing.Size(85, 37);
-            this.btnCreateOrder.TabIndex = 1;
-            this.btnCreateOrder.Text = "Create Order";
-            this.btnCreateOrder.UseVisualStyleBackColor = true;
             // 
             // frmAdminWindow
             // 

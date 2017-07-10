@@ -39,13 +39,13 @@
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dgvItems = new System.Windows.Forms.DataGridView();
-            this.btnAddItem = new System.Windows.Forms.Button();
-            this.btnRemoveItem = new System.Windows.Forms.Button();
-            this.btnSubmitOrder = new System.Windows.Forms.Button();
             this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalAmonut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnSubmitOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             this.tbxCustomerName.Name = "tbxCustomerName";
             this.tbxCustomerName.Size = new System.Drawing.Size(442, 20);
             this.tbxCustomerName.TabIndex = 4;
+            this.tbxCustomerName.TextChanged += new System.EventHandler(this.tbxCustomerName_TextChanged);
             // 
             // tbxNIC
             // 
@@ -116,6 +117,7 @@
             // 
             // btnCreateOrder
             // 
+            this.btnCreateOrder.Enabled = false;
             this.btnCreateOrder.Location = new System.Drawing.Point(15, 133);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(75, 23);
@@ -146,6 +148,30 @@
             this.dgvItems.Size = new System.Drawing.Size(536, 150);
             this.dgvItems.TabIndex = 10;
             // 
+            // colType
+            // 
+            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colType.HeaderText = "Strip Type";
+            this.colType.Name = "colType";
+            this.colType.ReadOnly = true;
+            // 
+            // colUnitPrice
+            // 
+            this.colUnitPrice.HeaderText = "Unit Price";
+            this.colUnitPrice.Name = "colUnitPrice";
+            this.colUnitPrice.ReadOnly = true;
+            // 
+            // colQty
+            // 
+            this.colQty.HeaderText = "Quantity";
+            this.colQty.Name = "colQty";
+            // 
+            // colTotalAmonut
+            // 
+            this.colTotalAmonut.HeaderText = "Full Amount";
+            this.colTotalAmonut.Name = "colTotalAmonut";
+            this.colTotalAmonut.ReadOnly = true;
+            // 
             // btnAddItem
             // 
             this.btnAddItem.Location = new System.Drawing.Point(12, 318);
@@ -173,30 +199,6 @@
             this.btnSubmitOrder.TabIndex = 13;
             this.btnSubmitOrder.Text = "Submit";
             this.btnSubmitOrder.UseVisualStyleBackColor = true;
-            // 
-            // colType
-            // 
-            this.colType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colType.HeaderText = "Strip Type";
-            this.colType.Name = "colType";
-            this.colType.ReadOnly = true;
-            // 
-            // colUnitPrice
-            // 
-            this.colUnitPrice.HeaderText = "Unit Price";
-            this.colUnitPrice.Name = "colUnitPrice";
-            this.colUnitPrice.ReadOnly = true;
-            // 
-            // colQty
-            // 
-            this.colQty.HeaderText = "Quantity";
-            this.colQty.Name = "colQty";
-            // 
-            // colTotalAmonut
-            // 
-            this.colTotalAmonut.HeaderText = "Full Amount";
-            this.colTotalAmonut.Name = "colTotalAmonut";
-            this.colTotalAmonut.ReadOnly = true;
             // 
             // FrmCreateOrder
             // 

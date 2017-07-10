@@ -32,5 +32,13 @@ namespace Aklan_International.CreateNewOrder
             FrmAddItem frmAddItem = new FrmAddItem();
             frmAddItem.Show();
         }
+
+        private void tbxCustomerName_TextChanged(object sender, EventArgs e)
+        {
+            if(tbxCustomerName.Text.Length > 0 && tbxContactNumber.Text.Length > 0 && tbxNIC.Text.Length > 0)
+            {
+                btnCreateOrder.Enabled = true;
+            }
+        }
     }
 }
