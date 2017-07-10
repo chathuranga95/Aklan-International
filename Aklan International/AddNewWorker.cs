@@ -40,7 +40,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) || (tbxDOB.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {

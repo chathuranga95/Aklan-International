@@ -318,7 +318,7 @@
             0,
             0,
             0});
-            this.nudYear.ValueChanged += new System.EventHandler(this.nudYear_ValueChanged);
+            //this.nudYear.ValueChanged += new System.EventHandler(this.nudYear_ValueChanged);
             // 
             // frmAddNewWorker
             // 
