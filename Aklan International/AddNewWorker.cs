@@ -51,13 +51,13 @@ namespace Aklan_International
                 MessageBox.Show("Passwords do not match.", "Warning");
             }
             else {
-                conn.open();
+                conn.Open();
                 MySqlCommand comm = conn.CreateCommand();
                 comm.CommandText = "INSERT INTO worker_details VALUES(@empID)";
                 comm.Parameters.Add("@empID", "Myname");
                 
                 comm.ExecuteNonQuery();
-                conn.close();
+                conn.Close();
 
                 MessageBox.Show("New worker added successfully.", "Success");
                 this.Close();

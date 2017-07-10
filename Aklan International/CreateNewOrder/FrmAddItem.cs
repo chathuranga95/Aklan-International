@@ -16,5 +16,20 @@ namespace Aklan_International.CreateNewOrder
         {
             InitializeComponent();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmCreateOrder frmCreateOrder = (FrmCreateOrder)this.Owner;
+            frmCreateOrder.addDgvRow(cmbType.Text, tbxUnitPrice.Text , mtbQty.Text,  tbxTotal.Text);
+            mtbQty.Clear();
+            tbxTotal.Clear();
+            tbxUnitPrice.Clear();
+            cmbType.Text = null;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
