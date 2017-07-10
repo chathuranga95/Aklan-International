@@ -110,6 +110,12 @@
     <Compile Include="frmRequestJob.Designer.cs">
       <DependentUpon>frmRequestJob.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSetJobRates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetJobRates.Designer.cs">
+      <DependentUpon>frmSetJobRates.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSupervisorWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRequestJob.resx">
       <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetJobRates.resx">
+      <DependentUpon>frmSetJobRates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSupervisorWindow.resx">
       <DependentUpon>frmSupervisorWindow.cs</DependentUpon>

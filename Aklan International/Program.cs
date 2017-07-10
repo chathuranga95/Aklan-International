@@ -16,11 +16,7 @@ namespace Aklan_International
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin());
-            //Application.Run(new CreateNewOrder.FrmCreateOrder());
-            //Application.Run(new frmModeSelect());
-            //Application.Run(new CreateNewOrder.FrmCreateOrder());
-            Application.Run(new frmSupervisorWindow());
+            Application.Run(new frmSetJobRates());
 
         }
     }

@@ -27,5 +27,11 @@ namespace Aklan_International
             CreateNewOrder.FrmCreateOrder createrOrderFrm = new CreateNewOrder.FrmCreateOrder();
             createrOrderFrm.Show();
         }
+
+        private void btnSetJobRates_Click(object sender, EventArgs e)
+        {
+            frmSetJobRates obj = new frmSetJobRates();
+            obj.Show(); 
+        }
     }
 }

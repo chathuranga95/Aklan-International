@@ -36,13 +36,13 @@
             this.btnManageSales = new System.Windows.Forms.Button();
             this.btnViewSales = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnSetUnitPrice = new System.Windows.Forms.Button();
             this.btnManageStock = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnSetJobRates = new System.Windows.Forms.Button();
             this.btnManageWorkers = new System.Windows.Forms.Button();
             this.btnViewWorkers = new System.Windows.Forms.Button();
-            this.btnSetUnitPrice = new System.Windows.Forms.Button();
-            this.btnSetJobRates = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -130,6 +130,15 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Stock";
             // 
+            // btnSetUnitPrice
+            // 
+            this.btnSetUnitPrice.Location = new System.Drawing.Point(313, 41);
+            this.btnSetUnitPrice.Name = "btnSetUnitPrice";
+            this.btnSetUnitPrice.Size = new System.Drawing.Size(85, 38);
+            this.btnSetUnitPrice.TabIndex = 1;
+            this.btnSetUnitPrice.Text = "Set Unit Plrices";
+            this.btnSetUnitPrice.UseVisualStyleBackColor = true;
+            // 
             // btnManageStock
             // 
             this.btnManageStock.Location = new System.Drawing.Point(166, 41);
@@ -160,6 +169,16 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Work";
             // 
+            // btnSetJobRates
+            // 
+            this.btnSetJobRates.Location = new System.Drawing.Point(313, 47);
+            this.btnSetJobRates.Name = "btnSetJobRates";
+            this.btnSetJobRates.Size = new System.Drawing.Size(85, 38);
+            this.btnSetJobRates.TabIndex = 2;
+            this.btnSetJobRates.Text = "Set Job Rates";
+            this.btnSetJobRates.UseVisualStyleBackColor = true;
+            this.btnSetJobRates.Click += new System.EventHandler(this.btnSetJobRates_Click);
+            // 
             // btnManageWorkers
             // 
             this.btnManageWorkers.Location = new System.Drawing.Point(166, 47);
@@ -177,24 +196,6 @@
             this.btnViewWorkers.TabIndex = 4;
             this.btnViewWorkers.Text = "View Workers";
             this.btnViewWorkers.UseVisualStyleBackColor = true;
-            // 
-            // btnSetUnitPrice
-            // 
-            this.btnSetUnitPrice.Location = new System.Drawing.Point(313, 41);
-            this.btnSetUnitPrice.Name = "btnSetUnitPrice";
-            this.btnSetUnitPrice.Size = new System.Drawing.Size(85, 38);
-            this.btnSetUnitPrice.TabIndex = 1;
-            this.btnSetUnitPrice.Text = "Set Unit Plrices";
-            this.btnSetUnitPrice.UseVisualStyleBackColor = true;
-            // 
-            // btnSetJobRates
-            // 
-            this.btnSetJobRates.Location = new System.Drawing.Point(313, 47);
-            this.btnSetJobRates.Name = "btnSetJobRates";
-            this.btnSetJobRates.Size = new System.Drawing.Size(85, 38);
-            this.btnSetJobRates.TabIndex = 2;
-            this.btnSetJobRates.Text = "Set Job Rates";
-            this.btnSetJobRates.UseVisualStyleBackColor = true;
             // 
             // frmAdminWindow
             // 
