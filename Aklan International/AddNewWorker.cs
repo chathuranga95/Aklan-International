@@ -13,10 +13,31 @@ namespace Aklan_International
 {
     public partial class frmAddNewWorker : Form
     {
-        //MySqlCommand cmd;
+        
          MySqlConnection conn;
-       
-        //MySqlDataReader reader;
+        string empid = "";
+
+        
+        private int retrieveIndex()
+        {
+            conn.Open();
+            MySqlCommand cmd;
+            MySqlDataReader reader;
+            int index = 0;
+            //retrieve index from the table's last record 
+            cmd = new MySqlCommand("select * from worker_details", conn);
+
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                // index = int.Parse(reader.GetString("empID").Substring(1,3));
+                index++;
+            }
+            conn.Close();
+            index++; //increament index
+            return index;
+        }
         public frmAddNewWorker()
         {
             InitializeComponent();
@@ -29,8 +50,25 @@ namespace Aklan_International
 
         private void frmAddNewWorker_Load(object sender, EventArgs e)
         {
+            dudMonth.Text = "Jan";
+            lblPasswordMaching.Text = "";
+            btnAddWorker.Enabled = false;
             rbMale.Checked = true;
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+            int index = retrieveIndex();
+            if (index < 10)
+            {
+                empid = "W00" + index.ToString();
+            }
+            else if(index <100){
+                empid = "W0" + index.ToString();
+            }
+            else
+            {
+                empid = "W" + index.ToString();
+            }
+            lblworkerID.Text = empid;
+
         }
 
         private void rtbxAddress_TextChanged(object sender, EventArgs e)
@@ -40,26 +78,24 @@ namespace Aklan_International
 
         private void btnAddWorker_Click(object sender, EventArgs e)
         {
-            //if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-            //    (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-            //    (tbxUserName.Text.Length == 0) || (tbxDOB.Text.Length == 0) ||
-            //    (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-            //    (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
-            //{
-            //    MessageBox.Show("Fill all fields.", "Warning");
-            //}
-            //else 
-            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            
+            
+            
             {
-                MessageBox.Show("Passwords do not match.", "Warning");
-            }
-            else {
                 string firstName = tbxFirstName.Text;
                 string lastName = tbxLastName.Text;
                 string userName = tbxUserName.Text;
                 string password = tbxPassword.Text;
                 string address = tbxAddress.Text;
-                int telNO = int.Parse(tbxContactNumber.Text) ;
+                int telNO = 0;
+                try
+                {
+                    telNO = int.Parse(tbxContactNumber.Text);
+                }
+                catch
+                {
+
+                }
                                
                 string accNO = tbxACNumber.Text;
                 string nicNO = tbxNIC.Text;
@@ -78,7 +114,8 @@ namespace Aklan_International
                     
                     MySqlCommand comm = conn.CreateCommand();
                     //comm.CommandText = "INSERT INTO worker_details(first_name,last_name,user_name,password,address,nic_NO,gender,acc_NO) VALUES(@first_name,@last_name,@user_name,@password,@address,,@nic_NO,@gender,@acc_NO)";
-                    comm.CommandText = "INSERT INTO worker_details(first_name,last_name,user_name,password,address,acc_NO,nic_NO,gender,tel_NO,dob) VALUES (@first_name,@last_name,@user_name,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob)";
+                    comm.CommandText = "INSERT INTO worker_details(empID,first_name,last_name,user_name,password,address,acc_NO,nic_NO,gender,tel_NO,dob) VALUES (@empID,@first_name,@last_name,@user_name,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob)";
+                    comm.Parameters.Add("@empID", empid);
                     comm.Parameters.Add("@first_name", firstName);
                     comm.Parameters.Add("@last_name",lastName);
                     comm.Parameters.Add("@user_name", userName );
@@ -112,6 +149,209 @@ namespace Aklan_International
         private void nudYear_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbxFirstName_TextChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+        }
+
+        private void tbxLastName_TextChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+        }
+
+        private void tbxUserName_TextChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+        }
+
+        private void tbxPassword_TextChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+        }
+
+        private void tbxConfirmPassword_TextChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+        }
+
+        private void tbxNIC_TextChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+        }
+
+        private void tbxAddress_TextChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+        }
+
+        private void tbxContactNumber_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+        }
+
+        private void tbxACNumber_TextChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (tbxUserName.Text.Length == 0) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

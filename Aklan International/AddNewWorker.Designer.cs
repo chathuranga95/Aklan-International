@@ -57,6 +57,7 @@
             this.lblDOB = new System.Windows.Forms.Label();
             this.lblNICNumber = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
+            this.lblPasswordMaching = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDate)).BeginInit();
             this.SuspendLayout();
@@ -101,6 +102,7 @@
             this.tbxContactNumber.PromptChar = ' ';
             this.tbxContactNumber.Size = new System.Drawing.Size(122, 20);
             this.tbxContactNumber.TabIndex = 68;
+            this.tbxContactNumber.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbxContactNumber_MaskInputRejected);
             // 
             // lblworkerID
             // 
@@ -134,6 +136,7 @@
             0,
             0});
             this.nudYear.Name = "nudYear";
+            this.nudYear.ReadOnly = true;
             this.nudYear.Size = new System.Drawing.Size(47, 20);
             this.nudYear.TabIndex = 67;
             this.nudYear.Tag = "";
@@ -145,23 +148,24 @@
             // 
             // dudMonth
             // 
-            this.dudMonth.Items.Add("Jan");
-            this.dudMonth.Items.Add("Feb");
-            this.dudMonth.Items.Add("Mar");
             this.dudMonth.Items.Add("Apr");
-            this.dudMonth.Items.Add("May");
-            this.dudMonth.Items.Add("Jun");
-            this.dudMonth.Items.Add("Jul");
             this.dudMonth.Items.Add("Aug");
-            this.dudMonth.Items.Add("Sep");
-            this.dudMonth.Items.Add("Oct");
-            this.dudMonth.Items.Add("Nov");
             this.dudMonth.Items.Add("Dec");
+            this.dudMonth.Items.Add("Feb");
+            this.dudMonth.Items.Add("Jan");
+            this.dudMonth.Items.Add("Jul");
+            this.dudMonth.Items.Add("Jun");
+            this.dudMonth.Items.Add("Mar");
+            this.dudMonth.Items.Add("May");
+            this.dudMonth.Items.Add("Nov");
+            this.dudMonth.Items.Add("Oct");
+            this.dudMonth.Items.Add("Sep");
             this.dudMonth.Location = new System.Drawing.Point(168, 298);
             this.dudMonth.Name = "dudMonth";
+            this.dudMonth.ReadOnly = true;
             this.dudMonth.Size = new System.Drawing.Size(40, 20);
             this.dudMonth.TabIndex = 66;
-            this.dudMonth.Text = "Jan";
+            this.dudMonth.Wrap = true;
             // 
             // nudDate
             // 
@@ -177,6 +181,7 @@
             0,
             0});
             this.nudDate.Name = "nudDate";
+            this.nudDate.ReadOnly = true;
             this.nudDate.Size = new System.Drawing.Size(37, 20);
             this.nudDate.TabIndex = 65;
             this.nudDate.Value = new decimal(new int[] {
@@ -192,13 +197,16 @@
             this.tbxAddress.Name = "tbxAddress";
             this.tbxAddress.Size = new System.Drawing.Size(121, 71);
             this.tbxAddress.TabIndex = 64;
+            this.tbxAddress.TextChanged += new System.EventHandler(this.tbxAddress_TextChanged);
             // 
             // tbxConfirmPassword
             // 
             this.tbxConfirmPassword.Location = new System.Drawing.Point(125, 139);
             this.tbxConfirmPassword.Name = "tbxConfirmPassword";
+            this.tbxConfirmPassword.PasswordChar = '*';
             this.tbxConfirmPassword.Size = new System.Drawing.Size(121, 20);
             this.tbxConfirmPassword.TabIndex = 62;
+            this.tbxConfirmPassword.TextChanged += new System.EventHandler(this.tbxConfirmPassword_TextChanged);
             // 
             // lblConfirmPassword
             // 
@@ -226,6 +234,7 @@
             this.btnCancel.TabIndex = 70;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
             // 
             // tbxLastName
             // 
@@ -233,6 +242,7 @@
             this.tbxLastName.Name = "tbxLastName";
             this.tbxLastName.Size = new System.Drawing.Size(121, 20);
             this.tbxLastName.TabIndex = 59;
+            this.tbxLastName.TextChanged += new System.EventHandler(this.tbxLastName_TextChanged);
             // 
             // tbxUserName
             // 
@@ -240,13 +250,16 @@
             this.tbxUserName.Name = "tbxUserName";
             this.tbxUserName.Size = new System.Drawing.Size(121, 20);
             this.tbxUserName.TabIndex = 60;
+            this.tbxUserName.TextChanged += new System.EventHandler(this.tbxUserName_TextChanged);
             // 
             // tbxPassword
             // 
             this.tbxPassword.Location = new System.Drawing.Point(125, 112);
             this.tbxPassword.Name = "tbxPassword";
+            this.tbxPassword.PasswordChar = '*';
             this.tbxPassword.Size = new System.Drawing.Size(121, 20);
             this.tbxPassword.TabIndex = 61;
+            this.tbxPassword.TextChanged += new System.EventHandler(this.tbxPassword_TextChanged);
             // 
             // tbxNIC
             // 
@@ -254,6 +267,7 @@
             this.tbxNIC.Name = "tbxNIC";
             this.tbxNIC.Size = new System.Drawing.Size(121, 20);
             this.tbxNIC.TabIndex = 63;
+            this.tbxNIC.TextChanged += new System.EventHandler(this.tbxNIC_TextChanged);
             // 
             // tbxACNumber
             // 
@@ -261,6 +275,7 @@
             this.tbxACNumber.Name = "tbxACNumber";
             this.tbxACNumber.Size = new System.Drawing.Size(120, 20);
             this.tbxACNumber.TabIndex = 69;
+            this.tbxACNumber.TextChanged += new System.EventHandler(this.tbxACNumber_TextChanged);
             // 
             // tbxFirstName
             // 
@@ -268,6 +283,7 @@
             this.tbxFirstName.Name = "tbxFirstName";
             this.tbxFirstName.Size = new System.Drawing.Size(120, 20);
             this.tbxFirstName.TabIndex = 58;
+            this.tbxFirstName.TextChanged += new System.EventHandler(this.tbxFirstName_TextChanged);
             // 
             // lblAddress
             // 
@@ -351,11 +367,22 @@
             this.lblFirstName.TabIndex = 71;
             this.lblFirstName.Text = "First Name";
             // 
+            // lblPasswordMaching
+            // 
+            this.lblPasswordMaching.AutoSize = true;
+            this.lblPasswordMaching.ForeColor = System.Drawing.Color.Red;
+            this.lblPasswordMaching.Location = new System.Drawing.Point(0, 0);
+            this.lblPasswordMaching.Name = "lblPasswordMaching";
+            this.lblPasswordMaching.Size = new System.Drawing.Size(35, 13);
+            this.lblPasswordMaching.TabIndex = 86;
+            this.lblPasswordMaching.Text = "label1";
+            // 
             // frmAddNewWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(266, 421);
+            this.Controls.Add(this.lblPasswordMaching);
             this.Controls.Add(this.rbFemale);
             this.Controls.Add(this.rbMale);
             this.Controls.Add(this.tbxContactNumber);
@@ -425,5 +452,6 @@
         private System.Windows.Forms.Label lblDOB;
         private System.Windows.Forms.Label lblNICNumber;
         private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblPasswordMaching;
     }
 }
