@@ -9,7 +9,7 @@ namespace Aklan_International
 {
     class SalaryCalc
     {
-        private static decimal getRate(String job)
+        public static decimal getRate(String job)
         {
             decimal jobRate = 0;
 
@@ -55,7 +55,7 @@ namespace Aklan_International
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             string index = DateTime.Today.Month.ToString() + "/" + DateTime.Today.Year.ToString() + "/" + empID;
 
-            cmd = new MySqlCommand("select * from dtsalary where index='" + index +"'", conn);
+            cmd = new MySqlCommand("select * from dtsalary where `index`='"+index+"'", conn);
 
             conn.Open();
             reader = cmd.ExecuteReader();
@@ -63,7 +63,9 @@ namespace Aklan_International
             {
                 rowExist = true;
                 lastSalary = decimal.Parse(reader.GetString("salary"));
+                
             }
+            
             conn.Close();
 
             if (!rowExist)

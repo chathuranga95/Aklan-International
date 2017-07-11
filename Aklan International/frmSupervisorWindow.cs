@@ -49,15 +49,27 @@ namespace Aklan_International
             conn.Close();
             foreach (string id in empList)
             {
-                lbxCurrentJobs.Items.Clear();
-                cmd = new MySqlCommand("select * from dt" + id + " where finished='no'", conn);
-                conn.Open();
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
+                try
                 {
-                    jobList.Add(new Job(id,int.Parse(reader.GetString("index")), reader.GetString("matType"), int.Parse(reader.GetString("qty")), reader.GetString("finished")=="yes",reader.GetString("date")));
+                    lbxCurrentJobs.Items.Clear();
+                    cmd = new MySqlCommand("select * from dt" + id + " where finished='no'", conn);
+                    conn.Open();
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        jobList.Add(new Job(id, int.Parse(reader.GetString("index")), reader.GetString("matType"), reader.GetString("job"), int.Parse(reader.GetString("qty")), reader.GetString("finished") == "yes", reader.GetString("date")));
+                    }
+                    
                 }
-                conn.Close();
+                catch (Exception)
+                {
+                    continue;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                
             }
             lbxCurrentJobs.Items.Clear();
             foreach (Job job in jobList)
@@ -69,6 +81,13 @@ namespace Aklan_International
         
         private void btnMark_Click(object sender, EventArgs e)
         {
+            Dictionary<String, String> mydic = new Dictionary<string, string>();
+            mydic.Add("Cutting", "sheet");
+            mydic.Add("Clip Cutting", "cut strip");
+            mydic.Add("Folding", "clip cut");
+            mydic.Add("Rimming", "Folded strip");
+            
+            
             Job selectedJob = (Job)jobList[lbxCurrentJobs.SelectedIndex];
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             selectedJob.setFinished(true);
@@ -76,6 +95,7 @@ namespace Aklan_International
             conn.Open();
             if (cmd.ExecuteNonQuery() >= 0)
             {
+                SalaryCalc.updateSalary(selectedJob.getEmpID(), selectedJob.getQty() * SalaryCalc.getRate(selectedJob.getJob()));
                 MessageBox.Show("success...");
             }
             conn.Close();

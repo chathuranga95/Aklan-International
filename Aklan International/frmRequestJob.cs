@@ -69,7 +69,7 @@ namespace Aklan_International
 
             if (!reader.Read())
             {
-                cmd = new MySqlCommand("CREATE TABLE `dbcore`.`dt" + empID.ToString() + "` ( `index` INT NOT NULL,`date` VARCHAR(20) NULL, `matType` VARCHAR(45) NULL,`Qty` INT NULL, `finished` VARCHAR(3) NULL, PRIMARY KEY(`index`))", conn1);
+                cmd = new MySqlCommand("CREATE TABLE `dbcore`.`dt" + empID.ToString() + "` ( `index` INT NOT NULL,`date` VARCHAR(20) NULL, `matType` VARCHAR(45) NULL,`job` VARCHAR(45) NULL,`Qty` INT NULL, `finished` VARCHAR(3) NULL, PRIMARY KEY(`index`))", conn1);
                 reader.Close();
                 cmd.ExecuteNonQuery();
             }
@@ -81,7 +81,7 @@ namespace Aklan_International
         {
             //array of material consists of the current
             //available material with the order,
-            //sheet, cut strip, folded strip(single sheet), folded strip(12 sheets), clip cut strip
+            //sheet, cut strip, clip cut, folded 12, folded single
             int[] materialArray = new int[5];
             MySqlConnection conn1 = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             conn1.Open();
@@ -113,7 +113,7 @@ namespace Aklan_International
             {
                 return true;
             }
-            else if (matType == "folded single" && matArray[2] > qty)
+            else if (matType == "clip cut" && matArray[2] > qty)
             {
                 return true;
             }
@@ -121,7 +121,7 @@ namespace Aklan_International
             {
                 return true;
             }
-            else if (matType == "clip cut" && matArray[4] > qty)
+            else if (matType == "folded single" && matArray[4] > qty)
             {
                 return true;
             }
@@ -138,26 +138,21 @@ namespace Aklan_International
             int index = retrieveIndex();
 
             Dictionary<String, String> mydic = new Dictionary<string, string>();
-            mydic.Add("Cutting", "sheet");
-            mydic.Add("Clip Cutting", "cut strip");
-            mydic.Add("Folding", "clip cut");
-            mydic.Add("Rimming", "Folded strip");
+            mydic.Add("cutting", "sheet");
+            mydic.Add("clip Cutting", "cut strip");
+            mydic.Add("folding 12", "clip cut");
+            mydic.Add("folding single", "clip cut");
+            mydic.Add("Rimming 12", "folded 12");
+            mydic.Add("Rimming single", "folded single");
             string matType;
-            mydic.TryGetValue(cmbMachineType.Text.Trim(), out matType);
+            mydic.TryGetValue(cmbJob.Text.Trim(), out matType);
 
-            if (matType == "Folded strip")
-            {
-                if (cmbSingleOr12.Text == "Single")
-                    matType = "folded single";
-                if (cmbSingleOr12.Text == "12")
-                    matType = "folded 12";
-            }
 
             if (validateRequest(matType, (int)spnQty.Value))
             {
                 try
                 {
-                    cmd = new MySqlCommand("INSERT INTO `dbcore`.`dt" + empID.ToString() + "` (`index`, `date`, `matType`, `Qty`, `finished`) VALUES ('" + index + "', '" + DateTime.Today.Date.ToShortDateString() + "', '" + matType + "', '" + spnQty.Value.ToString() + "', 'no')", conn);
+                    cmd = new MySqlCommand("INSERT INTO `dbcore`.`dt" + empID.ToString() + "` (`index`, `date`, `matType`,`job`, `Qty`, `finished`) VALUES ('" + index + "', '" + DateTime.Today.Date.ToShortDateString() + "', '" + matType + "', '" + cmbJob.Text.Trim() + "', '" + spnQty.Value.ToString() + "', 'no')", conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Success...");
@@ -202,7 +197,7 @@ namespace Aklan_International
 
         private void cmbMachineType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbMachineType.Text == "Folding")
+            if (cmbJob.Text == "Folding")
                 cmbSingleOr12.Visible = true;
             else
                 cmbSingleOr12.Visible = false;
