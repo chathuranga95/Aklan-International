@@ -29,6 +29,7 @@ namespace Aklan_International
 
         private void frmAddNewWorker_Load(object sender, EventArgs e)
         {
+            rbMale.Checked = true;
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
         }
 
@@ -58,20 +59,19 @@ namespace Aklan_International
                 string userName = tbxUserName.Text;
                 string password = tbxPassword.Text;
                 string address = tbxAddress.Text;
-                int telNO = 0;
-                try
-                {
-                    telNO = int.Parse(tbxContactNumber.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("error");//should be cahnged
-                    
-                }
-                
+                int telNO = int.Parse(tbxContactNumber.Text) ;
+                               
                 string accNO = tbxACNumber.Text;
                 string nicNO = tbxNIC.Text;
-                string gender = cmbGender.Text;
+                string gender;
+                if (rbMale.Checked)
+                {
+                    gender = "Male";
+                }
+                else
+                {
+                    gender = "Female";
+                }
                 string dob = nudYear.Value.ToString() + "-" + dudMonth.Text + "-" + nudDate.Value.ToString();
                 try { 
                 conn.Open();
