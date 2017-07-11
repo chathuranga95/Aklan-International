@@ -60,6 +60,8 @@ namespace Aklan_International
             return index;
         }
 
+        
+
         private void checkTable()
         {
             MySqlConnection conn1 = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
@@ -77,33 +79,12 @@ namespace Aklan_International
             conn1.Close();
         }
 
-        private int[] retrieveMaterial()
-        {
-            //array of material consists of the current
-            //available material with the order,
-            //sheet, cut strip, clip cut, folded 12, folded single
-            int[] materialArray = new int[5];
-            MySqlConnection conn1 = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
-            conn1.Open();
-            cmd = new MySqlCommand("select material from dtmaterial", conn1);
-            reader = cmd.ExecuteReader();
-            string res = "";
-            if (reader.Read())
-            {
-                res = reader.GetString(0);
-            }
-            conn1.Close();
-            for (int i = 0; i < 5; i++)
-            {
-                materialArray[i] = int.Parse(res.Split(',')[i]);
-            }
-
-            return materialArray;
-        }
+        
 
         private bool validateRequest(string matType, int qty)
         {
-            int[] matArray = retrieveMaterial();
+            MaterialUpdate mtup = new Aklan_International.MaterialUpdate(empID);
+            int[] matArray = mtup.retrieveMaterial();
 
             if (matType == "sheet" && matArray[0] > qty)
             {
@@ -131,6 +112,7 @@ namespace Aklan_International
             }
 
         }
+        
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
@@ -147,7 +129,7 @@ namespace Aklan_International
             string matType;
             mydic.TryGetValue(cmbJob.Text.Trim(), out matType);
 
-
+            MaterialUpdate mtup = new Aklan_International.MaterialUpdate(empID);
             if (validateRequest(matType, (int)spnQty.Value))
             {
                 try
@@ -155,6 +137,8 @@ namespace Aklan_International
                     cmd = new MySqlCommand("INSERT INTO `dbcore`.`dt" + empID.ToString() + "` (`index`, `date`, `matType`,`job`, `Qty`, `finished`) VALUES ('" + index + "', '" + DateTime.Today.Date.ToShortDateString() + "', '" + matType + "', '" + cmbJob.Text.Trim() + "', '" + spnQty.Value.ToString() + "', 'no')", conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
+                    conn.Close();
+                    mtup.updateMaterial(matType, (int)spnQty.Value, empID,true);
                     MessageBox.Show("Success...");
                 }
                 catch
@@ -162,10 +146,7 @@ namespace Aklan_International
                     //MessageBox.Show(ee.ToString());
                     throw;
                 }
-                finally
-                {
-                    conn.Close();
-                }
+               
             }
             else
                 MessageBox.Show("Request can't obtained. Please try another material or fewer Qty!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);

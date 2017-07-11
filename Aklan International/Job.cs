@@ -16,6 +16,7 @@ namespace Aklan_International
         private bool finished;
         private string date;
 
+        private Dictionary<String, String> mydic;
         
         
 
@@ -28,8 +29,21 @@ namespace Aklan_International
             this.finished = finished;
             this.date = date;
             this.job = job;
+            mydic = new Dictionary<string, string>();
+            mydic.Add("cutting", "cut strip");
+            mydic.Add("clip cutting", "clip cut");
+            mydic.Add("folding 12", "folded 12");
+            mydic.Add("folding single", "folded single");
+            mydic.Add("rimming 12", "None");
+            mydic.Add("rimming single", "None");
         }
 
+        public string getOutputMaterialType()
+        {
+            string output;
+            mydic.TryGetValue(job, out output);
+            return output;
+        }
         public string getJob()
         {
             return job;
