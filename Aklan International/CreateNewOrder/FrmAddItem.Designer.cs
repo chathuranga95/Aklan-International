@@ -83,11 +83,12 @@
             this.cmbType.FormattingEnabled = true;
             this.cmbType.Items.AddRange(new object[] {
             "Single Sheet Strip",
-            "Dozen Sheets Strip"});
+            "12 Sheets Strip"});
             this.cmbType.Location = new System.Drawing.Point(124, 25);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(299, 21);
             this.cmbType.TabIndex = 1;
+            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
             // 
             // tbxUnitPrice
             // 
@@ -96,6 +97,7 @@
             this.tbxUnitPrice.ReadOnly = true;
             this.tbxUnitPrice.Size = new System.Drawing.Size(299, 20);
             this.tbxUnitPrice.TabIndex = 5;
+            this.tbxUnitPrice.TextChanged += new System.EventHandler(this.tbxUnitPrice_TextChanged);
             // 
             // tbxTotal
             // 
@@ -134,6 +136,8 @@
             this.mtbQty.Size = new System.Drawing.Size(299, 20);
             this.mtbQty.TabIndex = 2;
             this.mtbQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mtbQty.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbQty_MaskInputRejected);
+            this.mtbQty.TextChanged += new System.EventHandler(this.mtbQty_TextChanged);
             // 
             // FrmAddItem
             // 
