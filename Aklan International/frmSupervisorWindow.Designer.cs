@@ -70,7 +70,7 @@
             this.ClientSize = new System.Drawing.Size(798, 394);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSupervisorWindow";
-            this.Text = "frmSupervisorWindow";
+            this.Text = "Supervisor Window";
             this.Load += new System.EventHandler(this.frmSupervisorWindow_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
