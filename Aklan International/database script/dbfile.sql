@@ -16,6 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `dta001`
+--
+
+DROP TABLE IF EXISTS `dta001`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dta001` (
+  `index` int(11) NOT NULL,
+  `date` varchar(20) DEFAULT NULL,
+  `matType` varchar(45) DEFAULT NULL,
+  `Qty` int(11) DEFAULT NULL,
+  `finished` varchar(3) DEFAULT NULL,
+  PRIMARY KEY (`index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dta001`
+--
+
+LOCK TABLES `dta001` WRITE;
+/*!40000 ALTER TABLE `dta001` DISABLE KEYS */;
+INSERT INTO `dta001` VALUES (1,'7/4/2017','Sheet',2,'no'),(2,'5/8/2017','sheet',3,'no'),(3,'6/6/2017','sheet',3,'no'),(4,'7/5/2017','Sheet',1,'no'),(5,'7/5/2017','Cut strip',50,'no');
+/*!40000 ALTER TABLE `dta001` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `dtjobrates`
 --
 
@@ -87,8 +114,35 @@ CREATE TABLE `dtmaterial` (
 
 LOCK TABLES `dtmaterial` WRITE;
 /*!40000 ALTER TABLE `dtmaterial` DISABLE KEYS */;
-INSERT INTO `dtmaterial` VALUES (1,'a001','7/6/2017','admin updated stock','50,0,0,0,0'),(2,'w001','7/12/2017','3 of sheet taken','47,0,0,0,0'),(3,'w001','7/12/2017','60 of cut strip made','47,60,0,0,0');
+INSERT INTO `dtmaterial` VALUES (1,'a001','7/6/2017','admin updated stock','50,0,0,0,0');
 /*!40000 ALTER TABLE `dtmaterial` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dts001`
+--
+
+DROP TABLE IF EXISTS `dts001`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dts001` (
+  `index` int(11) NOT NULL,
+  `date` varchar(20) DEFAULT NULL,
+  `matType` varchar(45) DEFAULT NULL,
+  `Qty` int(11) DEFAULT NULL,
+  `finished` varchar(3) DEFAULT NULL,
+  PRIMARY KEY (`index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dts001`
+--
+
+LOCK TABLES `dts001` WRITE;
+/*!40000 ALTER TABLE `dts001` DISABLE KEYS */;
+INSERT INTO `dts001` VALUES (1,'7/6/2017','sheet',1,'no');
+/*!40000 ALTER TABLE `dts001` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -111,8 +165,33 @@ CREATE TABLE `dtsalary` (
 
 LOCK TABLES `dtsalary` WRITE;
 /*!40000 ALTER TABLE `dtsalary` DISABLE KEYS */;
-INSERT INTO `dtsalary` VALUES ('7/2017/w001',15);
 /*!40000 ALTER TABLE `dtsalary` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `dtsm001`
+--
+
+DROP TABLE IF EXISTS `dtsm001`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dtsm001` (
+  `index` int(11) NOT NULL,
+  `date` varchar(20) DEFAULT NULL,
+  `matType` varchar(45) DEFAULT NULL,
+  `Qty` int(11) DEFAULT NULL,
+  `finished` varchar(3) DEFAULT NULL,
+  PRIMARY KEY (`index`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dtsm001`
+--
+
+LOCK TABLES `dtsm001` WRITE;
+/*!40000 ALTER TABLE `dtsm001` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dtsm001` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -126,7 +205,6 @@ CREATE TABLE `dtw001` (
   `index` int(11) NOT NULL,
   `date` varchar(20) DEFAULT NULL,
   `matType` varchar(45) DEFAULT NULL,
-  `job` varchar(45) DEFAULT NULL,
   `Qty` int(11) DEFAULT NULL,
   `finished` varchar(3) DEFAULT NULL,
   PRIMARY KEY (`index`)
@@ -139,7 +217,7 @@ CREATE TABLE `dtw001` (
 
 LOCK TABLES `dtw001` WRITE;
 /*!40000 ALTER TABLE `dtw001` DISABLE KEYS */;
-INSERT INTO `dtw001` VALUES (1,'7/12/2017','sheet','cutting',3,'yes');
+INSERT INTO `dtw001` VALUES (1,'7/5/2017','Clip cut strip',50,'no');
 /*!40000 ALTER TABLE `dtw001` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -152,4 +230,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-12 19:20:20
+-- Dump completed on 2017-07-10 15:43:32
