@@ -12,14 +12,16 @@ namespace Aklan_International
 {
     public partial class frmAdminWindow : Form
     {
+        string empID;
         public frmAdminWindow()
         {
             InitializeComponent();
         }
-        public frmAdminWindow(string adminName)
+        public frmAdminWindow(string adminName, string empID)
         {
             InitializeComponent();
             this.Text = adminName;
+            this.empID = empID;
         }
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
@@ -37,6 +39,12 @@ namespace Aklan_International
         private void btnCreateSalesOrder_Click(object sender, EventArgs e)
         {
             frmNewSalesRecord obj = new frmNewSalesRecord();
+            obj.Show();
+        }
+
+        private void btnManageStock_Click(object sender, EventArgs e)
+        {
+            frmManageStock obj = new frmManageStock(empID);
             obj.Show();
         }
     }

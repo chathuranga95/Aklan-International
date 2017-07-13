@@ -35,7 +35,7 @@ namespace Aklan_International
                     if (txtEmpID.Text.Substring(0, 1) == "a")
                     {
                         MessageBox.Show("Admin access granted!!!");
-                        frmAdminWindow obj = new frmAdminWindow(reader.GetString("empName"));
+                        frmAdminWindow obj = new frmAdminWindow(reader.GetString("empName"),txtEmpID.Text.Trim());
                         obj.Show();
                         this.Hide();
                     }
