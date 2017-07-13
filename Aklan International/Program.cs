@@ -17,8 +17,8 @@ namespace Aklan_International
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmSupervisorWindow());
-            //Application.Run(new frmWorkerWindow());
-            Application.Run(new frmAdminWindow("shehan","a001"));
+            Application.Run(new frmWorkerWindow());
+            //Application.Run(new frmAdminWindow("shehan","a001"));
 
         }
     }
