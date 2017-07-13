@@ -86,6 +86,12 @@
     <Compile Include="frmAdminWindow.Designer.cs">
       <DependentUpon>frmAdminWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDeleteWorker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDeleteWorker.Designer.cs">
+      <DependentUpon>frmDeleteWorker.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdminWindow.resx">
       <DependentUpon>frmAdminWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDeleteWorker.resx">
+      <DependentUpon>frmDeleteWorker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
