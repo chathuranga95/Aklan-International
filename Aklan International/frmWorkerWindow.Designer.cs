@@ -93,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 248);
+            this.ClientSize = new System.Drawing.Size(426, 205);
             this.Controls.Add(this.cmbWorkerName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -101,7 +101,7 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLogin);
             this.Name = "frmWorkerWindow";
-            this.Text = "frmWorkerWindow";
+            this.Text = "Worker Window";
             this.Load += new System.EventHandler(this.frmWorkerWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

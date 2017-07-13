@@ -33,7 +33,7 @@
             this.btnManageOrder = new System.Windows.Forms.Button();
             this.btnViewOrders = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnManageSales = new System.Windows.Forms.Button();
+            this.btnCreateSalesOrder = new System.Windows.Forms.Button();
             this.btnViewSales = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnSetUnitPrice = new System.Windows.Forms.Button();
@@ -91,7 +91,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnManageSales);
+            this.groupBox2.Controls.Add(this.btnCreateSalesOrder);
             this.groupBox2.Controls.Add(this.btnViewSales);
             this.groupBox2.Location = new System.Drawing.Point(28, 268);
             this.groupBox2.Name = "groupBox2";
@@ -100,14 +100,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Sales";
             // 
-            // btnManageSales
+            // btnCreateSalesOrder
             // 
-            this.btnManageSales.Location = new System.Drawing.Point(166, 39);
-            this.btnManageSales.Name = "btnManageSales";
-            this.btnManageSales.Size = new System.Drawing.Size(85, 38);
-            this.btnManageSales.TabIndex = 1;
-            this.btnManageSales.Text = "Manage Sales orders";
-            this.btnManageSales.UseVisualStyleBackColor = true;
+            this.btnCreateSalesOrder.Location = new System.Drawing.Point(166, 39);
+            this.btnCreateSalesOrder.Name = "btnCreateSalesOrder";
+            this.btnCreateSalesOrder.Size = new System.Drawing.Size(85, 38);
+            this.btnCreateSalesOrder.TabIndex = 1;
+            this.btnCreateSalesOrder.Text = "Create Sales orders";
+            this.btnCreateSalesOrder.UseVisualStyleBackColor = true;
+            this.btnCreateSalesOrder.Click += new System.EventHandler(this.btnCreateSalesOrder_Click);
             // 
             // btnViewSales
             // 
@@ -226,7 +227,7 @@
         private System.Windows.Forms.Button btnViewOrders;
         private System.Windows.Forms.Button btnManageStock;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnManageSales;
+        private System.Windows.Forms.Button btnCreateSalesOrder;
         private System.Windows.Forms.Button btnViewSales;
         private System.Windows.Forms.Button btnManageWorkers;
         private System.Windows.Forms.Button btnViewWorkers;
