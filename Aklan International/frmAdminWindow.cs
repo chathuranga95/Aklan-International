@@ -33,5 +33,11 @@ namespace Aklan_International
             frmSetJobRates obj = new frmSetJobRates();
             obj.Show(); 
         }
+
+        private void btnCreateSalesOrder_Click(object sender, EventArgs e)
+        {
+            frmNewSalesRecord obj = new frmNewSalesRecord();
+            obj.Show();
+        }
     }
 }
