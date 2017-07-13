@@ -100,7 +100,7 @@ namespace Aklan_International
                 string accNO = tbxACNumber.Text;
                 string nicNO = tbxNIC.Text;
                 string gender;
-                //string deleted = "No";
+                string deleted = "No";
                 if (rbMale.Checked)
                 {
                     gender = "Male";
@@ -127,7 +127,7 @@ namespace Aklan_International
                     comm.Parameters.AddWithValue("@nic_NO", nicNO );
                     comm.Parameters.AddWithValue("@gender", gender );
                     comm.Parameters.AddWithValue("@dob", dob );
-                    comm.Parameters.AddWithValue("@deleted", "no");
+                    comm.Parameters.AddWithValue("@deleted", deleted);
                     comm.ExecuteNonQuery();
                     conn.Close();
 
