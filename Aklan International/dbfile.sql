@@ -19,7 +19,7 @@
 
 
   <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-e04a23d39bf81b7db3c635177756ef51bc171feb440be9e174933c6eb56382da.css" integrity="sha256-4Eoj05v4G32zxjUXd1bvUbwXH+tEC+nhdJM8brVjgto=" media="all" rel="stylesheet" />
-  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-24334c18831214381e60cd2cee0b86be216d64096d129d8c2b644d1fdcba1d4e.css" integrity="sha256-JDNMGIMSFDgeYM0s7guGviFtZAltEp2MK2RNH9y6HU4=" media="all" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-22e3fb48f206f7397882977c3d9f95c013ca85b21fead71acc9d225efc163b86.css" integrity="sha256-IuP7SPIG9zl4gpd8PZ+VwBPKhbIf6tcazJ0iXvwWO4Y=" media="all" rel="stylesheet" />
   
   
   
@@ -27,7 +27,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>Aklan-International/dbfile.sql at 827d86a3376af222d764b321d80e6be9df2d7a73 · chathuranga95/Aklan-International</title>
+  <title>Aklan-International/dbfile.sql at master · chathuranga95/Aklan-International</title>
   <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
   <meta property="fb:app_id" content="1401488693436528">
@@ -36,10 +36,10 @@
     <meta content="https://avatars3.githubusercontent.com/u/25490163?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="chathuranga95/Aklan-International" property="og:title" /><meta content="https://github.com/chathuranga95/Aklan-International" property="og:url" /><meta content="Aklan-International - Software development for Aklan International company" property="og:description" />
 
   <link rel="assets" href="https://assets-cdn.github.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MTg0OTEwNDMwOjEwYTU2YjU1ZTg5MWYzYjVhNTJhNmQ3MjgxMzZmZWRjYjBkNjZiNGE3MTFiZTc2YTNmMmRkNWU0NWE5ZWYyZTg=--c467b1091ac4b7e3b8fac8ba481a76de49c90965">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MTg0OTEwNDMwOjc2MzIxYjg3OGZmMzAzMWIxODRkYmIxMjllZjBmMzZlM2ZiMmU5OWM1NjkxYjkzZWIyZjY1MjVkYjExNDQ2NjA=--dfb2bdbb306f0924623a05517b86de7d1c140806">
   <meta name="pjax-timeout" content="1000">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
-  <meta name="request-id" content="A409:77BC:10B5E19:1CE3D09:596640B8" data-pjax-transient>
+  <meta name="request-id" content="BE54:4781:8C099:F960B:5964F7BE" data-pjax-transient>
   
 
   <meta name="selected-link" value="repo_source" data-pjax-transient>
@@ -48,7 +48,7 @@
 <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
     <meta name="google-analytics" content="UA-3769691-2">
 
-<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="A409:77BC:10B5E19:1CE3D09:596640B8" name="octolytics-dimension-request_id" /><meta content="iad" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" /><meta content="25480893" name="octolytics-actor-id" /><meta content="MaheshSuranga" name="octolytics-actor-login" /><meta content="c7531bf79225c8251e4a5ee011836071d2e5df5261319c6b1fed8f9856dd4b2f" name="octolytics-actor-hash" />
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="BE54:4781:8C099:F960B:5964F7BE" name="octolytics-dimension-request_id" /><meta content="iad" name="octolytics-dimension-region_edge" /><meta content="iad" name="octolytics-dimension-region_render" /><meta content="25480893" name="octolytics-actor-id" /><meta content="MaheshSuranga" name="octolytics-actor-login" /><meta content="c7531bf79225c8251e4a5ee011836071d2e5df5261319c6b1fed8f9856dd4b2f" name="octolytics-actor-hash" />
 <meta content="/&lt;user-name&gt;/&lt;repo-name&gt;/blob/show" data-pjax-transient="true" name="analytics-location" />
 
 
@@ -63,15 +63,15 @@
   <meta name="user-login" content="MaheshSuranga">
 
       <meta name="expected-hostname" content="github.com">
-    <meta name="js-proxy-site-detection-payload" content="MTQ5NjhmODIzYTYwYmEyZWNlODViMDkwMGU3N2VlMjljNzU3MTRiZDQ1OTY0MzBhNmYzN2Y0ZTNkMmQ1NmE0YXx7InJlbW90ZV9hZGRyZXNzIjoiMTEyLjEzNC40NS4xNTQiLCJyZXF1ZXN0X2lkIjoiQTQwOTo3N0JDOjEwQjVFMTk6MUNFM0QwOTo1OTY2NDBCOCIsInRpbWVzdGFtcCI6MTQ5OTg3MzQ3MSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+    <meta name="js-proxy-site-detection-payload" content="MmJkMTRlYjIxYTU4OTQ5MjA3ZTE0NjRiNTAyZGIyYzIyNzEwODdjMDdlNjA1M2MyMDk0N2IzNzEwNzNjODgyNXx7InJlbW90ZV9hZGRyZXNzIjoiMTEyLjEzNC40Ni44MyIsInJlcXVlc3RfaWQiOiJCRTU0OjQ3ODE6OEMwOTk6Rjk2MEI6NTk2NEY3QkUiLCJ0aW1lc3RhbXAiOjE0OTk3ODkyNDcsImhvc3QiOiJnaXRodWIuY29tIn0=">
 
 
   <meta name="html-safe-nonce" content="7a4f6c531b884eaf348e948a1ed21291595f4d2d">
 
-  <meta http-equiv="x-pjax-version" content="c338d66b8b269ef48ad3b5eaa0f8123c">
+  <meta http-equiv="x-pjax-version" content="a2733e0630d10e04dc840dd0e841ebe1">
   
 
-      <link href="https://github.com/chathuranga95/Aklan-International/commits/827d86a3376af222d764b321d80e6be9df2d7a73.atom" rel="alternate" title="Recent Commits to Aklan-International:827d86a3376af222d764b321d80e6be9df2d7a73" type="application/atom+xml">
+      <link href="https://github.com/chathuranga95/Aklan-International/commits/master.atom" rel="alternate" title="Recent Commits to Aklan-International:master" type="application/atom+xml">
 
   <meta name="description" content="Aklan-International - Software development for Aklan International company">
   <meta name="go-import" content="github.com/chathuranga95/Aklan-International git https://github.com/chathuranga95/Aklan-International.git">
@@ -79,7 +79,7 @@
   <meta content="25490163" name="octolytics-dimension-user_id" /><meta content="chathuranga95" name="octolytics-dimension-user_login" /><meta content="88532743" name="octolytics-dimension-repository_id" /><meta content="chathuranga95/Aklan-International" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="88532743" name="octolytics-dimension-repository_network_root_id" /><meta content="chathuranga95/Aklan-International" name="octolytics-dimension-repository_network_root_nwo" /><meta content="false" name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" />
 
 
-    <link rel="canonical" href="https://github.com/chathuranga95/Aklan-International/blob/827d86a3376af222d764b321d80e6be9df2d7a73/Aklan%20International/database%20script/dbfile.sql" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/chathuranga95/Aklan-International/blob/master/Aklan%20International/database%20script/dbfile.sql" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -122,7 +122,7 @@
         <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
   <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/search" class="js-site-search-form" data-scoped-search-url="/chathuranga95/Aklan-International/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
     <label class="form-control header-search-wrapper js-chromeless-input-container">
-        <a href="/chathuranga95/Aklan-International/blob/827d86a3376af222d764b321d80e6be9df2d7a73/Aklan%20International/database%20script/dbfile.sql" class="header-search-scope no-underline">This repository</a>
+        <a href="/chathuranga95/Aklan-International/blob/master/Aklan%20International/database%20script/dbfile.sql" class="header-search-scope no-underline">This repository</a>
       <input type="text"
         class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
         data-hotkey="s"
@@ -243,7 +243,7 @@
           Settings
         </a>
 
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="UZQ8po55oiIbV9D/de8DPsBJADxtGLaOEmFMl95pfXEB8eRCfy7wxtSke4R6Idb4IJ14KRb5YLjMF5UcIXIfhA==" /></div>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="+b2KiQju31tzX5w8Q7iI9uboXwlmIZgFHpq1l13dZkOp2FJt+bmNv7ysN0dMdl0wBjwnHB3ATjPA7GwcosYEtg==" /></div>
           <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
             Sign out
           </button>
@@ -253,7 +253,7 @@
 </ul>
 
 
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="V2DgXawe3pR/wgpWbMmvE3e14IcVM6h3CVy9fbvLIugHBTi5XUmMcLAxoS1jB3rVl2GYkm7SfkHXKmT2RNBAHQ==" /></div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Inwn01QgfvfKgu4D5ZrsXOc3XcAwNtEbW03fpWhdJ3RyGf83pXcsEwVxRXjqVDmaB+Ml1UvXBy2FOwYul0ZFgQ==" /></div>
       <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
         Sign out
       </button>
@@ -285,7 +285,7 @@
 
         <ul class="pagehead-actions">
   <li>
-        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="qI+Zg93r0OECPMFXLH7YIjL0aUFVo7W+qOZ4XkmswTiPt5JjVaFbqORsjMnWJ/3HCijA6joYPC90MSDyhTLWzg==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="88532743" />
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="SZt8aKGWF8IgdTcnOCikLoRTHOBFr9093dKSFgRpZ6puo3eIKdyci8YlernCcYHLvI+1SyoUVKwBBcq6yPdwXA==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="88532743" />
 
         <div class="select-menu js-menu-container js-select-menu">
           <a href="/chathuranga95/Aklan-International/subscription"
@@ -365,7 +365,7 @@
   <li>
     
   <div class="js-toggler-container js-social-container starring-container ">
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/unstar" class="starred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="CekmootHl2ECx04sWHULT5aKEhtYjLRBzh+BXn8gYkDCFLoKeAY0qNooedPDF7+NojOsvcchbZBp/jkyqx232A==" /></div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/unstar" class="starred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="DBLyrzRrW7zq8XP37xxaplzvuBJNi+oXhHbFi9t4HljH724Hxyr4dTIeRAh0fu5kaFYGtNImM8Yjl33nD0XLwA==" /></div>
       <button
         type="submit"
         class="btn btn-sm btn-with-count js-toggler-target"
@@ -379,7 +379,7 @@
           0
         </a>
 </form>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/star" class="unstarred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="JP/LX7pQ8LTX9Hy6g3C5oBh8+XzCu3DZNAZjWIa1KI9H+YjqvH5fN1fCiOPmqh6/pBeQVaej9Re42UVROY7h3w==" /></div>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/star" class="unstarred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="hvHCuG9jjQm747Q2FpLY3UEwhtD7pew0dwFRZMRO+73l94ENaU0iijvVQG9zSH/C/Vvv+Z69afr73ndte3Uy7Q==" /></div>
       <button
         type="submit"
         class="btn btn-sm btn-with-count js-toggler-target"
@@ -397,7 +397,7 @@
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="pEUX7fIZimZOO0sak+3/ogMlaoyFIept384zpUu1LAwtgjIl7RBbVI3F3lSXpSrok4y8ZCHp5RipnNWbH8V9vg==" /></div>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="enwcBR/+N9zVzOB2ftCtL+9ud8h20T14PqPoY7VkBRfzuznNAPfm7hYydTh6mHhlf8ehINIZMg1I8Q5d4RRUpQ==" /></div>
             <button
                 type="submit"
                 class="btn btn-sm btn-with-count"
@@ -492,7 +492,7 @@
   <div class="repository-content">
 
     
-  <a href="/chathuranga95/Aklan-International/blob/827d86a3376af222d764b321d80e6be9df2d7a73/Aklan%20International/database%20script/dbfile.sql" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
+  <a href="/chathuranga95/Aklan-International/blob/4151b4a34b645261258eb6a209b8d9d659c53904/Aklan%20International/database%20script/dbfile.sql" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
 
   <!-- blob contrib key: blob_contributors:v21:1dffea7166b5400897a4b0ea266ffedf -->
 
@@ -502,8 +502,8 @@
   <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
     
     type="button" aria-label="Switch branches or tags" aria-expanded="false" aria-haspopup="true">
-      <i>Tree:</i>
-      <span class="js-select-button css-truncate-target">827d86a337</span>
+      <i>Branch:</i>
+      <span class="js-select-button css-truncate-target">master</span>
   </button>
 
   <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax>
@@ -615,7 +615,7 @@
                 edit-worker-details
               </span>
             </a>
-            <a class="select-menu-item js-navigation-item js-navigation-open "
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
                href="/chathuranga95/Aklan-International/blob/master/Aklan%20International/database%20script/dbfile.sql"
                data-name="master"
                data-skip-pjax="true"
@@ -667,14 +667,14 @@
             </a>
         </div>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="lsIhXS53w3xLeEWHfGoNOPlBdilmGAOwL5S+/GIRCwtCNgyymfAIZhqWuheTeHuyuumVWZVvlTJgDeH8ggIVkg==" /></div>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/branches" class="js-create-branch select-menu-item select-menu-new-item-form js-navigation-item js-new-item-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="lie6C8cwBYuucmcU/dCdaepTS6hRD4GO+vorJsIqqspC05fkcLfOkf+cmIQSwuvjqfuo2KJ4Fwy1Y3QmIjm0Uw==" /></div>
           <svg aria-hidden="true" class="octicon octicon-git-branch select-menu-item-icon" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
             <div class="select-menu-item-text">
               <span class="select-menu-item-heading">Create branch: <span class="js-new-item-name"></span></span>
-              <span class="description">from ‘827d86a’</span>
+              <span class="description">from ‘master’</span>
             </div>
             <input type="hidden" name="name" id="name" class="js-new-item-value">
-            <input type="hidden" name="branch" id="branch" value="827d86a3376af222d764b321d80e6be9df2d7a73">
+            <input type="hidden" name="branch" id="branch" value="master">
             <input type="hidden" name="path" id="path" value="Aklan%20International/database%20script/dbfile.sql">
 </form>
       </div>
@@ -693,7 +693,7 @@
 </div>
 
     <div class="BtnGroup float-right">
-      <a href="/chathuranga95/Aklan-International/find/827d86a3376af222d764b321d80e6be9df2d7a73"
+      <a href="/chathuranga95/Aklan-International/find/master"
             class="js-pjax-capture-input btn btn-sm BtnGroup-item"
             data-pjax
             data-hotkey="t">
@@ -702,7 +702,7 @@
       <button aria-label="Copy file path to clipboard" class="js-zeroclipboard btn btn-sm BtnGroup-item tooltipped tooltipped-s" data-copied-hint="Copied!" type="button">Copy path</button>
     </div>
     <div class="breadcrumb js-zeroclipboard-target">
-      <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/chathuranga95/Aklan-International/tree/827d86a3376af222d764b321d80e6be9df2d7a73"><span>Aklan-International</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/chathuranga95/Aklan-International/tree/827d86a3376af222d764b321d80e6be9df2d7a73/Aklan%20International"><span>Aklan International</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/chathuranga95/Aklan-International/tree/827d86a3376af222d764b321d80e6be9df2d7a73/Aklan%20International/database%20script"><span>database script</span></a></span><span class="separator">/</span><strong class="final-path">dbfile.sql</strong>
+      <span class="repo-root js-repo-root"><span class="js-path-segment"><a href="/chathuranga95/Aklan-International"><span>Aklan-International</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a href="/chathuranga95/Aklan-International/tree/master/Aklan%20International"><span>Aklan International</span></a></span><span class="separator">/</span><span class="js-path-segment"><a href="/chathuranga95/Aklan-International/tree/master/Aklan%20International/database%20script"><span>database script</span></a></span><span class="separator">/</span><strong class="final-path">dbfile.sql</strong>
     </div>
   </div>
 
@@ -710,17 +710,15 @@
   
   <div class="commit-tease">
       <span class="float-right">
-        <a class="commit-tease-sha" href="/chathuranga95/Aklan-International/commit/827d86a3376af222d764b321d80e6be9df2d7a73" data-pjax>
-          827d86a
+        <a class="commit-tease-sha" href="/chathuranga95/Aklan-International/commit/2581de94493b678b8ce8ee2ada705d6c6f48b681" data-pjax>
+          2581de9
         </a>
-        <relative-time datetime="2017-07-12T14:52:25Z">Jul 12, 2017</relative-time>
+        <relative-time datetime="2017-07-10T10:15:32Z">Jul 10, 2017</relative-time>
       </span>
       <div>
         <img alt="@chathuranga95" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/25490163?v=3&amp;s=40" width="20" />
         <a href="/chathuranga95" class="user-mention" rel="author">chathuranga95</a>
-          <a href="/chathuranga95/Aklan-International/commit/827d86a3376af222d764b321d80e6be9df2d7a73" class="message" data-pjax="true" title="Revert &quot;database file updated. now, material request, job completion, stock update are functioning&quot;
-
-This reverts commit 13dcc47abe90c230f37acfbe3997fd00d433f9d2.">Revert "database file updated. now, material request, job completion,…</a>
+          <a href="/chathuranga95/Aklan-International/commit/2581de94493b678b8ce8ee2ada705d6c6f48b681" class="message" data-pjax="true" title="database update">database update</a>
       </div>
 
     <div class="commit-tease-contributors">
@@ -747,27 +745,29 @@ This reverts commit 13dcc47abe90c230f37acfbe3997fd00d433f9d2.">Revert "database 
   <div class="file-actions">
 
     <div class="BtnGroup">
-      <a href="/chathuranga95/Aklan-International/raw/827d86a3376af222d764b321d80e6be9df2d7a73/Aklan%20International/database%20script/dbfile.sql" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
-        <a href="/chathuranga95/Aklan-International/blame/827d86a3376af222d764b321d80e6be9df2d7a73/Aklan%20International/database%20script/dbfile.sql" class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b">Blame</a>
-      <a href="/chathuranga95/Aklan-International/commits/827d86a3376af222d764b321d80e6be9df2d7a73/Aklan%20International/database%20script/dbfile.sql" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
+      <a href="/chathuranga95/Aklan-International/raw/master/Aklan%20International/database%20script/dbfile.sql" class="btn btn-sm BtnGroup-item" id="raw-url">Raw</a>
+        <a href="/chathuranga95/Aklan-International/blame/master/Aklan%20International/database%20script/dbfile.sql" class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b">Blame</a>
+      <a href="/chathuranga95/Aklan-International/commits/master/Aklan%20International/database%20script/dbfile.sql" class="btn btn-sm BtnGroup-item" rel="nofollow">History</a>
     </div>
 
-        <button class="btn-octicon disabled tooltipped tooltipped-nw"
-           type="button"
-           disabled
-           aria-label="You must be on a branch to open this file in GitHub Desktop">
+        <a class="btn-octicon tooltipped tooltipped-nw"
+           href="https://desktop.github.com"
+           aria-label="Open this file in GitHub Desktop"
+           data-ga-click="Repository, open with desktop, type:windows">
             <svg aria-hidden="true" class="octicon octicon-device-desktop" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
-        </button>
+        </a>
 
-        <button type="button" class="btn-octicon disabled tooltipped tooltipped-nw"
-          aria-label="You must be on a branch to make or propose changes to this file">
-          <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
-        </button>
-        <button type="button" class="btn-octicon btn-octicon-danger disabled tooltipped tooltipped-nw"
-          aria-label="You must be on a branch to make or propose changes to this file">
-          <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
-        </button>
-  </div>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/edit/master/Aklan%20International/database%20script/dbfile.sql" class="inline-form js-update-url-with-hash" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="nsh3o/C+VytCdLFFCq3Ee7//BBAjtwCnCyFsAKKvXNE9sV085sITsbz0VbwN/ukqm61LO19bbjf5tgX479ns4Q==" /></div>
+          <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
+            aria-label="Edit this file" data-hotkey="e" data-disable-with>
+            <svg aria-hidden="true" class="octicon octicon-pencil" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 0 1 1.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
+          </button>
+</form>        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/chathuranga95/Aklan-International/delete/master/Aklan%20International/database%20script/dbfile.sql" class="inline-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="VZSur9J2kG6YyDEFxsVKAQ1UifvM74Fg+Ff5PjRZI9mheRujAlwl1K5xlYRHuNuKKNjdvPwvfb2JhUTPn1+0Kg==" /></div>
+          <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
+            aria-label="Delete this file" data-disable-with>
+            <svg aria-hidden="true" class="octicon octicon-trashcan" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
+          </button>
+</form>  </div>
 
   <div class="file-info">
       234 lines (198 sloc)
@@ -1749,7 +1749,6 @@ This reverts commit 13dcc47abe90c230f37acfbe3997fd00d433f9d2.">Revert "database 
       </tr>
 </table>
 
-
   </div>
 
   </div>
@@ -1787,7 +1786,7 @@ This reverts commit 13dcc47abe90c230f37acfbe3997fd00d433f9d2.">Revert "database 
       <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
 </a>
     <ul class="site-footer-links">
-      <li>&copy; 2017 <span title="0.36381s from unicorn-3397726263-np2g4">GitHub</span>, Inc.</li>
+      <li>&copy; 2017 <span title="0.18789s from unicorn-4151209827-l45gx">GitHub</span>, Inc.</li>
         <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
         <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
         <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
@@ -1809,9 +1808,9 @@ This reverts commit 13dcc47abe90c230f37acfbe3997fd00d433f9d2.">Revert "database 
 
 
     
-    <script crossorigin="anonymous" integrity="sha256-+Eu4exSWhdHmxvBX7jJPLNSW5nf1o1motduFMxO7g+Y=" src="https://assets-cdn.github.com/assets/frameworks-f84bb87b149685d1e6c6f057ee324f2cd496e677f5a359a8b5db853313bb83e6.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-ppOnsBnDIasqNFKIsGSIce0coP+bwNb7uTuu6vc2HpU=" src="https://assets-cdn.github.com/assets/frameworks-a693a7b019c321ab2a345288b0648871ed1ca0ff9bc0d6fbb93baeeaf7361e95.js"></script>
     
-    <script async="async" crossorigin="anonymous" integrity="sha256-FkDWB6bEsOU6MvLaGsw4K7uTk3n5FnWs7RHNjktoT2o=" src="https://assets-cdn.github.com/assets/github-1640d607a6c4b0e53a32f2da1acc382bbb939379f91675aced11cd8e4b684f6a.js"></script>
+    <script async="async" crossorigin="anonymous" integrity="sha256-Jw0xhRiZGhfboSQ64cc5v2Fjx6QvhwdlALVM/FF6P60=" src="https://assets-cdn.github.com/assets/github-270d318518991a17dba1243ae1c739bf6163c7a42f87076500b54cfc517a3fad.js"></script>
     
     
     
