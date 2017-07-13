@@ -148,6 +148,7 @@
             this.btnManageStock.TabIndex = 0;
             this.btnManageStock.Text = "Manage Stock";
             this.btnManageStock.UseVisualStyleBackColor = true;
+            this.btnManageStock.Click += new System.EventHandler(this.btnManageStock_Click);
             // 
             // button2
             // 

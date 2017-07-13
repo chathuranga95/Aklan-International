@@ -97,7 +97,7 @@ namespace Aklan_International
             {
                 if (matType == "sheet")
                 {
-                    cmdtxt = "INSERT INTO `dbcore`.`dtmaterial` (`index`, `empID`, `date`,`description`, `material`) VALUES ('" + index + "', '" + empID + "', '" + DateTime.Today.Date.ToShortDateString() + "', '" + qty.ToString() + " of " + matType + " inserted', '" + (matArr[0] + qty).ToString() + "," + matArr[1].ToString() + "," + matArr[2].ToString() + "," + matArr[3].ToString() + "," + matArr[4].ToString() + "')";
+                    cmdtxt = "INSERT INTO `dbcore`.`dtmaterial` (`index`, `empID`, `date`,`description`, `material`) VALUES ('" + index + "', '" + empID + "', '" + DateTime.Today.Date.ToShortDateString() + "', '" + qty.ToString() + " of " + matType + " inserted by Admin', '" + (matArr[0] + qty).ToString() + "," + matArr[1].ToString() + "," + matArr[2].ToString() + "," + matArr[3].ToString() + "," + matArr[4].ToString() + "')";
                 }
                 else if (matType == "cut strip")
                 {
