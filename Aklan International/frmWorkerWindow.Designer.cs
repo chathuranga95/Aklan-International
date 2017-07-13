@@ -39,7 +39,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 72);
+            this.label2.Location = new System.Drawing.Point(61, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 11;
@@ -48,7 +48,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 27);
+            this.label1.Location = new System.Drawing.Point(58, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 10;
@@ -56,23 +56,24 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(188, 66);
+            this.txtPassword.Location = new System.Drawing.Point(212, 83);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 7;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(85, 129);
+            this.btnClear.Location = new System.Drawing.Point(109, 146);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(213, 129);
+            this.btnLogin.Location = new System.Drawing.Point(237, 146);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 8;
@@ -83,7 +84,7 @@
             // cmbWorkerName
             // 
             this.cmbWorkerName.FormattingEnabled = true;
-            this.cmbWorkerName.Location = new System.Drawing.Point(188, 12);
+            this.cmbWorkerName.Location = new System.Drawing.Point(212, 35);
             this.cmbWorkerName.Name = "cmbWorkerName";
             this.cmbWorkerName.Size = new System.Drawing.Size(121, 21);
             this.cmbWorkerName.TabIndex = 12;
@@ -92,7 +93,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 264);
+            this.ClientSize = new System.Drawing.Size(426, 205);
             this.Controls.Add(this.cmbWorkerName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -100,7 +101,8 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLogin);
             this.Name = "frmWorkerWindow";
-            this.Text = "frmWorkerWindow";
+            this.Text = "Worker Window";
+            this.Load += new System.EventHandler(this.frmWorkerWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
