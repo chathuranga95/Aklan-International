@@ -39,7 +39,17 @@ namespace Aklan_International
                         obj.Show();
                         this.Hide();
                     }
-                    
+                    else if (txtEmpID.Text.Substring(0, 1) == "sm")
+                    {
+
+                    }
+                    else if (txtEmpID.Text.Substring(0, 1) == "s")
+                    {
+                        MessageBox.Show("Supervisor access granted!!!");
+                        frmSupervisorWindow obj = new frmSupervisorWindow();
+                        obj.Show();
+                        this.Hide();
+                    }
                 }
                 else
                 {

@@ -70,7 +70,7 @@ CREATE TABLE `dtjobrates` (
 
 LOCK TABLES `dtjobrates` WRITE;
 /*!40000 ALTER TABLE `dtjobrates` DISABLE KEYS */;
-INSERT INTO `dtjobrates` VALUES ('clip cutting',5),('cutting',5),('folding 12',5),('folding single',5),('rimming',5);
+INSERT INTO `dtjobrates` VALUES ('clip cutting',5),('cutting',5),('folding 12',5),('folding single',5),('rimming 12',5),('rimming single',5);
 /*!40000 ALTER TABLE `dtjobrates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -212,4 +212,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-13 12:23:45
+-- Dump completed on 2017-07-13 17:10:42

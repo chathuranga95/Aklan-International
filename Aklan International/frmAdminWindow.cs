@@ -13,6 +13,7 @@ namespace Aklan_International
     public partial class frmAdminWindow : Form
     {
         string empID;
+        string adminName;
         public frmAdminWindow()
         {
             InitializeComponent();
@@ -20,7 +21,8 @@ namespace Aklan_International
         public frmAdminWindow(string adminName, string empID)
         {
             InitializeComponent();
-            this.Text = adminName;
+            this.Text = adminName + " - Admin Mode";
+            this.adminName = adminName;
             this.empID = empID;
         }
 
@@ -51,6 +53,19 @@ namespace Aklan_International
         private void btnSetUnitPrice_Click(object sender, EventArgs e)
         {
             FrmSetUnitPrice obj = new FrmSetUnitPrice();
+            obj.Show();
+        }
+
+        
+
+        private void btnViewNotif_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            frmChangePassword obj = new frmChangePassword(adminName);
             obj.Show();
         }
     }
