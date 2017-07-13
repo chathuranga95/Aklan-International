@@ -105,12 +105,18 @@ namespace Aklan_International
         {
             DialogResult dr = MessageBox.Show("Delete Worker", "Are you sure?", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes) {
+
+                conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
                 conn.Open();
                 MySqlCommand cmd;
-
+                cmd = new MySqlCommand("UPDATE worker_details SET deleted = @Yes WHERE empID ='"+empID+"'",conn);
+                cmd.Parameters.AddWithValue("@Yes", "Yes");
+                cmd.ExecuteNonQuery();
                 conn.Close();
+                this.Close();
 
             }
+            
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -126,7 +132,7 @@ namespace Aklan_International
 
             while (reader.Read())
             {
-                if (tbxempID.Text  == reader.GetString("empID")
+                if (tbxempID.Text  == reader.GetString("empID"))
                 {
                     if (reader.GetString("deleted") == "Yes")
                     {
@@ -134,13 +140,12 @@ namespace Aklan_International
                     }
                     else
                     {
-
+                        deleteWorker(tbxempID.Text);
                     }
                 }
             }
             conn.Close();
-
-            return availability;
+            
         }
     }
 }

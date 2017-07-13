@@ -41,15 +41,15 @@
             // lblempID
             // 
             this.lblempID.AutoSize = true;
-            this.lblempID.Location = new System.Drawing.Point(12, 47);
+            this.lblempID.Location = new System.Drawing.Point(12, 15);
             this.lblempID.Name = "lblempID";
-            this.lblempID.Size = new System.Drawing.Size(83, 13);
+            this.lblempID.Size = new System.Drawing.Size(89, 13);
             this.lblempID.TabIndex = 0;
-            this.lblempID.Text = "Worker\'s empID";
+            this.lblempID.Text = "Worker\'s empID :";
             // 
             // tbxempID
             // 
-            this.tbxempID.Location = new System.Drawing.Point(106, 44);
+            this.tbxempID.Location = new System.Drawing.Point(106, 12);
             this.tbxempID.Name = "tbxempID";
             this.tbxempID.Size = new System.Drawing.Size(100, 20);
             this.tbxempID.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(29, 152);
+            this.btnDelete.Location = new System.Drawing.Point(12, 70);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(186, 152);
+            this.btnCancel.Location = new System.Drawing.Point(197, 70);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 3;
@@ -78,16 +78,16 @@
             // lblWorkerName
             // 
             this.lblWorkerName.AutoSize = true;
-            this.lblWorkerName.Location = new System.Drawing.Point(24, 77);
+            this.lblWorkerName.Location = new System.Drawing.Point(12, 43);
             this.lblWorkerName.Name = "lblWorkerName";
-            this.lblWorkerName.Size = new System.Drawing.Size(80, 13);
+            this.lblWorkerName.Size = new System.Drawing.Size(89, 13);
             this.lblWorkerName.TabIndex = 4;
-            this.lblWorkerName.Text = "Worker\'s Name";
+            this.lblWorkerName.Text = "Worker\'s Name  :";
             // 
             // lblWorkerNameShow
             // 
             this.lblWorkerNameShow.AutoSize = true;
-            this.lblWorkerNameShow.Location = new System.Drawing.Point(126, 77);
+            this.lblWorkerNameShow.Location = new System.Drawing.Point(107, 43);
             this.lblWorkerNameShow.Name = "lblWorkerNameShow";
             this.lblWorkerNameShow.Size = new System.Drawing.Size(80, 13);
             this.lblWorkerNameShow.TabIndex = 5;
@@ -97,7 +97,7 @@
             // 
             this.lblAvailable.AutoSize = true;
             this.lblAvailable.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.lblAvailable.Location = new System.Drawing.Point(212, 47);
+            this.lblAvailable.Location = new System.Drawing.Point(212, 15);
             this.lblAvailable.Name = "lblAvailable";
             this.lblAvailable.Size = new System.Drawing.Size(49, 13);
             this.lblAvailable.TabIndex = 6;
@@ -107,7 +107,7 @@
             // 
             this.lblnotAvailable.AutoSize = true;
             this.lblnotAvailable.ForeColor = System.Drawing.Color.Crimson;
-            this.lblnotAvailable.Location = new System.Drawing.Point(212, 47);
+            this.lblnotAvailable.Location = new System.Drawing.Point(212, 15);
             this.lblnotAvailable.Name = "lblnotAvailable";
             this.lblnotAvailable.Size = new System.Drawing.Size(67, 13);
             this.lblnotAvailable.TabIndex = 7;
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 103);
             this.Controls.Add(this.lblnotAvailable);
             this.Controls.Add(this.lblAvailable);
             this.Controls.Add(this.lblWorkerNameShow);
