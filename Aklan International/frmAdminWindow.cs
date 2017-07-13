@@ -47,5 +47,11 @@ namespace Aklan_International
             frmManageStock obj = new frmManageStock(empID);
             obj.Show();
         }
+
+        private void btnSetUnitPrice_Click(object sender, EventArgs e)
+        {
+            FrmSetUnitPrice obj = new FrmSetUnitPrice();
+            obj.Show();
+        }
     }
 }

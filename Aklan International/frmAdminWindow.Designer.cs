@@ -139,6 +139,7 @@
             this.btnSetUnitPrice.TabIndex = 1;
             this.btnSetUnitPrice.Text = "Set Unit Plrices";
             this.btnSetUnitPrice.UseVisualStyleBackColor = true;
+            this.btnSetUnitPrice.Click += new System.EventHandler(this.btnSetUnitPrice_Click);
             // 
             // btnManageStock
             // 
