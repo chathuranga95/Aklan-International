@@ -100,6 +100,7 @@ namespace Aklan_International
                 string accNO = tbxACNumber.Text;
                 string nicNO = tbxNIC.Text;
                 string gender;
+                //string deleted = "No";
                 if (rbMale.Checked)
                 {
                     gender = "Male";
@@ -114,18 +115,19 @@ namespace Aklan_International
                     
                     MySqlCommand comm = conn.CreateCommand();
                     //comm.CommandText = "INSERT INTO worker_details(first_name,last_name,user_name,password,address,nic_NO,gender,acc_NO) VALUES(@first_name,@last_name,@user_name,@password,@address,,@nic_NO,@gender,@acc_NO)";
-                    comm.CommandText = "INSERT INTO worker_details(empID,first_name,last_name,user_name,password,address,acc_NO,nic_NO,gender,tel_NO,dob) VALUES (@empID,@first_name,@last_name,@user_name,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob)";
-                    comm.Parameters.Add("@empID", empid);
-                    comm.Parameters.Add("@first_name", firstName);
-                    comm.Parameters.Add("@last_name",lastName);
-                    comm.Parameters.Add("@user_name", userName );
-                    comm.Parameters.Add("@password", password);
-                    comm.Parameters.Add("@address", address);
-                    comm.Parameters.Add("@tel_NO", telNO);
-                    comm.Parameters.Add("@acc_NO",accNO );
-                    comm.Parameters.Add("@nic_NO", nicNO );
-                    comm.Parameters.Add("@gender", gender );
-                    comm.Parameters.Add("@dob", dob );
+                    comm.CommandText = "INSERT INTO worker_details(empID,first_name,last_name,user_name,password,address,acc_NO,nic_NO,gender,tel_NO,dob,deleted) VALUES (@empID,@first_name,@last_name,@user_name,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob,@deleted)";
+                    comm.Parameters.AddWithValue("@empID", empid);
+                    comm.Parameters.AddWithValue("@first_name", firstName);
+                    comm.Parameters.AddWithValue("@last_name",lastName);
+                    comm.Parameters.AddWithValue("@user_name", userName );
+                    comm.Parameters.AddWithValue("@password", password);
+                    comm.Parameters.AddWithValue("@address", address);
+                    comm.Parameters.AddWithValue("@tel_NO", telNO);
+                    comm.Parameters.AddWithValue("@acc_NO",accNO );
+                    comm.Parameters.AddWithValue("@nic_NO", nicNO );
+                    comm.Parameters.AddWithValue("@gender", gender );
+                    comm.Parameters.AddWithValue("@dob", dob );
+                    comm.Parameters.AddWithValue("@deleted", "no");
                     comm.ExecuteNonQuery();
                     conn.Close();
 
