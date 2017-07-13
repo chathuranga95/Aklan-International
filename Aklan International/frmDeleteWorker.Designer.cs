@@ -72,7 +72,7 @@
             // lblWorkerName
             // 
             this.lblWorkerName.AutoSize = true;
-            this.lblWorkerName.Location = new System.Drawing.Point(29, 75);
+            this.lblWorkerName.Location = new System.Drawing.Point(24, 77);
             this.lblWorkerName.Name = "lblWorkerName";
             this.lblWorkerName.Size = new System.Drawing.Size(80, 13);
             this.lblWorkerName.TabIndex = 4;
