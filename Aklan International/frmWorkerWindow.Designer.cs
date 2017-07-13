@@ -84,6 +84,7 @@
             // 
             // cmbWorkerName
             // 
+            this.cmbWorkerName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWorkerName.FormattingEnabled = true;
             this.cmbWorkerName.Location = new System.Drawing.Point(212, 41);
             this.cmbWorkerName.Name = "cmbWorkerName";
