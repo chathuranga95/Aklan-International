@@ -34,10 +34,10 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.tbxUnitPrice = new System.Windows.Forms.TextBox();
-            this.tbxQty = new System.Windows.Forms.TextBox();
             this.tbxTotal = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.mtbQty = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // lblSripeType
@@ -78,30 +78,30 @@
             // 
             // cmbType
             // 
+            this.cmbType.AllowDrop = true;
+            this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Single Sheet Strip",
+            "Dozen Sheets Strip"});
             this.cmbType.Location = new System.Drawing.Point(124, 25);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(299, 21);
-            this.cmbType.TabIndex = 4;
+            this.cmbType.TabIndex = 1;
             // 
             // tbxUnitPrice
             // 
             this.tbxUnitPrice.Location = new System.Drawing.Point(124, 57);
             this.tbxUnitPrice.Name = "tbxUnitPrice";
+            this.tbxUnitPrice.ReadOnly = true;
             this.tbxUnitPrice.Size = new System.Drawing.Size(299, 20);
             this.tbxUnitPrice.TabIndex = 5;
-            // 
-            // tbxQty
-            // 
-            this.tbxQty.Location = new System.Drawing.Point(124, 89);
-            this.tbxQty.Name = "tbxQty";
-            this.tbxQty.Size = new System.Drawing.Size(299, 20);
-            this.tbxQty.TabIndex = 6;
             // 
             // tbxTotal
             // 
             this.tbxTotal.Location = new System.Drawing.Point(124, 124);
             this.tbxTotal.Name = "tbxTotal";
+            this.tbxTotal.ReadOnly = true;
             this.tbxTotal.Size = new System.Drawing.Size(299, 20);
             this.tbxTotal.TabIndex = 7;
             // 
@@ -110,28 +110,40 @@
             this.btnAdd.Location = new System.Drawing.Point(15, 175);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 8;
+            this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "Add item";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(348, 175);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 9;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // mtbQty
+            // 
+            this.mtbQty.Location = new System.Drawing.Point(124, 89);
+            this.mtbQty.Mask = "000000";
+            this.mtbQty.Name = "mtbQty";
+            this.mtbQty.PromptChar = ' ';
+            this.mtbQty.Size = new System.Drawing.Size(299, 20);
+            this.mtbQty.TabIndex = 2;
+            this.mtbQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // FrmAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 216);
+            this.Controls.Add(this.mtbQty);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.tbxTotal);
-            this.Controls.Add(this.tbxQty);
             this.Controls.Add(this.tbxUnitPrice);
             this.Controls.Add(this.cmbType);
             this.Controls.Add(this.lblTotal);
@@ -158,9 +170,9 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.ComboBox cmbType;
         private System.Windows.Forms.TextBox tbxUnitPrice;
-        private System.Windows.Forms.TextBox tbxQty;
         private System.Windows.Forms.TextBox tbxTotal;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.MaskedTextBox mtbQty;
     }
 }

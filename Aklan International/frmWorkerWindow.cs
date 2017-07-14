@@ -24,38 +24,85 @@ namespace Aklan_International
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            conn.Open();
-            cmd = new MySqlCommand("select * from dtlogin", conn);
-            reader = cmd.ExecuteReader();
-            if (reader.Read())
+            try
             {
-                if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
+                conn.Open();
+                cmd = new MySqlCommand("select * from dtlogin where empName = '"+cmbWorkerName.Text.Trim()+"'", conn);
+                reader = cmd.ExecuteReader();
+                while (reader.Read())
                 {
-                    MessageBox.Show("success...");
-                    this.Hide();
-                    frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(),this);
-                    obj.Show();
+                    if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
+                    {
+                        MessageBox.Show("success...");
+                        
+                        this.Hide();
+                        frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(), this,reader.GetString("empID"));
+                        obj.Show();
+                        clearComponents(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed...");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Failed...");
-                }
+
             }
-            conn.Close();
+            catch
+            {
+                //MessageBox.Show(ee.ToString());
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void frmWorkerWindow_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
-            conn.Open();
-            cmd = new MySqlCommand("select * from dtlogin", conn);
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                cmbWorkerName.Items.Add(reader.GetString("empName"));
+                conn.Open();
+                cmd = new MySqlCommand("select * from dtlogin where empID like 'w%'", conn);
+                reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cmbWorkerName.Items.Add(reader.GetString("empName"));
+                }
             }
-            conn.Close();
+            catch
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void clearComponents()
+        {
+            txtPassword.Clear();
+            cmbWorkerName.Text = "";
+            cmbWorkerName.Focus();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearComponents();
+        }
+
+        private void cmbWorkerName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnChangePass.Enabled = cmbWorkerName.Text != "";
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            frmChangePassword obj = new frmChangePassword(cmbWorkerName.Text.Trim());
+            obj.Show();
         }
     }
 }

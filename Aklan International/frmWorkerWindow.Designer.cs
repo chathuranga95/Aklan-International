@@ -34,6 +34,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.cmbWorkerName = new System.Windows.Forms.ComboBox();
+            this.btnChangePass = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -56,23 +57,24 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(212, 83);
+            this.txtPassword.Location = new System.Drawing.Point(212, 86);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 7;
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(109, 146);
+            this.btnClear.Location = new System.Drawing.Point(238, 147);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 9;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(237, 146);
+            this.btnLogin.Location = new System.Drawing.Point(366, 147);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 8;
@@ -82,17 +84,31 @@
             // 
             // cmbWorkerName
             // 
+            this.cmbWorkerName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWorkerName.FormattingEnabled = true;
-            this.cmbWorkerName.Location = new System.Drawing.Point(212, 35);
+            this.cmbWorkerName.Location = new System.Drawing.Point(212, 41);
             this.cmbWorkerName.Name = "cmbWorkerName";
             this.cmbWorkerName.Size = new System.Drawing.Size(121, 21);
             this.cmbWorkerName.TabIndex = 12;
+            this.cmbWorkerName.SelectedIndexChanged += new System.EventHandler(this.cmbWorkerName_SelectedIndexChanged);
+            // 
+            // btnChangePass
+            // 
+            this.btnChangePass.Enabled = false;
+            this.btnChangePass.Location = new System.Drawing.Point(78, 147);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(115, 23);
+            this.btnChangePass.TabIndex = 13;
+            this.btnChangePass.Text = "Change Password";
+            this.btnChangePass.UseVisualStyleBackColor = true;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // frmWorkerWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 248);
+            this.ClientSize = new System.Drawing.Size(543, 227);
+            this.Controls.Add(this.btnChangePass);
             this.Controls.Add(this.cmbWorkerName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -100,7 +116,7 @@
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLogin);
             this.Name = "frmWorkerWindow";
-            this.Text = "frmWorkerWindow";
+            this.Text = "Worker Window";
             this.Load += new System.EventHandler(this.frmWorkerWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -115,5 +131,6 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.ComboBox cmbWorkerName;
+        private System.Windows.Forms.Button btnChangePass;
     }
 }
