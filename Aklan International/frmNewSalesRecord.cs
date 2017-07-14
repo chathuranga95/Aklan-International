@@ -23,13 +23,13 @@ namespace Aklan_International
         }
         public void btnAddState()
         {
-            if(tbxCustName.Text.Length>0 &&
-               tbxNic.Text.Length == 10 && 
-               cmbType.Text !=""&&
-               tbxQty.Text.Length>0 &&
+            if (tbxCustName.Text.Length > 0 &&
+               tbxNic.Text.Length == 10 &&
+               cmbType.Text != "" &&
+               tbxQty.Text.Length > 0 &&
                tbxUprice.Text.Length > 0)
             {
-                if(tbxNic.Text.Substring(9) == "V" || tbxNic.Text.Substring(9) == "v")
+                if (tbxNic.Text.Substring(9) == "V" || tbxNic.Text.Substring(9) == "v")
                 {
                     btnAdd.Enabled = true;
                 }
@@ -62,7 +62,7 @@ namespace Aklan_International
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int amount = Convert.ToInt32(tbxUprice.Text) * Convert.ToInt32(tbxQty.Text);
+            decimal amount = Convert.ToDecimal(tbxUprice.Text) * Convert.ToDecimal(tbxQty.Text);
             grd.Rows.Add(cmbType.Text, tbxQty.Text, tbxUprice.Text, amount);
             cmbType.Text = "";
             tbxQty.Text = "";
@@ -98,7 +98,7 @@ namespace Aklan_International
         {
             if (this.grd.SelectedRows.Count > 0)
             {
-               grd.Rows.RemoveAt(this.grd.SelectedRows[0].Index);
+                grd.Rows.RemoveAt(this.grd.SelectedRows[0].Index);
             }
         }
 
@@ -111,29 +111,48 @@ namespace Aklan_International
         {
             //conn = new MySqlConnection("server = localhost; user id = root; database = dbcore; pwd = 1234; allowuservariables = True");
             int rows = grd.Rows.Count;
-            for (int x = 0; x < rows-1; ++x)
+            for (int x = 0; x < rows - 1; ++x)
             {
                 conn.Open();
                 string StrQuery;
                 StrQuery = "insert into dtsales values('" + tbxCustName.Text.Trim() + "', '" + tbxNic.Text.Trim() + "', '" + tbxTel.Text.Trim() + "', '" + grd.Rows[x].Cells[0].Value.ToString() + "', '" + grd.Rows[x].Cells[1].Value.ToString() + "', '" + grd.Rows[x].Cells[2].Value.ToString() + "', '" + grd.Rows[x].Cells[3].Value.ToString() + "')";
-                cmd = new MySqlCommand(StrQuery,conn);
-                
-                cmd.ExecuteNonQuery();
+                cmd = new MySqlCommand(StrQuery, conn);
+
+                if (cmd.ExecuteNonQuery() >= 0)
+                {
+                    MessageBox.Show("Sucess","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Failed");
+                }
                 conn.Close();
+                
 
             }
-            
-            
+
+
         }
 
         private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Decimal unitprice;
             MySqlCommand cmd2;
-            cmd2 = new MySqlCommand("SELECT * dtunitprices", conn);
             conn.Open();
+            if (cmbType.Text.Trim() == "Single")
+            {
+                cmd2 = new MySqlCommand("SELECT UnitPrice from dtunitprices where TypeId = 1", conn);
+            }
+            else 
+            {
+                cmd2 = new MySqlCommand("SELECT UnitPrice from dtunitprices where TypeId = 2", conn);
+            }
             reader = cmd2.ExecuteReader();
-            reader.GetString("TypeId");
+            if (reader.Read())
+            {
+                unitprice = reader.GetDecimal(0);
+                tbxUprice.Text = unitprice.ToString();
+            }
             conn.Close();
         }
     }

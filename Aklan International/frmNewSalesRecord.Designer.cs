@@ -36,7 +36,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbxQty = new System.Windows.Forms.MaskedTextBox();
-            this.tbxUprice = new System.Windows.Forms.MaskedTextBox();
             this.tbxTel = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.grd = new System.Windows.Forms.DataGridView();
@@ -48,6 +47,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tbxNic = new System.Windows.Forms.TextBox();
+            this.tbxUprice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -129,17 +129,6 @@
             this.tbxQty.TabIndex = 11;
             this.tbxQty.ValidatingType = typeof(int);
             this.tbxQty.TextChanged += new System.EventHandler(this.tbxQty_TextChanged);
-            // 
-            // tbxUprice
-            // 
-            this.tbxUprice.Location = new System.Drawing.Point(130, 111);
-            this.tbxUprice.Mask = "00000";
-            this.tbxUprice.Name = "tbxUprice";
-            this.tbxUprice.Size = new System.Drawing.Size(100, 20);
-            this.tbxUprice.TabIndex = 12;
-            this.tbxUprice.ValidatingType = typeof(int);
-            this.tbxUprice.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
-            this.tbxUprice.TextChanged += new System.EventHandler(this.tbxUprice_TextChanged);
             // 
             // tbxTel
             // 
@@ -236,11 +225,20 @@
             this.tbxNic.TabIndex = 21;
             this.tbxNic.TextChanged += new System.EventHandler(this.tbxNic_TextChanged_1);
             // 
+            // tbxUprice
+            // 
+            this.tbxUprice.Enabled = false;
+            this.tbxUprice.Location = new System.Drawing.Point(130, 108);
+            this.tbxUprice.Name = "tbxUprice";
+            this.tbxUprice.Size = new System.Drawing.Size(100, 20);
+            this.tbxUprice.TabIndex = 22;
+            // 
             // frmNewSalesRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 404);
+            this.Controls.Add(this.tbxUprice);
             this.Controls.Add(this.tbxNic);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnSubmit);
@@ -248,7 +246,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.grd);
             this.Controls.Add(this.tbxTel);
-            this.Controls.Add(this.tbxUprice);
             this.Controls.Add(this.tbxQty);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -276,7 +273,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MaskedTextBox tbxQty;
-        private System.Windows.Forms.MaskedTextBox tbxUprice;
         private System.Windows.Forms.MaskedTextBox tbxTel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView grd;
@@ -288,5 +284,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.TextBox tbxNic;
+        private System.Windows.Forms.TextBox tbxUprice;
     }
 }
