@@ -12,6 +12,21 @@
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +48,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -53,11 +69,29 @@
     <Compile Include="AddNewWorker.Designer.cs">
       <DependentUpon>AddNewWorker.cs</DependentUpon>
     </Compile>
-    <Compile Include="frnChangePassword.cs">
+    <Compile Include="CreateNewOrder\FrmAddItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frnChangePassword.Designer.cs">
-      <DependentUpon>frnChangePassword.cs</DependentUpon>
+    <Compile Include="CreateNewOrder\FrmAddItem.Designer.cs">
+      <DependentUpon>FrmAddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmCreateOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmCreateOrder.Designer.cs">
+      <DependentUpon>FrmCreateOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdminWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdminWindow.Designer.cs">
+      <DependentUpon>frmAdminWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -65,16 +99,103 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManageStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageStock.Designer.cs">
+      <DependentUpon>frmManageStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModeSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModeSelect.Designer.cs">
+      <DependentUpon>frmModeSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNewSalesRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewSalesRecord.Designer.cs">
+      <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRequestJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRequestJob.Designer.cs">
+      <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetJobRates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetJobRates.Designer.cs">
+      <DependentUpon>frmSetJobRates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSetUnitPrice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSetUnitPrice.Designer.cs">
+      <DependentUpon>FrmSetUnitPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSupervisorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSupervisorWindow.Designer.cs">
+      <DependentUpon>frmSupervisorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkerWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkerWindow.Designer.cs">
+      <DependentUpon>frmWorkerWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Job.cs" />
+    <Compile Include="MaterialUpdate.cs" />
+    <Compile Include="Order.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryCalc.cs" />
+    <Compile Include="SalesOrder.cs" />
+    <Compile Include="Worker.cs" />
     <EmbeddedResource Include="AddNewWorker.resx">
       <DependentUpon>AddNewWorker.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frnChangePassword.resx">
-      <DependentUpon>frnChangePassword.cs</DependentUpon>
+    <EmbeddedResource Include="CreateNewOrder\FrmAddItem.resx">
+      <DependentUpon>FrmAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewOrder\FrmCreateOrder.resx">
+      <DependentUpon>FrmCreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdminWindow.resx">
+      <DependentUpon>frmAdminWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangePassword.resx">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageStock.resx">
+      <DependentUpon>frmManageStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModeSelect.resx">
+      <DependentUpon>frmModeSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewSalesRecord.resx">
+      <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRequestJob.resx">
+      <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetJobRates.resx">
+      <DependentUpon>frmSetJobRates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSetUnitPrice.resx">
+      <DependentUpon>FrmSetUnitPrice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSupervisorWindow.resx">
+      <DependentUpon>frmSupervisorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkerWindow.resx">
+      <DependentUpon>frmWorkerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -97,6 +218,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="database script\dbfile.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
