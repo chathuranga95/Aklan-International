@@ -7,11 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+
 
 namespace Aklan_International
 {
     public partial class frmAdminWindow : Form
     {
+        MySqlConnection conn;
+        MySqlCommand cmd;
+        MySqlDataReader reader;
         public frmAdminWindow()
         {
             InitializeComponent();
@@ -36,6 +41,8 @@ namespace Aklan_International
 
         private void btnCreateSalesOrder_Click(object sender, EventArgs e)
         {
+           MaterialUpdate mtup = new MaterialUpdate(emp)
+
             frmNewSalesRecord obj = new frmNewSalesRecord();
             obj.Show();
         }
