@@ -84,11 +84,6 @@
     <Compile Include="CreateNewOrder\FrmCreateOrder.Designer.cs">
       <DependentUpon>FrmCreateOrder.cs</DependentUpon>
     </Compile>
-    <Compile Include="dbcoreDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>dbcoreDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmAdminWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +146,7 @@
     </Compile>
     <Compile Include="Job.cs" />
     <Compile Include="MaterialUpdate.cs" />
+    <Compile Include="OverManAlert.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SalaryCalc.cs" />
@@ -202,17 +198,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="dbcoreDataSet.xsc">
-      <DependentUpon>dbcoreDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="dbcoreDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>dbcoreDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="dbcoreDataSet.xss">
-      <DependentUpon>dbcoreDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
