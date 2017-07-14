@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Collections;
+using Microsoft.VisualBasic;
 
 namespace Aklan_International
 {
@@ -49,15 +50,27 @@ namespace Aklan_International
             conn.Close();
             foreach (string id in empList)
             {
-                lbxCurrentJobs.Items.Clear();
-                cmd = new MySqlCommand("select * from dt" + id + " where finished='no'", conn);
-                conn.Open();
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
+                try
                 {
-                    jobList.Add(new Job(id,int.Parse(reader.GetString("index")), reader.GetString("matType"), int.Parse(reader.GetString("qty")), reader.GetString("finished")=="yes",reader.GetString("date")));
+                    lbxCurrentJobs.Items.Clear();
+                    cmd = new MySqlCommand("select * from dt" + id + " where finished='no'", conn);
+                    conn.Open();
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        jobList.Add(new Job(id, int.Parse(reader.GetString("index")), reader.GetString("matType"), reader.GetString("job"), int.Parse(reader.GetString("qty")), reader.GetString("finished") == "yes", reader.GetString("date")));
+                    }
+                    
                 }
-                conn.Close();
+                catch (Exception)
+                {
+                    continue;
+                }
+                finally
+                {
+                    conn.Close();
+                }
+                
             }
             lbxCurrentJobs.Items.Clear();
             foreach (Job job in jobList)
@@ -69,17 +82,39 @@ namespace Aklan_International
         
         private void btnMark_Click(object sender, EventArgs e)
         {
+           
+
+            
             Job selectedJob = (Job)jobList[lbxCurrentJobs.SelectedIndex];
+            MaterialUpdate mtup = new Aklan_International.MaterialUpdate(selectedJob.getEmpID());
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             selectedJob.setFinished(true);
             cmd = new MySqlCommand("UPDATE `dbcore`.`dt"+selectedJob.getEmpID()+"` SET `finished`='yes' WHERE `index`='" + selectedJob.getIndex() + "' ", conn);
             conn.Open();
             if (cmd.ExecuteNonQuery() >= 0)
             {
+                int outMatqty;
+                SalaryCalc.updateSalary(selectedJob.getEmpID(), selectedJob.getQty() * SalaryCalc.getRate(selectedJob.getJob()));
+                while (true)
+                {
+                    try
+                    {
+                        outMatqty = int.Parse(Microsoft.VisualBasic.Interaction.InputBox("Enter output qty", "Get Info", "0", -1, -1));
+                        break;
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Enter a valid integer...");
+                        continue;
+                    }
+                }
+                mtup.updateMaterial(selectedJob.getOutputMaterialType(),outMatqty,selectedJob.getEmpID(),false);
                 MessageBox.Show("success...");
             }
             conn.Close();
         }
+
+        
 
     }
 }
