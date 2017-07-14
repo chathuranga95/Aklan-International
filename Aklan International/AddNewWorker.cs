@@ -18,7 +18,7 @@ namespace Aklan_International
         string empid = "";
 
         
-        private int retrieveIndex()
+        private int retrieveIndex(string workerType)
         {
             conn.Open();
             MySqlCommand cmd;
@@ -31,8 +31,22 @@ namespace Aklan_International
 
             while (reader.Read())
             {
-                // index = int.Parse(reader.GetString("empID").Substring(1,3));
-                index++;
+                if (workerType == "Admin" && reader.GetString("empID").Substring(0, 1) == "a") {
+                    index++;
+                }
+                else if (workerType == "Salesman" && reader.GetString("empID").Substring(0, 2) == "sm")
+                {
+                    index++;
+                }
+                else if(workerType == "Supervisor" && reader.GetString("empID").Substring(0, 1) == "s")
+                {
+                    index++;
+                }
+                else if (workerType == "Worker" && reader.GetString("empID").Substring(0, 1) == "w")
+                {
+                    index++;
+                }
+
             }
             conn.Close();
             index++; //increament index
@@ -54,20 +68,7 @@ namespace Aklan_International
             lblPasswordMaching.Text = "";
             btnAddWorker.Enabled = false;
             rbMale.Checked = true;
-            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
-            int index = retrieveIndex();
-            if (index < 10)
-            {
-                empid = "W00" + index.ToString();
-            }
-            else if(index <100){
-                empid = "W0" + index.ToString();
-            }
-            else
-            {
-                empid = "W" + index.ToString();
-            }
-            lblworkerID.Text = empid;
+            
 
         }
 
@@ -84,7 +85,7 @@ namespace Aklan_International
             {
                 string firstName = tbxFirstName.Text;
                 string lastName = tbxLastName.Text;
-                string userName = tbxUserName.Text;
+                string workerType = cmbWorkerType.Text;
                 string password = tbxPassword.Text;
                 string address = tbxAddress.Text;
                 int telNO = 0;
@@ -114,12 +115,12 @@ namespace Aklan_International
                 conn.Open();
                     
                     MySqlCommand comm = conn.CreateCommand();
-                    //comm.CommandText = "INSERT INTO worker_details(first_name,last_name,user_name,password,address,nic_NO,gender,acc_NO) VALUES(@first_name,@last_name,@user_name,@password,@address,,@nic_NO,@gender,@acc_NO)";
-                    comm.CommandText = "INSERT INTO worker_details(empID,first_name,last_name,user_name,password,address,acc_NO,nic_NO,gender,tel_NO,dob,deleted) VALUES (@empID,@first_name,@last_name,@user_name,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob,@deleted)";
+                    
+                    comm.CommandText = "INSERT INTO worker_details(empID,first_name,last_name,worker_type,password,address,acc_NO,nic_NO,gender,tel_NO,dob,deleted) VALUES (@empID,@first_name,@last_name,@worker_type,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob,@deleted)";
                     comm.Parameters.AddWithValue("@empID", empid);
                     comm.Parameters.AddWithValue("@first_name", firstName);
                     comm.Parameters.AddWithValue("@last_name",lastName);
-                    comm.Parameters.AddWithValue("@user_name", userName );
+                    comm.Parameters.AddWithValue("@worker_type",workerType );
                     comm.Parameters.AddWithValue("@password", password);
                     comm.Parameters.AddWithValue("@address", address);
                     comm.Parameters.AddWithValue("@tel_NO", telNO);
@@ -162,7 +163,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length <2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -184,7 +185,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -206,7 +207,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -228,7 +229,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -249,8 +250,7 @@ namespace Aklan_International
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) || (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -272,7 +272,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -294,7 +294,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -316,7 +316,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+               (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -338,7 +338,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -354,6 +354,55 @@ namespace Aklan_International
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cmbWorkerType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+
+            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+            int index = retrieveIndex(cmbWorkerType.Text);
+
+            string type = "";
+
+            if (cmbWorkerType.Text == "Salesman")
+            {
+                type = "sm";
+            }
+            else {
+                type = cmbWorkerType.Text.Substring(0,1).ToLower();
+            }
+
+            if (index < 10)
+            {
+                empid = type+"00" + index.ToString();
+            }
+            else if (index < 100)
+            {
+                empid = type+"0" + index.ToString();
+            }
+            else
+            {
+                empid = type + index.ToString();
+            }
+            lblworkerID.Text = empid;
         }
     }
 }
