@@ -116,11 +116,14 @@ namespace Aklan_International
                     cmdtxt = "INSERT INTO `dbcore`.`dtmaterial` (`index`, `empID`, `date`,`description`, `material`) VALUES ('" + index + "', '" + empID + "', '" + DateTime.Today.Date.ToShortDateString() + "',  '" + qty.ToString() + " of " + matType + " made', '" + (matArr[0]).ToString() + "," + matArr[1].ToString() + "," + matArr[2].ToString() + "," + matArr[3].ToString() + "," + (matArr[4] + qty).ToString() + "')";
                 }
             }
-            conn2 = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
-            cmd = new MySqlCommand(cmdtxt, conn2);
-            conn2.Open();
-            cmd.ExecuteNonQuery();
-            conn2.Close();
+            if (cmdtxt != "")
+            {
+                conn2 = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+                cmd = new MySqlCommand(cmdtxt, conn2);
+                conn2.Open();
+                cmd.ExecuteNonQuery();
+                conn2.Close();
+            }
         }
     }
 }

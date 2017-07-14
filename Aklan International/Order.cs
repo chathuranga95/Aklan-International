@@ -22,8 +22,6 @@ namespace Aklan_International
         private decimal amountRemaining;
         private decimal totalPrice;
 
-        private int proccessedSingleSheetQty;
-        private int proccessedDozenSheetQty;
 
         public Order(string orderID, string customerID, string customerName, string customerEmail, int singleSheetQty, decimal singleSheetUnitPrice, int dozenSheetQty, decimal dozenSheetUnitPrice, decimal amountPaid)
         {

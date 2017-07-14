@@ -15,7 +15,7 @@ namespace Aklan_International
 {
     public partial class frmSupervisorWindow : Form
     {
-        string empID = "";
+        string empID;
         MySqlCommand cmd;
         MySqlConnection conn;
         MySqlDataReader reader;
@@ -24,6 +24,11 @@ namespace Aklan_International
         public frmSupervisorWindow()
         {
             InitializeComponent();
+        }
+        public frmSupervisorWindow(string empID)
+        {
+            InitializeComponent();
+            this.empID = empID;
         }
 
         private void frmSupervisorWindow_Load(object sender, EventArgs e)
@@ -46,6 +51,7 @@ namespace Aklan_International
             ArrayList empList = new ArrayList();
             conn.Open();
             reader = cmd.ExecuteReader();
+            
             while (reader.Read())
             {
                 empList.Add(reader.GetString(0));
@@ -55,7 +61,7 @@ namespace Aklan_International
             {
                 try
                 {
-                    lbxCurrentJobs.Items.Clear();
+                    jobList.Clear();
                     cmd = new MySqlCommand("select * from dt" + id + " where finished='no'", conn);
                     conn.Open();
                     reader = cmd.ExecuteReader();
@@ -78,7 +84,7 @@ namespace Aklan_International
             lbxCurrentJobs.Items.Clear();
             foreach (Job job in jobList)
             {
-                lbxCurrentJobs.Items.Add("EmpID :" + job.getEmpID() + "Material Type :" + job.getMatType() + "Qty :" + job.getQty() + "Date :" + job.getDate());
+                lbxCurrentJobs.Items.Add("EmpID :" + job.getEmpID() + "     Material Type :" + job.getMatType() + "     Qty :" + job.getQty() + "       Date :" + job.getDate());
             }
         }
         private void refreshOrders()
@@ -89,6 +95,7 @@ namespace Aklan_International
             
             conn.Open();
             reader = cmd.ExecuteReader();
+            orderList.Clear();
             while (reader.Read())
             {
                 orderList.Add(new Order(reader.GetString("OrderId"), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetString("CustomerEmail"), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit"), reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid")));
@@ -98,7 +105,7 @@ namespace Aklan_International
             lbxCurrentOrders.Items.Clear();
             foreach (Order order in orderList)
             {
-                lbxCurrentOrders.Items.Add("OrderID : " + order.getOrderID() + " Order description : to be added");
+                lbxCurrentOrders.Items.Add("OrderID : " + order.getOrderID() + "     Order description : to be added");
             }
         }
 
@@ -130,10 +137,11 @@ namespace Aklan_International
                         continue;
                     }
                 }
-                mtup.updateMaterial(selectedJob.getOutputMaterialType(), outMatqty, selectedJob.getEmpID(), false);
+                mtup.updateMaterial(selectedJob.getOutputMaterialType(), outMatqty, empID, false);
                 MessageBox.Show("success...");
             }
             conn.Close();
+            refreshJobs();
 
         }
 
@@ -152,6 +160,7 @@ namespace Aklan_International
                 MessageBox.Show("success...");
             }
             conn.Close();
+            refreshOrders();
         }
     }
 }
