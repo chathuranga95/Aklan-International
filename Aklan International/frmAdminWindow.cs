@@ -7,22 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-
 
 namespace Aklan_International
 {
     public partial class frmAdminWindow : Form
     {
-        
+        string empID;
+        string adminName;
         public frmAdminWindow()
         {
             InitializeComponent();
         }
-        public frmAdminWindow(string adminName)
+        public frmAdminWindow(string adminName, string empID)
         {
             InitializeComponent();
-            this.Text = adminName;
+            this.Text = adminName + " - Admin Mode";
+            this.adminName = adminName;
+            this.empID = empID;
         }
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
@@ -39,20 +40,33 @@ namespace Aklan_International
 
         private void btnCreateSalesOrder_Click(object sender, EventArgs e)
         {
-           MaterialUpdate mtup = new MaterialUpdate(emp)
-
             frmNewSalesRecord obj = new frmNewSalesRecord();
             obj.Show();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnManageStock_Click(object sender, EventArgs e)
+        {
+            frmManageStock obj = new frmManageStock(empID);
+            obj.Show();
+        }
+
+        private void btnSetUnitPrice_Click(object sender, EventArgs e)
+        {
+            FrmSetUnitPrice obj = new FrmSetUnitPrice();
+            obj.Show();
+        }
+
+        
+
+        private void btnViewNotif_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void frmAdminWindow_Load(object sender, EventArgs e)
+        private void btnChangePass_Click(object sender, EventArgs e)
         {
-
+            frmChangePassword obj = new frmChangePassword(adminName);
+            obj.Show();
         }
     }
 }
