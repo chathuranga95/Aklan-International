@@ -60,6 +60,8 @@ namespace Aklan_International
             return index;
         }
 
+        
+
         private void checkTable()
         {
             MySqlConnection conn1 = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
@@ -69,7 +71,7 @@ namespace Aklan_International
 
             if (!reader.Read())
             {
-                cmd = new MySqlCommand("CREATE TABLE `dbcore`.`dt" + empID.ToString() + "` ( `index` INT NOT NULL,`date` VARCHAR(20) NULL, `matType` VARCHAR(45) NULL,`Qty` INT NULL, `finished` VARCHAR(3) NULL, PRIMARY KEY(`index`))", conn1);
+                cmd = new MySqlCommand("CREATE TABLE `dbcore`.`dt" + empID.ToString() + "` ( `index` INT NOT NULL,`date` VARCHAR(20) NULL, `matType` VARCHAR(45) NULL,`job` VARCHAR(45) NULL,`Qty` INT NULL, `finished` VARCHAR(3) NULL, PRIMARY KEY(`index`))", conn1);
                 reader.Close();
                 cmd.ExecuteNonQuery();
             }
@@ -77,33 +79,12 @@ namespace Aklan_International
             conn1.Close();
         }
 
-        private int[] retrieveMaterial()
-        {
-            //array of material consists of the current
-            //available material with the order,
-            //sheet, cut strip, folded strip(single sheet), folded strip(12 sheets), clip cut strip
-            int[] materialArray = new int[5];
-            MySqlConnection conn1 = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
-            conn1.Open();
-            cmd = new MySqlCommand("select material from dtmaterial", conn1);
-            reader = cmd.ExecuteReader();
-            string res = "";
-            if (reader.Read())
-            {
-                res = reader.GetString(0);
-            }
-            conn1.Close();
-            for (int i = 0; i < 5; i++)
-            {
-                materialArray[i] = int.Parse(res.Split(',')[i]);
-            }
-
-            return materialArray;
-        }
+        
 
         private bool validateRequest(string matType, int qty)
         {
-            int[] matArray = retrieveMaterial();
+            MaterialUpdate mtup = new Aklan_International.MaterialUpdate(empID);
+            int[] matArray = mtup.retrieveMaterial();
 
             if (matType == "sheet" && matArray[0] > qty)
             {
@@ -113,7 +94,7 @@ namespace Aklan_International
             {
                 return true;
             }
-            else if (matType == "folded single" && matArray[2] > qty)
+            else if (matType == "clip cut" && matArray[2] > qty)
             {
                 return true;
             }
@@ -121,7 +102,7 @@ namespace Aklan_International
             {
                 return true;
             }
-            else if (matType == "clip cut" && matArray[4] > qty)
+            else if (matType == "folded single" && matArray[4] > qty)
             {
                 return true;
             }
@@ -131,6 +112,7 @@ namespace Aklan_International
             }
 
         }
+        
 
         private void btnRequest_Click(object sender, EventArgs e)
         {
@@ -138,39 +120,33 @@ namespace Aklan_International
             int index = retrieveIndex();
 
             Dictionary<String, String> mydic = new Dictionary<string, string>();
-            mydic.Add("Cutting", "sheet");
-            mydic.Add("Clip Cutting", "cut strip");
-            mydic.Add("Folding", "clip cut");
-            mydic.Add("Rimming", "Folded strip");
+            mydic.Add("cutting", "sheet");
+            mydic.Add("clip Cutting", "cut strip");
+            mydic.Add("folding 12", "clip cut");
+            mydic.Add("folding single", "clip cut");
+            mydic.Add("Rimming 12", "folded 12");
+            mydic.Add("Rimming single", "folded single");
             string matType;
-            mydic.TryGetValue(cmbMachineType.Text.Trim(), out matType);
+            mydic.TryGetValue(cmbJob.Text.Trim(), out matType);
 
-            if (matType == "Folded strip")
-            {
-                if (cmbSingleOr12.Text == "Single")
-                    matType = "folded single";
-                if (cmbSingleOr12.Text == "12")
-                    matType = "folded 12";
-            }
-
+            MaterialUpdate mtup = new Aklan_International.MaterialUpdate(empID);
             if (validateRequest(matType, (int)spnQty.Value))
             {
                 try
                 {
-                    cmd = new MySqlCommand("INSERT INTO `dbcore`.`dt" + empID.ToString() + "` (`index`, `date`, `matType`, `Qty`, `finished`) VALUES ('" + index + "', '" + DateTime.Today.Date.ToShortDateString() + "', '" + matType + "', '" + spnQty.Value.ToString() + "', 'no')", conn);
+                    cmd = new MySqlCommand("INSERT INTO `dbcore`.`dt" + empID.ToString() + "` (`index`, `date`, `matType`,`job`, `Qty`, `finished`) VALUES ('" + index + "', '" + DateTime.Today.Date.ToShortDateString() + "', '" + matType + "', '" + cmbJob.Text.Trim() + "', '" + spnQty.Value.ToString() + "', 'no')", conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("success...");
+                    conn.Close();
+                    mtup.updateMaterial(matType, (int)spnQty.Value, empID,true);
+                    MessageBox.Show("Success...");
                 }
                 catch
                 {
                     //MessageBox.Show(ee.ToString());
                     throw;
                 }
-                finally
-                {
-                    conn.Close();
-                }
+               
             }
             else
                 MessageBox.Show("Request can't obtained. Please try another material or fewer Qty!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -202,7 +178,7 @@ namespace Aklan_International
 
         private void cmbMachineType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbMachineType.Text == "Folding")
+            if (cmbJob.Text == "Folding")
                 cmbSingleOr12.Visible = true;
             else
                 cmbSingleOr12.Visible = false;

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient; //my sql
 using System.Windows.Forms;
 
 namespace Aklan_International
@@ -64,7 +64,7 @@ namespace Aklan_International
             try
             {
                 conn.Open();
-                cmd = new MySqlCommand("select * from dtlogin", conn);
+                cmd = new MySqlCommand("select * from dtlogin where empID like 'w%'", conn);
                 reader = cmd.ExecuteReader();
 
                 while (reader.Read())
@@ -92,6 +92,17 @@ namespace Aklan_International
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearComponents();
+        }
+
+        private void cmbWorkerName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnChangePass.Enabled = cmbWorkerName.Text != "";
+        }
+
+        private void btnChangePass_Click(object sender, EventArgs e)
+        {
+            frmChangePassword obj = new frmChangePassword(cmbWorkerName.Text.Trim());
+            obj.Show();
         }
     }
 }
