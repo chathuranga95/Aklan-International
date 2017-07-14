@@ -38,13 +38,11 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnChangeDetails = new System.Windows.Forms.Button();
             this.tbxLastName = new System.Windows.Forms.TextBox();
-            this.tbxUserName = new System.Windows.Forms.TextBox();
             this.tbxPassword = new System.Windows.Forms.TextBox();
             this.tbxACNumber = new System.Windows.Forms.TextBox();
             this.tbxFirstName = new System.Windows.Forms.TextBox();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblACNumber = new System.Windows.Forms.Label();
             this.lblContactNumber = new System.Windows.Forms.Label();
@@ -52,11 +50,13 @@
             this.lblNICNumber = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblempID = new System.Windows.Forms.Label();
-            this.lblworkerID = new System.Windows.Forms.Label();
             this.tbxContactNumber = new System.Windows.Forms.MaskedTextBox();
             this.tbxNIC = new System.Windows.Forms.TextBox();
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.rbFemale = new System.Windows.Forms.RadioButton();
+            this.lblWorkerType = new System.Windows.Forms.Label();
+            this.tbxWorkerID = new System.Windows.Forms.TextBox();
+            this.tbxWorkerType = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDate)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +75,7 @@
             0,
             0});
             this.nudYear.Name = "nudYear";
+            this.nudYear.ReadOnly = true;
             this.nudYear.Size = new System.Drawing.Size(47, 20);
             this.nudYear.TabIndex = 11;
             this.nudYear.Tag = "";
@@ -100,6 +101,7 @@
             this.dudMonth.Items.Add("Dec");
             this.dudMonth.Location = new System.Drawing.Point(170, 298);
             this.dudMonth.Name = "dudMonth";
+            this.dudMonth.ReadOnly = true;
             this.dudMonth.Size = new System.Drawing.Size(40, 20);
             this.dudMonth.TabIndex = 10;
             this.dudMonth.Text = "Jan";
@@ -118,6 +120,7 @@
             0,
             0});
             this.nudDate.Name = "nudDate";
+            this.nudDate.ReadOnly = true;
             this.nudDate.Size = new System.Drawing.Size(37, 20);
             this.nudDate.TabIndex = 9;
             this.nudDate.Value = new decimal(new int[] {
@@ -184,21 +187,12 @@
             // 
             // tbxLastName
             // 
-            this.tbxLastName.Location = new System.Drawing.Point(127, 59);
+            this.tbxLastName.Location = new System.Drawing.Point(127, 86);
             this.tbxLastName.Name = "tbxLastName";
             this.tbxLastName.Size = new System.Drawing.Size(121, 20);
             this.tbxLastName.TabIndex = 2;
             this.tbxLastName.TextChanged += new System.EventHandler(this.tbxLastName_TextChanged);
             this.tbxLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxLastName_KeyPress);
-            // 
-            // tbxUserName
-            // 
-            this.tbxUserName.Location = new System.Drawing.Point(127, 86);
-            this.tbxUserName.Name = "tbxUserName";
-            this.tbxUserName.Size = new System.Drawing.Size(121, 20);
-            this.tbxUserName.TabIndex = 3;
-            this.tbxUserName.TextChanged += new System.EventHandler(this.tbxUserName_TextChanged);
-            this.tbxUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxUserName_KeyPress);
             // 
             // tbxPassword
             // 
@@ -219,7 +213,7 @@
             // 
             // tbxFirstName
             // 
-            this.tbxFirstName.Location = new System.Drawing.Point(128, 34);
+            this.tbxFirstName.Location = new System.Drawing.Point(128, 61);
             this.tbxFirstName.Name = "tbxFirstName";
             this.tbxFirstName.Size = new System.Drawing.Size(120, 20);
             this.tbxFirstName.TabIndex = 1;
@@ -245,19 +239,10 @@
             this.lblPassword.TabIndex = 42;
             this.lblPassword.Text = "Password";
             // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(12, 89);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(60, 13);
-            this.lblUserName.TabIndex = 40;
-            this.lblUserName.Text = "User Name";
-            // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(12, 62);
+            this.lblLastName.Location = new System.Drawing.Point(12, 89);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(58, 13);
             this.lblLastName.TabIndex = 37;
@@ -302,7 +287,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(12, 37);
+            this.lblFirstName.Location = new System.Drawing.Point(12, 64);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(57, 13);
             this.lblFirstName.TabIndex = 28;
@@ -316,15 +301,6 @@
             this.lblempID.Size = new System.Drawing.Size(56, 13);
             this.lblempID.TabIndex = 54;
             this.lblempID.Text = "Worker ID";
-            // 
-            // lblworkerID
-            // 
-            this.lblworkerID.AutoSize = true;
-            this.lblworkerID.Location = new System.Drawing.Point(128, 10);
-            this.lblworkerID.Name = "lblworkerID";
-            this.lblworkerID.Size = new System.Drawing.Size(25, 13);
-            this.lblworkerID.TabIndex = 55;
-            this.lblworkerID.Text = "aaa";
             // 
             // tbxContactNumber
             // 
@@ -366,15 +342,42 @@
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
             // 
+            // lblWorkerType
+            // 
+            this.lblWorkerType.AutoSize = true;
+            this.lblWorkerType.Location = new System.Drawing.Point(12, 36);
+            this.lblWorkerType.Name = "lblWorkerType";
+            this.lblWorkerType.Size = new System.Drawing.Size(69, 13);
+            this.lblWorkerType.TabIndex = 58;
+            this.lblWorkerType.Text = "Worker Type";
+            // 
+            // tbxWorkerID
+            // 
+            this.tbxWorkerID.Enabled = false;
+            this.tbxWorkerID.Location = new System.Drawing.Point(127, 9);
+            this.tbxWorkerID.Name = "tbxWorkerID";
+            this.tbxWorkerID.Size = new System.Drawing.Size(120, 20);
+            this.tbxWorkerID.TabIndex = 59;
+            // 
+            // tbxWorkerType
+            // 
+            this.tbxWorkerType.Enabled = false;
+            this.tbxWorkerType.Location = new System.Drawing.Point(127, 35);
+            this.tbxWorkerType.Name = "tbxWorkerType";
+            this.tbxWorkerType.Size = new System.Drawing.Size(120, 20);
+            this.tbxWorkerType.TabIndex = 60;
+            // 
             // frmEditWorkerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 415);
+            this.Controls.Add(this.tbxWorkerType);
+            this.Controls.Add(this.tbxWorkerID);
+            this.Controls.Add(this.lblWorkerType);
             this.Controls.Add(this.rbFemale);
             this.Controls.Add(this.rbMale);
             this.Controls.Add(this.tbxContactNumber);
-            this.Controls.Add(this.lblworkerID);
             this.Controls.Add(this.lblempID);
             this.Controls.Add(this.nudYear);
             this.Controls.Add(this.dudMonth);
@@ -386,14 +389,12 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnChangeDetails);
             this.Controls.Add(this.tbxLastName);
-            this.Controls.Add(this.tbxUserName);
             this.Controls.Add(this.tbxPassword);
             this.Controls.Add(this.tbxNIC);
             this.Controls.Add(this.tbxACNumber);
             this.Controls.Add(this.tbxFirstName);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblACNumber);
             this.Controls.Add(this.lblContactNumber);
@@ -422,13 +423,11 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnChangeDetails;
         private System.Windows.Forms.TextBox tbxLastName;
-        private System.Windows.Forms.TextBox tbxUserName;
         private System.Windows.Forms.TextBox tbxPassword;
         private System.Windows.Forms.TextBox tbxACNumber;
         private System.Windows.Forms.TextBox tbxFirstName;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblACNumber;
         private System.Windows.Forms.Label lblContactNumber;
@@ -436,10 +435,12 @@
         private System.Windows.Forms.Label lblNICNumber;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblempID;
-        private System.Windows.Forms.Label lblworkerID;
         private System.Windows.Forms.MaskedTextBox tbxContactNumber;
         private System.Windows.Forms.TextBox tbxNIC;
         private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.RadioButton rbFemale;
+        private System.Windows.Forms.Label lblWorkerType;
+        private System.Windows.Forms.TextBox tbxWorkerID;
+        private System.Windows.Forms.TextBox tbxWorkerType;
     }
 }

@@ -31,7 +31,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+              
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
@@ -48,7 +48,7 @@ namespace Aklan_International
 
             string firstName = tbxFirstName.Text;
             string lastName = tbxLastName.Text;
-            string userName = tbxUserName.Text;
+            
             string password = tbxPassword.Text;
             string address = tbxAddress.Text;
             int telNO = 0;
@@ -83,17 +83,17 @@ namespace Aklan_International
                 //comm.CommandText = "INSERT INTO worker_details(first_name,last_name,user_name,password,address,nic_NO,gender,acc_NO) VALUES(@first_name,@last_name,@user_name,@password,@address,,@nic_NO,@gender,@acc_NO)";
                 //comm.CommandText = "UPDATE worker_details(first_name,last_name,user_name,password,address,acc_NO,nic_NO,gender,tel_NO,dob) VALUES (@first_name,@last_name,@user_name,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob) WHERE empID = '" + empID + "'";
                 comm.CommandText = "UPDATE worker_details SET first_name = @first_name,last_name=@last_name,user_name=@user_name,password=@password,address=@address,acc_NO=@acc_NO,nic_NO=@nic_NO,gender=@gender,tel_NO=@tel_NO,dob=@dob WHERE empID = '" + empID + "' ";
-                comm.Parameters.Add("@first_name", firstName);
-                comm.Parameters.Add("@last_name", lastName);
-                comm.Parameters.Add("@user_name", userName);
-                comm.Parameters.Add("@password", password);
-                comm.Parameters.Add("@address", address);
-                comm.Parameters.Add("@tel_NO", telNO);
-                comm.Parameters.Add("@acc_NO", accNO);
-                comm.Parameters.Add("@nic_NO", nicNO);
-                comm.Parameters.Add("@gender", gender);
-                comm.Parameters.Add("@dob", dob);
-                comm.CommandText = "UPDATE worker_details SET first_name = @first_name,last_name=@last_name,user_name=@user_name,password=@password,address=@address,acc_NO=@acc_NO,nic_NO=@nic_NO,gender=@gender,tel_NO=@tel_NO,dob=@dob WHERE empID = '" + empID + "' ";
+                comm.Parameters.AddWithValue("@first_name", firstName);
+                comm.Parameters.AddWithValue("@last_name", lastName);
+                
+                comm.Parameters.AddWithValue("@password", password);
+                comm.Parameters.AddWithValue("@address", address);
+                comm.Parameters.AddWithValue("@tel_NO", telNO);
+                comm.Parameters.AddWithValue("@acc_NO", accNO);
+                comm.Parameters.AddWithValue("@nic_NO", nicNO);
+                comm.Parameters.AddWithValue("@gender", gender);
+                comm.Parameters.AddWithValue("@dob", dob);
+                //comm.CommandText = "UPDATE worker_details SET first_name = @first_name,last_name=@last_name,user_name=@user_name,password=@password,address=@address,acc_NO=@acc_NO,nic_NO=@nic_NO,gender=@gender,tel_NO=@tel_NO,dob=@dob WHERE empID = '" + empID + "' ";
                 comm.ExecuteNonQuery();
                 conn.Close();
 
@@ -109,7 +109,7 @@ namespace Aklan_International
 
         private void frmEditWorkerDetails_Load(object sender, EventArgs e)
         {
-            lblworkerID.Text = empID;
+            tbxWorkerID.Text = empID;
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             try
             {
@@ -121,7 +121,7 @@ namespace Aklan_International
                 tbxLastName.Text = reader.GetString("last_name");
                 tbxNIC.Text = reader.GetString("nic_NO");
                 tbxPassword.Text = reader.GetString("password");
-                tbxUserName.Text = reader.GetString("user_name");
+                tbxWorkerType.Text = reader.GetString("worker_type");
                 tbxACNumber.Text = reader.GetString("acc_NO");
                 tbxAddress.Text = reader.GetString("address");
                 string gender = reader.GetString("gender");
@@ -164,10 +164,10 @@ namespace Aklan_International
 
         private void tbxLastName_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
+            /*if (e.KeyChar == 13)
             {
                 tbxUserName.Focus();
-            }
+            }*/
         }
 
         private void tbxUserName_KeyPress(object sender, KeyPressEventArgs e)
@@ -198,7 +198,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+               
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0)) {
                 btnChangeDetails.Enabled = false;
@@ -213,7 +213,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+               
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
@@ -229,7 +229,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+               
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
@@ -245,7 +245,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+               
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
@@ -261,7 +261,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+               
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
@@ -277,7 +277,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+               
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
@@ -293,7 +293,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+               
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
@@ -309,7 +309,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+              
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
@@ -325,7 +325,7 @@ namespace Aklan_International
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
-               (tbxUserName.Text.Trim().Length == 0) ||
+               
               (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
