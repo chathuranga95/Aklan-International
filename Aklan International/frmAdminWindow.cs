@@ -68,5 +68,10 @@ namespace Aklan_International
             frmChangePassword obj = new frmChangePassword(adminName);
             obj.Show();
         }
+
+        private void frmAdminWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
