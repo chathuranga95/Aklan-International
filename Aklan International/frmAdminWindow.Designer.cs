@@ -247,6 +247,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAdminWindow";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.frmAdminWindow_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

@@ -17,6 +17,7 @@ namespace Aklan_International
         private int dozenSheetQty;
         private decimal dozenSheetUnitPrice;
         private decimal amountPaid;
+        private bool finished;
 
         private decimal amountRemaining;
         private decimal totalPrice;
@@ -35,8 +36,7 @@ namespace Aklan_International
             this.dozenSheetQty = dozenSheetQty;
             this.dozenSheetUnitPrice = dozenSheetUnitPrice;
             this.amountPaid = amountPaid;
-            proccessedSingleSheetQty = 0;
-            proccessedDozenSheetQty = 0;
+            finished = false;
         }
 
         public string getOrderID()
@@ -56,5 +56,17 @@ namespace Aklan_International
             return amountRemaining;
         }
 
+        public int getSingleQty()
+        {
+            return singleSheetQty;
+        }
+        public int getDozenQty()
+        {
+            return dozenSheetQty;
+        }
+        public void setFinished()
+        {
+            finished = true;
+        }
     }
 }
