@@ -23,6 +23,7 @@ namespace Aklan_International
 
         private int proccessedSingleSheetQty;
         private int proccessedDozenSheetQty;
+        private bool finished;
 
         public Order(string orderID, string customerID, string customerName, string customerEmail, int singleSheetQty, decimal singleSheetUnitPrice, int dozenSheetQty, decimal dozenSheetUnitPrice, decimal amountPaid)
         {
@@ -37,8 +38,17 @@ namespace Aklan_International
             this.amountPaid = amountPaid;
             proccessedSingleSheetQty = 0;
             proccessedDozenSheetQty = 0;
+            finished = false;
         }
 
+        public void setAsFinish()
+        {
+            finished = true;
+        }
+        public bool getFinished()
+        {
+            return finished;
+        }
         public string getOrderID()
         {
             return orderID;
