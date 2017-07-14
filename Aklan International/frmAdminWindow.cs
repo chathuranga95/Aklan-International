@@ -14,9 +14,7 @@ namespace Aklan_International
 {
     public partial class frmAdminWindow : Form
     {
-        MySqlConnection conn;
-        MySqlCommand cmd;
-        MySqlDataReader reader;
+        
         public frmAdminWindow()
         {
             InitializeComponent();
@@ -45,6 +43,16 @@ namespace Aklan_International
 
             frmNewSalesRecord obj = new frmNewSalesRecord();
             obj.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAdminWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

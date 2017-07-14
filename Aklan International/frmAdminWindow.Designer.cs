@@ -60,6 +60,7 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnCreateOrder
             // 
@@ -209,6 +210,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAdminWindow";
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.frmAdminWindow_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
