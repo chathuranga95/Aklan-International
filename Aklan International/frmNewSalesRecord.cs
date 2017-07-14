@@ -13,6 +13,9 @@ namespace Aklan_International
 {
     public partial class frmNewSalesRecord : Form
     {
+        MySqlConnection conn;
+        MySqlCommand cmd;
+        MySqlDataReader reader;
         public frmNewSalesRecord()
         {
             InitializeComponent();
@@ -97,6 +100,41 @@ namespace Aklan_International
             {
                grd.Rows.RemoveAt(this.grd.SelectedRows[0].Index);
             }
+        }
+
+        private void frmNewSalesRecord_Load(object sender, EventArgs e)
+        {
+            conn = new MySqlConnection("server = localhost; user id = root; database = dbcore; pwd = 1234; allowuservariables = True");
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            //conn = new MySqlConnection("server = localhost; user id = root; database = dbcore; pwd = 1234; allowuservariables = True");
+            int rows = grd.Rows.Count;
+            for (int x = 0; x < rows-1; ++x)
+            {
+                conn.Open();
+                string StrQuery;
+                StrQuery = "insert into dtsales values('" + tbxCustName.Text.Trim() + "', '" + tbxNic.Text.Trim() + "', '" + tbxTel.Text.Trim() + "', '" + grd.Rows[x].Cells[0].Value.ToString() + "', '" + grd.Rows[x].Cells[1].Value.ToString() + "', '" + grd.Rows[x].Cells[2].Value.ToString() + "', '" + grd.Rows[x].Cells[3].Value.ToString() + "')";
+                cmd = new MySqlCommand(StrQuery,conn);
+                
+                cmd.ExecuteNonQuery();
+                conn.Close();
+
+            }
+            
+            
+        }
+
+        private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            MySqlCommand cmd2;
+            cmd2 = new MySqlCommand("SELECT * dtunitprices", conn);
+            conn.Open();
+            reader = cmd2.ExecuteReader();
+            reader.GetString("TypeId");
+            conn.Close();
         }
     }
 }
