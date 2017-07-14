@@ -39,13 +39,13 @@
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.dgvItems = new System.Windows.Forms.DataGridView();
-            this.btnAddItem = new System.Windows.Forms.Button();
-            this.btnRemoveItem = new System.Windows.Forms.Button();
-            this.btnSubmitOrder = new System.Windows.Forms.Button();
             this.colType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTotalAmonut = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAddItem = new System.Windows.Forms.Button();
+            this.btnRemoveItem = new System.Windows.Forms.Button();
+            this.btnSubmitOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,6 +92,7 @@
             this.tbxCustomerName.Name = "tbxCustomerName";
             this.tbxCustomerName.Size = new System.Drawing.Size(442, 20);
             this.tbxCustomerName.TabIndex = 4;
+            this.tbxCustomerName.TextChanged += new System.EventHandler(this.tbxCustomerName_TextChanged);
             // 
             // tbxNIC
             // 
@@ -99,6 +100,7 @@
             this.tbxNIC.Name = "tbxNIC";
             this.tbxNIC.Size = new System.Drawing.Size(442, 20);
             this.tbxNIC.TabIndex = 5;
+            this.tbxNIC.TextChanged += new System.EventHandler(this.tbxNIC_TextChanged);
             // 
             // tbxContactNumber
             // 
@@ -106,6 +108,7 @@
             this.tbxContactNumber.Name = "tbxContactNumber";
             this.tbxContactNumber.Size = new System.Drawing.Size(442, 20);
             this.tbxContactNumber.TabIndex = 6;
+            this.tbxContactNumber.TextChanged += new System.EventHandler(this.tbxContactNumber_TextChanged);
             // 
             // tbxMail
             // 
@@ -116,12 +119,14 @@
             // 
             // btnCreateOrder
             // 
+            this.btnCreateOrder.Enabled = false;
             this.btnCreateOrder.Location = new System.Drawing.Point(15, 133);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(75, 23);
             this.btnCreateOrder.TabIndex = 8;
             this.btnCreateOrder.Text = "Create Order";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
             // btnClear
             // 
@@ -141,38 +146,11 @@
             this.colUnitPrice,
             this.colQty,
             this.colTotalAmonut});
+            this.dgvItems.Enabled = false;
             this.dgvItems.Location = new System.Drawing.Point(15, 162);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.Size = new System.Drawing.Size(536, 150);
             this.dgvItems.TabIndex = 10;
-            // 
-            // btnAddItem
-            // 
-            this.btnAddItem.Location = new System.Drawing.Point(12, 318);
-            this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(75, 23);
-            this.btnAddItem.TabIndex = 11;
-            this.btnAddItem.Text = "Add Item";
-            this.btnAddItem.UseVisualStyleBackColor = true;
-            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
-            // 
-            // btnRemoveItem
-            // 
-            this.btnRemoveItem.Location = new System.Drawing.Point(93, 318);
-            this.btnRemoveItem.Name = "btnRemoveItem";
-            this.btnRemoveItem.Size = new System.Drawing.Size(75, 23);
-            this.btnRemoveItem.TabIndex = 12;
-            this.btnRemoveItem.Text = "Remove";
-            this.btnRemoveItem.UseVisualStyleBackColor = true;
-            // 
-            // btnSubmitOrder
-            // 
-            this.btnSubmitOrder.Location = new System.Drawing.Point(476, 318);
-            this.btnSubmitOrder.Name = "btnSubmitOrder";
-            this.btnSubmitOrder.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmitOrder.TabIndex = 13;
-            this.btnSubmitOrder.Text = "Submit";
-            this.btnSubmitOrder.UseVisualStyleBackColor = true;
             // 
             // colType
             // 
@@ -197,6 +175,37 @@
             this.colTotalAmonut.HeaderText = "Full Amount";
             this.colTotalAmonut.Name = "colTotalAmonut";
             this.colTotalAmonut.ReadOnly = true;
+            // 
+            // btnAddItem
+            // 
+            this.btnAddItem.Enabled = false;
+            this.btnAddItem.Location = new System.Drawing.Point(12, 318);
+            this.btnAddItem.Name = "btnAddItem";
+            this.btnAddItem.Size = new System.Drawing.Size(75, 23);
+            this.btnAddItem.TabIndex = 11;
+            this.btnAddItem.Text = "Add Item";
+            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
+            // 
+            // btnRemoveItem
+            // 
+            this.btnRemoveItem.Enabled = false;
+            this.btnRemoveItem.Location = new System.Drawing.Point(93, 318);
+            this.btnRemoveItem.Name = "btnRemoveItem";
+            this.btnRemoveItem.Size = new System.Drawing.Size(75, 23);
+            this.btnRemoveItem.TabIndex = 12;
+            this.btnRemoveItem.Text = "Remove";
+            this.btnRemoveItem.UseVisualStyleBackColor = true;
+            // 
+            // btnSubmitOrder
+            // 
+            this.btnSubmitOrder.Enabled = false;
+            this.btnSubmitOrder.Location = new System.Drawing.Point(476, 318);
+            this.btnSubmitOrder.Name = "btnSubmitOrder";
+            this.btnSubmitOrder.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmitOrder.TabIndex = 13;
+            this.btnSubmitOrder.Text = "Submit";
+            this.btnSubmitOrder.UseVisualStyleBackColor = true;
             // 
             // FrmCreateOrder
             // 
