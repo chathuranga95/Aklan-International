@@ -242,6 +242,7 @@
             this.tbxTotal.TabIndex = 12;
             this.tbxTotal.TabStop = false;
             this.tbxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxTotal.TextChanged += new System.EventHandler(this.tbxTotal_TextChanged);
             // 
             // lblDecription
             // 
@@ -259,6 +260,7 @@
             this.tbxDescription.Name = "tbxDescription";
             this.tbxDescription.Size = new System.Drawing.Size(315, 48);
             this.tbxDescription.TabIndex = 7;
+            this.tbxDescription.Text = " ";
             // 
             // lblAomuntPaying
             // 
@@ -272,10 +274,12 @@
             // 
             // tbxAmountPaying
             // 
+            this.tbxAmountPaying.HideSelection = false;
             this.tbxAmountPaying.Location = new System.Drawing.Point(323, 326);
             this.tbxAmountPaying.Name = "tbxAmountPaying";
             this.tbxAmountPaying.Size = new System.Drawing.Size(104, 20);
             this.tbxAmountPaying.TabIndex = 15;
+            this.tbxAmountPaying.Text = "0.00";
             this.tbxAmountPaying.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbxAmountPaying.TextChanged += new System.EventHandler(this.tbxAmountPaying_TextChanged);
             // 
