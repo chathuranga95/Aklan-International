@@ -127,6 +127,7 @@ namespace Aklan_International
                     MessageBox.Show("Failed");
                 }
                 conn.Close();
+                grd.Rows.Clear();
                 tbxCustName.Clear();
                 tbxNic.Clear();
                 tbxTel.Clear();
