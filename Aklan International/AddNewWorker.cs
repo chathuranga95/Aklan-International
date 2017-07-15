@@ -115,8 +115,13 @@ namespace Aklan_International
                 conn.Open();
                     
                     MySqlCommand comm = conn.CreateCommand();
-                    
+                    MySqlCommand cmd = new MySqlCommand("insert into dtlogin(empID,psw,empName) values (@empID,@psw,@empName)",conn);
                     comm.CommandText = "INSERT INTO worker_details(empID,first_name,last_name,worker_type,password,address,acc_NO,nic_NO,gender,tel_NO,dob,deleted) VALUES (@empID,@first_name,@last_name,@worker_type,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob,@deleted)";
+
+                    cmd.Parameters.AddWithValue("@empID", empid);
+                    cmd.Parameters.AddWithValue("@psw", password);
+                    cmd.Parameters.AddWithValue("@empName", firstName + " " + lastName);
+                    cmd.ExecuteNonQuery();
                     comm.Parameters.AddWithValue("@empID", empid);
                     comm.Parameters.AddWithValue("@first_name", firstName);
                     comm.Parameters.AddWithValue("@last_name",lastName);
@@ -130,7 +135,7 @@ namespace Aklan_International
                     comm.Parameters.AddWithValue("@dob", dob );
                     comm.Parameters.AddWithValue("@deleted", deleted);
                     comm.ExecuteNonQuery();
-                    conn.Close();
+                    conn.Close();                  
 
                     MessageBox.Show("New worker added successfully.", "Success");
                     this.Close();
