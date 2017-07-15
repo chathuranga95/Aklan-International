@@ -105,6 +105,12 @@
     <Compile Include="frmManageStock.Designer.cs">
       <DependentUpon>frmManageStock.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManageWorkers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageWorkers.Designer.cs">
+      <DependentUpon>frmManageWorkers.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmModeSelect.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageStock.resx">
       <DependentUpon>frmManageStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageWorkers.resx">
+      <DependentUpon>frmManageWorkers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModeSelect.resx">
       <DependentUpon>frmModeSelect.cs</DependentUpon>
