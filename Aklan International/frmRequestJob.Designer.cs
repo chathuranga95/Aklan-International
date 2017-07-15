@@ -30,7 +30,6 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.cmbSingleOr12 = new System.Windows.Forms.ComboBox();
             this.btnRequest = new System.Windows.Forms.Button();
             this.spnQty = new System.Windows.Forms.NumericUpDown();
             this.cmbJob = new System.Windows.Forms.ComboBox();
@@ -59,7 +58,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.cmbSingleOr12);
             this.tabPage1.Controls.Add(this.btnRequest);
             this.tabPage1.Controls.Add(this.spnQty);
             this.tabPage1.Controls.Add(this.cmbJob);
@@ -73,20 +71,9 @@
             this.tabPage1.Text = "Request Job";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // cmbSingleOr12
-            // 
-            this.cmbSingleOr12.FormattingEnabled = true;
-            this.cmbSingleOr12.Items.AddRange(new object[] {
-            "Single",
-            "12"});
-            this.cmbSingleOr12.Location = new System.Drawing.Point(320, 43);
-            this.cmbSingleOr12.Name = "cmbSingleOr12";
-            this.cmbSingleOr12.Size = new System.Drawing.Size(121, 21);
-            this.cmbSingleOr12.TabIndex = 5;
-            this.cmbSingleOr12.Visible = false;
-            // 
             // btnRequest
             // 
+            this.btnRequest.Enabled = false;
             this.btnRequest.Location = new System.Drawing.Point(360, 205);
             this.btnRequest.Name = "btnRequest";
             this.btnRequest.Size = new System.Drawing.Size(75, 23);
@@ -101,6 +88,7 @@
             this.spnQty.Name = "spnQty";
             this.spnQty.Size = new System.Drawing.Size(120, 20);
             this.spnQty.TabIndex = 3;
+            this.spnQty.ValueChanged += new System.EventHandler(this.spnQty_ValueChanged);
             // 
             // cmbJob
             // 
@@ -209,6 +197,5 @@
         private System.Windows.Forms.Label lblWorkerName;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnRequest;
-        private System.Windows.Forms.ComboBox cmbSingleOr12;
     }
 }

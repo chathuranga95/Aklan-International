@@ -33,7 +33,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.cmbJob = new System.Windows.Forms.ComboBox();
-            this.txtRate = new System.Windows.Forms.MaskedTextBox();
+            this.txtRate = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -88,13 +88,12 @@
             this.cmbJob.Name = "cmbJob";
             this.cmbJob.Size = new System.Drawing.Size(121, 21);
             this.cmbJob.TabIndex = 4;
+            this.cmbJob.SelectedIndexChanged += new System.EventHandler(this.cmbJob_SelectedIndexChanged);
             // 
             // txtRate
             // 
-            this.txtRate.Location = new System.Drawing.Point(232, 81);
-            this.txtRate.Mask = "00.00";
+            this.txtRate.Location = new System.Drawing.Point(232, 89);
             this.txtRate.Name = "txtRate";
-            this.txtRate.PromptChar = ' ';
             this.txtRate.Size = new System.Drawing.Size(100, 20);
             this.txtRate.TabIndex = 5;
             // 
@@ -124,6 +123,6 @@
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cmbJob;
-        private System.Windows.Forms.MaskedTextBox txtRate;
+        private System.Windows.Forms.TextBox txtRate;
     }
 }

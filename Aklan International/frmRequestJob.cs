@@ -26,7 +26,7 @@ namespace Aklan_International
         public frmRequestJob(String workerName, Form frmobj, String empID)
         {
             InitializeComponent();
-            lblWorkerName.Text = workerName;
+            lblWorkerName.Text = "Welcome : " + workerName;
             this.frmobj = frmobj;
             this.empID = empID;
         }
@@ -162,11 +162,11 @@ namespace Aklan_International
             {
                 int index = retrieveIndex();
                 conn.Open();
-                cmd = new MySqlCommand("select * from dt" + empID.ToString(), conn);
+                cmd = new MySqlCommand("select * from dt" + empID.ToString() + " where finished = 'no'", conn);
                 reader = cmd.ExecuteReader();
                 while (reader.Read())
                 {
-                    if (reader.GetInt32("index") + 3 >= index)
+                    //if (reader.GetInt32("index") + 3 >= index)
                     {
                         lbxJobs.Items.Insert(0, reader.GetString("Qty") + " of " + reader.GetString("matType") + " taken. finish status :" + reader.GetString("finished")); ;
                     }
@@ -176,12 +176,19 @@ namespace Aklan_International
             }
         }
 
+        private void refreshInput()
+        {
+            btnRequest.Enabled = (cmbJob.Text.Trim()!="" && spnQty.Value != 0);
+        }
+
         private void cmbMachineType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbJob.Text == "Folding")
-                cmbSingleOr12.Visible = true;
-            else
-                cmbSingleOr12.Visible = false;
+            refreshInput();
+        }
+
+        private void spnQty_ValueChanged(object sender, EventArgs e)
+        {
+            refreshInput();
         }
     }
 }
