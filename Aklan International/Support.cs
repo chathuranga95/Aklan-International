@@ -46,6 +46,12 @@ namespace Aklan_International
             return max;
 
         }
+
+        public static bool isValidAmount(string str)
+        {
+            decimal value = decimal.Parse(str) * 100;
+            return value == Math.Floor(value);
+            
     }
 
     

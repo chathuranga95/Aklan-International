@@ -120,6 +120,7 @@ namespace Aklan_International
                 con.Open();
                 command.ExecuteNonQuery();
                 con.Close();
+                MessageBox.Show("New Unit Prices Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             if (new12UnitPrice >0)
@@ -129,6 +130,7 @@ namespace Aklan_International
                 con.Open();
                 command.ExecuteNonQuery();
                 con.Close();
+                MessageBox.Show("New Unit Prices Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
@@ -163,6 +165,7 @@ namespace Aklan_International
             }
             else
                 MessageBox.Show("Please enter a valid value for new unit price!", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Question);
+           
 
         }
     }
