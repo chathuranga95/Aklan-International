@@ -48,6 +48,22 @@ namespace Aklan_International
 
         private void frmDeleteWorker_Load(object sender, EventArgs e)
         {
+            tbxempID.AutoCompleteCustomSource.Clear();
+            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+            conn.Open();
+            MySqlCommand cmd;
+            MySqlDataReader reader;
+
+            cmd = new MySqlCommand("select * from worker_details", conn);
+
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                tbxempID.AutoCompleteCustomSource.Add(reader.GetString("empID"));
+
+
+            }
             btnDelete.Enabled = false;
             lblAvailable.Visible = false;
             lblnotAvailable.Visible = false;
@@ -78,6 +94,7 @@ namespace Aklan_International
         }
         private void tbxempID_TextChanged(object sender, EventArgs e)
         {
+            
             if (checkAvailability(tbxempID.Text)) {
                 btnDelete.Enabled = true;
                 lblAvailable.Visible = true;

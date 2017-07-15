@@ -49,6 +49,12 @@
             // 
             // tbxempID
             // 
+            this.tbxempID.AutoCompleteCustomSource.AddRange(new string[] {
+            "w001",
+            "w002",
+            "s001"});
+            this.tbxempID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tbxempID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxempID.Location = new System.Drawing.Point(106, 12);
             this.tbxempID.Name = "tbxempID";
             this.tbxempID.Size = new System.Drawing.Size(100, 20);
