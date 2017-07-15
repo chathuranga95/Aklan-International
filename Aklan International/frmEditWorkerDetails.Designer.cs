@@ -32,8 +32,6 @@
             this.dudMonth = new System.Windows.Forms.DomainUpDown();
             this.nudDate = new System.Windows.Forms.NumericUpDown();
             this.tbxAddress = new System.Windows.Forms.TextBox();
-            this.tbxConfirmPassword = new System.Windows.Forms.TextBox();
-            this.lblConfirmPassword = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnChangeDetails = new System.Windows.Forms.Button();
@@ -57,6 +55,7 @@
             this.lblWorkerType = new System.Windows.Forms.Label();
             this.tbxWorkerID = new System.Windows.Forms.TextBox();
             this.tbxWorkerType = new System.Windows.Forms.TextBox();
+            this.lblStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDate)).BeginInit();
             this.SuspendLayout();
@@ -87,18 +86,19 @@
             // 
             // dudMonth
             // 
-            this.dudMonth.Items.Add("Jan");
-            this.dudMonth.Items.Add("Feb");
-            this.dudMonth.Items.Add("Mar");
-            this.dudMonth.Items.Add("Apr");
-            this.dudMonth.Items.Add("May");
-            this.dudMonth.Items.Add("Jun");
-            this.dudMonth.Items.Add("Jul");
-            this.dudMonth.Items.Add("Aug");
-            this.dudMonth.Items.Add("Sep");
-            this.dudMonth.Items.Add("Oct");
-            this.dudMonth.Items.Add("Nov");
+            this.dudMonth.AllowDrop = true;
             this.dudMonth.Items.Add("Dec");
+            this.dudMonth.Items.Add("Nov");
+            this.dudMonth.Items.Add("Oct");
+            this.dudMonth.Items.Add("Sep");
+            this.dudMonth.Items.Add("Aug");
+            this.dudMonth.Items.Add("Jul");
+            this.dudMonth.Items.Add("Jun");
+            this.dudMonth.Items.Add("May");
+            this.dudMonth.Items.Add("Apr");
+            this.dudMonth.Items.Add("Mar");
+            this.dudMonth.Items.Add("Feb");
+            this.dudMonth.Items.Add("Jan");
             this.dudMonth.Location = new System.Drawing.Point(170, 298);
             this.dudMonth.Name = "dudMonth";
             this.dudMonth.ReadOnly = true;
@@ -138,24 +138,6 @@
             this.tbxAddress.TabIndex = 8;
             this.tbxAddress.TextChanged += new System.EventHandler(this.tbxAddress_TextChanged);
             // 
-            // tbxConfirmPassword
-            // 
-            this.tbxConfirmPassword.Location = new System.Drawing.Point(127, 139);
-            this.tbxConfirmPassword.Name = "tbxConfirmPassword";
-            this.tbxConfirmPassword.Size = new System.Drawing.Size(121, 20);
-            this.tbxConfirmPassword.TabIndex = 5;
-            this.tbxConfirmPassword.TextChanged += new System.EventHandler(this.tbxConfirmPassword_TextChanged);
-            this.tbxConfirmPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbxConfirmPassword_KeyPress);
-            // 
-            // lblConfirmPassword
-            // 
-            this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(12, 142);
-            this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(91, 13);
-            this.lblConfirmPassword.TabIndex = 50;
-            this.lblConfirmPassword.Text = "Confirm Password";
-            // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
@@ -187,7 +169,7 @@
             // 
             // tbxLastName
             // 
-            this.tbxLastName.Location = new System.Drawing.Point(127, 86);
+            this.tbxLastName.Location = new System.Drawing.Point(126, 104);
             this.tbxLastName.Name = "tbxLastName";
             this.tbxLastName.Size = new System.Drawing.Size(121, 20);
             this.tbxLastName.TabIndex = 2;
@@ -196,7 +178,7 @@
             // 
             // tbxPassword
             // 
-            this.tbxPassword.Location = new System.Drawing.Point(127, 112);
+            this.tbxPassword.Location = new System.Drawing.Point(126, 130);
             this.tbxPassword.Name = "tbxPassword";
             this.tbxPassword.Size = new System.Drawing.Size(121, 20);
             this.tbxPassword.TabIndex = 4;
@@ -213,7 +195,7 @@
             // 
             // tbxFirstName
             // 
-            this.tbxFirstName.Location = new System.Drawing.Point(128, 61);
+            this.tbxFirstName.Location = new System.Drawing.Point(127, 79);
             this.tbxFirstName.Name = "tbxFirstName";
             this.tbxFirstName.Size = new System.Drawing.Size(120, 20);
             this.tbxFirstName.TabIndex = 1;
@@ -233,7 +215,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(12, 115);
+            this.lblPassword.Location = new System.Drawing.Point(11, 133);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(53, 13);
             this.lblPassword.TabIndex = 42;
@@ -242,7 +224,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(12, 89);
+            this.lblLastName.Location = new System.Drawing.Point(11, 107);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(58, 13);
             this.lblLastName.TabIndex = 37;
@@ -287,7 +269,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(12, 64);
+            this.lblFirstName.Location = new System.Drawing.Point(11, 82);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(57, 13);
             this.lblFirstName.TabIndex = 28;
@@ -305,7 +287,7 @@
             // tbxContactNumber
             // 
             this.tbxContactNumber.Location = new System.Drawing.Point(127, 324);
-            this.tbxContactNumber.Mask = "0000000000";
+            this.tbxContactNumber.Mask = "(999) 000-0000";
             this.tbxContactNumber.Name = "tbxContactNumber";
             this.tbxContactNumber.PromptChar = ' ';
             this.tbxContactNumber.Size = new System.Drawing.Size(122, 20);
@@ -345,7 +327,7 @@
             // lblWorkerType
             // 
             this.lblWorkerType.AutoSize = true;
-            this.lblWorkerType.Location = new System.Drawing.Point(12, 36);
+            this.lblWorkerType.Location = new System.Drawing.Point(9, 55);
             this.lblWorkerType.Name = "lblWorkerType";
             this.lblWorkerType.Size = new System.Drawing.Size(69, 13);
             this.lblWorkerType.TabIndex = 58;
@@ -353,25 +335,38 @@
             // 
             // tbxWorkerID
             // 
-            this.tbxWorkerID.Enabled = false;
+            this.tbxWorkerID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.tbxWorkerID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxWorkerID.Location = new System.Drawing.Point(127, 9);
             this.tbxWorkerID.Name = "tbxWorkerID";
             this.tbxWorkerID.Size = new System.Drawing.Size(120, 20);
             this.tbxWorkerID.TabIndex = 59;
+            this.tbxWorkerID.TextChanged += new System.EventHandler(this.tbxWorkerID_TextChanged);
             // 
             // tbxWorkerType
             // 
             this.tbxWorkerType.Enabled = false;
-            this.tbxWorkerType.Location = new System.Drawing.Point(127, 35);
+            this.tbxWorkerType.Location = new System.Drawing.Point(126, 53);
             this.tbxWorkerType.Name = "tbxWorkerType";
             this.tbxWorkerType.Size = new System.Drawing.Size(120, 20);
             this.tbxWorkerType.TabIndex = 60;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.ForeColor = System.Drawing.Color.Crimson;
+            this.lblStatus.Location = new System.Drawing.Point(125, 34);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(35, 13);
+            this.lblStatus.TabIndex = 61;
+            this.lblStatus.Text = "label1";
             // 
             // frmEditWorkerDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 415);
+            this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.tbxWorkerType);
             this.Controls.Add(this.tbxWorkerID);
             this.Controls.Add(this.lblWorkerType);
@@ -383,8 +378,6 @@
             this.Controls.Add(this.dudMonth);
             this.Controls.Add(this.nudDate);
             this.Controls.Add(this.tbxAddress);
-            this.Controls.Add(this.tbxConfirmPassword);
-            this.Controls.Add(this.lblConfirmPassword);
             this.Controls.Add(this.lblGender);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnChangeDetails);
@@ -417,8 +410,6 @@
         private System.Windows.Forms.DomainUpDown dudMonth;
         private System.Windows.Forms.NumericUpDown nudDate;
         private System.Windows.Forms.TextBox tbxAddress;
-        private System.Windows.Forms.TextBox tbxConfirmPassword;
-        private System.Windows.Forms.Label lblConfirmPassword;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnChangeDetails;
@@ -442,5 +433,6 @@
         private System.Windows.Forms.Label lblWorkerType;
         private System.Windows.Forms.TextBox tbxWorkerID;
         private System.Windows.Forms.TextBox tbxWorkerType;
+        private System.Windows.Forms.Label lblStatus;
     }
 }
