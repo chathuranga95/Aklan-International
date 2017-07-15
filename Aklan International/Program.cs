@@ -20,7 +20,7 @@ namespace Aklan_International
             //Application.Run(new CreateNewOrder.FrmCreateOrder());
             //Application.Run(new frmModeSelect());
             //Application.Run(new FrmSetUnitPrice());
-            Application.Run(new CreateNewOrder.FrmAddItem());
+            Application.Run(new CreateNewOrder.FrmCreateOrder());
 
 
         }

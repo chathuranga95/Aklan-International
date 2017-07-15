@@ -29,19 +29,26 @@ namespace Aklan_International.CreateNewOrder
         {
             FrmCreateOrder frmCreateOrder = (FrmCreateOrder)this.Owner;
             frmCreateOrder.addDgvRow(cmbType.Text, tbxUnitPrice.Text , mtbQty.Text,  tbxTotal.Text);
+            frmCreateOrder.addToTotal(tbxTotal.Text);
+            
             mtbQty.Clear();
             tbxTotal.Clear();
-            tbxUnitPrice.Clear();
-            cmbType.Text = null;
+            
+            btnAdd.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            mtbQty.Clear();
+            tbxTotal.Clear();
+            tbxUnitPrice.Clear();
+            cmbType.Text = null;
+            btnAdd.Enabled = false;
         }
 
         private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if(cmbType.Text == "Single Sheet Strip")
             {
                 cmd = new MySqlCommand("select * from dtunitprices where TypeId ='1'", con);
@@ -61,6 +68,8 @@ namespace Aklan_International.CreateNewOrder
                 tbxUnitPrice.Text = reader.GetDecimal("UnitPrice").ToString();
                 con.Close();
             }
+
+            mtbQty.Enabled = true;
 
 
 
@@ -82,10 +91,17 @@ namespace Aklan_International.CreateNewOrder
             try
             {
                 tbxTotal.Text = (int.Parse(mtbQty.Text) * decimal.Parse(tbxUnitPrice.Text)).ToString();
+                btnAdd.Enabled = true;
             }catch (System.FormatException)
             {
                 tbxTotal.Clear();
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }
