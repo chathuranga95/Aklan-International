@@ -98,14 +98,14 @@ namespace Aklan_International
             orderList.Clear();
             while (reader.Read())
             {
-                orderList.Add(new Order(reader.GetString("OrderId"), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetString("CustomerEmail"), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit"), reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid")));
+                orderList.Add(new Order(reader.GetString("OrderId"), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetDateTime("OrderDateTime"), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit") , reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid"),reader.GetString("description")));
             }
             conn.Close();
             
             lbxCurrentOrders.Items.Clear();
             foreach (Order order in orderList)
             {
-                lbxCurrentOrders.Items.Add("OrderID : " + order.getOrderID() + "     Order description : to be added");
+                lbxCurrentOrders.Items.Add("OrderID : " + order.getOrderID() + "     Order description : "+order.getDescription());
             }
         }
 
