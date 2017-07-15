@@ -30,16 +30,16 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cmbSingleOr12 = new System.Windows.Forms.ComboBox();
             this.btnRequest = new System.Windows.Forms.Button();
             this.spnQty = new System.Windows.Forms.NumericUpDown();
-            this.cmbMachineType = new System.Windows.Forms.ComboBox();
+            this.cmbJob = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lbxJobs = new System.Windows.Forms.ListBox();
             this.lblWorkerName = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
-            this.cmbSingleOr12 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.spnQty)).BeginInit();
@@ -62,7 +62,7 @@
             this.tabPage1.Controls.Add(this.cmbSingleOr12);
             this.tabPage1.Controls.Add(this.btnRequest);
             this.tabPage1.Controls.Add(this.spnQty);
-            this.tabPage1.Controls.Add(this.cmbMachineType);
+            this.tabPage1.Controls.Add(this.cmbJob);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -72,6 +72,18 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Request Job";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cmbSingleOr12
+            // 
+            this.cmbSingleOr12.FormattingEnabled = true;
+            this.cmbSingleOr12.Items.AddRange(new object[] {
+            "Single",
+            "12"});
+            this.cmbSingleOr12.Location = new System.Drawing.Point(320, 43);
+            this.cmbSingleOr12.Name = "cmbSingleOr12";
+            this.cmbSingleOr12.Size = new System.Drawing.Size(121, 21);
+            this.cmbSingleOr12.TabIndex = 5;
+            this.cmbSingleOr12.Visible = false;
             // 
             // btnRequest
             // 
@@ -90,19 +102,22 @@
             this.spnQty.Size = new System.Drawing.Size(120, 20);
             this.spnQty.TabIndex = 3;
             // 
-            // cmbMachineType
+            // cmbJob
             // 
-            this.cmbMachineType.FormattingEnabled = true;
-            this.cmbMachineType.Items.AddRange(new object[] {
-            "Cutting",
-            "Clip Cutting",
-            "Folding",
-            "Rimming"});
-            this.cmbMachineType.Location = new System.Drawing.Point(145, 44);
-            this.cmbMachineType.Name = "cmbMachineType";
-            this.cmbMachineType.Size = new System.Drawing.Size(121, 21);
-            this.cmbMachineType.TabIndex = 2;
-            this.cmbMachineType.SelectedIndexChanged += new System.EventHandler(this.cmbMachineType_SelectedIndexChanged);
+            this.cmbJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbJob.FormattingEnabled = true;
+            this.cmbJob.Items.AddRange(new object[] {
+            "cutting",
+            "clip cutting",
+            "folding 12",
+            "folding single",
+            "rimming 12",
+            "rimming single"});
+            this.cmbJob.Location = new System.Drawing.Point(145, 44);
+            this.cmbJob.Name = "cmbJob";
+            this.cmbJob.Size = new System.Drawing.Size(121, 21);
+            this.cmbJob.TabIndex = 2;
+            this.cmbJob.SelectedIndexChanged += new System.EventHandler(this.cmbMachineType_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -118,9 +133,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(41, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Machine Type";
+            this.label1.Text = "Select Job";
             // 
             // tabPage2
             // 
@@ -160,18 +175,6 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // cmbSingleOr12
-            // 
-            this.cmbSingleOr12.FormattingEnabled = true;
-            this.cmbSingleOr12.Items.AddRange(new object[] {
-            "Single",
-            "12"});
-            this.cmbSingleOr12.Location = new System.Drawing.Point(320, 43);
-            this.cmbSingleOr12.Name = "cmbSingleOr12";
-            this.cmbSingleOr12.Size = new System.Drawing.Size(121, 21);
-            this.cmbSingleOr12.TabIndex = 5;
-            this.cmbSingleOr12.Visible = false;
-            // 
             // frmRequestJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,7 +201,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.NumericUpDown spnQty;
-        private System.Windows.Forms.ComboBox cmbMachineType;
+        private System.Windows.Forms.ComboBox cmbJob;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabPage2;

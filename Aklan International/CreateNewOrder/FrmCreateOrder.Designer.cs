@@ -100,6 +100,7 @@
             this.tbxNIC.Name = "tbxNIC";
             this.tbxNIC.Size = new System.Drawing.Size(442, 20);
             this.tbxNIC.TabIndex = 5;
+            this.tbxNIC.TextChanged += new System.EventHandler(this.tbxNIC_TextChanged);
             // 
             // tbxContactNumber
             // 
@@ -107,6 +108,7 @@
             this.tbxContactNumber.Name = "tbxContactNumber";
             this.tbxContactNumber.Size = new System.Drawing.Size(442, 20);
             this.tbxContactNumber.TabIndex = 6;
+            this.tbxContactNumber.TextChanged += new System.EventHandler(this.tbxContactNumber_TextChanged);
             // 
             // tbxMail
             // 
@@ -124,6 +126,7 @@
             this.btnCreateOrder.TabIndex = 8;
             this.btnCreateOrder.Text = "Create Order";
             this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
             // btnClear
             // 
@@ -143,6 +146,7 @@
             this.colUnitPrice,
             this.colQty,
             this.colTotalAmonut});
+            this.dgvItems.Enabled = false;
             this.dgvItems.Location = new System.Drawing.Point(15, 162);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.Size = new System.Drawing.Size(536, 150);
@@ -174,6 +178,7 @@
             // 
             // btnAddItem
             // 
+            this.btnAddItem.Enabled = false;
             this.btnAddItem.Location = new System.Drawing.Point(12, 318);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(75, 23);
@@ -184,6 +189,7 @@
             // 
             // btnRemoveItem
             // 
+            this.btnRemoveItem.Enabled = false;
             this.btnRemoveItem.Location = new System.Drawing.Point(93, 318);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(75, 23);
@@ -193,6 +199,7 @@
             // 
             // btnSubmitOrder
             // 
+            this.btnSubmitOrder.Enabled = false;
             this.btnSubmitOrder.Location = new System.Drawing.Point(476, 318);
             this.btnSubmitOrder.Name = "btnSubmitOrder";
             this.btnSubmitOrder.Size = new System.Drawing.Size(75, 23);
