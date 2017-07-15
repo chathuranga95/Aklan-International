@@ -38,6 +38,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.mtbQty = new System.Windows.Forms.MaskedTextBox();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSripeType
@@ -83,11 +84,12 @@
             this.cmbType.FormattingEnabled = true;
             this.cmbType.Items.AddRange(new object[] {
             "Single Sheet Strip",
-            "Dozen Sheets Strip"});
+            "12 Sheets Strip"});
             this.cmbType.Location = new System.Drawing.Point(124, 25);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(299, 21);
             this.cmbType.TabIndex = 1;
+            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
             // 
             // tbxUnitPrice
             // 
@@ -95,7 +97,9 @@
             this.tbxUnitPrice.Name = "tbxUnitPrice";
             this.tbxUnitPrice.ReadOnly = true;
             this.tbxUnitPrice.Size = new System.Drawing.Size(299, 20);
-            this.tbxUnitPrice.TabIndex = 5;
+            this.tbxUnitPrice.TabIndex = 0;
+            this.tbxUnitPrice.TabStop = false;
+            this.tbxUnitPrice.TextChanged += new System.EventHandler(this.tbxUnitPrice_TextChanged);
             // 
             // tbxTotal
             // 
@@ -103,10 +107,13 @@
             this.tbxTotal.Name = "tbxTotal";
             this.tbxTotal.ReadOnly = true;
             this.tbxTotal.Size = new System.Drawing.Size(299, 20);
-            this.tbxTotal.TabIndex = 7;
+            this.tbxTotal.TabIndex = 0;
+            this.tbxTotal.TabStop = false;
+            this.tbxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnAdd
             // 
+            this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(15, 175);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
@@ -117,16 +124,18 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(348, 175);
+            this.btnCancel.Location = new System.Drawing.Point(267, 175);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.TabIndex = 0;
+            this.btnCancel.TabStop = false;
+            this.btnCancel.Text = "Clear";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // mtbQty
             // 
+            this.mtbQty.Enabled = false;
             this.mtbQty.Location = new System.Drawing.Point(124, 89);
             this.mtbQty.Mask = "000000";
             this.mtbQty.Name = "mtbQty";
@@ -134,12 +143,25 @@
             this.mtbQty.Size = new System.Drawing.Size(299, 20);
             this.mtbQty.TabIndex = 2;
             this.mtbQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.mtbQty.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtbQty_MaskInputRejected);
+            this.mtbQty.TextChanged += new System.EventHandler(this.mtbQty_TextChanged);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(348, 175);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 4;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(444, 216);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.mtbQty);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
@@ -174,5 +196,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.MaskedTextBox mtbQty;
+        private System.Windows.Forms.Button btnClose;
     }
 }
