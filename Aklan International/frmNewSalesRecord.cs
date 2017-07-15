@@ -13,6 +13,7 @@ namespace Aklan_International
 {
     public partial class frmNewSalesRecord : Form
     {
+        bool salesmanMode;
         MySqlConnection conn;
         MySqlCommand cmd;
         MySqlDataReader reader;
@@ -20,6 +21,13 @@ namespace Aklan_International
         {
             InitializeComponent();
             btnAdd.Enabled = false;
+        }
+        public frmNewSalesRecord(string salesmanName)
+        {
+            InitializeComponent();
+            btnAdd.Enabled = false;
+            this.Text = "New Sales Record : Salesman Mode - " + salesmanName;
+            salesmanMode = true;
         }
         public void btnAddState()
         {
@@ -138,8 +146,29 @@ namespace Aklan_International
 
 
         }
+        private void frmNewSalesRecord_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (salesmanMode)
+            {
+                DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dlgresult == DialogResult.Yes)
+                {
 
-        private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
+                    Application.ExitThread();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                this.Hide();
+            }
+        }
+    
+
+    private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
             Decimal unitprice;
             MySqlCommand cmd2;
