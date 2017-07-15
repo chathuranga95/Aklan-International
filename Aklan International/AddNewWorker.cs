@@ -68,6 +68,7 @@ namespace Aklan_International
             lblPasswordMaching.Text = "";
             btnAddWorker.Enabled = false;
             rbMale.Checked = true;
+            lblworkerID.Text = "";
             
 
         }

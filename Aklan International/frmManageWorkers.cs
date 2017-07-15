@@ -19,13 +19,18 @@ namespace Aklan_International
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Application.Run(new frmAddNewWorker());
+            (new frmAddNewWorker()).Show();
 
         }
 
         private void btnEditWorker_Click(object sender, EventArgs e)
         {
-            Application.Run(new frmEditWorkerDetails());
+            (new frmEditWorkerDetails()).Show();
+        }
+
+        private void btnDeleteWorker_Click(object sender, EventArgs e)
+        {
+            (new frmDeleteWorker()).Show();
         }
     }
 }

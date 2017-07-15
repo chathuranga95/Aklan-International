@@ -51,6 +51,7 @@
             this.btnDeleteWorker.TabIndex = 1;
             this.btnDeleteWorker.Text = "Delete Worker";
             this.btnDeleteWorker.UseVisualStyleBackColor = true;
+            this.btnDeleteWorker.Click += new System.EventHandler(this.btnDeleteWorker_Click);
             // 
             // btnEditWorker
             // 
