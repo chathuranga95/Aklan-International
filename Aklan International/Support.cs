@@ -52,5 +52,8 @@ namespace Aklan_International
             decimal value = decimal.Parse(str) * 100;
             return value == Math.Floor(value);
         }
+            
     }
+
+    
 }
