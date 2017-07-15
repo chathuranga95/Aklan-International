@@ -73,5 +73,35 @@ namespace Aklan_International
         {
 
         }
+
+        private void btnViewOrders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnManageOrder_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewSales_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewWorkers_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnManageWorkers_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

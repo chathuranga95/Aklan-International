@@ -83,6 +83,7 @@
             this.btnManageOrder.TabIndex = 1;
             this.btnManageOrder.Text = "Manage Orders";
             this.btnManageOrder.UseVisualStyleBackColor = true;
+            this.btnManageOrder.Click += new System.EventHandler(this.btnManageOrder_Click);
             // 
             // btnViewOrders
             // 
@@ -92,6 +93,7 @@
             this.btnViewOrders.TabIndex = 0;
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
             // 
             // groupBox2
             // 
@@ -122,6 +124,7 @@
             this.btnViewSales.TabIndex = 2;
             this.btnViewSales.Text = "View Sales Orders";
             this.btnViewSales.UseVisualStyleBackColor = true;
+            this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);
             // 
             // groupBox3
             // 
@@ -163,6 +166,7 @@
             this.btnViewStock.TabIndex = 0;
             this.btnViewStock.Text = "View Stock";
             this.btnViewStock.UseVisualStyleBackColor = true;
+            this.btnViewStock.Click += new System.EventHandler(this.btnViewStock_Click);
             // 
             // groupBox4
             // 
@@ -194,6 +198,7 @@
             this.btnManageWorkers.TabIndex = 3;
             this.btnManageWorkers.Text = "Manage Workers";
             this.btnManageWorkers.UseVisualStyleBackColor = true;
+            this.btnManageWorkers.Click += new System.EventHandler(this.btnManageWorkers_Click);
             // 
             // btnViewWorkers
             // 
@@ -203,6 +208,7 @@
             this.btnViewWorkers.TabIndex = 4;
             this.btnViewWorkers.Text = "View Workers";
             this.btnViewWorkers.UseVisualStyleBackColor = true;
+            this.btnViewWorkers.Click += new System.EventHandler(this.btnViewWorkers_Click);
             // 
             // groupBox5
             // 

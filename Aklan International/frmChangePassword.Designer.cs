@@ -51,6 +51,7 @@
             // 
             this.txtOldPass.Location = new System.Drawing.Point(144, 32);
             this.txtOldPass.Name = "txtOldPass";
+            this.txtOldPass.PasswordChar = '*';
             this.txtOldPass.Size = new System.Drawing.Size(100, 20);
             this.txtOldPass.TabIndex = 4;
             // 
@@ -58,6 +59,7 @@
             // 
             this.txtNewPass.Location = new System.Drawing.Point(144, 72);
             this.txtNewPass.Name = "txtNewPass";
+            this.txtNewPass.PasswordChar = '*';
             this.txtNewPass.Size = new System.Drawing.Size(100, 20);
             this.txtNewPass.TabIndex = 6;
             // 
@@ -74,6 +76,7 @@
             // 
             this.txtConfirmPass.Location = new System.Drawing.Point(144, 108);
             this.txtConfirmPass.Name = "txtConfirmPass";
+            this.txtConfirmPass.PasswordChar = '*';
             this.txtConfirmPass.Size = new System.Drawing.Size(100, 20);
             this.txtConfirmPass.TabIndex = 8;
             // 
@@ -104,6 +107,7 @@
             this.btnCancel.TabIndex = 10;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // frmChangePassword
             // 

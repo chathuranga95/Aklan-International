@@ -20,36 +20,57 @@ namespace Aklan_International
         {
             InitializeComponent();
         }
-
-        private void btnOK_Click(object sender, EventArgs e)
+        private bool verifyRate(string rate)
         {
+            bool res = false;
             try
             {
-                cmd = new MySqlCommand("UPDATE `dbcore`.`dtjobrates` SET `rate`='" + decimal.Parse(txtRate.Text).ToString() + "' WHERE `job`='" + cmbJob.Text.Trim() + "' ", conn);
-                conn.Open();
-                if (cmd.ExecuteNonQuery() >= 0)
+                decimal.Parse(rate);
+                res = true;
+            }
+            catch
+            {
+                res = false;
+            }
+            return res;
+        }
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            if (verifyRate(txtRate.Text.Trim()))
+            {
+                try
                 {
-                    MessageBox.Show("Success...");
-                }
-                else
-                    MessageBox.Show("failed..");
+                    cmd = new MySqlCommand("UPDATE `dbcore`.`dtjobrates` SET `rate`='" + decimal.Parse(txtRate.Text).ToString() + "' WHERE `job`='" + cmbJob.Text.Trim() + "' ", conn);
+                    conn.Open();
+                    if (cmd.ExecuteNonQuery() >= 0)
+                    {
+                        MessageBox.Show("Success...");
+                    }
+                    else
+                        MessageBox.Show("failed..");
 
-                
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Failed...");
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Failed...");
-            }
-            finally
-            {
-                conn.Close();
-            }
-            
         }
 
         private void frmSetJobRates_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+            btnOK.Enabled = false;
+        }
+
+        private void cmbJob_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnOK.Enabled = (cmbJob.Text != "");
         }
     }
 }
