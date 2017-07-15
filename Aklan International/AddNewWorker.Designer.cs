@@ -32,7 +32,6 @@
             this.rbFemale = new System.Windows.Forms.RadioButton();
             this.rbMale = new System.Windows.Forms.RadioButton();
             this.tbxContactNumber = new System.Windows.Forms.MaskedTextBox();
-            this.lblworkerID = new System.Windows.Forms.Label();
             this.lblempID = new System.Windows.Forms.Label();
             this.nudYear = new System.Windows.Forms.NumericUpDown();
             this.dudMonth = new System.Windows.Forms.DomainUpDown();
@@ -58,6 +57,7 @@
             this.lblPasswordMaching = new System.Windows.Forms.Label();
             this.cmbWorkerType = new System.Windows.Forms.ComboBox();
             this.lblWorkerType = new System.Windows.Forms.Label();
+            this.tbxWorkerID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDate)).BeginInit();
             this.SuspendLayout();
@@ -104,15 +104,6 @@
             this.tbxContactNumber.TabIndex = 68;
             this.tbxContactNumber.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.tbxContactNumber_MaskInputRejected);
             // 
-            // lblworkerID
-            // 
-            this.lblworkerID.AutoSize = true;
-            this.lblworkerID.Location = new System.Drawing.Point(126, 32);
-            this.lblworkerID.Name = "lblworkerID";
-            this.lblworkerID.Size = new System.Drawing.Size(25, 13);
-            this.lblworkerID.TabIndex = 83;
-            this.lblworkerID.Text = "aaa";
-            // 
             // lblempID
             // 
             this.lblempID.AutoSize = true;
@@ -148,18 +139,18 @@
             // 
             // dudMonth
             // 
-            this.dudMonth.Items.Add("Apr");
-            this.dudMonth.Items.Add("Aug");
             this.dudMonth.Items.Add("Dec");
-            this.dudMonth.Items.Add("Feb");
-            this.dudMonth.Items.Add("Jan");
-            this.dudMonth.Items.Add("Jul");
-            this.dudMonth.Items.Add("Jun");
-            this.dudMonth.Items.Add("Mar");
-            this.dudMonth.Items.Add("May");
             this.dudMonth.Items.Add("Nov");
             this.dudMonth.Items.Add("Oct");
             this.dudMonth.Items.Add("Sep");
+            this.dudMonth.Items.Add("Aug");
+            this.dudMonth.Items.Add("Jul");
+            this.dudMonth.Items.Add("Jun");
+            this.dudMonth.Items.Add("May");
+            this.dudMonth.Items.Add("Apr");
+            this.dudMonth.Items.Add("Mar");
+            this.dudMonth.Items.Add("Feb");
+            this.dudMonth.Items.Add("Jan");
             this.dudMonth.Location = new System.Drawing.Point(168, 306);
             this.dudMonth.Name = "dudMonth";
             this.dudMonth.ReadOnly = true;
@@ -384,18 +375,26 @@
             this.lblWorkerType.TabIndex = 88;
             this.lblWorkerType.Text = "Worker Type";
             // 
+            // tbxWorkerID
+            // 
+            this.tbxWorkerID.Enabled = false;
+            this.tbxWorkerID.Location = new System.Drawing.Point(125, 31);
+            this.tbxWorkerID.Name = "tbxWorkerID";
+            this.tbxWorkerID.Size = new System.Drawing.Size(120, 20);
+            this.tbxWorkerID.TabIndex = 89;
+            // 
             // frmAddNewWorker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(266, 421);
+            this.Controls.Add(this.tbxWorkerID);
             this.Controls.Add(this.lblWorkerType);
             this.Controls.Add(this.cmbWorkerType);
             this.Controls.Add(this.lblPasswordMaching);
             this.Controls.Add(this.rbFemale);
             this.Controls.Add(this.rbMale);
             this.Controls.Add(this.tbxContactNumber);
-            this.Controls.Add(this.lblworkerID);
             this.Controls.Add(this.lblempID);
             this.Controls.Add(this.nudYear);
             this.Controls.Add(this.dudMonth);
@@ -434,7 +433,6 @@
         private System.Windows.Forms.RadioButton rbFemale;
         private System.Windows.Forms.RadioButton rbMale;
         private System.Windows.Forms.MaskedTextBox tbxContactNumber;
-        private System.Windows.Forms.Label lblworkerID;
         private System.Windows.Forms.Label lblempID;
         private System.Windows.Forms.NumericUpDown nudYear;
         private System.Windows.Forms.DomainUpDown dudMonth;
@@ -460,5 +458,6 @@
         private System.Windows.Forms.Label lblPasswordMaching;
         private System.Windows.Forms.ComboBox cmbWorkerType;
         private System.Windows.Forms.Label lblWorkerType;
+        private System.Windows.Forms.TextBox tbxWorkerID;
     }
 }

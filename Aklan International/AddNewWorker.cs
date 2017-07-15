@@ -38,7 +38,7 @@ namespace Aklan_International
                 {
                     index++;
                 }
-                else if(workerType == "Supervisor" && reader.GetString("empID").Substring(0, 1) == "s")
+                else if(workerType == "Supervisor" && reader.GetString("empID").Substring(0, 1) == "s"&& reader.GetString("empID").Substring(0, 2) != "sm")
                 {
                     index++;
                 }
@@ -68,7 +68,7 @@ namespace Aklan_International
             lblPasswordMaching.Text = "";
             btnAddWorker.Enabled = false;
             rbMale.Checked = true;
-            lblworkerID.Text = "";
+            tbxWorkerID.Text = "";
             
 
         }
@@ -89,15 +89,8 @@ namespace Aklan_International
                 string workerType = cmbWorkerType.Text;
                 string password = tbxPassword.Text;
                 string address = tbxAddress.Text;
-                int telNO = 0;
-                try
-                {
-                    telNO = int.Parse(tbxContactNumber.Text);
-                }
-                catch
-                {
-
-                }
+                string telNO = tbxContactNumber.Text;
+             
                                
                 string accNO = tbxACNumber.Text;
                 string nicNO = tbxNIC.Text;
@@ -408,7 +401,7 @@ namespace Aklan_International
             {
                 empid = type + index.ToString();
             }
-            lblworkerID.Text = empid;
+            tbxWorkerID.Text = empid;
         }
     }
 }
