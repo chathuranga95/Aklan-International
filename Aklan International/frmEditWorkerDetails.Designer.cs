@@ -86,18 +86,19 @@
             // 
             // dudMonth
             // 
-            this.dudMonth.Items.Add("Jan");
-            this.dudMonth.Items.Add("Feb");
-            this.dudMonth.Items.Add("Mar");
-            this.dudMonth.Items.Add("Apr");
-            this.dudMonth.Items.Add("May");
-            this.dudMonth.Items.Add("Jun");
-            this.dudMonth.Items.Add("Jul");
-            this.dudMonth.Items.Add("Aug");
-            this.dudMonth.Items.Add("Sep");
-            this.dudMonth.Items.Add("Oct");
-            this.dudMonth.Items.Add("Nov");
+            this.dudMonth.AllowDrop = true;
             this.dudMonth.Items.Add("Dec");
+            this.dudMonth.Items.Add("Nov");
+            this.dudMonth.Items.Add("Oct");
+            this.dudMonth.Items.Add("Sep");
+            this.dudMonth.Items.Add("Aug");
+            this.dudMonth.Items.Add("Jul");
+            this.dudMonth.Items.Add("Jun");
+            this.dudMonth.Items.Add("May");
+            this.dudMonth.Items.Add("Apr");
+            this.dudMonth.Items.Add("Mar");
+            this.dudMonth.Items.Add("Feb");
+            this.dudMonth.Items.Add("Jan");
             this.dudMonth.Location = new System.Drawing.Point(170, 298);
             this.dudMonth.Name = "dudMonth";
             this.dudMonth.ReadOnly = true;
@@ -334,7 +335,7 @@
             // 
             // tbxWorkerID
             // 
-            this.tbxWorkerID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.tbxWorkerID.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.tbxWorkerID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxWorkerID.Location = new System.Drawing.Point(127, 9);
             this.tbxWorkerID.Name = "tbxWorkerID";

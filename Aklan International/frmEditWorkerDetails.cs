@@ -13,7 +13,7 @@ namespace Aklan_International
 {
     public partial class frmEditWorkerDetails : Form
     {
-        string empID = "w001";
+        
         MySqlCommand cmd;
         MySqlConnection conn;
         
@@ -21,11 +21,7 @@ namespace Aklan_International
         {
             InitializeComponent();
         }
-        public frmEditWorkerDetails(string empID)
-        {
-            this.empID = empID;
-            InitializeComponent();
-        }
+        
 
         private void tbxAddress_TextChanged(object sender, EventArgs e)
         {
@@ -45,23 +41,12 @@ namespace Aklan_International
 
         private void btnAddWorker_Click(object sender, EventArgs e)
         {
-
+            string empID = tbxWorkerID.Text;
             string firstName = tbxFirstName.Text;
-            string lastName = tbxLastName.Text;
-            
+            string lastName = tbxLastName.Text;            
             string password = tbxPassword.Text;
             string address = tbxAddress.Text;
-            int telNO = 0;
-            try
-            {
-                telNO = int.Parse(tbxContactNumber.Text);
-            }
-            catch
-            {
-                MessageBox.Show("error");//****************
-
-            }
-
+            string telNO = tbxContactNumber.Text;
             string accNO = tbxACNumber.Text;
             string nicNO = tbxNIC.Text;
             string gender = "";
@@ -81,9 +66,9 @@ namespace Aklan_International
 
                 MySqlCommand comm = conn.CreateCommand();
                 MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "update dtlogin set psw = @psw, empName = @empName where empID =@empID ";
-                comm.CommandText = "UPDATE worker_details SET first_name = @first_name,last_name=@last_name,user_name=@user_name,password=@password,address=@address,acc_NO=@acc_NO,nic_NO=@nic_NO,gender=@gender,tel_NO=@tel_NO,dob=@dob WHERE empID = '" + empID + "' ";
-                cmd.Parameters.AddWithValue("@empID", empID);
+                cmd.CommandText = "update dtlogin set psw = @psw, empName = @empName where empID ='" + empID + "'";
+                comm.CommandText = "UPDATE worker_details SET first_name = @first_name,last_name=@last_name,password=@password,address=@address,acc_NO=@acc_NO,nic_NO=@nic_NO,gender=@gender,tel_NO=@tel_NO,dob=@dob WHERE empID = '" + empID + "' ";
+                
                 cmd.Parameters.AddWithValue("@psw", password);
                 cmd.Parameters.AddWithValue("@empName", firstName +" "+lastName);
                 comm.Parameters.AddWithValue("@first_name", firstName);
@@ -105,7 +90,8 @@ namespace Aklan_International
             }
             catch
             {
-                MessageBox.Show("Error in adding mysql row. Error: ");
+                //MessageBox.Show("Error in adding mysql row. Error: ");
+                throw;
 
             }
         }
@@ -410,7 +396,7 @@ namespace Aklan_International
 
                     if (reader.GetString("deleted") == "No")
                     {
-                        
+                        lblStatus.Text = "";
                         tbxFirstName.Text = reader.GetString("first_name");
                         tbxLastName.Text = reader.GetString("last_name");
                         tbxNIC.Text = reader.GetString("nic_NO");
