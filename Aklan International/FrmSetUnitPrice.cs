@@ -17,7 +17,8 @@ namespace Aklan_International
         private MySqlConnection con;
         private MySqlCommand command;
         private MySqlDataReader reader;
-        private decimal[] unitPrices; 
+        private decimal[] unitPrices;
+        private decimal newSingleUnitPrice, new12UnitPrice;
 
         public FrmSetUnitPrice()
         {
@@ -62,12 +63,107 @@ namespace Aklan_International
             if (unitPrices[1] == 0)
                 this.tbx12Current.Text = "Price not set!";
             else
-                this.tbx12Current.Text = unitPrices[0].ToString();
+                this.tbx12Current.Text = unitPrices[1].ToString();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tbxSingleNewPrice.Clear();
+        }
+
+        private void btnClear12New_Click(object sender, EventArgs e)
+        {
+            tbx12New.Clear();
+        }
+
+        private void btn12Update_Click(object sender, EventArgs e)
+        {
+            if (tbx12New.Text.Split().Length > 0)
+            {
+                try
+                {
+                    if (decimal.Parse(tbx12New.Text) > 0)
+                    {
+
+                        new12UnitPrice = decimal.Parse(tbx12New.Text);
+                        MessageBox.Show("12 Sheet Strip Unit Price Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnSave.Enabled = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter a non-zero Price!", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        tbx12New.Clear();
+                    }
+                }
+                catch (System.FormatException)
+                {
+                    MessageBox.Show("Please enter a valid value for new unit price!", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    tbx12New.Clear();
+                }
+            }
+            else
+                MessageBox.Show("Please enter a valid value for new unit price!", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (newSingleUnitPrice >0)
+            {
+                Console.WriteLine("Single UP "+newSingleUnitPrice);
+                command = new MySqlCommand("UPDATE `dbcore`.`dtunitprices` SET `UnitPrice`= '" + newSingleUnitPrice + "' WHERE `TypeId`= '1'",con);
+                con.Open();
+                command.ExecuteNonQuery();
+                con.Close();
+            }
+
+            if (new12UnitPrice >0)
+            {
+                Console.WriteLine("12 UP " + new12UnitPrice);
+                command = new MySqlCommand("UPDATE `dbcore`.`dtunitprices` SET `UnitPrice`= '" + new12UnitPrice + "' WHERE `TypeId`= '2'",con);
+                con.Open();
+                command.ExecuteNonQuery();
+                con.Close();
+
+            }
+
+
         }
 
         private void btnSingleUpdate_Click(object sender, EventArgs e)
         {
-           
+           if(tbxSingleNewPrice.Text.Split().Length > 0)
+            {
+                try
+                {
+                    if (decimal.Parse(tbxSingleNewPrice.Text) > 0)
+                    {
+
+                        newSingleUnitPrice = decimal.Parse(tbxSingleNewPrice.Text);
+                        MessageBox.Show("Sinlge Sheet Strip Unit Price Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnSave.Enabled = true;
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Please enter a non-zero Price!", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        tbxSingleNewPrice.Clear();
+                    }
+                }
+                catch (System.FormatException)
+                {
+                    MessageBox.Show("Please enter a valid value for new unit price!", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    tbxSingleNewPrice.Clear();
+                }
+            }
+            else
+                MessageBox.Show("Please enter a valid value for new unit price!", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
         }
     }
 }

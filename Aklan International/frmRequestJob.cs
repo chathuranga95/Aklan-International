@@ -121,11 +121,11 @@ namespace Aklan_International
 
             Dictionary<String, String> mydic = new Dictionary<string, string>();
             mydic.Add("cutting", "sheet");
-            mydic.Add("clip Cutting", "cut strip");
+            mydic.Add("clip cutting", "cut strip");
             mydic.Add("folding 12", "clip cut");
             mydic.Add("folding single", "clip cut");
-            mydic.Add("Rimming 12", "folded 12");
-            mydic.Add("Rimming single", "folded single");
+            mydic.Add("rimming 12", "folded 12");
+            mydic.Add("rimming single", "folded single");
             string matType;
             mydic.TryGetValue(cmbJob.Text.Trim(), out matType);
 

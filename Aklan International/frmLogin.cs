@@ -25,12 +25,12 @@ namespace Aklan_International
         private void btnLogin_Click(object sender, EventArgs e)
         {   
             conn.Open();
-            cmd = new MySqlCommand("select * from dtlogin",conn);
+            cmd = new MySqlCommand("select * from dtlogin where empID = '"+txtEmpID.Text.Trim()+"'",conn);
             reader = cmd.ExecuteReader();
 
             if (reader.Read())
             {
-                if(reader.GetString("empID")==txtEmpID.Text.Trim() && reader.GetString("psw") == txtPassword.Text.Trim())
+                if(reader.GetString("psw") == txtPassword.Text.Trim())
                 {
                     if (txtEmpID.Text.Substring(0, 1) == "a")
                     {
@@ -39,14 +39,14 @@ namespace Aklan_International
                         obj.Show();
                         this.Hide();
                     }
-                    else if (txtEmpID.Text.Substring(0, 1) == "sm")
+                    else if (txtEmpID.Text.Substring(0,2) == "sm")
                     {
 
                     }
                     else if (txtEmpID.Text.Substring(0, 1) == "s")
                     {
                         MessageBox.Show("Supervisor access granted!!!");
-                        frmSupervisorWindow obj = new frmSupervisorWindow();
+                        frmSupervisorWindow obj = new frmSupervisorWindow(txtEmpID.Text.Trim());
                         obj.Show();
                         this.Hide();
                     }
@@ -56,7 +56,7 @@ namespace Aklan_International
                     MessageBox.Show("failed");
                 }
             }
-            conn.Clone();
+            conn.Close();
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
