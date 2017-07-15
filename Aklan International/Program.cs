@@ -14,11 +14,12 @@ namespace Aklan_International
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.EnableVisualStyles();
+            //Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmSupervisorWindow());
-            Application.Run(new frmWorkerWindow());
+            //Application.Run(new frmWorkerWindow());
             //Application.Run(new frmAdminWindow("shehan","a001"));
+            Application.Run(new frmNotification());
 
         }
     }

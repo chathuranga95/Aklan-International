@@ -40,8 +40,16 @@ namespace Aklan_International
 
         private void btnCreateSalesOrder_Click(object sender, EventArgs e)
         {
-            frmNewSalesRecord obj = new frmNewSalesRecord();
-            obj.Show();
+            MaterialUpdate mtup = new MaterialUpdate(empID);
+            int[] matArr = mtup.retrieveMaterial();
+
+            if(matArr[3]>0 || matArr[4] > 0)
+            {
+                frmNewSalesRecord obj = new frmNewSalesRecord();
+                obj.Show();
+
+            }
+            
         }
 
         private void btnManageStock_Click(object sender, EventArgs e)
@@ -67,6 +75,11 @@ namespace Aklan_International
         {
             frmChangePassword obj = new frmChangePassword(adminName);
             obj.Show();
+        }
+
+        private void frmAdminWindow_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

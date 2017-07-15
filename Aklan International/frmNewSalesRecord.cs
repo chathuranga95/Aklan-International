@@ -101,5 +101,10 @@ namespace Aklan_International
             }
             
         }
+
+        private void frmNewSalesRecord_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

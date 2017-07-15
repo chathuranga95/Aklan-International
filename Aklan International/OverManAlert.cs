@@ -9,16 +9,27 @@ namespace Aklan_International
 {
     class OverManAlert
     {
+        private static OverManAlert instance;
+
         MySqlConnection conn;
         MySqlCommand cmd;
         MySqlDataReader reader;
 
         bool finished;
+        string message;
 
         public OverManAlert()
         {
             conn = new MySqlConnection("server=localhost;user id=root;database=dbcore;pwd=1234;allowuservariables=True");
             
+        }
+        public static OverManAlert GetInstatance()
+        {
+            if(instance == null)
+            {
+                instance = new OverManAlert();
+            }
+            return instance;
         }
         public bool CheckOrderList()
         {
@@ -37,12 +48,20 @@ namespace Aklan_International
             return finished;
         }
 
-        public void sendalert()
+        public string sendalert()
         {
+            string message;
             if (finished)
             {
-                Console.WriteLine("All orders are done!!");
+                message = "All orders are done!!!";
+                //Console.WriteLine("All orders are done!!");
+                return message;
             }
+            else
+            {
+                return null;
+            }
+            
         }
     }
 }
