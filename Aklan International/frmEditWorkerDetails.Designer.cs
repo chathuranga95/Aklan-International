@@ -305,7 +305,7 @@
             // tbxContactNumber
             // 
             this.tbxContactNumber.Location = new System.Drawing.Point(127, 324);
-            this.tbxContactNumber.Mask = "0000000000";
+            this.tbxContactNumber.Mask = "(999) 000-0000";
             this.tbxContactNumber.Name = "tbxContactNumber";
             this.tbxContactNumber.PromptChar = ' ';
             this.tbxContactNumber.Size = new System.Drawing.Size(122, 20);

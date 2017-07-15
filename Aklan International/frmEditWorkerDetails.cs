@@ -13,7 +13,7 @@ namespace Aklan_International
 {
     public partial class frmEditWorkerDetails : Form
     {
-        string empID = "21";
+        string empID = "w001";
         MySqlCommand cmd;
         MySqlConnection conn;
         MySqlDataReader reader;
@@ -80,9 +80,12 @@ namespace Aklan_International
                 conn.Open();
 
                 MySqlCommand comm = conn.CreateCommand();
-                //comm.CommandText = "INSERT INTO worker_details(first_name,last_name,user_name,password,address,nic_NO,gender,acc_NO) VALUES(@first_name,@last_name,@user_name,@password,@address,,@nic_NO,@gender,@acc_NO)";
-                //comm.CommandText = "UPDATE worker_details(first_name,last_name,user_name,password,address,acc_NO,nic_NO,gender,tel_NO,dob) VALUES (@first_name,@last_name,@user_name,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob) WHERE empID = '" + empID + "'";
+                MySqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText = "update dtlogin set psw = @psw, empName = @empName where empID =@empID ";
                 comm.CommandText = "UPDATE worker_details SET first_name = @first_name,last_name=@last_name,user_name=@user_name,password=@password,address=@address,acc_NO=@acc_NO,nic_NO=@nic_NO,gender=@gender,tel_NO=@tel_NO,dob=@dob WHERE empID = '" + empID + "' ";
+                cmd.Parameters.AddWithValue("@empID", empID);
+                cmd.Parameters.AddWithValue("@psw", password);
+                cmd.Parameters.AddWithValue("@empName", firstName +" "+lastName);
                 comm.Parameters.AddWithValue("@first_name", firstName);
                 comm.Parameters.AddWithValue("@last_name", lastName);
                 
@@ -93,7 +96,7 @@ namespace Aklan_International
                 comm.Parameters.AddWithValue("@nic_NO", nicNO);
                 comm.Parameters.AddWithValue("@gender", gender);
                 comm.Parameters.AddWithValue("@dob", dob);
-                //comm.CommandText = "UPDATE worker_details SET first_name = @first_name,last_name=@last_name,user_name=@user_name,password=@password,address=@address,acc_NO=@acc_NO,nic_NO=@nic_NO,gender=@gender,tel_NO=@tel_NO,dob=@dob WHERE empID = '" + empID + "' ";
+                cmd.ExecuteNonQuery();
                 comm.ExecuteNonQuery();
                 conn.Close();
 
@@ -109,7 +112,7 @@ namespace Aklan_International
 
         private void frmEditWorkerDetails_Load(object sender, EventArgs e)
         {
-            tbxWorkerID.Text = empID;
+            
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             try
             {
@@ -117,27 +120,36 @@ namespace Aklan_International
                 cmd = new MySqlCommand("select * from worker_details where empID = '" + empID+ "'",conn);
                 reader = cmd.ExecuteReader();
                 reader.Read();
-                tbxFirstName.Text = reader.GetString("first_name");
-                tbxLastName.Text = reader.GetString("last_name");
-                tbxNIC.Text = reader.GetString("nic_NO");
-                tbxPassword.Text = reader.GetString("password");
-                tbxWorkerType.Text = reader.GetString("worker_type");
-                tbxACNumber.Text = reader.GetString("acc_NO");
-                tbxAddress.Text = reader.GetString("address");
-                string gender = reader.GetString("gender");
-                if (gender == "Male")
-                {
-                    rbMale.Checked = true;
+
+                if (reader.GetString("deleted") == "No") {
+                    tbxWorkerID.Text = empID;
+                    tbxFirstName.Text = reader.GetString("first_name");
+                    tbxLastName.Text = reader.GetString("last_name");
+                    tbxNIC.Text = reader.GetString("nic_NO");
+                    tbxPassword.Text = reader.GetString("password");
+                    tbxWorkerType.Text = reader.GetString("worker_type");
+                    tbxACNumber.Text = reader.GetString("acc_NO");
+                    tbxAddress.Text = reader.GetString("address");
+                    string gender = reader.GetString("gender");
+                    if (gender == "Male")
+                    {
+                        rbMale.Checked = true;
+                    }
+                    else
+                    {
+                        rbMale.Checked = false;
+                    }
+                    tbxContactNumber.Text = reader.GetString("tel_NO");
+                    nudDate.Value = int.Parse(reader.GetString("dob").Substring(9));
+                    nudYear.Value = int.Parse(reader.GetString("dob").Substring(0, 4));
+                    dudMonth.Text = reader.GetString("dob").Substring(5, 3);
+                    tbxConfirmPassword.Text = reader.GetString("password");
                 }
                 else
                 {
-                    rbMale.Checked = false;
+                    MessageBox.Show("Worker has deleted.","Edit Worker Details" );
+                    this.Close();
                 }
-                tbxContactNumber.Text = reader.GetString("tel_NO");
-                nudDate.Value = int.Parse(reader.GetString("dob").Substring(9));
-                nudYear.Value = int.Parse(reader.GetString("dob").Substring(0, 4));
-                dudMonth.Text = reader.GetString("dob").Substring(5, 3);
-                tbxConfirmPassword.Text = reader.GetString("password");
                 conn.Close();
             }
             catch
