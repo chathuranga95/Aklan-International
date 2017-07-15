@@ -68,7 +68,6 @@
     <Compile Include="AddNewWorker.Designer.cs">
       <DependentUpon>AddNewWorker.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateNewOrder\Order.cs" />
     <Compile Include="Support.cs" />
     <Compile Include="CreateNewOrder\FrmAddItem.cs">
       <SubType>Form</SubType>

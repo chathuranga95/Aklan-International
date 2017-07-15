@@ -21,21 +21,27 @@ namespace Aklan_International
             return new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
         }
 
-        public static int getHighestVlaueFrom(String coloumnName, String tableName)
+        public static int getMaxVlaueFrom(String coloumnName, String tableName)
         {
             int max;
             MySqlConnection con = setConnection();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM "+tableName+" WHERE "+coloumnName+"= 'MAX("+coloumnName+")'", con);
+            MySqlCommand cmd = new MySqlCommand("SELECT MAX("+coloumnName+") AS OrderId FROM "+tableName+"", con);
             MySqlDataReader reader;
             con.Open();
             reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
+            try {
+                if (reader.Read())
+                {
+                    try
+                    {
 
-                max = int.Parse(reader.GetString(coloumnName));
-            }
+                        max = int.Parse(reader.GetString(coloumnName));
+                    }
+                    catch (System.Data.SqlTypes.SqlNullValueException) { max = 0; }
+                }
 
-            else max = 0;
+                else max = 0;
+            }catch ( MySql.Data.MySqlClient.MySqlException) { max = -1; }
             con.Close();
             return max;
 

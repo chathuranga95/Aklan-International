@@ -13,7 +13,7 @@ namespace Aklan_International.CreateNewOrder
 {
     public partial class FrmCreateOrder : Form
     {
-        private Order customerOrder;
+        //private Order customerOrder;
         public FrmCreateOrder()
         {
             InitializeComponent();
@@ -73,10 +73,10 @@ namespace Aklan_International.CreateNewOrder
                 String NIC = tbxNIC.Text;
                 if (isValidNIC(NIC))
                 {
+                    
                     dgvItems.Enabled = true;
-                    MessageBox.Show("Add Items and submit the order!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     btnAddItem.Enabled = true;
-                    customerOrder = new Order(tbxCustomerName.Text, tbxNIC.Text, mtbContactNumber.Text);
+                    MessageBox.Show("Add Items and submit the order!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -86,7 +86,7 @@ namespace Aklan_International.CreateNewOrder
             
             }
             Console.WriteLine(DateTime.Now.ToString());
-            Console.WriteLine(Support.getHighestVlaueFrom("OrderId", "dtcustomer_orders"));
+            Console.WriteLine(Support.getMaxVlaueFrom("OrderId", "dtcustomer_orders"));
                 
         }
 
@@ -173,6 +173,34 @@ namespace Aklan_International.CreateNewOrder
         {
             MySqlConnection con = Support.setConnection();
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbxAmountPaying_TextChanged(object sender, EventArgs e)
+        {
+            if (Support.isNumeric(tbxAmountPaying.Text))
+            {
+                tbxAmountRemain.Text = (decimal.Parse(tbxTotal.Text) - decimal.Parse(tbxAmountPaying.Text)).ToString();
+            }
+            else
+            {
+                tbxAmountRemain.Text = tbxTotal.Text;
+                tbxAmountPaying.Clear();
+            }
         }
     }
 }

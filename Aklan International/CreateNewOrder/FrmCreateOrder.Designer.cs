@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblNIC = new System.Windows.Forms.Label();
             this.lblContactNumber = new System.Windows.Forms.Label();
@@ -47,6 +47,12 @@
             this.mtbContactNumber = new System.Windows.Forms.MaskedTextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.tbxTotal = new System.Windows.Forms.TextBox();
+            this.lblDecription = new System.Windows.Forms.Label();
+            this.tbxDescription = new System.Windows.Forms.TextBox();
+            this.lblAomuntPaying = new System.Windows.Forms.Label();
+            this.tbxAmountPaying = new System.Windows.Forms.TextBox();
+            this.tbxAmountRemain = new System.Windows.Forms.TextBox();
+            this.lblAmountRemaining = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +104,7 @@
             // btnCreateOrder
             // 
             this.btnCreateOrder.Enabled = false;
-            this.btnCreateOrder.Location = new System.Drawing.Point(15, 84);
+            this.btnCreateOrder.Location = new System.Drawing.Point(14, 123);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(75, 23);
             this.btnCreateOrder.TabIndex = 8;
@@ -108,7 +114,7 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(353, 84);
+            this.btnClear.Location = new System.Drawing.Point(352, 123);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 0;
@@ -121,14 +127,14 @@
             this.dgvItems.AllowUserToResizeColumns = false;
             this.dgvItems.AllowUserToResizeRows = false;
             this.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colType,
@@ -136,12 +142,12 @@
             this.colQty,
             this.colTotalAmonut});
             this.dgvItems.Enabled = false;
-            this.dgvItems.Location = new System.Drawing.Point(15, 113);
+            this.dgvItems.Location = new System.Drawing.Point(15, 152);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvItems.RowHeadersVisible = false;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(413, 161);
+            this.dgvItems.Size = new System.Drawing.Size(413, 142);
             this.dgvItems.TabIndex = 0;
             this.dgvItems.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvItems_RowsAdded);
             this.dgvItems.SelectionChanged += new System.EventHandler(this.dgvItems_SelectionChanged);
@@ -175,7 +181,7 @@
             // btnAddItem
             // 
             this.btnAddItem.Enabled = false;
-            this.btnAddItem.Location = new System.Drawing.Point(15, 318);
+            this.btnAddItem.Location = new System.Drawing.Point(14, 405);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(75, 23);
             this.btnAddItem.TabIndex = 9;
@@ -186,7 +192,7 @@
             // btnRemoveItem
             // 
             this.btnRemoveItem.Enabled = false;
-            this.btnRemoveItem.Location = new System.Drawing.Point(93, 318);
+            this.btnRemoveItem.Location = new System.Drawing.Point(92, 405);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(75, 23);
             this.btnRemoveItem.TabIndex = 0;
@@ -197,7 +203,7 @@
             // btnSubmitOrder
             // 
             this.btnSubmitOrder.Enabled = false;
-            this.btnSubmitOrder.Location = new System.Drawing.Point(353, 318);
+            this.btnSubmitOrder.Location = new System.Drawing.Point(352, 405);
             this.btnSubmitOrder.Name = "btnSubmitOrder";
             this.btnSubmitOrder.Size = new System.Drawing.Size(75, 23);
             this.btnSubmitOrder.TabIndex = 10;
@@ -220,15 +226,16 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(246, 283);
+            this.lblTotal.Location = new System.Drawing.Point(220, 303);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(70, 13);
             this.lblTotal.TabIndex = 11;
             this.lblTotal.Text = "Total Amount";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // tbxTotal
             // 
-            this.tbxTotal.Location = new System.Drawing.Point(322, 280);
+            this.tbxTotal.Location = new System.Drawing.Point(323, 300);
             this.tbxTotal.Name = "tbxTotal";
             this.tbxTotal.ReadOnly = true;
             this.tbxTotal.Size = new System.Drawing.Size(105, 20);
@@ -236,11 +243,72 @@
             this.tbxTotal.TabStop = false;
             this.tbxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // lblDecription
+            // 
+            this.lblDecription.AutoSize = true;
+            this.lblDecription.Location = new System.Drawing.Point(17, 72);
+            this.lblDecription.Name = "lblDecription";
+            this.lblDecription.Size = new System.Drawing.Size(89, 13);
+            this.lblDecription.TabIndex = 13;
+            this.lblDecription.Text = "Order Description";
+            // 
+            // tbxDescription
+            // 
+            this.tbxDescription.Location = new System.Drawing.Point(112, 69);
+            this.tbxDescription.Multiline = true;
+            this.tbxDescription.Name = "tbxDescription";
+            this.tbxDescription.Size = new System.Drawing.Size(315, 48);
+            this.tbxDescription.TabIndex = 7;
+            // 
+            // lblAomuntPaying
+            // 
+            this.lblAomuntPaying.AutoSize = true;
+            this.lblAomuntPaying.Location = new System.Drawing.Point(220, 329);
+            this.lblAomuntPaying.Name = "lblAomuntPaying";
+            this.lblAomuntPaying.Size = new System.Drawing.Size(78, 13);
+            this.lblAomuntPaying.TabIndex = 14;
+            this.lblAomuntPaying.Text = "Amount Paying";
+            this.lblAomuntPaying.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // tbxAmountPaying
+            // 
+            this.tbxAmountPaying.Location = new System.Drawing.Point(323, 326);
+            this.tbxAmountPaying.Name = "tbxAmountPaying";
+            this.tbxAmountPaying.Size = new System.Drawing.Size(104, 20);
+            this.tbxAmountPaying.TabIndex = 15;
+            this.tbxAmountPaying.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxAmountPaying.TextChanged += new System.EventHandler(this.tbxAmountPaying_TextChanged);
+            // 
+            // tbxAmountRemain
+            // 
+            this.tbxAmountRemain.Location = new System.Drawing.Point(323, 352);
+            this.tbxAmountRemain.Name = "tbxAmountRemain";
+            this.tbxAmountRemain.ReadOnly = true;
+            this.tbxAmountRemain.Size = new System.Drawing.Size(104, 20);
+            this.tbxAmountRemain.TabIndex = 16;
+            this.tbxAmountRemain.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbxAmountRemain.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // lblAmountRemaining
+            // 
+            this.lblAmountRemaining.AutoSize = true;
+            this.lblAmountRemaining.Location = new System.Drawing.Point(220, 355);
+            this.lblAmountRemaining.Name = "lblAmountRemaining";
+            this.lblAmountRemaining.Size = new System.Drawing.Size(96, 13);
+            this.lblAmountRemaining.TabIndex = 17;
+            this.lblAmountRemaining.Text = "Amount Remaining";
+            // 
             // FrmCreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 353);
+            this.ClientSize = new System.Drawing.Size(439, 440);
+            this.Controls.Add(this.lblAmountRemaining);
+            this.Controls.Add(this.tbxAmountRemain);
+            this.Controls.Add(this.tbxAmountPaying);
+            this.Controls.Add(this.lblAomuntPaying);
+            this.Controls.Add(this.tbxDescription);
+            this.Controls.Add(this.lblDecription);
             this.Controls.Add(this.tbxTotal);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.mtbContactNumber);
@@ -283,5 +351,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTotalAmonut;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox tbxTotal;
+        private System.Windows.Forms.Label lblDecription;
+        private System.Windows.Forms.TextBox tbxDescription;
+        private System.Windows.Forms.Label lblAomuntPaying;
+        private System.Windows.Forms.TextBox tbxAmountPaying;
+        private System.Windows.Forms.TextBox tbxAmountRemain;
+        private System.Windows.Forms.Label lblAmountRemaining;
     }
 }

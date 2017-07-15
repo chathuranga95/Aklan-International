@@ -109,6 +109,7 @@
             this.tbxTotal.Size = new System.Drawing.Size(299, 20);
             this.tbxTotal.TabIndex = 0;
             this.tbxTotal.TabStop = false;
+            this.tbxTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnAdd
             // 
