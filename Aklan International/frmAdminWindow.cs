@@ -68,7 +68,8 @@ namespace Aklan_International
 
         private void btnViewNotif_Click(object sender, EventArgs e)
         {
-
+            frmNotification obj = new frmNotification();
+            obj.Show();
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
