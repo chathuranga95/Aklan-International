@@ -48,6 +48,7 @@
             this.grdNotify.Name = "grdNotify";
             this.grdNotify.Size = new System.Drawing.Size(449, 134);
             this.grdNotify.TabIndex = 0;
+            this.grdNotify.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdNotify_CellContentClick);
             // 
             // btnRefresh
             // 
@@ -72,23 +73,29 @@
             // Time
             // 
             this.Time.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Time.FillWeight = 76.14214F;
             this.Time.HeaderText = "Time";
+            this.Time.MinimumWidth = 30;
             this.Time.Name = "Time";
             this.Time.ReadOnly = true;
             // 
             // Notification
             // 
+            this.Notification.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Notification.FillWeight = 223.0715F;
             this.Notification.HeaderText = "Notification";
+            this.Notification.MinimumWidth = 150;
             this.Notification.Name = "Notification";
             this.Notification.ReadOnly = true;
-            this.Notification.Width = 300;
             // 
             // Column1
             // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.FillWeight = 0.7863408F;
             this.Column1.HeaderText = "Del";
             this.Column1.Image = global::Aklan_International.Properties.Resources.delete_garbage;
+            this.Column1.MinimumWidth = 30;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 25;
             // 
             // frmNotification
             // 
