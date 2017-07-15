@@ -42,6 +42,8 @@
             this.btn12Update = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnClearSingleNew = new System.Windows.Forms.Button();
+            this.btnClear12New = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSingleSheetStrip
@@ -86,7 +88,7 @@
             this.tbxSingleCurrentPrice.Location = new System.Drawing.Point(164, 54);
             this.tbxSingleCurrentPrice.Name = "tbxSingleCurrentPrice";
             this.tbxSingleCurrentPrice.ReadOnly = true;
-            this.tbxSingleCurrentPrice.Size = new System.Drawing.Size(207, 20);
+            this.tbxSingleCurrentPrice.Size = new System.Drawing.Size(135, 20);
             this.tbxSingleCurrentPrice.TabIndex = 4;
             this.tbxSingleCurrentPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -94,7 +96,7 @@
             // 
             this.tbxSingleNewPrice.Location = new System.Drawing.Point(164, 93);
             this.tbxSingleNewPrice.Name = "tbxSingleNewPrice";
-            this.tbxSingleNewPrice.Size = new System.Drawing.Size(207, 20);
+            this.tbxSingleNewPrice.Size = new System.Drawing.Size(135, 20);
             this.tbxSingleNewPrice.TabIndex = 5;
             this.tbxSingleNewPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -122,7 +124,7 @@
             this.tbx12Current.Location = new System.Drawing.Point(164, 153);
             this.tbx12Current.Name = "tbx12Current";
             this.tbx12Current.ReadOnly = true;
-            this.tbx12Current.Size = new System.Drawing.Size(207, 20);
+            this.tbx12Current.Size = new System.Drawing.Size(135, 20);
             this.tbx12Current.TabIndex = 8;
             this.tbx12Current.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -130,13 +132,13 @@
             // 
             this.tbx12New.Location = new System.Drawing.Point(164, 188);
             this.tbx12New.Name = "tbx12New";
-            this.tbx12New.Size = new System.Drawing.Size(207, 20);
+            this.tbx12New.Size = new System.Drawing.Size(135, 20);
             this.tbx12New.TabIndex = 9;
             this.tbx12New.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnSingleUpdate
             // 
-            this.btnSingleUpdate.Location = new System.Drawing.Point(391, 54);
+            this.btnSingleUpdate.Location = new System.Drawing.Point(321, 54);
             this.btnSingleUpdate.Name = "btnSingleUpdate";
             this.btnSingleUpdate.Size = new System.Drawing.Size(75, 59);
             this.btnSingleUpdate.TabIndex = 10;
@@ -146,36 +148,62 @@
             // 
             // btn12Update
             // 
-            this.btn12Update.Location = new System.Drawing.Point(391, 153);
+            this.btn12Update.Location = new System.Drawing.Point(321, 153);
             this.btn12Update.Name = "btn12Update";
             this.btn12Update.Size = new System.Drawing.Size(75, 55);
             this.btn12Update.TabIndex = 11;
             this.btn12Update.Text = "Update";
             this.btn12Update.UseVisualStyleBackColor = true;
+            this.btn12Update.Click += new System.EventHandler(this.btn12Update_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(256, 254);
+            this.btnSave.Enabled = false;
+            this.btnSave.Location = new System.Drawing.Point(266, 243);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 23);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(364, 254);
+            this.btnClose.Location = new System.Drawing.Point(374, 243);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(102, 23);
             this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnClearSingleNew
+            // 
+            this.btnClearSingleNew.Location = new System.Drawing.Point(402, 55);
+            this.btnClearSingleNew.Name = "btnClearSingleNew";
+            this.btnClearSingleNew.Size = new System.Drawing.Size(75, 59);
+            this.btnClearSingleNew.TabIndex = 14;
+            this.btnClearSingleNew.Text = "Clear";
+            this.btnClearSingleNew.UseVisualStyleBackColor = true;
+            this.btnClearSingleNew.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnClear12New
+            // 
+            this.btnClear12New.Location = new System.Drawing.Point(402, 149);
+            this.btnClear12New.Name = "btnClear12New";
+            this.btnClear12New.Size = new System.Drawing.Size(75, 59);
+            this.btnClear12New.TabIndex = 15;
+            this.btnClear12New.Text = "Clear";
+            this.btnClear12New.UseVisualStyleBackColor = true;
+            this.btnClear12New.Click += new System.EventHandler(this.btnClear12New_Click);
             // 
             // FrmSetUnitPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(490, 299);
+            this.ClientSize = new System.Drawing.Size(488, 287);
+            this.Controls.Add(this.btnClear12New);
+            this.Controls.Add(this.btnClearSingleNew);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btn12Update);
@@ -214,5 +242,7 @@
         private System.Windows.Forms.Button btn12Update;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnClearSingleNew;
+        private System.Windows.Forms.Button btnClear12New;
     }
 }
