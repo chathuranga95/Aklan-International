@@ -13,11 +13,20 @@ namespace Aklan_International
 {
     public partial class frmNewSalesRecord : Form
     {
-        
+        bool salesmanMode;
         public frmNewSalesRecord()
         {
             InitializeComponent();
             btnAdd.Enabled = false;
+            salesmanMode = false;
+        }
+
+        public frmNewSalesRecord(string salesmanName)
+        {
+            InitializeComponent();
+            btnAdd.Enabled = false;
+            this.Text = "New Sales Record : Salesman Mode - " + salesmanName;
+            salesmanMode = true;
         }
         public void btnAddState()
         {
@@ -100,6 +109,27 @@ namespace Aklan_International
                grd.Rows.RemoveAt(this.grd.SelectedRows[0].Index);
             }
             
+        }
+
+        private void frmNewSalesRecord_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (salesmanMode)
+            {
+                DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (dlgresult == DialogResult.Yes)
+                {
+
+                    Application.ExitThread();
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                this.Hide();
+            }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Aklan_International
 {
-    static class Program//hello
+    static class Program
     {
         /// <summary>
         /// The main entry point for the application.

@@ -112,7 +112,7 @@
             this.btnCreateSalesOrder.Name = "btnCreateSalesOrder";
             this.btnCreateSalesOrder.Size = new System.Drawing.Size(85, 38);
             this.btnCreateSalesOrder.TabIndex = 1;
-            this.btnCreateSalesOrder.Text = "Create Sales orders";
+            this.btnCreateSalesOrder.Text = "Create Sales Record";
             this.btnCreateSalesOrder.UseVisualStyleBackColor = true;
             this.btnCreateSalesOrder.Click += new System.EventHandler(this.btnCreateSalesOrder_Click);
             // 
@@ -122,7 +122,7 @@
             this.btnViewSales.Name = "btnViewSales";
             this.btnViewSales.Size = new System.Drawing.Size(85, 38);
             this.btnViewSales.TabIndex = 2;
-            this.btnViewSales.Text = "View Sales Orders";
+            this.btnViewSales.Text = "View Sales Record";
             this.btnViewSales.UseVisualStyleBackColor = true;
             this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);
             // 
@@ -253,6 +253,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAdminWindow";
             this.Text = "Admin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAdminWindow_FormClosing);
             this.Load += new System.EventHandler(this.frmAdminWindow_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

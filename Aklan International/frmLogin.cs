@@ -47,7 +47,10 @@ namespace Aklan_International
                         }
                         else if (txtEmpID.Text.Substring(0, 2) == "sm")
                         {
-
+                            MessageBox.Show("Salesman access granted!!!");
+                            frmNewSalesRecord obj = new frmNewSalesRecord(reader.GetString("empName"));
+                            obj.Show();
+                            this.Hide();
                         }
                         else if (txtEmpID.Text.Substring(0, 1) == "s")
                         {

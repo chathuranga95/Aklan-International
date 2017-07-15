@@ -35,7 +35,7 @@ namespace Aklan_International
         private void btnSetJobRates_Click(object sender, EventArgs e)
         {
             frmSetJobRates obj = new frmSetJobRates();
-            obj.Show(); 
+            obj.Show();
         }
 
         private void btnCreateSalesOrder_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace Aklan_International
             obj.Show();
         }
 
-        
+
 
         private void btnViewNotif_Click(object sender, EventArgs e)
         {
@@ -81,7 +81,8 @@ namespace Aklan_International
 
         private void btnManageOrder_Click(object sender, EventArgs e)
         {
-
+            frmManageOrders obj = new frmManageOrders(empID);
+            obj.Show();
         }
 
         private void btnViewStock_Click(object sender, EventArgs e)
@@ -102,6 +103,21 @@ namespace Aklan_International
         private void btnManageWorkers_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmAdminWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dlgresult == DialogResult.Yes)
+            {
+                
+                Application.ExitThread();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
