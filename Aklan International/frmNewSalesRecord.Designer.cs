@@ -76,7 +76,7 @@
             this.tbxCustName.Location = new System.Drawing.Point(131, 6);
             this.tbxCustName.Name = "tbxCustName";
             this.tbxCustName.Size = new System.Drawing.Size(194, 20);
-            this.tbxCustName.TabIndex = 2;
+            this.tbxCustName.TabIndex = 1;
             this.tbxCustName.TextChanged += new System.EventHandler(this.tbxCustName_TextChanged);
             // 
             // cmbType
@@ -126,7 +126,7 @@
             this.tbxQty.Mask = "00000";
             this.tbxQty.Name = "tbxQty";
             this.tbxQty.Size = new System.Drawing.Size(100, 20);
-            this.tbxQty.TabIndex = 11;
+            this.tbxQty.TabIndex = 5;
             this.tbxQty.ValidatingType = typeof(int);
             this.tbxQty.TextChanged += new System.EventHandler(this.tbxQty_TextChanged);
             // 
@@ -136,7 +136,7 @@
             this.tbxTel.Mask = "(999) 000-0000";
             this.tbxTel.Name = "tbxTel";
             this.tbxTel.Size = new System.Drawing.Size(195, 20);
-            this.tbxTel.TabIndex = 13;
+            this.tbxTel.TabIndex = 3;
             // 
             // label5
             // 
@@ -159,6 +159,7 @@
             this.grd.Name = "grd";
             this.grd.Size = new System.Drawing.Size(443, 95);
             this.grd.TabIndex = 14;
+            this.grd.TabStop = false;
             this.grd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Type
@@ -192,7 +193,7 @@
             this.btnAdd.Location = new System.Drawing.Point(15, 152);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 18;
+            this.btnAdd.TabIndex = 6;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
@@ -202,7 +203,7 @@
             this.btnClear.Location = new System.Drawing.Point(374, 152);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 19;
+            this.btnClear.TabIndex = 7;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -212,7 +213,7 @@
             this.btnSubmit.Location = new System.Drawing.Point(374, 348);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.TabIndex = 8;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -222,7 +223,7 @@
             this.tbxNic.Location = new System.Drawing.Point(424, 8);
             this.tbxNic.Name = "tbxNic";
             this.tbxNic.Size = new System.Drawing.Size(148, 20);
-            this.tbxNic.TabIndex = 21;
+            this.tbxNic.TabIndex = 2;
             this.tbxNic.TextChanged += new System.EventHandler(this.tbxNic_TextChanged_1);
             // 
             // tbxUprice

@@ -64,9 +64,9 @@ namespace Aklan_International
         {
             decimal amount = Convert.ToDecimal(tbxUprice.Text) * Convert.ToDecimal(tbxQty.Text);
             grd.Rows.Add(cmbType.Text, tbxQty.Text, tbxUprice.Text, amount);
-            cmbType.Text = "";
-            tbxQty.Text = "";
-            tbxUprice.Text = "";
+            cmbType.Text = null;
+            tbxQty.Clear();
+            tbxUprice.Clear();
         }
 
         private void tbxCustName_TextChanged(object sender, EventArgs e)
@@ -127,6 +127,10 @@ namespace Aklan_International
                     MessageBox.Show("Failed");
                 }
                 conn.Close();
+                tbxCustName.Clear();
+                tbxNic.Clear();
+                tbxTel.Clear();
+                cmbType.Text = null;
                 
 
             }
