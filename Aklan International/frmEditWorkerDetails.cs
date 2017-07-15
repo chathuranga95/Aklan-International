@@ -16,7 +16,7 @@ namespace Aklan_International
         string empID = "w001";
         MySqlCommand cmd;
         MySqlConnection conn;
-        MySqlDataReader reader;
+        
         public frmEditWorkerDetails()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
               
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnChangeDetails.Enabled = false;
@@ -114,7 +114,26 @@ namespace Aklan_International
         {
             
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
-            try
+            conn.Open();
+            cmd = new MySqlCommand("select * from dtlogin", conn);
+            MySqlDataReader reader;
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                
+                    tbxWorkerID.AutoCompleteCustomSource.Add(reader.GetString("empID"));
+                
+            }
+            conn.Close();
+            tbxPassword.Enabled = false;
+            tbxNIC.Enabled = false;
+            tbxLastName.Enabled = false;
+            tbxFirstName.Enabled = false;
+            tbxContactNumber.Enabled = false;
+            tbxAddress.Enabled = false;
+            tbxACNumber.Enabled = false;
+            rbFemale.Enabled = false;
+            /*try
             {
                 conn.Open();
                 cmd = new MySqlCommand("select * from worker_details where empID = '" + empID+ "'",conn);
@@ -157,9 +176,9 @@ namespace Aklan_International
                 //MessageBox.Show("error in s");
                 throw;
             }
-            
+            */
 
-            }
+        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -192,10 +211,10 @@ namespace Aklan_International
 
         private void tbxPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 13)
-            {
-                tbxConfirmPassword.Focus();
-            }
+        //    if (e.KeyChar == 13)
+        //    {
+        //        tbxConfirmPassword.Focus();
+        //    }
         }
 
         private void tbxConfirmPassword_KeyPress(object sender, KeyPressEventArgs e)
@@ -211,7 +230,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
                
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0)  ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0)) {
                 btnChangeDetails.Enabled = false;
             }
@@ -226,7 +245,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
                
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnChangeDetails.Enabled = false;
@@ -242,7 +261,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
                
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnChangeDetails.Enabled = false;
@@ -258,7 +277,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
                
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnChangeDetails.Enabled = false;
@@ -274,7 +293,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
                
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnChangeDetails.Enabled = false;
@@ -290,7 +309,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
                
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0)||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnChangeDetails.Enabled = false;
@@ -306,7 +325,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
                
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnChangeDetails.Enabled = false;
@@ -322,7 +341,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
               
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnChangeDetails.Enabled = false;
@@ -338,7 +357,7 @@ namespace Aklan_International
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
               (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
                
-              (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+              (tbxContactNumber.Text.Trim().Length == 0) ||
                 (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnChangeDetails.Enabled = false;
@@ -347,6 +366,93 @@ namespace Aklan_International
             {
                 btnChangeDetails.Enabled = true;
             }
+        }
+
+        private void tbxWorkerID_TextChanged(object sender, EventArgs e)
+        {
+            lblStatus.Text = "Not available.";
+            tbxPassword.Enabled = false;
+            tbxNIC.Enabled = false;
+            tbxLastName.Enabled = false;
+            tbxFirstName.Enabled = false;
+            tbxContactNumber.Enabled = false;
+            tbxAddress.Enabled = false;
+            tbxACNumber.Enabled = false;
+            rbFemale.Enabled = false;
+
+            
+            tbxFirstName.Text = "";
+            tbxLastName.Text = "";
+            tbxNIC.Text = "";
+            tbxPassword.Text = "";
+            tbxWorkerType.Text = "";
+            tbxACNumber.Text = "";
+            tbxAddress.Text = "";
+            rbMale.Checked = true;
+            rbMale.Checked = false;
+            tbxContactNumber.Text = "";
+            nudDate.Value = 1;
+            nudYear.Value = 1980;
+            dudMonth.Text = "";
+
+            conn.Open();
+            MySqlDataReader reader;
+            MySqlCommand cmd1 = conn.CreateCommand();
+            cmd1.CommandText = "select * from worker_details";
+            
+            reader = cmd1.ExecuteReader();
+            while (reader.Read())
+            {
+                string empID = reader.GetString("empID");
+                if (tbxWorkerID.Text.Length>0 &&(tbxWorkerID.Text == empID))
+                {
+                    
+
+                    if (reader.GetString("deleted") == "No")
+                    {
+                        
+                        tbxFirstName.Text = reader.GetString("first_name");
+                        tbxLastName.Text = reader.GetString("last_name");
+                        tbxNIC.Text = reader.GetString("nic_NO");
+                        tbxPassword.Text = reader.GetString("password");
+                        tbxWorkerType.Text = reader.GetString("worker_type");
+                        tbxACNumber.Text = reader.GetString("acc_NO");
+                        tbxAddress.Text = reader.GetString("address");
+                        string gender = reader.GetString("gender");
+                        if (gender == "Male")
+                        {
+                            rbMale.Checked = true;
+                        }
+                        else
+                        {
+                            rbMale.Checked = false;
+                        }
+                        tbxContactNumber.Text = reader.GetString("tel_NO");
+                        nudDate.Value = int.Parse(reader.GetString("dob").Substring(9));
+                        nudYear.Value = int.Parse(reader.GetString("dob").Substring(0, 4));
+                        dudMonth.Text = reader.GetString("dob").Substring(5, 3);
+
+                        tbxPassword.Enabled = true;
+                        tbxNIC.Enabled = true;
+                        tbxLastName.Enabled = true;
+                        tbxFirstName.Enabled = true;
+                        tbxContactNumber.Enabled = true;
+                        tbxAddress.Enabled = true;
+                        tbxACNumber.Enabled = true;
+                        rbFemale.Enabled = true;
+                        
+
+                    }
+                    else
+                    {
+                        lblStatus.Text = "This worker has deleted.";
+                    }
+                    break;
+                }
+            }
+
+            conn.Close();
+
         }
     }
 }
