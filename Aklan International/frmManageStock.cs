@@ -28,7 +28,7 @@ namespace Aklan_International
         {
             MaterialUpdate mtup = new MaterialUpdate(empID);
             mtup.updateMaterial("sheet", (int)spnQty.Value, empID, false);
-            MessageBox.Show("Success...");
+            MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

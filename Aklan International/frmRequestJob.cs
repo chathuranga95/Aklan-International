@@ -139,12 +139,12 @@ namespace Aklan_International
                     cmd.ExecuteNonQuery();
                     conn.Close();
                     mtup.updateMaterial(matType, (int)spnQty.Value, empID,true);
-                    MessageBox.Show("Success...");
+                    MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch
                 {
-                    //MessageBox.Show(ee.ToString());
-                    throw;
+                    MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //throw;
                 }
                
             }

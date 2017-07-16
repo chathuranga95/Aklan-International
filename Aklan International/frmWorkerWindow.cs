@@ -26,7 +26,7 @@ namespace Aklan_International
         {
             if (cmbWorkerName.Text.Trim() == "")
             {
-                MessageBox.Show("Choose your name");
+                MessageBox.Show("Choose Your Name.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -39,7 +39,7 @@ namespace Aklan_International
                     {
                         if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
                         {
-                            MessageBox.Show("success...");
+                            MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.Hide();
                             frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(), this, reader.GetString("empID"));
@@ -48,14 +48,14 @@ namespace Aklan_International
                         }
                         else
                         {
-                            MessageBox.Show("Failed...");
+                            MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
 
                 }
                 catch
                 {
-                    //MessageBox.Show(ee.ToString());
+                    MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     throw;
                 }
                 finally
@@ -110,6 +110,21 @@ namespace Aklan_International
         {
             frmChangePassword obj = new frmChangePassword(cmbWorkerName.Text.Trim());
             obj.Show();
+        }
+
+        private void frmWorkerWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "System Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlgresult == DialogResult.Yes)
+            {
+
+                (new frmModeSelect()).Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+            
         }
     }
 }

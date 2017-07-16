@@ -45,13 +45,13 @@ namespace Aklan_International
 
             if (matArr[3] > 0 || matArr[4] > 0)
             {
-                frmNewSalesRecord obj = new frmNewSalesRecord();
+                frmNewSalesRecord obj = new frmNewSalesRecord(empID);
                 obj.Show();
 
             }
             else
             {
-                MessageBox.Show("There is no any material in store.");
+                MessageBox.Show("There is no any material in store.","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
@@ -71,7 +71,8 @@ namespace Aklan_International
 
         private void btnViewNotif_Click(object sender, EventArgs e)
         {
-
+            frmNotification obj = new frmNotification();
+            obj.Show();
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
@@ -87,7 +88,8 @@ namespace Aklan_International
 
         private void btnViewOrders_Click(object sender, EventArgs e)
         {
-
+            frmOrderReport obj = new Aklan_International.frmOrderReport();
+            obj.Show();
         }
 
         private void btnManageOrder_Click(object sender, EventArgs e)
@@ -98,28 +100,32 @@ namespace Aklan_International
 
         private void btnViewStock_Click(object sender, EventArgs e)
         {
-
+            frmStockReport obj = new Aklan_International.frmStockReport();
+            obj.Show();
         }
 
         private void btnViewSales_Click(object sender, EventArgs e)
         {
-
+            frmSalesReport obj = new Aklan_International.frmSalesReport();
+            obj.Show();
         }
 
         private void btnViewWorkers_Click(object sender, EventArgs e)
         {
-
+            frmWorkerReport obj = new Aklan_International.frmWorkerReport();
+            obj.Show();
         }
 
         private void btnManageWorkers_Click(object sender, EventArgs e)
         {
-
+            frmManageWorkers obj = new Aklan_International.frmManageWorkers();
+            obj.Show();
         }
 
         private void frmAdminWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             
-            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "System Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlgresult == DialogResult.Yes)
             {
                 
