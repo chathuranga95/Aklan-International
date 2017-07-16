@@ -86,6 +86,25 @@ namespace Aklan_International
         private void frmAdminWindow_Load(object sender, EventArgs e)
         {
             btnAdmin.PerformClick();
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnViewNotif, "View incoming Notifications");
+            toolTip.SetToolTip(this.btnChangePass, "Change own Login Password");
+            toolTip.SetToolTip(this.btnCreateOrder, "Create a New Order");
+            toolTip.SetToolTip(this.btnCreateSalesOrder, "Add a Sales record");
+            toolTip.SetToolTip(this.btnManageOrder, "View Onging Orders, Set finished Orders");
+            toolTip.SetToolTip(this.btnManageStock, "Add Materials to the Stock");
+            toolTip.SetToolTip(this.btnManageWorkers, "Add, Edit, Delete the Employers");
+            toolTip.SetToolTip(this.btnOrders, "View Order Category Controllers");
+            toolTip.SetToolTip(this.btnSales, "View Sales Category Controllers");
+            toolTip.SetToolTip(this.btnSetJobRates, "Edit the Rates for Jobs");
+            toolTip.SetToolTip(this.btnSetUnitPrice, "Edit item Selling prices");
+            toolTip.SetToolTip(this.btnStock, "View Stock Category Controllers");
+            toolTip.SetToolTip(this.btnViewOrders, "View Current Orders");
+            toolTip.SetToolTip(this.btnViewSales, "View Sales Records");
+            toolTip.SetToolTip(this.btnViewWorkers, "View Employer Details");
+            toolTip.SetToolTip(this.btnWork, "View Work/Employer Category Controllers");
+            toolTip.SetToolTip(this.btnAdmin, "View Admin Category Controllers");
+            toolTip.SetToolTip(this.btnViewStock, "View current Stock status");
         }
 
         private void btnViewOrders_Click(object sender, EventArgs e)
