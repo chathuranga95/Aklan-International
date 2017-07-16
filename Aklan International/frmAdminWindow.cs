@@ -45,13 +45,13 @@ namespace Aklan_International
 
             if (matArr[3] > 0 || matArr[4] > 0)
             {
-                frmNewSalesRecord obj = new frmNewSalesRecord();
+                frmNewSalesRecord obj = new frmNewSalesRecord(empID);
                 obj.Show();
 
             }
             else
             {
-                MessageBox.Show("There is no any material in store.");
+                MessageBox.Show("There is no any material in store.","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
@@ -119,7 +119,7 @@ namespace Aklan_International
         private void frmAdminWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             
-            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "System Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlgresult == DialogResult.Yes)
             {
                 

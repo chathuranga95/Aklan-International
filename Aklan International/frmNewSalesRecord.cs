@@ -13,21 +13,32 @@ namespace Aklan_International
 {
     public partial class frmNewSalesRecord : Form
     {
+        string empID;
         bool salesmanMode;
         MySqlConnection conn;
         MySqlCommand cmd;
         MySqlDataReader reader;
-        public frmNewSalesRecord()
+
+        int singleQty;
+        int dozenQty;
+
+        public frmNewSalesRecord(string empID)
         {
             InitializeComponent();
+            this.empID = empID;
             btnAdd.Enabled = false;
+            singleQty = 0;
+            dozenQty = 0;
         }
-        public frmNewSalesRecord(string salesmanName)
+        public frmNewSalesRecord(string salesmanName,string empID)
         {
             InitializeComponent();
             btnAdd.Enabled = false;
             this.Text = "New Sales Record : Salesman Mode - " + salesmanName;
             salesmanMode = true;
+            this.empID = empID;
+            singleQty = 0;
+            dozenQty = 0;
         }
         public void btnAddState()
         {
@@ -72,9 +83,18 @@ namespace Aklan_International
         {
             decimal amount = Convert.ToDecimal(tbxUprice.Text) * Convert.ToDecimal(tbxQty.Text);
             grd.Rows.Add(cmbType.Text, tbxQty.Text, tbxUprice.Text, amount);
+            if (cmbType.Text == "Single")
+            {
+                singleQty += int.Parse(tbxQty.Text.Trim());
+            }
+            else if (cmbType.Text == "12 sheets")
+            {
+                dozenQty += int.Parse(tbxQty.Text.Trim());
+            }
             cmbType.Text = null;
             tbxQty.Clear();
             tbxUprice.Clear();
+
         }
 
         private void tbxCustName_TextChanged(object sender, EventArgs e)
@@ -108,41 +128,67 @@ namespace Aklan_International
             {
                 grd.Rows.RemoveAt(this.grd.SelectedRows[0].Index);
             }
+            singleQty = 0;
+            dozenQty = 0;
         }
 
         private void frmNewSalesRecord_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection("server = localhost; user id = root; database = dbcore; pwd = 1234; allowuservariables = True");
         }
-
+        string matType = "default value";
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //conn = new MySqlConnection("server = localhost; user id = root; database = dbcore; pwd = 1234; allowuservariables = True");
-            int rows = grd.Rows.Count;
-            for (int x = 0; x < rows - 1; ++x)
+            MaterialUpdate mtup = new MaterialUpdate(empID);
+            int[] mtArr = mtup.retrieveMaterial();
+            
+            if (mtArr[3] >= dozenQty && mtArr[4] > singleQty)
             {
-                conn.Open();
-                string StrQuery;
-                StrQuery = "insert into dtsales values('" + tbxCustName.Text.Trim() + "', '" + tbxNic.Text.Trim() + "', '" + tbxTel.Text.Trim() + "', '" + grd.Rows[x].Cells[0].Value.ToString() + "', '" + grd.Rows[x].Cells[1].Value.ToString() + "', '" + grd.Rows[x].Cells[2].Value.ToString() + "', '" + grd.Rows[x].Cells[3].Value.ToString() + "')";
-                cmd = new MySqlCommand(StrQuery, conn);
-
-                if (cmd.ExecuteNonQuery() >= 0)
-                {
-                    MessageBox.Show("Sucess","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("Failed");
-                }
-                conn.Close();
-                grd.Rows.Clear();
-                tbxCustName.Clear();
-                tbxNic.Clear();
-                tbxTel.Clear();
-                cmbType.Text = null;
+                //conn = new MySqlConnection("server = localhost; user id = root; database = dbcore; pwd = 1234; allowuservariables = True");
+                int rows = grd.Rows.Count;
+                bool succ = true; ;
                 
-
+                for (int x = 0; x < rows - 1; x++)
+                {
+                    
+                    if(grd.Rows[x].Cells[0].Value.ToString().Trim() == "Single")
+                    {
+                        matType = "folded single";
+                    }
+                    else if (grd.Rows[x].Cells[0].Value.ToString().Trim() == "12 sheets")
+                    {
+                        matType = "folded 12";
+                    }
+                    
+                    mtup.updateMaterial(matType, int.Parse(grd.Rows[x].Cells[1].Value.ToString()),empID,true);
+                    
+                    conn.Open();
+                    string StrQuery;
+                    StrQuery = "insert into dtsales values('" + tbxCustName.Text.Trim() + "', '" + tbxNic.Text.Trim() + "', '" + tbxTel.Text.Trim() + "', '" + grd.Rows[x].Cells[0].Value.ToString() + "', '" + grd.Rows[x].Cells[1].Value.ToString() + "', '" + grd.Rows[x].Cells[2].Value.ToString() + "', '" + grd.Rows[x].Cells[3].Value.ToString() + "')";
+                    cmd = new MySqlCommand(StrQuery, conn);
+                    if (cmd.ExecuteNonQuery() < 0)
+                    {
+                        succ = false;
+                    }
+                    
+                    conn.Close();
+                    
+                    tbxCustName.Clear();
+                    tbxNic.Clear();
+                    tbxTel.Clear();
+                    cmbType.Text = null;
+                    singleQty = 0;
+                    dozenQty = 0;
+                }
+                grd.Rows.Clear();
+                if(succ)
+                    MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else
+            {
+                MessageBox.Show("Sorry. Not Enough Items in the Stock", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
 
 
         }
@@ -150,7 +196,7 @@ namespace Aklan_International
         {
             if (salesmanMode)
             {
-                DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "System Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dlgresult == DialogResult.Yes)
                 {
 
@@ -170,6 +216,7 @@ namespace Aklan_International
 
     private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             Decimal unitprice;
             MySqlCommand cmd2;
             conn.Open();
