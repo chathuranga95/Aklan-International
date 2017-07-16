@@ -73,6 +73,8 @@ namespace Aklan_International
         private void frmManageOrders_Load(object sender, EventArgs e)
         {
             refreshOrders();
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnMarkOrders, "Set Selected order as a completed order");
         }
     }
 }

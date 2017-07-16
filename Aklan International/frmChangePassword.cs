@@ -89,6 +89,9 @@ namespace Aklan_International
         private void frmChangePassword_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnChange, "Change the password");
+            toolTip.SetToolTip(this.btnCancel, "Cancel the operation and close the window");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

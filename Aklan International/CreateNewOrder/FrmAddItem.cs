@@ -103,5 +103,13 @@ namespace Aklan_International.CreateNewOrder
             this.Close();
 
         }
+
+        private void FrmAddItem_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnAdd, "Add Item to the Order");
+            toolTip.SetToolTip(this.btnCancel, "Clear components");
+            toolTip.SetToolTip(this.btnClose, "Close this Form");
+        }
     }
 }

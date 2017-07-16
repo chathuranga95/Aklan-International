@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.grdNotify = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnClrAll = new System.Windows.Forms.Button();
             this.Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notification = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnClrAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdNotify)).BeginInit();
             this.SuspendLayout();
             // 
             // grdNotify
             // 
+            this.grdNotify.AllowUserToAddRows = false;
+            this.grdNotify.AllowUserToDeleteRows = false;
             this.grdNotify.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdNotify.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Time,
@@ -46,29 +48,10 @@
             this.Column1});
             this.grdNotify.Location = new System.Drawing.Point(12, 17);
             this.grdNotify.Name = "grdNotify";
+            this.grdNotify.ReadOnly = true;
             this.grdNotify.Size = new System.Drawing.Size(449, 134);
             this.grdNotify.TabIndex = 0;
             this.grdNotify.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdNotify_CellContentClick);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(12, 190);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 1;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnClrAll
-            // 
-            this.btnClrAll.Location = new System.Drawing.Point(386, 190);
-            this.btnClrAll.Name = "btnClrAll";
-            this.btnClrAll.Size = new System.Drawing.Size(75, 23);
-            this.btnClrAll.TabIndex = 2;
-            this.btnClrAll.Text = "Clear All";
-            this.btnClrAll.UseVisualStyleBackColor = true;
-            this.btnClrAll.Click += new System.EventHandler(this.btnClrAll_Click);
             // 
             // Time
             // 
@@ -96,6 +79,27 @@
             this.Column1.Image = global::Aklan_International.Properties.Resources.delete_garbage;
             this.Column1.MinimumWidth = 30;
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(12, 190);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 1;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnClrAll
+            // 
+            this.btnClrAll.Location = new System.Drawing.Point(386, 190);
+            this.btnClrAll.Name = "btnClrAll";
+            this.btnClrAll.Size = new System.Drawing.Size(75, 23);
+            this.btnClrAll.TabIndex = 2;
+            this.btnClrAll.Text = "Clear All";
+            this.btnClrAll.UseVisualStyleBackColor = true;
+            this.btnClrAll.Click += new System.EventHandler(this.btnClrAll_Click);
             // 
             // frmNotification
             // 

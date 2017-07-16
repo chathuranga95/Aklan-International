@@ -55,14 +55,14 @@
             // spnYear
             // 
             this.spnYear.CausesValidation = false;
-            this.spnYear.Location = new System.Drawing.Point(96, 23);
+            this.spnYear.Location = new System.Drawing.Point(129, 22);
             this.spnYear.Maximum = new decimal(new int[] {
             5000,
             0,
             0,
             0});
             this.spnYear.Name = "spnYear";
-            this.spnYear.Size = new System.Drawing.Size(120, 20);
+            this.spnYear.Size = new System.Drawing.Size(53, 20);
             this.spnYear.TabIndex = 2;
             this.spnYear.Value = new decimal(new int[] {
             2017,
@@ -73,7 +73,7 @@
             // spnMonth
             // 
             this.spnMonth.CausesValidation = false;
-            this.spnMonth.Location = new System.Drawing.Point(249, 25);
+            this.spnMonth.Location = new System.Drawing.Point(198, 22);
             this.spnMonth.Maximum = new decimal(new int[] {
             12,
             0,
@@ -85,7 +85,7 @@
             0,
             0});
             this.spnMonth.Name = "spnMonth";
-            this.spnMonth.Size = new System.Drawing.Size(120, 20);
+            this.spnMonth.Size = new System.Drawing.Size(62, 20);
             this.spnMonth.TabIndex = 3;
             this.spnMonth.Value = new decimal(new int[] {
             2,
@@ -95,6 +95,8 @@
             // 
             // grdSalary
             // 
+            this.grdSalary.AllowUserToAddRows = false;
+            this.grdSalary.AllowUserToDeleteRows = false;
             this.grdSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdSalary.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.empID,
@@ -104,11 +106,12 @@
             this.salary});
             this.grdSalary.Location = new System.Drawing.Point(25, 83);
             this.grdSalary.Name = "grdSalary";
-            this.grdSalary.Size = new System.Drawing.Size(563, 250);
+            this.grdSalary.Size = new System.Drawing.Size(586, 250);
             this.grdSalary.TabIndex = 4;
             // 
             // empID
             // 
+            this.empID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.empID.HeaderText = "Worker ID";
             this.empID.Name = "empID";
             // 
@@ -169,11 +172,11 @@
         private System.Windows.Forms.NumericUpDown spnYear;
         private System.Windows.Forms.NumericUpDown spnMonth;
         private System.Windows.Forms.DataGridView grdSalary;
+        private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn empID;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn accNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn telNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn salary;
-        private System.Windows.Forms.Button btnRefresh;
     }
 }
