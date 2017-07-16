@@ -64,7 +64,7 @@ namespace Aklan_International
             {
                 mtup.updateMaterial("folded single", selectedOrder.getSingleQty(), empID, true);
                 mtup.updateMaterial("folded 12", selectedOrder.getDozenQty(), empID, true);
-                MessageBox.Show("success...");
+                MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             conn.Close();
             refreshOrders();

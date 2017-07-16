@@ -25,7 +25,7 @@ namespace Aklan_International
             MySqlCommand cmd;
             MySqlDataReader reader;
                
-            cmd = new MySqlCommand("select * from worker_details", conn);
+            cmd = new MySqlCommand("select * from dtLogin", conn);
 
             reader = cmd.ExecuteReader();
 
@@ -54,7 +54,7 @@ namespace Aklan_International
             MySqlCommand cmd;
             MySqlDataReader reader;
 
-            cmd = new MySqlCommand("select * from worker_details", conn);
+            cmd = new MySqlCommand("select * from dtLogin", conn);
 
             reader = cmd.ExecuteReader();
 
@@ -114,22 +114,30 @@ namespace Aklan_International
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("Are you sure?", "Cancel", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
 
         }
 
         private void deleteWorker(string empID)
         {
-            DialogResult dr = MessageBox.Show("Delete Worker", "Are you sure?", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Are you sure?","Delete Worker", MessageBoxButtons.YesNo);
             if (dr == DialogResult.Yes) {
 
                 conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
                 conn.Open();
                 MySqlCommand cmd;
+                MySqlCommand cmd1;
                 cmd = new MySqlCommand("UPDATE worker_details SET deleted = @Yes WHERE empID ='"+empID+"'",conn);
+                cmd1 = new MySqlCommand("delete from dtlogin where empID ='" + empID + "' ",conn);
+                cmd1.ExecuteNonQuery();
                 cmd.Parameters.AddWithValue("@Yes", "Yes");
                 cmd.ExecuteNonQuery();
                 conn.Close();
+                MessageBox.Show("Worker deleted successfully.","Success");
                 this.Close();
 
             }

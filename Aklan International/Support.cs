@@ -52,8 +52,20 @@ namespace Aklan_International
             decimal value = decimal.Parse(str) * 100;
             return value == Math.Floor(value);
         }
-            
+        public static bool isValidNIC(String NIC)
+        {
+            if (NIC.Length == 9 && Support.isNumeric(NIC))
+                return true;
+            else if (NIC.Length == 10 && Support.isNumeric(NIC.Substring(0, 9)))
+            {
+                if (NIC.Substring(9, 1) == "v" || NIC.Substring(9, 1) == "V" || NIC.Substring(9, 1) == "x" || NIC.Substring(9, 1) == "X")
+                    return true;
+                else return false;
+            }
+            else return false;
+        }
     }
 
-    
 }
+
+    

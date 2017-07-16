@@ -44,16 +44,16 @@ namespace Aklan_International
                     conn.Open();
                     if (cmd.ExecuteNonQuery() >= 0)
                     {
-                        MessageBox.Show("Success...");
+                        MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
-                        MessageBox.Show("failed..");
+                        MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Failed...");
+                    MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 finally
                 {

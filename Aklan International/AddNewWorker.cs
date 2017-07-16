@@ -18,7 +18,18 @@ namespace Aklan_International
         string empid = "";
 
         
-        private int retrieveIndex()
+        private Boolean isValidTelNO(string telNO)
+        {
+            if(telNO.Trim().Length== 13) {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+        private int retrieveIndex(string workerType)
         {
             conn.Open();
             MySqlCommand cmd;
@@ -31,8 +42,22 @@ namespace Aklan_International
 
             while (reader.Read())
             {
-                // index = int.Parse(reader.GetString("empID").Substring(1,3));
-                index++;
+                if (workerType == "Admin" && reader.GetString("empID").Substring(0, 1) == "a") {
+                    index++;
+                }
+                else if (workerType == "Salesman" && reader.GetString("empID").Substring(0, 2) == "sm")
+                {
+                    index++;
+                }
+                else if(workerType == "Supervisor" && reader.GetString("empID").Substring(0, 1) == "s"&& reader.GetString("empID").Substring(0, 2) != "sm")
+                {
+                    index++;
+                }
+                else if (workerType == "Worker" && reader.GetString("empID").Substring(0, 1) == "w")
+                {
+                    index++;
+                }
+
             }
             conn.Close();
             index++; //increament index
@@ -54,20 +79,8 @@ namespace Aklan_International
             lblPasswordMaching.Text = "";
             btnAddWorker.Enabled = false;
             rbMale.Checked = true;
-            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
-            int index = retrieveIndex();
-            if (index < 10)
-            {
-                empid = "W00" + index.ToString();
-            }
-            else if(index <100){
-                empid = "W0" + index.ToString();
-            }
-            else
-            {
-                empid = "W" + index.ToString();
-            }
-            lblworkerID.Text = empid;
+            tbxWorkerID.Text = "";
+            
 
         }
 
@@ -78,69 +91,80 @@ namespace Aklan_International
 
         private void btnAddWorker_Click(object sender, EventArgs e)
         {
-            
-            
-            
+            string firstName = tbxFirstName.Text;
+            string lastName = tbxLastName.Text;
+            string workerType = cmbWorkerType.Text;
+            string password = tbxPassword.Text;
+            string address = tbxAddress.Text;
+            string telNO = tbxContactNumber.Text;
+
+
+            string accNO = tbxACNumber.Text;
+            string nicNO = tbxNIC.Text;
+            string gender;
+            string deleted = "No";
+            if (Support.isValidNIC(nicNO)&&isValidTelNO(telNO))
             {
-                string firstName = tbxFirstName.Text;
-                string lastName = tbxLastName.Text;
-                string userName = tbxUserName.Text;
-                string password = tbxPassword.Text;
-                string address = tbxAddress.Text;
-                int telNO = 0;
-                try
-                {
-                    telNO = int.Parse(tbxContactNumber.Text);
-                }
-                catch
                 {
 
-                }
-                               
-                string accNO = tbxACNumber.Text;
-                string nicNO = tbxNIC.Text;
-                string gender;
-                string deleted = "No";
-                if (rbMale.Checked)
-                {
-                    gender = "Male";
-                }
-                else
-                {
-                    gender = "Female";
-                }
-                string dob = nudYear.Value.ToString() + "-" + dudMonth.Text + "-" + nudDate.Value.ToString();
-                try { 
-                conn.Open();
-                    
-                    MySqlCommand comm = conn.CreateCommand();
-                    //comm.CommandText = "INSERT INTO worker_details(first_name,last_name,user_name,password,address,nic_NO,gender,acc_NO) VALUES(@first_name,@last_name,@user_name,@password,@address,,@nic_NO,@gender,@acc_NO)";
-                    comm.CommandText = "INSERT INTO worker_details(empID,first_name,last_name,user_name,password,address,acc_NO,nic_NO,gender,tel_NO,dob,deleted) VALUES (@empID,@first_name,@last_name,@user_name,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob,@deleted)";
-                    comm.Parameters.AddWithValue("@empID", empid);
-                    comm.Parameters.AddWithValue("@first_name", firstName);
-                    comm.Parameters.AddWithValue("@last_name",lastName);
-                    comm.Parameters.AddWithValue("@user_name", userName );
-                    comm.Parameters.AddWithValue("@password", password);
-                    comm.Parameters.AddWithValue("@address", address);
-                    comm.Parameters.AddWithValue("@tel_NO", telNO);
-                    comm.Parameters.AddWithValue("@acc_NO",accNO );
-                    comm.Parameters.AddWithValue("@nic_NO", nicNO );
-                    comm.Parameters.AddWithValue("@gender", gender );
-                    comm.Parameters.AddWithValue("@dob", dob );
-                    comm.Parameters.AddWithValue("@deleted", deleted);
-                    comm.ExecuteNonQuery();
-                    conn.Close();
+                    if (rbMale.Checked)
+                    {
+                        gender = "Male";
+                    }
+                    else
+                    {
+                        gender = "Female";
+                    }
+                    string dob = nudYear.Value.ToString() + "-" + dudMonth.Text + "-" + nudDate.Value.ToString();
+                    try
+                    {
+                        conn.Open();
 
-                    MessageBox.Show("New worker added successfully.", "Success");
-                    this.Close();
-                }
-                catch
-                {
-                    MessageBox.Show("Error in adding mysql row. Error: " );
+                        MySqlCommand comm = conn.CreateCommand();
+                        MySqlCommand cmd = new MySqlCommand("insert into dtlogin(empID,psw,empName) values (@empID,@psw,@empName)", conn);
+                        comm.CommandText = "INSERT INTO worker_details(empID,first_name,last_name,worker_type,password,address,acc_NO,nic_NO,gender,tel_NO,dob,deleted) VALUES (@empID,@first_name,@last_name,@worker_type,@password,@address,@acc_NO,@nic_NO,@gender,@tel_NO,@dob,@deleted)";
 
+                        cmd.Parameters.AddWithValue("@empID", empid);
+                        cmd.Parameters.AddWithValue("@psw", password);
+                        cmd.Parameters.AddWithValue("@empName", firstName + " " + lastName);
+                        cmd.ExecuteNonQuery();
+                        comm.Parameters.AddWithValue("@empID", empid);
+                        comm.Parameters.AddWithValue("@first_name", firstName);
+                        comm.Parameters.AddWithValue("@last_name", lastName);
+                        comm.Parameters.AddWithValue("@worker_type", workerType);
+                        comm.Parameters.AddWithValue("@password", password);
+                        comm.Parameters.AddWithValue("@address", address);
+                        comm.Parameters.AddWithValue("@tel_NO", telNO);
+                        comm.Parameters.AddWithValue("@acc_NO", accNO);
+                        comm.Parameters.AddWithValue("@nic_NO", nicNO);
+                        comm.Parameters.AddWithValue("@gender", gender);
+                        comm.Parameters.AddWithValue("@dob", dob);
+                        comm.Parameters.AddWithValue("@deleted", deleted);
+                        comm.ExecuteNonQuery();
+                        conn.Close();
+
+                        MessageBox.Show("New worker added successfully.", "Success");
+                        this.Close();
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Error in adding mysql row. Error: ");
+
+                    }
                 }
+                
             }
-           
+            else if(!Support.isValidNIC(nicNO))
+            {
+                MessageBox.Show("NIC Number is not valid.", "Error");
+            }
+            else
+            {
+                MessageBox.Show("Contact Number is not valid.", "Error");
+            }
+
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -162,7 +186,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length <2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -184,7 +208,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -206,7 +230,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -228,7 +252,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -249,8 +273,7 @@ namespace Aklan_International
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) || (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -272,7 +295,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -294,7 +317,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -316,7 +339,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+               (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -338,7 +361,7 @@ namespace Aklan_International
             }
             else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
                 (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (tbxUserName.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
                 (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
                 (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
             {
@@ -353,7 +376,65 @@ namespace Aklan_International
 
         private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("Are you sure?", "Cancel", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void cmbWorkerType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "*Passwords do not match.";
+            }
+            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
+                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
+                (cmbWorkerType.Text.Length < 2) ||
+                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
+                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            {
+                btnAddWorker.Enabled = false;
+                lblPasswordMaching.Text = "";
+            }
+            else
+            {
+                btnAddWorker.Enabled = true;
+            }
+
+            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+            int index = retrieveIndex(cmbWorkerType.Text);
+
+            string type = "";
+
+            if (cmbWorkerType.Text == "Salesman")
+            {
+                type = "sm";
+            }
+            else {
+                type = cmbWorkerType.Text.Substring(0,1).ToLower();
+            }
+
+            if (index < 10)
+            {
+                empid = type+"00" + index.ToString();
+            }
+            else if (index < 100)
+            {
+                empid = type+"0" + index.ToString();
+            }
+            else
+            {
+                empid = type + index.ToString();
+            }
+            tbxWorkerID.Text = empid;
+        }
+
+        private void tbxWorkerID_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
