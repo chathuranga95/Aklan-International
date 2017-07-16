@@ -49,6 +49,10 @@ namespace Aklan_International
                 obj.Show();
 
             }
+            else
+            {
+                MessageBox.Show("There is no any material in store.");
+            }
         }
 
         private void btnManageStock_Click(object sender, EventArgs e)
