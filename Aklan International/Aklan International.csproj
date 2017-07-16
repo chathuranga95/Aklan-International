@@ -84,6 +84,12 @@
     <Compile Include="frmOrderReport.Designer.cs">
       <DependentUpon>frmOrderReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmWorkerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkerReport.Designer.cs">
+      <DependentUpon>frmWorkerReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Support.cs" />
     <Compile Include="CreateNewOrder\FrmAddItem.cs">
       <SubType>Form</SubType>
@@ -248,6 +254,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSupervisorWindow.resx">
       <DependentUpon>frmSupervisorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkerReport.resx">
+      <DependentUpon>frmWorkerReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkerWindow.resx">
       <DependentUpon>frmWorkerWindow.cs</DependentUpon>
