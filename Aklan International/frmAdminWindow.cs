@@ -130,5 +130,57 @@ namespace Aklan_International
                 e.Cancel = true;
             }
         }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            gbAdmin.Enabled = true;
+
+            gbOrders.Enabled = false;
+            gbStock.Enabled = false;
+            gbWork.Enabled = false;
+            gbSales.Enabled = false;
+
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            gbOrders.Enabled = true;
+
+            gbAdmin.Enabled = false;
+            gbStock.Enabled = false;
+            gbWork.Enabled = false;
+            gbSales.Enabled = false;
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            gbStock.Enabled = true;
+
+            gbAdmin.Enabled = false;
+            gbOrders.Enabled = false;
+            gbWork.Enabled = false;
+            gbSales.Enabled = false;
+        }
+
+        private void btnWork_Click(object sender, EventArgs e)
+        {
+            gbWork.Enabled = true;
+
+            gbAdmin.Enabled = false;
+            gbOrders.Enabled = false;
+            gbStock.Enabled = false;
+            gbSales.Enabled = false;
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            gbSales.Enabled = true;
+
+            gbAdmin.Enabled = false;
+            gbOrders.Enabled = false;
+            gbStock.Enabled = false;
+            gbWork.Enabled = false;
+
+        }
     }
 }
