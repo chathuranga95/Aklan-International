@@ -21,8 +21,19 @@ namespace Aklan_International
         {
             InitializeComponent();
         }
-        
 
+        private Boolean isValidTelNO(string telNO)
+        {
+            if (telNO.Trim().Length == 13)
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void tbxAddress_TextChanged(object sender, EventArgs e)
         {
             if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
@@ -60,45 +71,56 @@ namespace Aklan_International
             }
             
             string dob = nudYear.Value.ToString() + "-" + dudMonth.Text + "-" + nudDate.Value.ToString();
-            try
+            if (Support.isValidNIC(nicNO)&&isValidTelNO(telNO))
             {
-                conn.Open();
+                try
+                {
+                    conn.Open();
 
-                MySqlCommand comm = conn.CreateCommand();
-                MySqlCommand cmd = conn.CreateCommand();
-                cmd.CommandText = "update dtlogin set psw = @psw, empName = @empName where empID ='" + empID + "'";
-                comm.CommandText = "UPDATE worker_details SET first_name = @first_name,last_name=@last_name,password=@password,address=@address,acc_NO=@acc_NO,nic_NO=@nic_NO,gender=@gender,tel_NO=@tel_NO,dob=@dob WHERE empID = '" + empID + "' ";
-                
-                cmd.Parameters.AddWithValue("@psw", password);
-                cmd.Parameters.AddWithValue("@empName", firstName +" "+lastName);
-                comm.Parameters.AddWithValue("@first_name", firstName);
-                comm.Parameters.AddWithValue("@last_name", lastName);
-                
-                comm.Parameters.AddWithValue("@password", password);
-                comm.Parameters.AddWithValue("@address", address);
-                comm.Parameters.AddWithValue("@tel_NO", telNO);
-                comm.Parameters.AddWithValue("@acc_NO", accNO);
-                comm.Parameters.AddWithValue("@nic_NO", nicNO);
-                comm.Parameters.AddWithValue("@gender", gender);
-                comm.Parameters.AddWithValue("@dob", dob);
-                cmd.ExecuteNonQuery();
-                comm.ExecuteNonQuery();
-                conn.Close();
+                    MySqlCommand comm = conn.CreateCommand();
+                    MySqlCommand cmd = conn.CreateCommand();
+                    cmd.CommandText = "update dtlogin set psw = @psw, empName = @empName where empID ='" + empID + "'";
+                    comm.CommandText = "UPDATE worker_details SET first_name = @first_name,last_name=@last_name,password=@password,address=@address,acc_NO=@acc_NO,nic_NO=@nic_NO,gender=@gender,tel_NO=@tel_NO,dob=@dob WHERE empID = '" + empID + "' ";
 
-                MessageBox.Show("Worker details changed successfully.", "Success");
-                this.Close();
+                    cmd.Parameters.AddWithValue("@psw", password);
+                    cmd.Parameters.AddWithValue("@empName", firstName + " " + lastName);
+                    comm.Parameters.AddWithValue("@first_name", firstName);
+                    comm.Parameters.AddWithValue("@last_name", lastName);
+
+                    comm.Parameters.AddWithValue("@password", password);
+                    comm.Parameters.AddWithValue("@address", address);
+                    comm.Parameters.AddWithValue("@tel_NO", telNO);
+                    comm.Parameters.AddWithValue("@acc_NO", accNO);
+                    comm.Parameters.AddWithValue("@nic_NO", nicNO);
+                    comm.Parameters.AddWithValue("@gender", gender);
+                    comm.Parameters.AddWithValue("@dob", dob);
+                    cmd.ExecuteNonQuery();
+                    comm.ExecuteNonQuery();
+                    conn.Close();
+
+                    MessageBox.Show("Worker details changed successfully.", "Success");
+                    this.Close();
+                }
+                catch
+                {
+                    //MessageBox.Show("Error in adding mysql row. Error: ");
+                    throw;
+
+                }
             }
-            catch
+            else if(!Support.isValidNIC(nicNO))
             {
-                //MessageBox.Show("Error in adding mysql row. Error: ");
-                throw;
-
+                MessageBox.Show("NIC Number is not valid.","Error");
+            }
+            else
+            {
+                MessageBox.Show("Contact Number is not valid.", "Error");
             }
         }
 
         private void frmEditWorkerDetails_Load(object sender, EventArgs e)
         {
-            
+            lblStatus.Text = "";
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             conn.Open();
             cmd = new MySqlCommand("select * from dtlogin", conn);
@@ -119,6 +141,10 @@ namespace Aklan_International
             tbxAddress.Enabled = false;
             tbxACNumber.Enabled = false;
             rbFemale.Enabled = false;
+            rbMale.Enabled = false;
+            nudDate.Enabled = false;
+            nudYear.Enabled = false;
+            dudMonth.Enabled = false;
             /*try
             {
                 conn.Open();
@@ -168,7 +194,12 @@ namespace Aklan_International
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dr = MessageBox.Show("Are you sure?","Cancel", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+            }
+                
         }
 
         private void tbxFirstName_KeyPress(object sender, KeyPressEventArgs e)
@@ -365,8 +396,12 @@ namespace Aklan_International
             tbxAddress.Enabled = false;
             tbxACNumber.Enabled = false;
             rbFemale.Enabled = false;
+            rbMale.Enabled = false;
+            nudDate.Enabled = false;
+            nudYear.Enabled = false;
+            dudMonth.Enabled = false;
 
-            
+
             tbxFirstName.Text = "";
             tbxLastName.Text = "";
             tbxNIC.Text = "";
@@ -426,7 +461,11 @@ namespace Aklan_International
                         tbxAddress.Enabled = true;
                         tbxACNumber.Enabled = true;
                         rbFemale.Enabled = true;
-                        
+                        rbMale.Enabled = true;
+                        nudDate.Enabled = true;
+                        nudYear.Enabled = true;
+                        dudMonth.Enabled = true;
+
 
                     }
                     else
@@ -438,6 +477,11 @@ namespace Aklan_International
             }
 
             conn.Close();
+
+        }
+
+        private void tbxWorkerType_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
