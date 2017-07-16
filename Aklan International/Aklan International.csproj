@@ -48,13 +48,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Client.Education, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,31 +76,6 @@
     <Compile Include="AddNewWorker.Designer.cs">
       <DependentUpon>AddNewWorker.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmManageOrders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmManageOrders.Designer.cs">
-      <DependentUpon>frmManageOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmOrderReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmOrderReport.Designer.cs">
-      <DependentUpon>frmOrderReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmStockReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmStockReport.Designer.cs">
-      <DependentUpon>frmStockReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmWorkerReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmWorkerReport.Designer.cs">
-      <DependentUpon>frmWorkerReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Support.cs" />
     <Compile Include="CreateNewOrder\FrmAddItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,18 +99,6 @@
     </Compile>
     <Compile Include="frmChangePassword.Designer.cs">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDeleteWorker.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDeleteWorker.Designer.cs">
-      <DependentUpon>frmDeleteWorker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEditWorkerDetails.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEditWorkerDetails.Designer.cs">
-      <DependentUpon>frmEditWorkerDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -157,17 +124,17 @@
     <Compile Include="frmNewSalesRecord.Designer.cs">
       <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNotification.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmNotification.Designer.cs">
-      <DependentUpon>frmNotification.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmRequestJob.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRequestJob.Designer.cs">
       <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesReport.Designer.cs">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSetJobRates.cs">
       <SubType>Form</SubType>
@@ -196,14 +163,8 @@
     <Compile Include="Job.cs" />
     <Compile Include="MaterialUpdate.cs" />
     <Compile Include="Order.cs" />
-    <Compile Include="OverManAlert.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="SalaryCalc.cs" />
     <Compile Include="SalesOrder.cs" />
     <Compile Include="Worker.cs" />
@@ -222,17 +183,8 @@
     <EmbeddedResource Include="frmChangePassword.resx">
       <DependentUpon>frmChangePassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDeleteWorker.resx">
-      <DependentUpon>frmDeleteWorker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEditWorkerDetails.resx">
-      <DependentUpon>frmEditWorkerDetails.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmManageOrders.resx">
-      <DependentUpon>frmManageOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManageStock.resx">
       <DependentUpon>frmManageStock.cs</DependentUpon>
@@ -243,14 +195,11 @@
     <EmbeddedResource Include="frmNewSalesRecord.resx">
       <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNotification.resx">
-      <DependentUpon>frmNotification.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmOrderReport.resx">
-      <DependentUpon>frmOrderReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmRequestJob.resx">
       <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesReport.resx">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSetJobRates.resx">
       <DependentUpon>frmSetJobRates.cs</DependentUpon>
@@ -258,23 +207,21 @@
     <EmbeddedResource Include="FrmSetUnitPrice.resx">
       <DependentUpon>FrmSetUnitPrice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStockReport.resx">
-      <DependentUpon>frmStockReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmSupervisorWindow.resx">
       <DependentUpon>frmSupervisorWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmWorkerReport.resx">
-      <DependentUpon>frmWorkerReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkerWindow.resx">
       <DependentUpon>frmWorkerWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -302,7 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database script\dbfile.sql" />
-    <None Include="Resources\delete_garbage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
