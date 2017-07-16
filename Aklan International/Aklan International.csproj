@@ -91,6 +91,12 @@
     <Compile Include="frmOrderReport.Designer.cs">
       <DependentUpon>frmOrderReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSalaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalaryView.Designer.cs">
+      <DependentUpon>frmSalaryView.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSalesReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRequestJob.resx">
       <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalaryView.resx">
+      <DependentUpon>frmSalaryView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSalesReport.resx">
       <DependentUpon>frmSalesReport.cs</DependentUpon>
