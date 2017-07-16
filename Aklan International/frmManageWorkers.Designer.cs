@@ -37,7 +37,7 @@
             // 
             this.btnNewWorker.Location = new System.Drawing.Point(30, 12);
             this.btnNewWorker.Name = "btnNewWorker";
-            this.btnNewWorker.Size = new System.Drawing.Size(183, 63);
+            this.btnNewWorker.Size = new System.Drawing.Size(246, 101);
             this.btnNewWorker.TabIndex = 0;
             this.btnNewWorker.Text = "New Worker";
             this.btnNewWorker.UseVisualStyleBackColor = true;
@@ -45,9 +45,9 @@
             // 
             // btnDeleteWorker
             // 
-            this.btnDeleteWorker.Location = new System.Drawing.Point(30, 159);
+            this.btnDeleteWorker.Location = new System.Drawing.Point(30, 233);
             this.btnDeleteWorker.Name = "btnDeleteWorker";
-            this.btnDeleteWorker.Size = new System.Drawing.Size(183, 63);
+            this.btnDeleteWorker.Size = new System.Drawing.Size(246, 101);
             this.btnDeleteWorker.TabIndex = 1;
             this.btnDeleteWorker.Text = "Delete Worker";
             this.btnDeleteWorker.UseVisualStyleBackColor = true;
@@ -55,9 +55,9 @@
             // 
             // btnEditWorker
             // 
-            this.btnEditWorker.Location = new System.Drawing.Point(30, 85);
+            this.btnEditWorker.Location = new System.Drawing.Point(30, 123);
             this.btnEditWorker.Name = "btnEditWorker";
-            this.btnEditWorker.Size = new System.Drawing.Size(183, 63);
+            this.btnEditWorker.Size = new System.Drawing.Size(246, 101);
             this.btnEditWorker.TabIndex = 2;
             this.btnEditWorker.Text = "Edit Woker";
             this.btnEditWorker.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 231);
+            this.ClientSize = new System.Drawing.Size(309, 345);
             this.Controls.Add(this.btnEditWorker);
             this.Controls.Add(this.btnDeleteWorker);
             this.Controls.Add(this.btnNewWorker);
