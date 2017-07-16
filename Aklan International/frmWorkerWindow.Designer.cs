@@ -59,15 +59,16 @@
             // 
             this.txtPassword.Location = new System.Drawing.Point(212, 86);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
-            this.txtPassword.TabIndex = 7;
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(121, 20);
+            this.txtPassword.TabIndex = 1;
             // 
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(238, 147);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 9;
+            this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -77,7 +78,7 @@
             this.btnLogin.Location = new System.Drawing.Point(366, 147);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 8;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -89,7 +90,7 @@
             this.cmbWorkerName.Location = new System.Drawing.Point(212, 41);
             this.cmbWorkerName.Name = "cmbWorkerName";
             this.cmbWorkerName.Size = new System.Drawing.Size(121, 21);
-            this.cmbWorkerName.TabIndex = 12;
+            this.cmbWorkerName.TabIndex = 0;
             this.cmbWorkerName.SelectedIndexChanged += new System.EventHandler(this.cmbWorkerName_SelectedIndexChanged);
             // 
             // btnChangePass
@@ -99,6 +100,7 @@
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.Size = new System.Drawing.Size(115, 23);
             this.btnChangePass.TabIndex = 13;
+            this.btnChangePass.TabStop = false;
             this.btnChangePass.Text = "Change Password";
             this.btnChangePass.UseVisualStyleBackColor = true;
             this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
@@ -117,6 +119,7 @@
             this.Controls.Add(this.btnLogin);
             this.Name = "frmWorkerWindow";
             this.Text = "Worker Window";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmWorkerWindow_FormClosing);
             this.Load += new System.EventHandler(this.frmWorkerWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

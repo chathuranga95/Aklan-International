@@ -24,37 +24,44 @@ namespace Aklan_International
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            try
+            if (cmbWorkerName.Text.Trim() == "")
             {
-                conn.Open();
-                cmd = new MySqlCommand("select * from dtlogin where empName = '"+cmbWorkerName.Text.Trim()+"'", conn);
-                reader = cmd.ExecuteReader();
-                while (reader.Read())
+                MessageBox.Show("Choose your name");
+            }
+            else
+            {
+                try
                 {
-                    if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
+                    conn.Open();
+                    cmd = new MySqlCommand("select * from dtlogin where empName = '" + cmbWorkerName.Text.Trim() + "'", conn);
+                    reader = cmd.ExecuteReader();
+                    while (reader.Read())
                     {
-                        MessageBox.Show("success...");
-                        
-                        this.Hide();
-                        frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(), this,reader.GetString("empID"));
-                        obj.Show();
-                        clearComponents(); 
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed...");
-                    }
-                }
+                        if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
+                        {
+                            MessageBox.Show("success...");
 
-            }
-            catch
-            {
-                //MessageBox.Show(ee.ToString());
-                throw;
-            }
-            finally
-            {
-                conn.Close();
+                            this.Hide();
+                            frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(), this, reader.GetString("empID"));
+                            obj.Show();
+                            clearComponents();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed...");
+                        }
+                    }
+
+                }
+                catch
+                {
+                    //MessageBox.Show(ee.ToString());
+                    throw;
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
         }
 
@@ -103,6 +110,11 @@ namespace Aklan_International
         {
             frmChangePassword obj = new frmChangePassword(cmbWorkerName.Text.Trim());
             obj.Show();
+        }
+
+        private void frmWorkerWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            (new frmModeSelect()).Show();
         }
     }
 }

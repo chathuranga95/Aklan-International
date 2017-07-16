@@ -120,6 +120,7 @@ namespace Aklan_International
                 con.Open();
                 command.ExecuteNonQuery();
                 con.Close();
+                MessageBox.Show("New Unit Price for Single Sheet Type Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             if (new12UnitPrice >0)
@@ -129,15 +130,72 @@ namespace Aklan_International
                 con.Open();
                 command.ExecuteNonQuery();
                 con.Close();
+                MessageBox.Show("New Unit Price for 12 Sheets Type Saved Successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
 
         }
 
+        private void tbxSingleNewPrice_TextChanged(object sender, EventArgs e)
+        {
+            if (tbxSingleNewPrice.Text.Length > 0)
+            {
+                if (Support.isNumeric(tbxSingleNewPrice.Text) && Support.isValidAmount(tbxSingleNewPrice.Text))
+                {
+                    btnSave.Enabled = true;
+                    newSingleUnitPrice = decimal.Parse(tbxSingleNewPrice.Text);
+                }
+                else if (tbx12New.Text.Length == 0)
+                {
+                    btnSave.Enabled = false;
+                    tbxSingleNewPrice.Clear();
+                    newSingleUnitPrice = 0;
+                    MessageBox.Show("Value you entered is not valid!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else
+                {
+                  
+                    tbxSingleNewPrice.Clear();
+                    MessageBox.Show("Value you entered is not valid!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    newSingleUnitPrice = 0;
+                    
+                }
+            }
+        }
+
+        private void tbx12New_TextChanged(object sender, EventArgs e)
+        {
+            if (tbx12New.Text.Length > 0)
+            {
+                if (Support.isNumeric(tbx12New.Text) && Support.isValidAmount(tbx12New.Text))
+                {
+                    btnSave.Enabled = true;
+                    new12UnitPrice = decimal.Parse(tbx12New.Text);
+                }
+                else if (tbxSingleNewPrice.Text.Length == 0)
+                {
+                    btnSave.Enabled = false;
+                    tbx12New.Clear();
+                    new12UnitPrice = 0;
+                    MessageBox.Show("Value you entered is not valid!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+                else
+                {
+
+                    tbx12New.Clear();
+                    MessageBox.Show("Value you entered is not valid!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    new12UnitPrice = 0;
+
+                }
+            }
+        }
+
         private void btnSingleUpdate_Click(object sender, EventArgs e)
         {
-           if(tbxSingleNewPrice.Text.Split().Length > 0)
+            if (tbxSingleNewPrice.Text.Split().Length > 0)
             {
                 try
                 {
@@ -163,6 +221,7 @@ namespace Aklan_International
             }
             else
                 MessageBox.Show("Please enter a valid value for new unit price!", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Question);
+
 
         }
     }

@@ -58,12 +58,13 @@
             this.groupBox1.Controls.Add(this.btnCreateOrder);
             this.groupBox1.Controls.Add(this.btnManageOrder);
             this.groupBox1.Controls.Add(this.btnViewOrders);
-            this.groupBox1.Location = new System.Drawing.Point(27, 120);
+            this.groupBox1.Location = new System.Drawing.Point(0, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(577, 122);
+            this.groupBox1.Size = new System.Drawing.Size(578, 114);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Orders";
+            this.groupBox1.UseCompatibleTextRendering = true;
             // 
             // btnCreateOrder
             // 
@@ -83,6 +84,7 @@
             this.btnManageOrder.TabIndex = 1;
             this.btnManageOrder.Text = "Manage Orders";
             this.btnManageOrder.UseVisualStyleBackColor = true;
+            this.btnManageOrder.Click += new System.EventHandler(this.btnManageOrder_Click);
             // 
             // btnViewOrders
             // 
@@ -92,12 +94,13 @@
             this.btnViewOrders.TabIndex = 0;
             this.btnViewOrders.Text = "View Orders";
             this.btnViewOrders.UseVisualStyleBackColor = true;
+            this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnCreateSalesOrder);
             this.groupBox2.Controls.Add(this.btnViewSales);
-            this.groupBox2.Location = new System.Drawing.Point(27, 376);
+            this.groupBox2.Location = new System.Drawing.Point(1, 363);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(577, 122);
             this.groupBox2.TabIndex = 1;
@@ -110,7 +113,7 @@
             this.btnCreateSalesOrder.Name = "btnCreateSalesOrder";
             this.btnCreateSalesOrder.Size = new System.Drawing.Size(85, 38);
             this.btnCreateSalesOrder.TabIndex = 1;
-            this.btnCreateSalesOrder.Text = "Create Sales orders";
+            this.btnCreateSalesOrder.Text = "Create Sales Record";
             this.btnCreateSalesOrder.UseVisualStyleBackColor = true;
             this.btnCreateSalesOrder.Click += new System.EventHandler(this.btnCreateSalesOrder_Click);
             // 
@@ -120,15 +123,16 @@
             this.btnViewSales.Name = "btnViewSales";
             this.btnViewSales.Size = new System.Drawing.Size(85, 38);
             this.btnViewSales.TabIndex = 2;
-            this.btnViewSales.Text = "View Sales Orders";
+            this.btnViewSales.Text = "View Sales Record";
             this.btnViewSales.UseVisualStyleBackColor = true;
+            this.btnViewSales.Click += new System.EventHandler(this.btnViewSales_Click);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnSetUnitPrice);
             this.groupBox3.Controls.Add(this.btnManageStock);
             this.groupBox3.Controls.Add(this.btnViewStock);
-            this.groupBox3.Location = new System.Drawing.Point(27, 248);
+            this.groupBox3.Location = new System.Drawing.Point(1, 235);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(577, 122);
             this.groupBox3.TabIndex = 1;
@@ -163,13 +167,14 @@
             this.btnViewStock.TabIndex = 0;
             this.btnViewStock.Text = "View Stock";
             this.btnViewStock.UseVisualStyleBackColor = true;
+            this.btnViewStock.Click += new System.EventHandler(this.btnViewStock_Click);
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnSetJobRates);
             this.groupBox4.Controls.Add(this.btnManageWorkers);
             this.groupBox4.Controls.Add(this.btnViewWorkers);
-            this.groupBox4.Location = new System.Drawing.Point(27, 504);
+            this.groupBox4.Location = new System.Drawing.Point(1, 491);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(577, 122);
             this.groupBox4.TabIndex = 2;
@@ -194,6 +199,7 @@
             this.btnManageWorkers.TabIndex = 3;
             this.btnManageWorkers.Text = "Manage Workers";
             this.btnManageWorkers.UseVisualStyleBackColor = true;
+            this.btnManageWorkers.Click += new System.EventHandler(this.btnManageWorkers_Click);
             // 
             // btnViewWorkers
             // 
@@ -203,14 +209,15 @@
             this.btnViewWorkers.TabIndex = 4;
             this.btnViewWorkers.Text = "View Workers";
             this.btnViewWorkers.UseVisualStyleBackColor = true;
+            this.btnViewWorkers.Click += new System.EventHandler(this.btnViewWorkers_Click);
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.btnChangePass);
             this.groupBox5.Controls.Add(this.btnViewNotif);
-            this.groupBox5.Location = new System.Drawing.Point(26, 12);
+            this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(578, 93);
+            this.groupBox5.Size = new System.Drawing.Size(578, 114);
             this.groupBox5.TabIndex = 2;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Admin";
@@ -239,14 +246,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(711, 649);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
             this.Name = "frmAdminWindow";
             this.Text = "Admin";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAdminWindow_FormClosing);
             this.Load += new System.EventHandler(this.frmAdminWindow_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

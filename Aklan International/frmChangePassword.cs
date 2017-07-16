@@ -89,5 +89,10 @@ namespace Aklan_International
         {
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

@@ -8,9 +8,10 @@ namespace Aklan_International
 {
     class Order
     {
-        private string orderID;
+        private int orderID;
         private string customerID;
         private string customerName;
+        private String customerContact;
         private DateTime dateTime;
         private int singleSheetQty;
         private decimal singleSheetUnitPrice;
@@ -23,29 +24,35 @@ namespace Aklan_International
         private decimal totalPrice;
 
 
-        public Order(string orderID, string customerID, string customerName, DateTime dateTime, int singleSheetQty, decimal singleSheetUnitPrice, int dozenSheetQty, decimal dozenSheetUnitPrice, decimal amountPaid,string description)
+
+        public Order(int orderID, string customerID, string customerName, string contact, DateTime dateTime, int singleSheetQty, decimal singleSheetUnitPrice, int dozenSheetQty, decimal dozenSheetUnitPrice, decimal amountPaid, string description)
         {
             this.orderID = orderID;
             this.customerID = customerID;
             this.customerName = customerName;
+            this.customerContact = contact;
             this.dateTime = dateTime;
             this.singleSheetQty = singleSheetQty;
             this.singleSheetUnitPrice = singleSheetUnitPrice;
             this.dozenSheetQty = dozenSheetQty;
             this.dozenSheetUnitPrice = dozenSheetUnitPrice;
+
             this.amountPaid = amountPaid;
             finished = false;
             this.description = description;
+            Console.WriteLine("Order created");
         }
 
-        public string getOrderID()
+        public int getOrderID()
         {
+
             return orderID;
         }
 
+
         public string getDescription()
         {
-            return description; 
+            return description;
         }
 
         public decimal getTotalPrice()
@@ -72,5 +79,41 @@ namespace Aklan_International
         {
             finished = true;
         }
+
+        public DateTime getDateTime()
+        {
+            return dateTime;
+        }
+
+        public String getCustomerId()
+        {
+            return customerID;
+        }
+
+        public string getCustomerName()
+        {
+            return customerName;
+        }
+
+        public string getCustomerContact()
+        {
+            return customerContact;
+        }
+
+        public decimal getSingleUnitPrice()
+        {
+            return singleSheetUnitPrice;
+        }
+
+        public decimal getDozenUnitPrice()
+        {
+            return dozenSheetUnitPrice;
+        }
+
+        public decimal getAmountPaid()
+        {
+            return amountPaid;
+        }
+
     }
 }

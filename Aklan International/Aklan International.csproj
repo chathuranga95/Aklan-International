@@ -69,6 +69,12 @@
     <Compile Include="AddNewWorker.Designer.cs">
       <DependentUpon>AddNewWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmManageOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageOrders.Designer.cs">
+      <DependentUpon>frmManageOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Support.cs" />
     <Compile Include="CreateNewOrder\FrmAddItem.cs">
       <SubType>Form</SubType>
@@ -136,6 +142,12 @@
     <Compile Include="frmNewSalesRecord.Designer.cs">
       <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNotification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNotification.Designer.cs">
+      <DependentUpon>frmNotification.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRequestJob.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,8 +181,14 @@
     <Compile Include="Job.cs" />
     <Compile Include="MaterialUpdate.cs" />
     <Compile Include="Order.cs" />
+    <Compile Include="OverManAlert.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SalaryCalc.cs" />
     <Compile Include="SalesOrder.cs" />
     <Compile Include="Worker.cs" />
@@ -198,6 +216,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmManageOrders.resx">
+      <DependentUpon>frmManageOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmManageStock.resx">
       <DependentUpon>frmManageStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -209,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewSalesRecord.resx">
       <DependentUpon>frmNewSalesRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNotification.resx">
+      <DependentUpon>frmNotification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRequestJob.resx">
       <DependentUpon>frmRequestJob.cs</DependentUpon>
@@ -227,13 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -261,6 +281,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database script\dbfile.sql" />
+    <None Include="Resources\delete_garbage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

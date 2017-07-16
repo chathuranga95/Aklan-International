@@ -99,6 +99,7 @@
             this.tbxUnitPrice.Size = new System.Drawing.Size(299, 20);
             this.tbxUnitPrice.TabIndex = 0;
             this.tbxUnitPrice.TabStop = false;
+            this.tbxUnitPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbxUnitPrice.TextChanged += new System.EventHandler(this.tbxUnitPrice_TextChanged);
             // 
             // tbxTotal

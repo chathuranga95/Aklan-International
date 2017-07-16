@@ -13,7 +13,12 @@ namespace Aklan_International.CreateNewOrder
 {
     public partial class FrmCreateOrder : Form
     {
-        //private Order customerOrder;
+        private Order customerOrder;
+        private decimal singleUnitPrice = 0;
+        private decimal dozenUnitPrice =0;
+        private int singleSheeetQty = 0;
+        private int dozenSheetQty = 0;
+
         public FrmCreateOrder()
         {
             InitializeComponent();
@@ -92,12 +97,25 @@ namespace Aklan_International.CreateNewOrder
 
         public void addDgvRow(String stripType, String unitPrice, String qty, String totalAmount)
         {
+            if (stripType == "Single Sheet Strip")
+            {
+                this.singleUnitPrice = decimal.Parse(unitPrice);
+                this.singleSheeetQty = this.singleSheeetQty + int.Parse(qty);
+            }
+            else if (stripType == "12 Sheets Strip")
+            {
+                this.dozenUnitPrice = decimal.Parse(unitPrice);
+                this.dozenSheetQty = this.dozenSheetQty + int.Parse(qty);
+            }
+
             DataGridViewRow row = (DataGridViewRow) dgvItems.Rows[0].Clone() ;
             row.Cells[0].Value = stripType;
             row.Cells[1].Value = unitPrice;
             row.Cells[2].Value = qty;
             row.Cells[3].Value = totalAmount;
             dgvItems.Rows.Add(row);
+
+            
         }
 
         private bool isValidNIC(String NIC)
@@ -156,6 +174,7 @@ namespace Aklan_International.CreateNewOrder
             {
                 decimal newTotal = decimal.Parse(tbxTotal.Text) + decimal.Parse(itemTotal);
                 tbxTotal.Text = newTotal.ToString();
+               
             }
 
             else
@@ -171,7 +190,19 @@ namespace Aklan_International.CreateNewOrder
 
         private void btnSubmitOrder_Click(object sender, EventArgs e)
         {
-            MySqlConnection con = Support.setConnection();
+            if(MessageBox.Show("Confirm Submit Order?","Confirm!",MessageBoxButtons.YesNo , MessageBoxIcon.Question)== DialogResult.Yes)
+            {
+
+                customerOrder = new Order(Support.getMaxVlaueFrom("OrderId", "dtcustomer_orders")+1, tbxNIC.Text, tbxCustomerName.Text, mtbContactNumber.Text, DateTime.Now, this.singleSheeetQty, this.singleUnitPrice, this.dozenSheetQty, this.dozenUnitPrice,  decimal.Parse(tbxAmountPaying.Text), tbxDescription.Text);
+                MySqlConnection con = Support.setConnection();
+                
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO `dbcore`.`dtcustomer_orders` (`OrderId`, `OrderDateTime`, `CustomerId`, `CustomerName`, `CustomerContact`, `description`, `SingleSheetQty`, `SingleSheetUnit`, `DozenSheetQty`, `DozenSheetUnit`, `TotalPrice`, `AmountPaid`, `AmountRemaining`, `finished`) VALUES ('"+customerOrder.getOrderID()+"', '"+customerOrder.getDateTime()+"', '"+customerOrder.getCustomerId()+"', '"+customerOrder.getCustomerName()+"', '"+customerOrder.getCustomerContact()+"', '"+customerOrder.getDescription()+"', '"+customerOrder.getSingleQty()+"', '"+customerOrder.getSingleUnitPrice()+"', '"+customerOrder.getDozenQty()+"', '"+customerOrder.getDozenUnitPrice()+"', '"+customerOrder.getTotalPrice()+"', '"+customerOrder.getAmountPaid()+"', '"+customerOrder.getRemainingPrice()+"', 'No')",con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                this.Close();
+            }
+           
 
         }
 
@@ -188,6 +219,15 @@ namespace Aklan_International.CreateNewOrder
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void tbxTotal_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tbxAmountRemain.Text = (decimal.Parse(tbxTotal.Text) - decimal.Parse(tbxAmountPaying.Text)).ToString();
+            }
+            catch (System.FormatException) { tbxAmountRemain.Text = tbxTotal.Text; }
         }
 
         private void tbxAmountPaying_TextChanged(object sender, EventArgs e)

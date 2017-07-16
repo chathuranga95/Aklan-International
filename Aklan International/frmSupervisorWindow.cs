@@ -98,7 +98,7 @@ namespace Aklan_International
             orderList.Clear();
             while (reader.Read())
             {
-                orderList.Add(new Order(reader.GetString("OrderId"), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetDateTime("OrderDateTime"), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit") , reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid"),reader.GetString("description")));
+                orderList.Add(new Order(int.Parse(reader.GetString("OrderId")), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetString("CustomerContact"),reader.GetDateTime("OrderDateTime"), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit") , reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid"),reader.GetString("description")));
             }
             conn.Close();
             
@@ -161,6 +161,20 @@ namespace Aklan_International
             }
             conn.Close();
             refreshOrders();
+        }
+
+        private void frmSupervisorWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dlgresult == DialogResult.Yes)
+            {
+
+                Application.ExitThread();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
