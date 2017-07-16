@@ -122,6 +122,7 @@ namespace Aklan_International
             catch (Exception Ex)
             {
                 MessageBox.Show("Error occured.......");
+                //new frmAdminWindow().Show();
 
             }
 

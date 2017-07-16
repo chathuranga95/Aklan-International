@@ -23,7 +23,7 @@ namespace Aklan_International
         {
             MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=1234;database=dbcore;allowuservariables=True");
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT OrderId, OrderDateTime, CustomerName, CustomerContact, description, SingleSheetQty, SingleSheetUnit, DozenSheetQty, DozenSheetUnit,TotalPrice FROM dtcustomer_orders WHERE finished='yes' OR 'Yes'", conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT OrderId, OrderDateTime, CustomerName, CustomerContact, description, SingleSheetQty, SingleSheetUnit, DozenSheetQty, DozenSheetUnit,TotalPrice FROM dtcustomer_orders WHERE finished='yes' OR 'Yes' or 'YES'", conn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
