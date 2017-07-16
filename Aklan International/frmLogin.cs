@@ -81,5 +81,10 @@ namespace Aklan_International
             txtPassword.Clear();
             txtEmpID.Focus();
         }
+
+        private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            (new frmModeSelect()).Show();
+        }
     }
 }

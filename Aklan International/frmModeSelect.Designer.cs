@@ -63,6 +63,7 @@
             this.Controls.Add(this.button1);
             this.Name = "frmModeSelect";
             this.Text = "Select Mode";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmModeSelect_FormClosing);
             this.ResumeLayout(false);
 
         }

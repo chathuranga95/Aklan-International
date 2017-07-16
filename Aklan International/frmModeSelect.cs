@@ -30,5 +30,19 @@ namespace Aklan_International
             obj.Show();
             this.Hide();
         }
+
+        private void frmModeSelect_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dlgresult == DialogResult.Yes)
+            {
+
+                Application.ExitThread();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

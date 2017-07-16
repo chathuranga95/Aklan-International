@@ -111,5 +111,10 @@ namespace Aklan_International
             frmChangePassword obj = new frmChangePassword(cmbWorkerName.Text.Trim());
             obj.Show();
         }
+
+        private void frmWorkerWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            (new frmModeSelect()).Show();
+        }
     }
 }
