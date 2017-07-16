@@ -54,7 +54,7 @@ namespace Aklan_International
                 }
                 catch
                 {
-                    //MessageBox.Show(ee.ToString());
+                    MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     throw;
                 }
                 finally
@@ -66,12 +66,13 @@ namespace Aklan_International
                     cmd = new MySqlCommand("UPDATE `dbcore`.`dtlogin` SET `psw`='" + txtNewPass.Text + "' WHERE `empID`='" + empID + "' ", conn);
                     conn.Open();
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show("Password change success...");
+                    
+                    MessageBox.Show("Password Change Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     conn.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Old password incorrect!");
+                    MessageBox.Show("Old Password Incorrect!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 clearComponents();
             }

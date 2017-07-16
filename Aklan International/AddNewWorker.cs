@@ -131,13 +131,12 @@ namespace Aklan_International
                     comm.ExecuteNonQuery();
                     conn.Close();
 
-                    MessageBox.Show("New worker added successfully.", "Success");
+                    MessageBox.Show("New worker added successfully.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                 catch
                 {
-                    MessageBox.Show("Error in adding mysql row. Error: " );
-
+                    MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
            

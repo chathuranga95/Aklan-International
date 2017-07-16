@@ -58,7 +58,7 @@ namespace Aklan_International
             }
             catch
             {
-                MessageBox.Show("error");//****************
+                MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
@@ -97,12 +97,13 @@ namespace Aklan_International
                 comm.ExecuteNonQuery();
                 conn.Close();
 
-                MessageBox.Show("Worker details changed successfully.", "Success");
+                
+                MessageBox.Show("Worker details changed successfully.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch
             {
-                MessageBox.Show("Error in adding mysql row. Error: ");
+                MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
         }
@@ -142,8 +143,8 @@ namespace Aklan_International
             }
             catch
             {
-                //MessageBox.Show("error in s");
-                throw;
+                MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //throw;
             }
             
 

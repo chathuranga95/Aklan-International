@@ -120,7 +120,7 @@ namespace Aklan_International
 
         private void deleteWorker(string empID)
         {
-            DialogResult dr = MessageBox.Show("Delete Worker", "Are you sure?", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Delete Worker", "Are you sure?", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (dr == DialogResult.Yes) {
 
                 conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
@@ -153,7 +153,8 @@ namespace Aklan_International
                 {
                     if (reader.GetString("deleted") == "Yes")
                     {
-                        MessageBox.Show("This worker already deleted");
+                        MessageBox.Show("");
+                        MessageBox.Show("This Worker is Already Deleted", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
