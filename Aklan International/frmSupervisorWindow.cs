@@ -170,5 +170,11 @@ namespace Aklan_International
                 e.Cancel = true;
             }
         }
+
+        private void btnChangePw_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmObj = new frmChangePassword(empID);
+            frmObj.Show();
+        }
     }
 }

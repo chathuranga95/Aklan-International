@@ -34,6 +34,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnMarkOrders = new System.Windows.Forms.Button();
             this.lbxCurrentOrders = new System.Windows.Forms.ListBox();
+            this.btnChangePw = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -96,11 +97,22 @@
             this.lbxCurrentOrders.Size = new System.Drawing.Size(680, 160);
             this.lbxCurrentOrders.TabIndex = 0;
             // 
+            // btnChangePw
+            // 
+            this.btnChangePw.Location = new System.Drawing.Point(29, 683);
+            this.btnChangePw.Name = "btnChangePw";
+            this.btnChangePw.Size = new System.Drawing.Size(86, 38);
+            this.btnChangePw.TabIndex = 2;
+            this.btnChangePw.Text = "Change Password";
+            this.btnChangePw.UseVisualStyleBackColor = true;
+            this.btnChangePw.Click += new System.EventHandler(this.btnChangePw_Click);
+            // 
             // frmSupervisorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 741);
+            this.ClientSize = new System.Drawing.Size(788, 733);
+            this.Controls.Add(this.btnChangePw);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmSupervisorWindow";
@@ -121,5 +133,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnMarkOrders;
         private System.Windows.Forms.ListBox lbxCurrentOrders;
+        private System.Windows.Forms.Button btnChangePw;
     }
 }
