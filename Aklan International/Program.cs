@@ -19,7 +19,7 @@ namespace Aklan_International
             //Application.Run(new frmSupervisorWindow());
             //Application.Run(new frmWorkerWindow());
             //Application.Run(new frmAdminWindow("shehan","a001"));
-            Application.Run(new frmNewSalesRecord());
+            Application.Run(new frmSalesReport());
 
 
         }
