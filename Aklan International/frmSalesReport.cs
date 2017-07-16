@@ -39,7 +39,7 @@ namespace Aklan_International
         }
         private void btnGenerate_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 MySqlConnection cnn;
@@ -57,7 +57,7 @@ namespace Aklan_International
                 xlApp = new Excel.Application();
                 xlWorkBook = xlApp.Workbooks.Add(misValue);
                 xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-                
+
 
                 connectionString = "server=localhost;user id=root;pwd=1234;database=dbcore;allowuservariables=True";
                 cnn = new MySqlConnection(connectionString);
@@ -107,29 +107,30 @@ namespace Aklan_International
                 MessageBox.Show("Error occured.......");
 
             }
-            
+
 
         }
-        
+
         private void frmSalesReport_Load(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection("server=localhost;user id=root;pwd=1234;database=dbcore;allowuservariables=True");
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand("SELECT * FROM dtsales",conn);
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM dtsales", conn);
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
             {
-                for(int i=0; i<7; i++)
+                
+                string str = "";
+                for (int i = 0; i < 7; i++)
                 {
-                    string str = reader.GetString(i);
-                    //grdReport.
-
+                    str += reader.GetString(i) + ",";
                 }
-               
+                
+                grdReport.Rows.Add(str.Split(','));
             }
         }
-        
-        
+
+
     }
 }
