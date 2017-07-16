@@ -20,8 +20,9 @@ namespace Aklan_International
             //Application.Run(new FrmSetUnitPrice());
             //Application.Run(new frmAdminWindow());
             //Application.Run(new frmModeSelect());
-            Application.Run(new frmWorkerReport());
-            Application.Run(new frmOrderReport());
+            //Application.Run(new frmWorkerReport());
+            //Application.Run(new frmOrderReport());
+            Application.Run(new frmStockReport());
         }
     }
 }
