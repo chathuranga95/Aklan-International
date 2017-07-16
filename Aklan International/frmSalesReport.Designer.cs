@@ -53,6 +53,8 @@
             // 
             // grdReport
             // 
+            this.grdReport.AllowUserToAddRows = false;
+            this.grdReport.AllowUserToDeleteRows = false;
             this.grdReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Customer,
@@ -65,6 +67,7 @@
             this.grdReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.grdReport.Location = new System.Drawing.Point(0, 0);
             this.grdReport.Name = "grdReport";
+            this.grdReport.ReadOnly = true;
             this.grdReport.Size = new System.Drawing.Size(741, 157);
             this.grdReport.TabIndex = 1;
             this.grdReport.TabStop = false;
