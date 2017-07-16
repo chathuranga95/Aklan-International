@@ -46,6 +46,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnChangePass = new System.Windows.Forms.Button();
             this.btnViewNotif = new System.Windows.Forms.Button();
+            this.btnViewSalry = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -171,6 +172,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnViewSalry);
             this.groupBox4.Controls.Add(this.btnSetJobRates);
             this.groupBox4.Controls.Add(this.btnManageWorkers);
             this.groupBox4.Controls.Add(this.btnViewWorkers);
@@ -242,6 +244,15 @@
             this.btnViewNotif.UseVisualStyleBackColor = true;
             this.btnViewNotif.Click += new System.EventHandler(this.btnViewNotif_Click);
             // 
+            // btnViewSalry
+            // 
+            this.btnViewSalry.Location = new System.Drawing.Point(436, 38);
+            this.btnViewSalry.Name = "btnViewSalry";
+            this.btnViewSalry.Size = new System.Drawing.Size(89, 38);
+            this.btnViewSalry.TabIndex = 5;
+            this.btnViewSalry.Text = "View Payroles";
+            this.btnViewSalry.UseVisualStyleBackColor = true;
+            // 
             // frmAdminWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,5 +299,6 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnChangePass;
         private System.Windows.Forms.Button btnViewNotif;
+        private System.Windows.Forms.Button btnViewSalry;
     }
 }
