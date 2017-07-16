@@ -12,6 +12,7 @@ namespace Aklan_International
 {
     public partial class frmModeSelect : Form
     {
+        
         public frmModeSelect()
         {
             InitializeComponent();
@@ -29,6 +30,104 @@ namespace Aklan_International
             frmWorkerWindow obj = new frmWorkerWindow();
             obj.Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+           
+            this.Close();
+
+
+            
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            //btnClose.BackColor = System.Drawing.Color.Transparent;
+            //btnClose.FlatStyle = FlatStyle.Flat;
+            
+            Image image = Aklan_International.Properties.Resources.CloseButtonSelected2;
+            btnClose.BackgroundImage = image;
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+
+            Image image = Aklan_International.Properties.Resources.CloseButton;
+            btnClose.BackgroundImage = image;
+
+        }
+
+        private void btnAdmin_MouseEnter(object sender, EventArgs e)
+        {
+            Image image = Aklan_International.Properties.Resources.ModeButtonSelected;
+            btnAdmin.BackgroundImage = image;
+        }
+
+        private void btnAdmin_MouseLeave(object sender, EventArgs e)
+        {
+            Image image = Aklan_International.Properties.Resources.ModeButton;
+            btnAdmin.BackgroundImage = image;
+        }
+
+        private void btnWorker_MouseEnter(object sender, EventArgs e)
+        {
+
+            Image image = Aklan_International.Properties.Resources.ModeButtonSelected;
+            btnWorker.BackgroundImage = image;
+        }
+
+        private void btnWorker_MouseLeave(object sender, EventArgs e)
+        {
+            Image image = Aklan_International.Properties.Resources.ModeButton;
+            btnWorker.BackgroundImage = image;
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            frmLogin obj = new frmLogin();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void btnAdmin_Enter(object sender, EventArgs e)
+        {
+            btnAdmin.FlatStyle = FlatStyle.Flat;
+            btnAdmin.FlatAppearance.BorderSize = 0;
+            Image image = Aklan_International.Properties.Resources.ModeButtonSelected;
+            btnAdmin.BackgroundImage = image;
+        }
+
+
+
+        private void btnWorker_Enter(object sender, EventArgs e)
+        {
+            btnWorker.FlatStyle = FlatStyle.Flat;
+            btnWorker.FlatAppearance.BorderSize = 0;
+            Image image = Aklan_International.Properties.Resources.ModeButtonSelected;
+            btnWorker.BackgroundImage = image;
+        }
+
+        private void btnAdmin_Leave(object sender, EventArgs e)
+        {
+            Image image = Aklan_International.Properties.Resources.ModeButtonSelected;
+            btnAdmin.BackgroundImage = image;
+        }
+
+        private void btnWorker_Leave(object sender, EventArgs e)
+        {
+            Image image = Aklan_International.Properties.Resources.ModeButton;
+            btnWorker.BackgroundImage = image;
         }
     }
 }
