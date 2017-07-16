@@ -26,13 +26,16 @@ namespace Aklan_International
 
         private void frmNotification_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnClrAll, "Clear All Notifications");
+            toolTip.SetToolTip(this.btnRefresh, "Fetch Notifications");
             //grdNotify.Rows.Add("2017.07.15", "hai", Bitmap.FromFile(@"C:\Users\asus\Source\Repos\Aklan-International\Aklan International\Resources\delete_garbage.png"));
             //grdNotify.Rows.Add("2017.07.20", "hui", Bitmap.FromFile(@"C:\Users\asus\Source\Repos\Aklan-International\Aklan International\Resources\delete_garbage.png"));
             notifi.CheckOrderList();
             string message = notifi.sendalert();
             if (message != null)
             {
-                grdNotify.Rows.Add(DateTime.Now.ToString(), message, Bitmap.FromFile(@"C:\Users\asus\Source\Repos\Aklan-International\Aklan International\Resources\delete_garbage.png"));
+                grdNotify.Rows.Add(DateTime.Now.ToString(), message, Aklan_International.Properties.Resources.delete_garbage);
             }
         }
 
@@ -48,7 +51,7 @@ namespace Aklan_International
             string message = notifi.sendalert();
             if(message != null)
             {
-                grdNotify.Rows.Add(DateTime.Now.ToString(), message, Bitmap.FromFile(@"C:\Users\asus\Source\Repos\Aklan-International\Aklan International\Resources\delete_garbage.png"));
+                grdNotify.Rows.Add(DateTime.Now.ToString(), message, Aklan_International.Properties.Resources.delete_garbage);
             }
             
         }

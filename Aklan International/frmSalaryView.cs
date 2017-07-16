@@ -24,6 +24,10 @@ namespace Aklan_International
 
         private void frmSalaryView_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnRefresh, "View Salaries of all employers for selected month");
+            toolTip.SetToolTip(this.spnMonth, "Select Month number");
+            toolTip.SetToolTip(this.spnYear, "Select Year number");
             spnMonth.Value = DateTime.Today.Month;
             spnYear.Value = DateTime.Today.Year;
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");

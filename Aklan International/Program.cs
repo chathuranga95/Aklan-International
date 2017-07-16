@@ -17,12 +17,6 @@ namespace Aklan_International
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmModeSelect());
-            //Application.Run(new FrmSetUnitPrice());
-            //Application.Run(new frmAdminWindow());
-            //Application.Run(new frmSalaryView());
-            //Application.Run(new frmWorkerReport());
-            //Application.Run(new frmOrderReport());
-            //Application.Run(new frmStockReport());
         }
     }
 }

@@ -48,6 +48,10 @@ namespace Aklan_International
 
         private void frmDeleteWorker_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnDelete, "Delete Selected User");
+            toolTip.SetToolTip(this.btnCancel, "Cancel operation and close this window");
+
             tbxempID.AutoCompleteCustomSource.Clear();
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             conn.Open();

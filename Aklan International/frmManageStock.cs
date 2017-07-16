@@ -30,5 +30,16 @@ namespace Aklan_International
             mtup.updateMaterial("sheet", (int)spnQty.Value, empID, false);
             MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void frmManageStock_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnAdd, "Add "+spnQty.Value.ToString()+" New sheets to the Stock");
+        }
+
+        private void spnQty_ValueChanged(object sender, EventArgs e)
+        {
+            toolTip.SetToolTip(this.btnAdd, "Add " + spnQty.Value.ToString() + " New sheets to the Stock");
+        }
     }
 }

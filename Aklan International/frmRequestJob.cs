@@ -38,6 +38,10 @@ namespace Aklan_International
 
         private void frmRequestJob_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnExit, "Sign out");
+            toolTip.SetToolTip(this.btnRequest , "Request material for work");
+            toolTip.SetToolTip(this.cmbJob, "Select Job");
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             checkTable();
         }

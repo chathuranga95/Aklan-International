@@ -67,6 +67,11 @@ namespace Aklan_International
 
         private void frmWorkerWindow_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnChangePass, "Change selected Employer's login password");
+            toolTip.SetToolTip(this.btnClear, "Clear text");
+            toolTip.SetToolTip(this.btnLogin, "Login");
+
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             try
             {
