@@ -285,6 +285,10 @@ namespace Aklan_International
 
         }
 
-        
+        private void btnViewPayroll_Click(object sender, EventArgs e)
+        {
+            frmSalaryView frmSalary = new frmSalaryView();
+            frmSalary.Show();
+        }
     }
 }

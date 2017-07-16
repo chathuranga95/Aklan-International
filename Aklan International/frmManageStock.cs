@@ -39,6 +39,7 @@ namespace Aklan_International
 
         private void spnQty_ValueChanged(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
             toolTip.SetToolTip(this.btnAdd, "Add " + spnQty.Value.ToString() + " New sheets to the Stock");
         }
     }

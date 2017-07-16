@@ -247,6 +247,7 @@
             this.btnViewPayroll.Text = "View Payroll";
             this.btnViewPayroll.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnViewPayroll.UseVisualStyleBackColor = false;
+            this.btnViewPayroll.Click += new System.EventHandler(this.btnViewPayroll_Click);
             // 
             // btnSetJobRates
             // 
