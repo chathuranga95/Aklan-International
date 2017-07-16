@@ -143,6 +143,26 @@ namespace Aklan_International.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap lock_open_blue {
+            get {
+                object obj = ResourceManager.GetObject("lock-open-blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loginAdmin {
+            get {
+                object obj = ResourceManager.GetObject("loginAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ModeButton {
             get {
                 object obj = ResourceManager.GetObject("ModeButton", resourceCulture);

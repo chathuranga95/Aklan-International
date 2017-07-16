@@ -272,6 +272,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database script\dbfile.sql" />
+    <None Include="Resources\lock-open-blue.png" />
+    <None Include="Resources\loginAdmin.jpg" />
     <None Include="Resources\Pannel up with text3.png" />
     <None Include="Resources\ModeButtonSelected.png" />
     <None Include="Resources\ModeButton.png" />

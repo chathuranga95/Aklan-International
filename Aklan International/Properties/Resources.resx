@@ -121,40 +121,46 @@
   <data name="ModeButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModeButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CloseButtonSelected2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CloseButtonSelected2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="delete_garbage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\delete_garbage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="bottom pannel 72x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bottom pannel 72x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bottom pannel selected 2 72x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bottom pannel selected 2 72x50.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ModeButtonSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ModeButtonSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Pannel up with text3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pannel up with text3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CloseButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloseButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CloseButtonSelected2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CloseButtonSelected2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bottom pannel selected 72x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bottom pannel selected 72x50.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ModeButtonSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ModeButtonSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="loginAdmin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loginAdmin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CloseButtonSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloseButtonSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pannel up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pannel up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="delete_garbage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete_garbage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bottom pannel 480x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bottom pannel 480x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bottom pannel selected 2 72x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottom pannel selected 2 72x50.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pannel up2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pannel up2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pannel up with text3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Pannel up with text3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bottom pannel 480x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottom pannel 480x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Pannel up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pannel up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock-open-blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-open-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
