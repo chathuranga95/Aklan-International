@@ -35,6 +35,10 @@ namespace Aklan_International
         {
             refreshJobs();
             refreshOrders();
+
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnMarkJobs, "Make selected Job as Completed");
+            toolTip.SetToolTip(this.btnMarkOrders, "Make selected Order as Completed");
         }
 
         private void refreshJobs()

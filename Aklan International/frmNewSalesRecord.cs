@@ -125,17 +125,31 @@ namespace Aklan_International
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            
             if (this.grd.SelectedRows.Count > 0)
             {
+                
+                if (this.grd.SelectedRows[0].Cells[0].Value.ToString().Trim() == "Single")
+                {
+                    singleQty -= int.Parse(this.grd.SelectedRows[0].Cells[1].Value.ToString().Trim());
+                }
+                else if (this.grd.SelectedRows[0].Cells[0].Value.ToString().Trim() == "12 sheets")
+                {
+                    dozenQty -= int.Parse(this.grd.SelectedRows[0].Cells[1].Value.ToString().Trim());
+                }
                 grd.Rows.RemoveAt(this.grd.SelectedRows[0].Index);
             }
-            singleQty = 0;
-            dozenQty = 0;
+            
         }
 
         private void frmNewSalesRecord_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection("server = localhost; user id = root; database = dbcore; pwd = 1234; allowuservariables = True");
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnAdd, "Add Item to the Sales Record");
+            toolTip.SetToolTip(this.btnClear, "Clear selected items from the Sales Record");
+            toolTip.SetToolTip(this.btnSubmit, "Submit Sales Record");
+            toolTip.SetToolTip(this.cmbType, "Select the Strip Type");
         }
         string matType = "default value";
         private void btnSubmit_Click(object sender, EventArgs e)

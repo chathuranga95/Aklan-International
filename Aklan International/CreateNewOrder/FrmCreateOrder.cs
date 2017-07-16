@@ -242,5 +242,15 @@ namespace Aklan_International.CreateNewOrder
                 tbxAmountPaying.Clear();
             }
         }
+
+        private void FrmCreateOrder_Load(object sender, EventArgs e)
+        {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnCreateOrder, "Start creating an Order with above details");
+            toolTip.SetToolTip(this.btnClear, "Clear above details");
+            toolTip.SetToolTip(this.btnAddItem, "Add an item to the order");
+            toolTip.SetToolTip(this.btnRemoveItem, "Remove selected item from the order");
+            toolTip.SetToolTip(this.btnSubmitOrder, "Submit the order");
+        }
     }
 }
