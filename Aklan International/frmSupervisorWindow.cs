@@ -95,7 +95,7 @@ namespace Aklan_International
             orderList.Clear();
             while (reader.Read())
             {
-                orderList.Add(new Order(int.Parse(reader.GetString("OrderId")), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetString("CustomerContact"),reader.GetDateTime("OrderDateTime"), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit") , reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid"),reader.GetString("description")));
+                orderList.Add(new Order(int.Parse(reader.GetString("OrderId")), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetString("CustomerContact"),reader.GetString("OrderDateTime").Trim(), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit") , reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid"),reader.GetString("description")));
             }
             conn.Close();
             
@@ -177,7 +177,16 @@ namespace Aklan_International
 
         private void btnChangePw_Click(object sender, EventArgs e)
         {
-            frmChangePassword frmObj = new frmChangePassword(empID);
+            cmd = new MySqlCommand("select * from dtlogin where empID = '"+empID+"'", conn);
+            conn.Open();
+            reader = cmd.ExecuteReader();
+            string supervisorName = "";
+            if (reader.Read())
+            {
+                supervisorName = reader.GetString("empName").Trim();
+            }
+            conn.Close();
+            frmChangePassword frmObj = frmChangePassword.getInstance(supervisorName);
             frmObj.Show();
         }
     }

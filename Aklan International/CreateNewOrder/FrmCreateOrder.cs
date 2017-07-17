@@ -202,7 +202,7 @@ namespace Aklan_International.CreateNewOrder
                 if (MessageBox.Show("Confirm Submit Order?", "Confirm!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    customerOrder = new Order(Support.getMaxVlaueFrom("OrderId", "dtcustomer_orders") + 1, tbxNIC.Text, tbxCustomerName.Text, mtbContactNumber.Text, DateTime.Now, this.singleSheeetQty, this.singleUnitPrice, this.dozenSheetQty, this.dozenUnitPrice, decimal.Parse(tbxAmountPaying.Text), tbxDescription.Text);
+                    customerOrder = new Order(Support.getMaxVlaueFrom("OrderId", "dtcustomer_orders") + 1, tbxNIC.Text, tbxCustomerName.Text, mtbContactNumber.Text, DateTime.Now.ToString(), this.singleSheeetQty, this.singleUnitPrice, this.dozenSheetQty, this.dozenUnitPrice, decimal.Parse(tbxAmountPaying.Text), tbxDescription.Text);
                     MySqlConnection con = Support.setConnection();
 
                     MySqlCommand cmd = new MySqlCommand("INSERT INTO `dbcore`.`dtcustomer_orders` (`OrderId`, `OrderDateTime`, `CustomerId`, `CustomerName`, `CustomerContact`, `description`, `SingleSheetQty`, `SingleSheetUnit`, `DozenSheetQty`, `DozenSheetUnit`, `TotalPrice`, `AmountPaid`, `AmountRemaining`, `finished`) VALUES ('" + customerOrder.getOrderID() + "', '" + customerOrder.getDateTime() + "', '" + customerOrder.getCustomerId() + "', '" + customerOrder.getCustomerName() + "', '" + customerOrder.getCustomerContact() + "', '" + customerOrder.getDescription() + "', '" + customerOrder.getSingleQty() + "', '" + customerOrder.getSingleUnitPrice() + "', '" + customerOrder.getDozenQty() + "', '" + customerOrder.getDozenUnitPrice() + "', '" + customerOrder.getTotalPrice() + "', '" + customerOrder.getAmountPaid() + "', '" + customerOrder.getRemainingPrice() + "', 'No')", con);
@@ -222,7 +222,7 @@ namespace Aklan_International.CreateNewOrder
                 }
                 else
                 {
-                    customerOrder = new Order(Support.getMaxVlaueFrom("OrderId", "dtcustomer_orders") + 1, tbxNIC.Text, tbxCustomerName.Text, mtbContactNumber.Text, DateTime.Now, this.singleSheeetQty, this.singleUnitPrice, this.dozenSheetQty, this.dozenUnitPrice, decimal.Parse(tbxAmountPaying.Text), tbxDescription.Text);
+                    customerOrder = new Order(Support.getMaxVlaueFrom("OrderId", "dtcustomer_orders") + 1, tbxNIC.Text, tbxCustomerName.Text, mtbContactNumber.Text, DateTime.Now.ToString(), this.singleSheeetQty, this.singleUnitPrice, this.dozenSheetQty, this.dozenUnitPrice, decimal.Parse(tbxAmountPaying.Text), tbxDescription.Text);
                     MySqlConnection con = Support.setConnection();
 
                     MySqlCommand cmd = new MySqlCommand("INSERT INTO `dbcore`.`dtcustomer_orders` (`OrderId`, `OrderDateTime`, `CustomerId`, `CustomerName`, `CustomerContact`, `description`, `SingleSheetQty`, `SingleSheetUnit`, `DozenSheetQty`, `DozenSheetUnit`, `TotalPrice`, `AmountPaid`, `AmountRemaining`, `finished`) VALUES ('" + customerOrder.getOrderID() + "', '" + customerOrder.getDateTime() + "', '" + customerOrder.getCustomerId() + "', '" + customerOrder.getCustomerName() + "', '" + customerOrder.getCustomerContact() + "', '" + customerOrder.getDescription() + "', '" + customerOrder.getSingleQty() + "', '" + customerOrder.getSingleUnitPrice() + "', '" + customerOrder.getDozenQty() + "', '" + customerOrder.getDozenUnitPrice() + "', '" + customerOrder.getTotalPrice() + "', '" + customerOrder.getAmountPaid() + "', '" + customerOrder.getRemainingPrice() + "', 'No')", con);

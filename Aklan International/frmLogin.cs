@@ -105,5 +105,21 @@ namespace Aklan_International
         {
             (new frmModeSelect()).Show();
         }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnLogin.PerformClick();
+            }
+        }
+
+        private void txtEmpID_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtPassword.Focus();
+            }
+        }
     }
 }

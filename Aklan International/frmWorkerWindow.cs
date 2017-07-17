@@ -113,7 +113,7 @@ namespace Aklan_International
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            frmChangePassword obj = new frmChangePassword(cmbWorkerName.Text.Trim());
+            frmChangePassword obj = frmChangePassword.getInstance(cmbWorkerName.Text.Trim());
             obj.Show();
         }
 

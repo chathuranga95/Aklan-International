@@ -15,8 +15,17 @@ namespace Aklan_International
     {
         MySqlCommand cmd;
         MySqlConnection conn;
-        MySqlDataReader reader;
-        public frmSetJobRates()
+
+        private static frmSetJobRates instance;
+        public static frmSetJobRates getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmSetJobRates();
+            }
+            return instance;
+        }
+        private frmSetJobRates()
         {
             InitializeComponent();
         }
