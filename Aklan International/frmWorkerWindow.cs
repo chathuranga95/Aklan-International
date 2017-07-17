@@ -71,7 +71,7 @@ namespace Aklan_International
             toolTip.SetToolTip(this.btnChangePass, "Change selected Employer's login password");
             toolTip.SetToolTip(this.btnClear, "Clear text");
             toolTip.SetToolTip(this.btnLogin, "Login");
-
+            cmbWorkerName.Focus();
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             try
             {
@@ -130,6 +130,22 @@ namespace Aklan_International
                 e.Cancel = true;
             }
             
+        }
+
+        private void cmbWorkerName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }

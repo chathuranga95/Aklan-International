@@ -124,12 +124,12 @@ namespace Aklan_International
             int index = retrieveIndex();
 
             Dictionary<String, String> mydic = new Dictionary<string, string>();
-            mydic.Add("cutting", "sheet");
-            mydic.Add("clip cutting", "cut strip");
-            mydic.Add("folding 12", "clip cut");
-            mydic.Add("folding single", "clip cut");
-            mydic.Add("rimming 12", "folded 12");
-            mydic.Add("rimming single", "folded single");
+            mydic.Add("Cutting", "sheet");
+            mydic.Add("Clip Cutting", "cut strip");
+            mydic.Add("Folding 12", "clip cut");
+            mydic.Add("Folding Single", "clip cut");
+            mydic.Add("Rimming 12", "folded 12");
+            mydic.Add("Rimming Single", "folded single");
             string matType;
             mydic.TryGetValue(cmbJob.Text.Trim(), out matType);
 

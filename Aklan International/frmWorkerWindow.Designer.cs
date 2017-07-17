@@ -63,7 +63,8 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(156, 20);
-            this.txtPassword.TabIndex = 7;
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // btnClear
             // 
@@ -71,7 +72,7 @@
             this.btnClear.Location = new System.Drawing.Point(285, 156);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
-            this.btnClear.TabIndex = 9;
+            this.btnClear.TabIndex = 3;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -82,7 +83,7 @@
             this.btnLogin.Location = new System.Drawing.Point(366, 156);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
-            this.btnLogin.TabIndex = 8;
+            this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -95,8 +96,9 @@
             this.cmbWorkerName.Location = new System.Drawing.Point(285, 41);
             this.cmbWorkerName.Name = "cmbWorkerName";
             this.cmbWorkerName.Size = new System.Drawing.Size(156, 21);
-            this.cmbWorkerName.TabIndex = 12;
+            this.cmbWorkerName.TabIndex = 0;
             this.cmbWorkerName.SelectedIndexChanged += new System.EventHandler(this.cmbWorkerName_SelectedIndexChanged);
+            this.cmbWorkerName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbWorkerName_KeyPress);
             // 
             // btnChangePass
             // 

@@ -95,12 +95,12 @@
             this.cmbJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbJob.FormattingEnabled = true;
             this.cmbJob.Items.AddRange(new object[] {
-            "cutting",
-            "clip cutting",
-            "folding 12",
-            "folding single",
-            "rimming 12",
-            "rimming single"});
+            "Cutting",
+            "Clip Cutting",
+            "Folding 12",
+            "Folding Single",
+            "Rimming 12",
+            "Rimming Single"});
             this.cmbJob.Location = new System.Drawing.Point(145, 44);
             this.cmbJob.Name = "cmbJob";
             this.cmbJob.Size = new System.Drawing.Size(121, 21);
