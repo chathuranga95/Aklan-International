@@ -34,6 +34,7 @@
             this.lblModeSelect = new System.Windows.Forms.Label();
             this.panelbottom = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnAbout = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.panelbottom.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +107,7 @@
             this.panelbottom.BackColor = System.Drawing.Color.White;
             this.panelbottom.BackgroundImage = global::Aklan_International.Properties.Resources.bottom_pannel_480x50;
             this.panelbottom.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelbottom.Controls.Add(this.btnAbout);
             this.panelbottom.Controls.Add(this.btnClose);
             this.panelbottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelbottom.Location = new System.Drawing.Point(0, 310);
@@ -134,6 +136,15 @@
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAbout.Location = new System.Drawing.Point(0, 0);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(50, 50);
+            this.btnAbout.TabIndex = 4;
+            this.btnAbout.UseVisualStyleBackColor = true;
             // 
             // frmModeSelect
             // 
@@ -164,5 +175,6 @@
         private System.Windows.Forms.Panel panelTop;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblModeSelect;
+        private System.Windows.Forms.Button btnAbout;
     }
 }

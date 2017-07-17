@@ -363,6 +363,26 @@ namespace Aklan_International.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Req_Job_exit_100_new {
+            get {
+                object obj = ResourceManager.GetObject("Req Job exit 100 new", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Req_Job_req_110 {
+            get {
+                object obj = ResourceManager.GetObject("Req Job req 110", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap setJobRates {
             get {
                 object obj = ResourceManager.GetObject("setJobRates", resourceCulture);

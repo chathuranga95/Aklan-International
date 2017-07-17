@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRequestJob));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnRequest = new System.Windows.Forms.Button();
@@ -51,7 +50,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 39);
+            this.tabControl1.Location = new System.Drawing.Point(12, 45);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(540, 299);
@@ -76,7 +75,7 @@
             // btnRequest
             // 
             this.btnRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnRequest.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRequest.BackgroundImage")));
+            this.btnRequest.BackgroundImage = global::Aklan_International.Properties.Resources.Req_Job_req_110;
             this.btnRequest.Enabled = false;
             this.btnRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRequest.Location = new System.Drawing.Point(6, 215);
@@ -96,6 +95,11 @@
             this.spnQty.Size = new System.Drawing.Size(195, 29);
             this.spnQty.TabIndex = 3;
             this.spnQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.spnQty.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.spnQty.ValueChanged += new System.EventHandler(this.spnQty_ValueChanged);
             // 
             // cmbJob
@@ -171,7 +175,7 @@
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.BackgroundImage = global::Aklan_International.Properties.Resources.Req_Job_exit_100_new;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(448, 359);
