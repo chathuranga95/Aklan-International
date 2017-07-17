@@ -13,14 +13,24 @@ namespace Aklan_International
 {
     public partial class frmAddNewWorker : Form
     {
-        
-         MySqlConnection conn;
+        static frmAddNewWorker instance = null;
+        public static frmAddNewWorker getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmAddNewWorker();
+            }
+            return instance;
+
+        }
+
+        MySqlConnection conn;
         string empid = "";
 
         
         private Boolean isValidTelNO(string telNO)
         {
-            if(telNO.Trim().Length== 13) {
+            if(telNO.Trim().Length== 14) {
                 return true;
 
             }
@@ -76,6 +86,7 @@ namespace Aklan_International
         private void frmAddNewWorker_Load(object sender, EventArgs e)
         {
             dudMonth.Text = "Jan";
+            dudMonth.DownButton();
             lblPasswordMaching.Text = "";
             btnAddWorker.Enabled = false;
             rbMale.Checked = true;
@@ -105,7 +116,11 @@ namespace Aklan_International
             string nicNO = tbxNIC.Text;
             string gender;
             string deleted = "No";
-            if (Support.isValidNIC(nicNO)&&isValidTelNO(telNO))
+            if(nudYear.Value +15 >= DateTime.Now.Year)
+            {
+                MessageBox.Show("Enter worker's real date of birth.", "Something wrong");
+            }
+            else if (Support.isValidNIC(nicNO)&&isValidTelNO(telNO))
             {
                 {
 
@@ -159,10 +174,12 @@ namespace Aklan_International
             else if(!Support.isValidNIC(nicNO))
             {
                 MessageBox.Show("NIC Number is not valid.", "Error");
+                tbxNIC.Focus();
             }
             else
             {
                 MessageBox.Show("Contact Number is not valid.", "Error");
+                tbxContactNumber.Focus();
             }
 
 
@@ -186,11 +203,11 @@ namespace Aklan_International
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (cmbWorkerType.Text.Length <2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length <2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -208,11 +225,11 @@ namespace Aklan_International
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (cmbWorkerType.Text.Length < 2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length < 2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -230,11 +247,11 @@ namespace Aklan_International
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (cmbWorkerType.Text.Length < 2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length < 2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -247,16 +264,17 @@ namespace Aklan_International
 
         private void tbxPassword_TextChanged(object sender, EventArgs e)
         {
+            tbxConfirmPassword.Text = "";
             if ((tbxConfirmPassword.Text) != (tbxPassword.Text))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (cmbWorkerType.Text.Length < 2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length < 2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -274,10 +292,11 @@ namespace Aklan_International
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) || (cmbWorkerType.Text.Length < 2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length < 2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -295,11 +314,11 @@ namespace Aklan_International
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (cmbWorkerType.Text.Length < 2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length < 2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -317,11 +336,11 @@ namespace Aklan_International
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (cmbWorkerType.Text.Length < 2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length < 2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -339,11 +358,11 @@ namespace Aklan_International
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-               (cmbWorkerType.Text.Length < 2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length < 2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -361,11 +380,11 @@ namespace Aklan_International
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (cmbWorkerType.Text.Length < 2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length < 2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -392,11 +411,11 @@ namespace Aklan_International
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "*Passwords do not match.";
             }
-            else if ((tbxFirstName.Text.Length == 0) || (tbxLastName.Text.Length == 0) ||
-                (tbxNIC.Text.Length == 0) || (tbxPassword.Text.Length == 0) ||
-                (cmbWorkerType.Text.Length < 2) ||
-                (tbxContactNumber.Text.Length == 0) || (tbxConfirmPassword.Text.Length == 0) ||
-                (tbxAddress.Text.Length == 0) || (tbxACNumber.Text.Length == 0))
+            else if ((tbxFirstName.Text.Trim().Length == 0) || (tbxLastName.Text.Trim().Length == 0) ||
+                (tbxNIC.Text.Trim().Length == 0) || (tbxPassword.Text.Trim().Length == 0) ||
+                (cmbWorkerType.Text.Trim().Length < 2) ||
+                (tbxContactNumber.Text.Trim().Length == 0) || (tbxConfirmPassword.Text.Trim().Length == 0) ||
+                (tbxAddress.Text.Trim().Length == 0) || (tbxACNumber.Text.Trim().Length == 0))
             {
                 btnAddWorker.Enabled = false;
                 lblPasswordMaching.Text = "";
@@ -405,8 +424,9 @@ namespace Aklan_International
             {
                 btnAddWorker.Enabled = true;
             }
+        
 
-            conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+        conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             int index = retrieveIndex(cmbWorkerType.Text);
 
             string type = "";

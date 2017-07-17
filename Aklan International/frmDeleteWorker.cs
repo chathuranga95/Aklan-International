@@ -14,7 +14,17 @@ namespace Aklan_International
 {
     public partial class frmDeleteWorker : Form
     {
-        
+        static frmDeleteWorker instance = null;
+        public static frmDeleteWorker getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmDeleteWorker();
+            }
+            return instance;
+
+        }
+
         MySqlConnection conn;
         
         public Boolean checkAvailability(string empID)

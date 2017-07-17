@@ -143,7 +143,6 @@
             // 
             // dudMonth
             // 
-            this.dudMonth.AllowDrop = true;
             this.dudMonth.Items.Add("Dec");
             this.dudMonth.Items.Add("Nov");
             this.dudMonth.Items.Add("Oct");
@@ -162,7 +161,6 @@
             this.dudMonth.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dudMonth.Size = new System.Drawing.Size(40, 20);
             this.dudMonth.TabIndex = 11;
-            this.dudMonth.TabStop = false;
             // 
             // nudDate
             // 
