@@ -35,28 +35,31 @@ namespace Aklan_International
                     conn.Open();
                     cmd = new MySqlCommand("select * from dtlogin where empName = '" + cmbWorkerName.Text.Trim() + "'", conn);
                     reader = cmd.ExecuteReader();
+                    bool access = false;
                     while (reader.Read())
                     {
                         if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
                         {
                             MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            access = true;
                             this.Hide();
                             frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(), this, reader.GetString("empID"));
                             obj.Show();
                             clearComponents();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
                         }
                     }
-
+                    if (!access)
+                    {
+                        MessageBox.Show("Invalid Username Or Password!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        clearComponents();
+                    }
                 }
                 catch
                 {
                     MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    throw;
+                    clearComponents();
+                    //throw;
                 }
                 finally
                 {
