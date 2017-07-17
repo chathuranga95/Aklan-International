@@ -159,7 +159,7 @@
             // 
             // btnChangeDetails
             // 
-            this.btnChangeDetails.Location = new System.Drawing.Point(16, 361);
+            this.btnChangeDetails.Location = new System.Drawing.Point(13, 361);
             this.btnChangeDetails.Name = "btnChangeDetails";
             this.btnChangeDetails.Size = new System.Drawing.Size(88, 23);
             this.btnChangeDetails.TabIndex = 14;
@@ -278,7 +278,7 @@
             // lblempID
             // 
             this.lblempID.AutoSize = true;
-            this.lblempID.Location = new System.Drawing.Point(13, 12);
+            this.lblempID.Location = new System.Drawing.Point(13, 11);
             this.lblempID.Name = "lblempID";
             this.lblempID.Size = new System.Drawing.Size(56, 13);
             this.lblempID.TabIndex = 54;
@@ -305,7 +305,7 @@
             // rbMale
             // 
             this.rbMale.AutoSize = true;
-            this.rbMale.Location = new System.Drawing.Point(128, 165);
+            this.rbMale.Location = new System.Drawing.Point(127, 165);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(48, 17);
             this.rbMale.TabIndex = 6;
@@ -316,7 +316,7 @@
             // rbFemale
             // 
             this.rbFemale.AutoSize = true;
-            this.rbFemale.Location = new System.Drawing.Point(202, 165);
+            this.rbFemale.Location = new System.Drawing.Point(227, 165);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(59, 17);
             this.rbFemale.TabIndex = 7;
