@@ -82,6 +82,10 @@ namespace Aklan_International.CreateNewOrder
                     dgvItems.Enabled = true;
                     btnAddItem.Enabled = true;
                     MessageBox.Show("Add Items and submit the order!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnCreateOrder.Enabled = false;
+                    btnCancelOrder.Enabled = true;
+                    btnClear.Enabled = false;
+                    btnAddItem.Focus();
                 }
                 else
                 {
@@ -142,11 +146,14 @@ namespace Aklan_International.CreateNewOrder
         }
 
         private void dgvItems_SelectionChanged(object sender, EventArgs e)
-        {            
-            Console.WriteLine("Selected index = "+dgvItems.SelectedRows[0].Index);
-            if (dgvItems.SelectedRows[0].Cells[0].Value == null)
-                btnRemoveItem.Enabled = false;
-            else btnRemoveItem.Enabled = true;
+        {
+            //Console.WriteLine("Selected index = "+dgvItems.SelectedRows[0].Index);
+            try {
+                if (dgvItems.SelectedRows[0].Cells[0].Value == null)
+                    btnRemoveItem.Enabled = false;
+                else btnRemoveItem.Enabled = true;
+            }
+            catch (System.ArgumentOutOfRangeException) { }
         }
 
         private void dgvItems_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
@@ -190,18 +197,43 @@ namespace Aklan_International.CreateNewOrder
 
         private void btnSubmitOrder_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Confirm Submit Order?","Confirm!",MessageBoxButtons.YesNo , MessageBoxIcon.Question)== DialogResult.Yes)
+            if (decimal.Parse(tbxAmountPaying.Text) > 0)
             {
+                if (MessageBox.Show("Confirm Submit Order?", "Confirm!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
 
-                customerOrder = new Order(Support.getMaxVlaueFrom("OrderId", "dtcustomer_orders")+1, tbxNIC.Text, tbxCustomerName.Text, mtbContactNumber.Text, DateTime.Now, this.singleSheeetQty, this.singleUnitPrice, this.dozenSheetQty, this.dozenUnitPrice,  decimal.Parse(tbxAmountPaying.Text), tbxDescription.Text);
-                MySqlConnection con = Support.setConnection();
-                
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO `dbcore`.`dtcustomer_orders` (`OrderId`, `OrderDateTime`, `CustomerId`, `CustomerName`, `CustomerContact`, `description`, `SingleSheetQty`, `SingleSheetUnit`, `DozenSheetQty`, `DozenSheetUnit`, `TotalPrice`, `AmountPaid`, `AmountRemaining`, `finished`) VALUES ('"+customerOrder.getOrderID()+"', '"+customerOrder.getDateTime()+"', '"+customerOrder.getCustomerId()+"', '"+customerOrder.getCustomerName()+"', '"+customerOrder.getCustomerContact()+"', '"+customerOrder.getDescription()+"', '"+customerOrder.getSingleQty()+"', '"+customerOrder.getSingleUnitPrice()+"', '"+customerOrder.getDozenQty()+"', '"+customerOrder.getDozenUnitPrice()+"', '"+customerOrder.getTotalPrice()+"', '"+customerOrder.getAmountPaid()+"', '"+customerOrder.getRemainingPrice()+"', 'No')",con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-                this.Close();
+                    customerOrder = new Order(Support.getMaxVlaueFrom("OrderId", "dtcustomer_orders") + 1, tbxNIC.Text, tbxCustomerName.Text, mtbContactNumber.Text, DateTime.Now, this.singleSheeetQty, this.singleUnitPrice, this.dozenSheetQty, this.dozenUnitPrice, decimal.Parse(tbxAmountPaying.Text), tbxDescription.Text);
+                    MySqlConnection con = Support.setConnection();
+
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO `dbcore`.`dtcustomer_orders` (`OrderId`, `OrderDateTime`, `CustomerId`, `CustomerName`, `CustomerContact`, `description`, `SingleSheetQty`, `SingleSheetUnit`, `DozenSheetQty`, `DozenSheetUnit`, `TotalPrice`, `AmountPaid`, `AmountRemaining`, `finished`) VALUES ('" + customerOrder.getOrderID() + "', '" + customerOrder.getDateTime() + "', '" + customerOrder.getCustomerId() + "', '" + customerOrder.getCustomerName() + "', '" + customerOrder.getCustomerContact() + "', '" + customerOrder.getDescription() + "', '" + customerOrder.getSingleQty() + "', '" + customerOrder.getSingleUnitPrice() + "', '" + customerOrder.getDozenQty() + "', '" + customerOrder.getDozenUnitPrice() + "', '" + customerOrder.getTotalPrice() + "', '" + customerOrder.getAmountPaid() + "', '" + customerOrder.getRemainingPrice() + "', 'No')", con);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Order Submitted Successfully!", " ", MessageBoxButtons.OK , MessageBoxIcon.Information );
+                    this.Close();
+                }
             }
+
+            else
+            {
+                if(MessageBox.Show("Add inital Payment?", "Payment Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    this.tbxAmountPaying.Focus();
+                }
+                else
+                {
+                    customerOrder = new Order(Support.getMaxVlaueFrom("OrderId", "dtcustomer_orders") + 1, tbxNIC.Text, tbxCustomerName.Text, mtbContactNumber.Text, DateTime.Now, this.singleSheeetQty, this.singleUnitPrice, this.dozenSheetQty, this.dozenUnitPrice, decimal.Parse(tbxAmountPaying.Text), tbxDescription.Text);
+                    MySqlConnection con = Support.setConnection();
+
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO `dbcore`.`dtcustomer_orders` (`OrderId`, `OrderDateTime`, `CustomerId`, `CustomerName`, `CustomerContact`, `description`, `SingleSheetQty`, `SingleSheetUnit`, `DozenSheetQty`, `DozenSheetUnit`, `TotalPrice`, `AmountPaid`, `AmountRemaining`, `finished`) VALUES ('" + customerOrder.getOrderID() + "', '" + customerOrder.getDateTime() + "', '" + customerOrder.getCustomerId() + "', '" + customerOrder.getCustomerName() + "', '" + customerOrder.getCustomerContact() + "', '" + customerOrder.getDescription() + "', '" + customerOrder.getSingleQty() + "', '" + customerOrder.getSingleUnitPrice() + "', '" + customerOrder.getDozenQty() + "', '" + customerOrder.getDozenUnitPrice() + "', '" + customerOrder.getTotalPrice() + "', '" + customerOrder.getAmountPaid() + "', '" + customerOrder.getRemainingPrice() + "', 'No')", con);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Order Submitted Successfully!", " ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+            }
+
            
 
         }
@@ -251,6 +283,30 @@ namespace Aklan_International.CreateNewOrder
             toolTip.SetToolTip(this.btnAddItem, "Add an item to the order");
             toolTip.SetToolTip(this.btnRemoveItem, "Remove selected item from the order");
             toolTip.SetToolTip(this.btnSubmitOrder, "Submit the order");
+        }
+
+        private void btnCancelOrder_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Cancel Order?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                dgvItems.Enabled = false;
+                dgvItems.Rows.Clear();
+                
+                tbxCustomerName.Clear();
+                tbxNIC.Clear();
+                mtbContactNumber.Clear();
+                tbxDescription.Text = " ";
+                btnAddItem.Enabled = false;
+                btnCreateOrder.Enabled = false;
+                btnCancelOrder.Enabled = false;
+                btnClear.Enabled = true;
+                btnSubmitOrder.Enabled = false;
+                btnRemoveItem.Enabled = false;
+                tbxTotal.Clear();
+                
+
+
+            }
         }
     }
 }
