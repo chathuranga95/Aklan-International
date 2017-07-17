@@ -37,6 +37,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,11 +112,21 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "Built On : 2017/07/18";
             // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Aklan_International.Properties.Resources.ICON;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(536, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(140, 140);
+            this.panel2.TabIndex = 3;
+            // 
             // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(699, 311);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -148,5 +159,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel2;
     }
 }
