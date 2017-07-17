@@ -37,15 +37,17 @@
             this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unit_Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelGridView = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.grdReport)).BeginInit();
+            this.panelGridView.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnGenerate
             // 
             this.btnGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(547, 185);
+            this.btnGenerate.Location = new System.Drawing.Point(891, 234);
             this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(163, 46);
+            this.btnGenerate.Size = new System.Drawing.Size(140, 43);
             this.btnGenerate.TabIndex = 0;
             this.btnGenerate.Text = "Save and Open with Excel";
             this.btnGenerate.UseVisualStyleBackColor = true;
@@ -55,6 +57,7 @@
             // 
             this.grdReport.AllowUserToAddRows = false;
             this.grdReport.AllowUserToDeleteRows = false;
+            this.grdReport.BackgroundColor = System.Drawing.Color.White;
             this.grdReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Customer,
@@ -64,11 +67,11 @@
             this.Qty,
             this.Unit_Price,
             this.Amount});
-            this.grdReport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.grdReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdReport.Location = new System.Drawing.Point(0, 0);
             this.grdReport.Name = "grdReport";
             this.grdReport.ReadOnly = true;
-            this.grdReport.Size = new System.Drawing.Size(741, 157);
+            this.grdReport.Size = new System.Drawing.Size(1019, 216);
             this.grdReport.TabIndex = 1;
             this.grdReport.TabStop = false;
             // 
@@ -115,17 +118,30 @@
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
             // 
+            // panelGridView
+            // 
+            this.panelGridView.Controls.Add(this.grdReport);
+            this.panelGridView.Location = new System.Drawing.Point(12, 12);
+            this.panelGridView.Name = "panelGridView";
+            this.panelGridView.Size = new System.Drawing.Size(1019, 216);
+            this.panelGridView.TabIndex = 2;
+            // 
             // frmSalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 243);
-            this.Controls.Add(this.grdReport);
+            this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1043, 289);
+            this.Controls.Add(this.panelGridView);
             this.Controls.Add(this.btnGenerate);
+            this.DoubleBuffered = true;
             this.Name = "frmSalesReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales Report";
             this.Load += new System.EventHandler(this.frmSalesReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdReport)).EndInit();
+            this.panelGridView.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -141,5 +157,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unit_Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.Panel panelGridView;
     }
 }
