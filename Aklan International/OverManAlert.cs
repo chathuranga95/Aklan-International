@@ -10,13 +10,14 @@ namespace Aklan_International
     class OverManAlert
     {
         private static OverManAlert instance;
+        private int count = 0;
 
         MySqlConnection conn;
         MySqlCommand cmd;
         MySqlDataReader reader;
 
         bool finished;
-        string message;
+        
 
         public OverManAlert()
         {
@@ -36,7 +37,13 @@ namespace Aklan_International
             conn.Open();
             cmd = new MySqlCommand("SELECT * from dtcustomer_orders where finished = 'no'", conn);
             reader = cmd.ExecuteReader();
-            if (!reader.Read())
+            while (reader.Read())
+            this.count = 0;
+            {
+                count++;
+            }
+
+            if (count == 0)
             {
                 finished = true;
             }
@@ -44,6 +51,8 @@ namespace Aklan_International
             {
                 finished = false;
             }
+            
+         
             conn.Close();
             return finished;
         }
@@ -59,8 +68,23 @@ namespace Aklan_International
             }
             else
             {
-                return null;
+                if(count == 1)
+                {
+                    message = this.count.ToString() + " order is still on processing";
+                    
+                }
+                else if (count > 1)
+                {
+                    message = this.count.ToString() + " order are still on processing";
+                    
+                }
+                else
+                {
+                    return null;
+                }
+                
             }
+            return message;
             
         }
     }

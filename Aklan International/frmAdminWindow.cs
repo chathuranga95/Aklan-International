@@ -30,8 +30,9 @@ namespace Aklan_International
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            CreateNewOrder.FrmCreateOrder createrOrderFrm = new CreateNewOrder.FrmCreateOrder();
+            CreateNewOrder.FrmCreateOrder createrOrderFrm = CreateNewOrder.FrmCreateOrder.getInstance();
             createrOrderFrm.Show();
+            createrOrderFrm.BringToFront();
         }
 
         private void btnSetJobRates_Click(object sender, EventArgs e)
@@ -66,8 +67,9 @@ namespace Aklan_International
 
         private void btnSetUnitPrice_Click(object sender, EventArgs e)
         {
-            FrmSetUnitPrice obj = new FrmSetUnitPrice();
+            FrmSetUnitPrice obj =  FrmSetUnitPrice.getInstance();
             obj.Show();
+            obj.BringToFront();
         }
 
 
