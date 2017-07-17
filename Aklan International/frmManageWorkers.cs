@@ -12,6 +12,18 @@ namespace Aklan_International
 {
     public partial class frmManageWorkers : Form
     {
+        private static frmManageWorkers instance;
+
+
+
+        public static frmManageWorkers getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmManageWorkers();
+            }
+            return instance;
+        }
         public frmManageWorkers()
         {
             InitializeComponent();

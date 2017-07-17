@@ -151,8 +151,9 @@ namespace Aklan_International
 
         private void btnManageWorkers_Click(object sender, EventArgs e)
         {
-            frmManageWorkers obj = new Aklan_International.frmManageWorkers();
+            frmManageWorkers obj = frmManageWorkers.getInstance();
             obj.Show();
+            obj.BringToFront();
         }
 
         private void frmAdminWindow_FormClosing(object sender, FormClosingEventArgs e)
