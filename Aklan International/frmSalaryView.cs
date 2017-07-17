@@ -17,7 +17,18 @@ namespace Aklan_International
         MySqlCommand cmd;
         MySqlConnection conn;
         MySqlDataReader reader;
-        public frmSalaryView()
+
+        public static frmSalaryView instance;
+        public static frmSalaryView getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmSalaryView();
+            }
+            return instance;
+        }
+
+        private frmSalaryView()
         {
             InitializeComponent();
         }

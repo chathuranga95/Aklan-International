@@ -20,11 +20,20 @@ namespace Aklan_International
         MySqlDataReader reader;
         
         ArrayList orderList = new ArrayList();
+        public static frmManageOrders instance;
+        public static frmManageOrders getInstance(string empID)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmManageOrders(empID);
+            }
+            return instance;
+        }
         public frmManageOrders()
         {
             InitializeComponent();
         }
-        public frmManageOrders(string empID)
+        private frmManageOrders(string empID)
         {
             InitializeComponent();
             this.empID = empID;

@@ -177,7 +177,16 @@ namespace Aklan_International
 
         private void btnChangePw_Click(object sender, EventArgs e)
         {
-            frmChangePassword frmObj = new frmChangePassword(empID);
+            cmd = new MySqlCommand("select * from dtlogin where empID = '"+empID+"'", conn);
+            conn.Open();
+            reader = cmd.ExecuteReader();
+            string supervisorName = "";
+            if (reader.Read())
+            {
+                supervisorName = reader.GetString("empName").Trim();
+            }
+            conn.Close();
+            frmChangePassword frmObj = frmChangePassword.getInstance(supervisorName);
             frmObj.Show();
         }
     }
