@@ -33,8 +33,8 @@
             this.panelTop = new System.Windows.Forms.Panel();
             this.lblModeSelect = new System.Windows.Forms.Label();
             this.panelbottom = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.btnAbout = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panelTop.SuspendLayout();
             this.panelbottom.SuspendLayout();
             this.SuspendLayout();
@@ -114,6 +114,24 @@
             this.panelbottom.Name = "panelbottom";
             this.panelbottom.Size = new System.Drawing.Size(480, 50);
             this.panelbottom.TabIndex = 2;
+            this.panelbottom.Paint += new System.Windows.Forms.PaintEventHandler(this.panelbottom_Paint);
+            // 
+            // btnAbout
+            // 
+            this.btnAbout.BackColor = System.Drawing.Color.Transparent;
+            this.btnAbout.BackgroundImage = global::Aklan_International.Properties.Resources.info1600__1_;
+            this.btnAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAbout.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAbout.FlatAppearance.BorderSize = 0;
+            this.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbout.Location = new System.Drawing.Point(0, 0);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(50, 50);
+            this.btnAbout.TabIndex = 4;
+            this.btnAbout.UseVisualStyleBackColor = false;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            this.btnAbout.MouseEnter += new System.EventHandler(this.btnAbout_MouseEnter);
+            this.btnAbout.MouseHover += new System.EventHandler(this.btnAbout_MouseHover);
             // 
             // btnClose
             // 
@@ -136,15 +154,6 @@
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
-            // 
-            // btnAbout
-            // 
-            this.btnAbout.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnAbout.Location = new System.Drawing.Point(0, 0);
-            this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(50, 50);
-            this.btnAbout.TabIndex = 4;
-            this.btnAbout.UseVisualStyleBackColor = true;
             // 
             // frmModeSelect
             // 

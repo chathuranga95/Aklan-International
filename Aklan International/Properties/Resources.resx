@@ -172,6 +172,9 @@
   <data name="adminWinButton4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminWinButton4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Change Pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Change Pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bottom pannel 480x50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bottom pannel 480x50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,6 +199,9 @@
   <data name="setJobRates" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setJobRates.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Req Job exit 100 new" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Req Job exit 100 new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="adminWinButton2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminWinButton2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -204,9 +210,6 @@
   </data>
   <data name="adminWinButton5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminWinButton5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Change Pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Change Pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ModeButtonSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModeButtonSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,7 +232,7 @@
   <data name="manageOrder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manageOrder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Req Job exit 100 new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Req Job exit 100 new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="info1600 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info1600 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -30,12 +30,12 @@ namespace Aklan_International
             this.date = date;
             this.job = job;
             mydic = new Dictionary<string, string>();
-            mydic.Add("cutting", "cut strip");
-            mydic.Add("clip cutting", "clip cut");
-            mydic.Add("folding 12", "folded 12");
-            mydic.Add("folding single", "folded single");
-            mydic.Add("rimming 12", "None");
-            mydic.Add("rimming single", "None");
+            mydic.Add("Cutting", "cut strip");
+            mydic.Add("Clip Cutting", "clip cut");
+            mydic.Add("Folding 12", "folded 12");
+            mydic.Add("Folding Single", "folded single");
+            mydic.Add("Rimming 12", "None");
+            mydic.Add("Rimming Single", "None");
         }
 
         public string getOutputMaterialType()
