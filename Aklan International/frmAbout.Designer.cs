@@ -127,6 +127,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAbout";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "About";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.frmAbout_Load);
