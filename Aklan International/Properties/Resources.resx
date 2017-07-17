@@ -151,6 +151,9 @@
   <data name="adminWinButtonSelect" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminWinButtonSelect.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="adminWinButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adminWinButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="adminWinButton1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminWinButton1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -159,6 +162,9 @@
   </data>
   <data name="Payroll" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Payroll.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\password.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="setJobRates" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\setJobRates.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,11 +175,8 @@
   <data name="adminWinButton4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminWinButton4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Change Pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Change Pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="adminWinButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\adminWinButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="newOrder" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\newOrder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Pannel up2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pannel up2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,14 +208,14 @@
   <data name="adminWinButton5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\adminWinButton5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Change Pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Change Pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ModeButtonSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModeButtonSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CloseButtonSelected" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CloseButtonSelected.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="newOrder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\newOrder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ModeButton" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModeButton.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,7 +223,7 @@
   <data name="manageOrder" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\manageOrder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\password.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="growth-icon-12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\growth-icon-12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

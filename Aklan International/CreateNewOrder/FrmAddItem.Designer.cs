@@ -44,6 +44,7 @@
             // lblSripeType
             // 
             this.lblSripeType.AutoSize = true;
+            this.lblSripeType.BackColor = System.Drawing.Color.Transparent;
             this.lblSripeType.Location = new System.Drawing.Point(30, 28);
             this.lblSripeType.Name = "lblSripeType";
             this.lblSripeType.Size = new System.Drawing.Size(55, 13);
@@ -53,6 +54,7 @@
             // lblUnitPrice
             // 
             this.lblUnitPrice.AutoSize = true;
+            this.lblUnitPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblUnitPrice.Location = new System.Drawing.Point(30, 61);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(53, 13);
@@ -62,6 +64,7 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
+            this.lblQty.BackColor = System.Drawing.Color.Transparent;
             this.lblQty.Location = new System.Drawing.Point(30, 94);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(46, 13);
@@ -71,6 +74,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Location = new System.Drawing.Point(30, 127);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(70, 13);

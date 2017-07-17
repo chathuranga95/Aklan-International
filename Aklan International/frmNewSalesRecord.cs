@@ -20,6 +20,7 @@ namespace Aklan_International
         MySqlConnection conn;
         MySqlCommand cmd;
         MySqlDataReader reader;
+        string salesmanName;
 
         int singleQty;
         int dozenQty;
@@ -59,6 +60,7 @@ namespace Aklan_International
             singleQty = 0;
             dozenQty = 0;
             btnChangePassword.Visible = true;
+            this.salesmanName = salesmanName;
         }
         public void btnAddState()
         {
@@ -296,8 +298,8 @@ namespace Aklan_International
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-            frmChangePassword frmObj = new frmChangePassword(empID);
-            frmObj.Show();
+            frmChangePassword obj = frmChangePassword.getInstance(salesmanName);
+            obj.Show();
 
         }
 

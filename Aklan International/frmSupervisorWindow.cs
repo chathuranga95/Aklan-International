@@ -39,6 +39,22 @@ namespace Aklan_International
             System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
             toolTip.SetToolTip(this.btnMarkJobs, "Make selected Job as Completed");
             toolTip.SetToolTip(this.btnMarkOrders, "Make selected Order as Completed");
+            if (lbxCurrentJobs.Items.Count > 0)
+            {
+                lbxCurrentJobs.SelectedIndex = 0;
+            }
+            else
+            {
+                btnMarkJobs.Enabled = false;
+            }
+            if (lbxCurrentOrders.Items.Count > 0)
+            {
+                lbxCurrentOrders.SelectedIndex = 0;
+            }
+            else
+            {
+                btnMarkOrders.Enabled = false;
+            }
         }
 
         private void refreshJobs()
@@ -95,7 +111,7 @@ namespace Aklan_International
             orderList.Clear();
             while (reader.Read())
             {
-                orderList.Add(new Order(int.Parse(reader.GetString("OrderId")), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetString("CustomerContact"),reader.GetDateTime("OrderDateTime"), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit") , reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid"),reader.GetString("description")));
+                orderList.Add(new Order(int.Parse(reader.GetString("OrderId")), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetString("CustomerContact"),reader.GetString("OrderDateTime").Trim(), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit") , reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid"),reader.GetString("description")));
             }
             conn.Close();
             
@@ -177,8 +193,18 @@ namespace Aklan_International
 
         private void btnChangePw_Click(object sender, EventArgs e)
         {
-            frmChangePassword frmObj = new frmChangePassword(empID);
+            cmd = new MySqlCommand("select * from dtlogin where empID = '"+empID+"'", conn);
+            conn.Open();
+            reader = cmd.ExecuteReader();
+            string supervisorName = "";
+            if (reader.Read())
+            {
+                supervisorName = reader.GetString("empName").Trim();
+            }
+            conn.Close();
+            frmChangePassword frmObj = frmChangePassword.getInstance(supervisorName);
             frmObj.Show();
+            frmObj.BringToFront();
         }
     }
 }

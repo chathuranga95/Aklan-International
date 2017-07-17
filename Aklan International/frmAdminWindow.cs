@@ -36,8 +36,9 @@ namespace Aklan_International
 
         private void btnSetJobRates_Click(object sender, EventArgs e)
         {
-            frmSetJobRates obj = new frmSetJobRates();
+            frmSetJobRates obj = frmSetJobRates.getInstance();
             obj.Show();
+            obj.BringToFront();
         }
 
         private void btnCreateSalesOrder_Click(object sender, EventArgs e)
@@ -80,8 +81,11 @@ namespace Aklan_International
 
         private void btnChangePass_Click(object sender, EventArgs e)
         {
-            frmChangePassword obj = new frmChangePassword(adminName);
+            
+            frmChangePassword obj = frmChangePassword.getInstance(adminName);
             obj.Show();
+            obj.BringToFront();
+            
         }
 
         private void frmAdminWindow_Load(object sender, EventArgs e)
@@ -117,8 +121,9 @@ namespace Aklan_International
 
         private void btnManageOrder_Click(object sender, EventArgs e)
         {
-            frmManageOrders obj = new frmManageOrders(empID);
+            frmManageOrders obj = frmManageOrders.getInstance(empID);
             obj.Show();
+            obj.BringToFront();
         }
 
         private void btnViewStock_Click(object sender, EventArgs e)
@@ -292,8 +297,9 @@ namespace Aklan_International
 
         private void btnViewPayroll_Click(object sender, EventArgs e)
         {
-            frmSalaryView frmSalary = new frmSalaryView();
+            frmSalaryView frmSalary = frmSalaryView.getInstance();
             frmSalary.Show();
+            frmSalary.BringToFront();
         }
     }
 }
