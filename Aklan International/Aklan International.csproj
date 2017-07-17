@@ -339,6 +339,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database script\dbfile.sql" />
+    <None Include="Resources\info1600 %281%29.png" />
     <None Include="Resources\Req Job exit 100 new.png" />
     <None Include="Resources\Req Job req 110.png" />
     <None Include="Resources\growth-icon-12.png" />

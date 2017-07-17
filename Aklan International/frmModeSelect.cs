@@ -129,5 +129,26 @@ namespace Aklan_International
             Image image = Aklan_International.Properties.Resources.ModeButton;
             btnWorker.BackgroundImage = image;
         }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            frmAbout about = new frmAbout();
+            about.Show();
+        }
+
+        private void btnAbout_MouseEnter(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panelbottom_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAbout_MouseHover(object sender, EventArgs e)
+        {
+           
+        }
     }
 }
