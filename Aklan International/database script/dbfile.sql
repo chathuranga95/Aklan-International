@@ -26,7 +26,7 @@ DROP TABLE IF EXISTS `dtcustomer_orders`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dtcustomer_orders` (
   `OrderId` int(11) NOT NULL,
-  `OrderDateTime` datetime DEFAULT NULL,
+  `OrderDateTime` varchar(30) DEFAULT NULL,
   `CustomerId` varchar(10) DEFAULT NULL,
   `CustomerName` varchar(45) DEFAULT NULL,
   `CustomerContact` varchar(15) DEFAULT NULL,
@@ -49,6 +49,7 @@ CREATE TABLE `dtcustomer_orders` (
 
 LOCK TABLES `dtcustomer_orders` WRITE;
 /*!40000 ALTER TABLE `dtcustomer_orders` DISABLE KEYS */;
+INSERT INTO `dtcustomer_orders` VALUES (1,'2017-07-17 9:58:30 PM','916566705v','kavindu','(071) 659-8433',' The lovers calender set. blue color.',500,5.00,0,0.00,2500.00,1500.00,1000.00,'yes');
 /*!40000 ALTER TABLE `dtcustomer_orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +62,7 @@ DROP TABLE IF EXISTS `dtjobrates`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dtjobrates` (
   `job` varchar(20) NOT NULL,
-  `rate` decimal(10,0) DEFAULT NULL,
+  `rate` decimal(10,2) DEFAULT NULL,
   PRIMARY KEY (`job`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -72,7 +73,7 @@ CREATE TABLE `dtjobrates` (
 
 LOCK TABLES `dtjobrates` WRITE;
 /*!40000 ALTER TABLE `dtjobrates` DISABLE KEYS */;
-INSERT INTO `dtjobrates` VALUES ('clip cutting',5),('cutting',5),('folding 12',5),('folding single',5),('rimming',5);
+INSERT INTO `dtjobrates` VALUES ('Clip Cutting',1.25),('Cutting',50.00),('Folding 12',5.00),('Folding Single',3.50),('Rimming 12',2.50),('Rimming Single',1.50);
 /*!40000 ALTER TABLE `dtjobrates` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +98,7 @@ CREATE TABLE `dtlogin` (
 
 LOCK TABLES `dtlogin` WRITE;
 /*!40000 ALTER TABLE `dtlogin` DISABLE KEYS */;
-INSERT INTO `dtlogin` VALUES ('a001','1234','shehan'),('s001','1234','kamal'),('sm001','1234','saman'),('w001','1234','nimal');
+INSERT INTO `dtlogin` VALUES ('a001','1234','Shehan'),('s001','1234','Kamal Buwaneka'),('sm001','1234','namal rathnayake'),('w001','1234','Jagath gunatilake');
 /*!40000 ALTER TABLE `dtlogin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,7 +125,7 @@ CREATE TABLE `dtmaterial` (
 
 LOCK TABLES `dtmaterial` WRITE;
 /*!40000 ALTER TABLE `dtmaterial` DISABLE KEYS */;
-INSERT INTO `dtmaterial` VALUES (1,'a001','7/6/2017','admin updated stock','50,0,0,0,0');
+INSERT INTO `dtmaterial` VALUES (1,'a9999','2017-07-17','initialization','0,0,0,0,0'),(2,'a001','2017-07-17','100 of sheet inserted by Admin','100,0,0,0,0'),(3,'w001','2017-07-17','3 of sheet taken','97,0,0,0,0'),(4,'s001','2017-07-17','150 of cut strip made','97,150,0,0,0'),(5,'w001','2017-07-17','100 of cut strip taken','97,50,0,0,0'),(6,'s001','2017-07-17','95 of clip cut made','97,50,95,0,0'),(7,'w001','2017-07-17','50 of clip cut taken','97,50,45,0,0'),(8,'w001','2017-07-17','40 of clip cut taken','97,50,5,0,0'),(9,'s001','2017-07-17','50 of folded 12 made','97,50,5,50,0'),(10,'s001','2017-07-17','40 of folded single made','97,50,5,50,40'),(11,'s001','2017-07-17','50 of folded 12 made','97,50,5,100,40'),(12,'s001','2017-07-17','40 of folded single made','97,50,5,100,80'),(13,'sm001','2017-07-17','25 of folded single taken','97,50,5,100,55'),(14,'sm001','2017-07-17','30 of folded 12 taken','97,50,5,70,55'),(15,'sm001','2017-07-17','5 of folded single taken','97,50,5,70,50'),(16,'sm001','2017-07-17','6 of folded 12 taken','97,50,5,64,50'),(17,'a001','2017-07-17','100 of sheet inserted by Admin','197,50,5,64,50'),(18,'s001','2017-07-17','500 of folded single taken','197,50,5,64,-450'),(19,'s001','2017-07-17','0 of folded 12 taken','197,50,5,64,-450');
 /*!40000 ALTER TABLE `dtmaterial` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,6 +149,7 @@ CREATE TABLE `dtsalary` (
 
 LOCK TABLES `dtsalary` WRITE;
 /*!40000 ALTER TABLE `dtsalary` DISABLE KEYS */;
+INSERT INTO `dtsalary` VALUES ('7/2017/w001',1205);
 /*!40000 ALTER TABLE `dtsalary` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,8 +167,7 @@ CREATE TABLE `dtsales` (
   `Type` varchar(45) DEFAULT NULL,
   `Qty` varchar(45) DEFAULT NULL,
   `Unit_Price` varchar(45) DEFAULT NULL,
-  `Amount` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`NIC`)
+  `Amount` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -176,7 +177,7 @@ CREATE TABLE `dtsales` (
 
 LOCK TABLES `dtsales` WRITE;
 /*!40000 ALTER TABLE `dtsales` DISABLE KEYS */;
-INSERT INTO `dtsales` VALUES ('Mahesh','942291515V','712488893','Single','5','120','600'),('Chathuranga','953278945V','0713604485','12 sheets','8','150','1200');
+INSERT INTO `dtsales` VALUES ('Vimukthi','956248301v','0751111111','Single','   25','5.00','125.00'),('','','','12 sheets','30','6.50','195.00'),('athapaththu','956248322v','0764444444','Single','5','5.00','25.00'),('athapaththu','956248322v','0764444444','12 sheets','6','6.50','39.00');
 /*!40000 ALTER TABLE `dtsales` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -201,7 +202,7 @@ CREATE TABLE `dtunitprices` (
 
 LOCK TABLES `dtunitprices` WRITE;
 /*!40000 ALTER TABLE `dtunitprices` DISABLE KEYS */;
-INSERT INTO `dtunitprices` VALUES (1,'Single Sheet',100.57),(2,'Dozen Sheets',23.58);
+INSERT INTO `dtunitprices` VALUES (1,'Single Sheet',5.00),(2,'Dozen Sheets',6.50);
 /*!40000 ALTER TABLE `dtunitprices` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,7 +230,7 @@ CREATE TABLE `dtw001` (
 
 LOCK TABLES `dtw001` WRITE;
 /*!40000 ALTER TABLE `dtw001` DISABLE KEYS */;
-INSERT INTO `dtw001` VALUES (1,'7/12/2017','sheet','cutting',3,'yes'),(2,'7/12/2017','sheet','cutting',0,'yes'),(3,'7/12/2017','sheet','cutting',2,'yes');
+INSERT INTO `dtw001` VALUES (1,'2017-07-17','sheet','Cutting',3,'yes'),(2,'2017-07-17','cut strip','Clip Cutting',100,'yes'),(3,'2017-07-17','clip cut','Folding 12',50,'yes'),(4,'2017-07-17','clip cut','Folding Single',40,'yes');
 /*!40000 ALTER TABLE `dtw001` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,7 +246,7 @@ CREATE TABLE `worker_details` (
   `first_name` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
-  `tel_NO` int(11) DEFAULT NULL,
+  `tel_NO` varchar(20) DEFAULT NULL,
   `last_name` varchar(45) DEFAULT NULL,
   `worker_type` varchar(45) DEFAULT NULL,
   `nic_NO` varchar(45) DEFAULT NULL,
@@ -263,7 +264,7 @@ CREATE TABLE `worker_details` (
 
 LOCK TABLES `worker_details` WRITE;
 /*!40000 ALTER TABLE `worker_details` DISABLE KEYS */;
-INSERT INTO `worker_details` VALUES ('',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),('a001','shehan','1234','potuhera',711111111,'rajakaruna','admin','4589','male','5/8/1995','5454564654','no');
+INSERT INTO `worker_details` VALUES ('a001','Shehan','1234','Potuhera, Kurunegala','711236545','Rajakaruna','admin','926523709v','male','5/8/1992','123456','no'),('s001','Kamal','1234','Wadakada, Narammala','(071) 326-5408','Buwaneka','Supervisor','903233405v','Male','1990-Mar-2','123456','No'),('s002','fsdfsdf','1234','ghfhgfhgfhgfh','(071) 555-5555','sdfsdf','Supervisor','123456789v','Male','1980-Jan-1','654789','Yes'),('sm001','namal','1234','udapola, wadakada','(077) 564-8922','rathnayake','Salesman','853465205v','Male','1985-Nov-14','654789','No'),('w001','Jagath','1234','polgahawela','(071) 666-6666','gunatilake','Worker','716534591v','Male','1971-May-6','456987','No');
 /*!40000 ALTER TABLE `worker_details` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -276,4 +277,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-15 12:05:00
+-- Dump completed on 2017-07-18  1:21:33
