@@ -186,5 +186,10 @@ namespace Aklan_International
             conn.Close();
             
         }
+
+        private void lblnotAvailable_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

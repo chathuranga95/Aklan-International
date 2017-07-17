@@ -80,6 +80,8 @@
             this.Controls.Add(this.btnDeleteWorker);
             this.Controls.Add(this.btnNewWorker);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmManageWorkers";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Workers";
