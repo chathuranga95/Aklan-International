@@ -304,6 +304,7 @@ namespace Aklan_International
             else
             {
                 btnAddWorker.Enabled = true;
+                lblPasswordMaching.Text = "";
             }
         }
 
