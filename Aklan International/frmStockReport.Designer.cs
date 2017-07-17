@@ -121,6 +121,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmStockReport";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock Report";
             this.Load += new System.EventHandler(this.frmStockReport_Load);
             this.ResumeLayout(false);

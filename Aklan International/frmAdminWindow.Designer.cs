@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminWindow));
             this.gbOrders = new System.Windows.Forms.GroupBox();
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.btnManageOrder = new System.Windows.Forms.Button();
@@ -72,7 +71,7 @@
             this.gbOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbOrders.Location = new System.Drawing.Point(171, 12);
             this.gbOrders.Name = "gbOrders";
-            this.gbOrders.Size = new System.Drawing.Size(600, 200);
+            this.gbOrders.Size = new System.Drawing.Size(600, 396);
             this.gbOrders.TabIndex = 0;
             this.gbOrders.TabStop = false;
             this.gbOrders.UseCompatibleTextRendering = true;
@@ -129,7 +128,7 @@
             this.gbSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbSales.Location = new System.Drawing.Point(171, 12);
             this.gbSales.Name = "gbSales";
-            this.gbSales.Size = new System.Drawing.Size(600, 200);
+            this.gbSales.Size = new System.Drawing.Size(600, 396);
             this.gbSales.TabIndex = 1;
             this.gbSales.TabStop = false;
             this.gbSales.Visible = false;
@@ -172,7 +171,7 @@
             this.gbStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbStock.Location = new System.Drawing.Point(171, 12);
             this.gbStock.Name = "gbStock";
-            this.gbStock.Size = new System.Drawing.Size(600, 200);
+            this.gbStock.Size = new System.Drawing.Size(600, 396);
             this.gbStock.TabIndex = 1;
             this.gbStock.TabStop = false;
             this.gbStock.Visible = false;
@@ -228,9 +227,9 @@
             this.gbWork.Controls.Add(this.btnViewWorkers);
             this.gbWork.Enabled = false;
             this.gbWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.gbWork.Location = new System.Drawing.Point(171, 12);
+            this.gbWork.Location = new System.Drawing.Point(171, 6);
             this.gbWork.Name = "gbWork";
-            this.gbWork.Size = new System.Drawing.Size(600, 200);
+            this.gbWork.Size = new System.Drawing.Size(600, 402);
             this.gbWork.TabIndex = 2;
             this.gbWork.TabStop = false;
             this.gbWork.Visible = false;
@@ -299,8 +298,9 @@
             this.gbAdmin.Enabled = false;
             this.gbAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbAdmin.Location = new System.Drawing.Point(171, 12);
+            this.gbAdmin.Margin = new System.Windows.Forms.Padding(0);
             this.gbAdmin.Name = "gbAdmin";
-            this.gbAdmin.Size = new System.Drawing.Size(600, 200);
+            this.gbAdmin.Size = new System.Drawing.Size(600, 396);
             this.gbAdmin.TabIndex = 2;
             this.gbAdmin.TabStop = false;
             this.gbAdmin.Visible = false;
@@ -344,72 +344,82 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(165, 221);
+            this.panel1.Size = new System.Drawing.Size(165, 441);
             this.panel1.TabIndex = 3;
             // 
             // btnSales
             // 
-            this.btnSales.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSales.BackgroundImage")));
+            this.btnSales.BackColor = System.Drawing.Color.White;
+            this.btnSales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSales.FlatAppearance.BorderSize = 0;
             this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSales.Location = new System.Drawing.Point(0, 170);
+            this.btnSales.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSales.Location = new System.Drawing.Point(0, 334);
             this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(165, 38);
+            this.btnSales.Size = new System.Drawing.Size(165, 74);
             this.btnSales.TabIndex = 6;
             this.btnSales.Text = "Sales";
-            this.btnSales.UseVisualStyleBackColor = true;
+            this.btnSales.UseVisualStyleBackColor = false;
             this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             // 
             // btnWork
             // 
-            this.btnWork.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnWork.BackgroundImage")));
+            this.btnWork.BackColor = System.Drawing.Color.White;
+            this.btnWork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnWork.FlatAppearance.BorderSize = 0;
             this.btnWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWork.Location = new System.Drawing.Point(0, 132);
+            this.btnWork.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWork.Location = new System.Drawing.Point(0, 255);
             this.btnWork.Name = "btnWork";
-            this.btnWork.Size = new System.Drawing.Size(165, 38);
+            this.btnWork.Size = new System.Drawing.Size(165, 74);
             this.btnWork.TabIndex = 5;
             this.btnWork.Text = "Work";
-            this.btnWork.UseVisualStyleBackColor = true;
+            this.btnWork.UseVisualStyleBackColor = false;
             this.btnWork.Click += new System.EventHandler(this.btnWork_Click);
             // 
             // btnStock
             // 
-            this.btnStock.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnStock.BackgroundImage")));
+            this.btnStock.BackColor = System.Drawing.Color.White;
+            this.btnStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStock.FlatAppearance.BorderSize = 0;
             this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStock.Location = new System.Drawing.Point(0, 94);
+            this.btnStock.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStock.Location = new System.Drawing.Point(0, 176);
             this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(165, 38);
+            this.btnStock.Size = new System.Drawing.Size(165, 74);
             this.btnStock.TabIndex = 4;
             this.btnStock.Text = "Stock";
-            this.btnStock.UseVisualStyleBackColor = true;
+            this.btnStock.UseVisualStyleBackColor = false;
             this.btnStock.Click += new System.EventHandler(this.btnStock_Click);
             // 
             // btnOrders
             // 
-            this.btnOrders.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOrders.BackgroundImage")));
+            this.btnOrders.BackColor = System.Drawing.Color.White;
+            this.btnOrders.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOrders.FlatAppearance.BorderSize = 0;
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrders.Location = new System.Drawing.Point(0, 56);
+            this.btnOrders.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.Location = new System.Drawing.Point(0, 97);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(165, 38);
+            this.btnOrders.Size = new System.Drawing.Size(165, 74);
             this.btnOrders.TabIndex = 3;
             this.btnOrders.Text = "Orders";
-            this.btnOrders.UseVisualStyleBackColor = true;
+            this.btnOrders.UseVisualStyleBackColor = false;
             this.btnOrders.Click += new System.EventHandler(this.btnOrders_Click);
             // 
             // btnAdmin
             // 
-            this.btnAdmin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdmin.BackgroundImage")));
+            this.btnAdmin.BackColor = System.Drawing.Color.White;
+            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdmin.FlatAppearance.BorderSize = 0;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.Location = new System.Drawing.Point(0, 18);
             this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(165, 38);
+            this.btnAdmin.Size = new System.Drawing.Size(165, 74);
             this.btnAdmin.TabIndex = 2;
             this.btnAdmin.Text = "Adimn";
-            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // frmAdminWindow
@@ -419,13 +429,13 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 221);
+            this.ClientSize = new System.Drawing.Size(784, 441);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.gbStock);
+            this.Controls.Add(this.gbAdmin);
             this.Controls.Add(this.gbWork);
             this.Controls.Add(this.gbOrders);
             this.Controls.Add(this.gbSales);
-            this.Controls.Add(this.gbStock);
-            this.Controls.Add(this.gbAdmin);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
