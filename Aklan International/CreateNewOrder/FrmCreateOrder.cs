@@ -112,13 +112,13 @@ namespace Aklan_International.CreateNewOrder
                 this.dozenSheetQty = this.dozenSheetQty + int.Parse(qty);
             }
 
-            DataGridViewRow row = (DataGridViewRow) dgvItems.Rows[0].Clone() ;
-            row.Cells[0].Value = stripType;
-            row.Cells[1].Value = unitPrice;
-            row.Cells[2].Value = qty;
-            row.Cells[3].Value = totalAmount;
-            dgvItems.Rows.Add(row);
-
+            //DataGridViewRow row = (DataGridViewRow) dgvItems.Rows[0].Clone() ;
+            //row.Cells[0].Value = stripType;
+            //row.Cells[1].Value = unitPrice;
+            //row.Cells[2].Value = qty;
+            //row.Cells[3].Value = totalAmount;
+            //dgvItems.Rows.Add(row);
+            dgvItems.Rows.Add(stripType,unitPrice,qty,totalAmount);
             
         }
 

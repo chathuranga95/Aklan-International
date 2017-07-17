@@ -30,20 +30,22 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdReport = new System.Windows.Forms.DataGridView();
-            this.btnGenerate = new System.Windows.Forms.Button();
-            this.panelWorkReport = new System.Windows.Forms.Panel();
             this.empID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tel_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.worker_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.acc_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGenerate = new System.Windows.Forms.Button();
+            this.panelWorkReport = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.grdReport)).BeginInit();
             this.panelWorkReport.SuspendLayout();
             this.SuspendLayout();
             // 
             // grdReport
             // 
+            this.grdReport.AllowUserToAddRows = false;
+            this.grdReport.AllowUserToDeleteRows = false;
             this.grdReport.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -64,32 +66,9 @@
             this.grdReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grdReport.Location = new System.Drawing.Point(0, 0);
             this.grdReport.Name = "grdReport";
+            this.grdReport.ReadOnly = true;
             this.grdReport.Size = new System.Drawing.Size(1019, 216);
             this.grdReport.TabIndex = 0;
-            // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGenerate.BackColor = System.Drawing.Color.White;
-            this.btnGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(891, 234);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(140, 43);
-            this.btnGenerate.TabIndex = 1;
-            this.btnGenerate.Text = "Save and Open with Excel\r\n";
-            this.btnGenerate.UseVisualStyleBackColor = false;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
-            // 
-            // panelWorkReport
-            // 
-            this.panelWorkReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelWorkReport.Controls.Add(this.grdReport);
-            this.panelWorkReport.Location = new System.Drawing.Point(12, 12);
-            this.panelWorkReport.Name = "panelWorkReport";
-            this.panelWorkReport.Size = new System.Drawing.Size(1019, 216);
-            this.panelWorkReport.TabIndex = 2;
             // 
             // empID
             // 
@@ -128,6 +107,30 @@
             this.acc_NO.HeaderText = "ACC. NO";
             this.acc_NO.Name = "acc_NO";
             this.acc_NO.ReadOnly = true;
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGenerate.BackColor = System.Drawing.Color.White;
+            this.btnGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerate.Location = new System.Drawing.Point(891, 234);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(140, 43);
+            this.btnGenerate.TabIndex = 1;
+            this.btnGenerate.Text = "Save and Open with Excel\r\n";
+            this.btnGenerate.UseVisualStyleBackColor = false;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
+            // 
+            // panelWorkReport
+            // 
+            this.panelWorkReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelWorkReport.Controls.Add(this.grdReport);
+            this.panelWorkReport.Location = new System.Drawing.Point(12, 12);
+            this.panelWorkReport.Name = "panelWorkReport";
+            this.panelWorkReport.Size = new System.Drawing.Size(1019, 216);
+            this.panelWorkReport.TabIndex = 2;
             // 
             // frmWorkerReport
             // 
