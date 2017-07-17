@@ -44,7 +44,7 @@
             // lblSripeType
             // 
             this.lblSripeType.AutoSize = true;
-            this.lblSripeType.Location = new System.Drawing.Point(12, 28);
+            this.lblSripeType.Location = new System.Drawing.Point(30, 28);
             this.lblSripeType.Name = "lblSripeType";
             this.lblSripeType.Size = new System.Drawing.Size(55, 13);
             this.lblSripeType.TabIndex = 0;
@@ -53,7 +53,7 @@
             // lblUnitPrice
             // 
             this.lblUnitPrice.AutoSize = true;
-            this.lblUnitPrice.Location = new System.Drawing.Point(12, 60);
+            this.lblUnitPrice.Location = new System.Drawing.Point(30, 61);
             this.lblUnitPrice.Name = "lblUnitPrice";
             this.lblUnitPrice.Size = new System.Drawing.Size(53, 13);
             this.lblUnitPrice.TabIndex = 1;
@@ -62,7 +62,7 @@
             // lblQty
             // 
             this.lblQty.AutoSize = true;
-            this.lblQty.Location = new System.Drawing.Point(12, 92);
+            this.lblQty.Location = new System.Drawing.Point(30, 94);
             this.lblQty.Name = "lblQty";
             this.lblQty.Size = new System.Drawing.Size(46, 13);
             this.lblQty.TabIndex = 2;
@@ -71,7 +71,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(12, 127);
+            this.lblTotal.Location = new System.Drawing.Point(30, 127);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(70, 13);
             this.lblTotal.TabIndex = 3;
@@ -85,7 +85,7 @@
             this.cmbType.Items.AddRange(new object[] {
             "Single Sheet Strip",
             "12 Sheets Strip"});
-            this.cmbType.Location = new System.Drawing.Point(124, 25);
+            this.cmbType.Location = new System.Drawing.Point(139, 25);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(299, 21);
             this.cmbType.TabIndex = 1;
@@ -93,7 +93,8 @@
             // 
             // tbxUnitPrice
             // 
-            this.tbxUnitPrice.Location = new System.Drawing.Point(124, 57);
+            this.tbxUnitPrice.BackColor = System.Drawing.Color.White;
+            this.tbxUnitPrice.Location = new System.Drawing.Point(139, 58);
             this.tbxUnitPrice.Name = "tbxUnitPrice";
             this.tbxUnitPrice.ReadOnly = true;
             this.tbxUnitPrice.Size = new System.Drawing.Size(299, 20);
@@ -104,7 +105,8 @@
             // 
             // tbxTotal
             // 
-            this.tbxTotal.Location = new System.Drawing.Point(124, 124);
+            this.tbxTotal.BackColor = System.Drawing.Color.White;
+            this.tbxTotal.Location = new System.Drawing.Point(139, 122);
             this.tbxTotal.Name = "tbxTotal";
             this.tbxTotal.ReadOnly = true;
             this.tbxTotal.Size = new System.Drawing.Size(299, 20);
@@ -114,30 +116,33 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.White;
             this.btnAdd.Enabled = false;
-            this.btnAdd.Location = new System.Drawing.Point(15, 175);
+            this.btnAdd.Location = new System.Drawing.Point(30, 175);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 3;
+            this.btnAdd.Tag = "";
             this.btnAdd.Text = "Add item";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(267, 175);
+            this.btnCancel.BackColor = System.Drawing.Color.White;
+            this.btnCancel.Location = new System.Drawing.Point(282, 175);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.TabStop = false;
             this.btnCancel.Text = "Clear";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // mtbQty
             // 
             this.mtbQty.Enabled = false;
-            this.mtbQty.Location = new System.Drawing.Point(124, 89);
+            this.mtbQty.Location = new System.Drawing.Point(139, 90);
             this.mtbQty.Mask = "000000";
             this.mtbQty.Name = "mtbQty";
             this.mtbQty.PromptChar = ' ';
@@ -149,19 +154,22 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(348, 175);
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(363, 175);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 4;
             this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 216);
+            this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(464, 221);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.mtbQty);
             this.Controls.Add(this.btnCancel);
@@ -173,6 +181,7 @@
             this.Controls.Add(this.lblQty);
             this.Controls.Add(this.lblUnitPrice);
             this.Controls.Add(this.lblSripeType);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -180,6 +189,7 @@
             this.ShowInTaskbar = false;
             this.Text = "Add Item";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.FrmAddItem_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

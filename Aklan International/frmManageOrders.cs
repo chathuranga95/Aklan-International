@@ -64,7 +64,7 @@ namespace Aklan_International
             {
                 mtup.updateMaterial("folded single", selectedOrder.getSingleQty(), empID, true);
                 mtup.updateMaterial("folded 12", selectedOrder.getDozenQty(), empID, true);
-                MessageBox.Show("success...");
+                MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             conn.Close();
             refreshOrders();
@@ -73,6 +73,8 @@ namespace Aklan_International
         private void frmManageOrders_Load(object sender, EventArgs e)
         {
             refreshOrders();
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnMarkOrders, "Set Selected order as a completed order");
         }
     }
 }

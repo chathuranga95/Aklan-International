@@ -48,6 +48,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Client.Education, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -74,6 +78,42 @@
     </Compile>
     <Compile Include="frmManageOrders.Designer.cs">
       <DependentUpon>frmManageOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageWorkers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageWorkers.Designer.cs">
+      <DependentUpon>frmManageWorkers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderReport.Designer.cs">
+      <DependentUpon>frmOrderReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalaryView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalaryView.Designer.cs">
+      <DependentUpon>frmSalaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesReport.Designer.cs">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStockReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStockReport.Designer.cs">
+      <DependentUpon>frmStockReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWorkerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWorkerReport.Designer.cs">
+      <DependentUpon>frmWorkerReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Support.cs" />
     <Compile Include="CreateNewOrder\FrmAddItem.cs">
@@ -123,12 +163,6 @@
     </Compile>
     <Compile Include="frmManageStock.Designer.cs">
       <DependentUpon>frmManageStock.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmManageWorkers.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmManageWorkers.Designer.cs">
-      <DependentUpon>frmManageWorkers.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModeSelect.cs">
       <SubType>Form</SubType>
@@ -234,8 +268,17 @@
     <EmbeddedResource Include="frmNotification.resx">
       <DependentUpon>frmNotification.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderReport.resx">
+      <DependentUpon>frmOrderReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRequestJob.resx">
       <DependentUpon>frmRequestJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalaryView.resx">
+      <DependentUpon>frmSalaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesReport.resx">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSetJobRates.resx">
       <DependentUpon>frmSetJobRates.cs</DependentUpon>
@@ -243,8 +286,14 @@
     <EmbeddedResource Include="FrmSetUnitPrice.resx">
       <DependentUpon>FrmSetUnitPrice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmStockReport.resx">
+      <DependentUpon>frmStockReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSupervisorWindow.resx">
       <DependentUpon>frmSupervisorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWorkerReport.resx">
+      <DependentUpon>frmWorkerReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmWorkerWindow.resx">
       <DependentUpon>frmWorkerWindow.cs</DependentUpon>
@@ -281,6 +330,40 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database script\dbfile.sql" />
+    <None Include="Resources\password.jpg" />
+    <None Include="Resources\SetUnitPrice.png" />
+    <None Include="Resources\CreateSalesRec.png" />
+    <None Include="Resources\ViewSalesREc.png" />
+    <None Include="Resources\manageOrder.png" />
+    <None Include="Resources\viewOrder.png" />
+    <None Include="Resources\newOrder.png" />
+    <None Include="Resources\Payroll.png" />
+    <None Include="Resources\setJobRates.png" />
+    <None Include="Resources\viewworker.png" />
+    <None Include="Resources\ManageWorker.png" />
+    <None Include="Resources\Change Pass.png" />
+    <None Include="Resources\ViewNotific1.png" />
+    <None Include="Resources\adminWinButton5.png" />
+    <None Include="Resources\adminWinButton4.png" />
+    <None Include="Resources\adminWinButtonSelect.png" />
+    <None Include="Resources\adminWinButton2.png" />
+    <None Include="Resources\adminWinButton1.png" />
+    <None Include="Resources\adminWinButton.png" />
+    <None Include="Resources\Admin Window 2.png" />
+    <None Include="Resources\lock-open-blue.png" />
+    <None Include="Resources\loginAdmin.jpg" />
+    <None Include="Resources\Pannel up with text3.png" />
+    <None Include="Resources\ModeButtonSelected.png" />
+    <None Include="Resources\ModeButton.png" />
+    <None Include="Resources\Pannel up2.png" />
+    <None Include="Resources\Pannel up.png" />
+    <None Include="Resources\CloseButtonSelected2.png" />
+    <None Include="Resources\CloseButtonSelected.png" />
+    <None Include="Resources\CloseButton.png" />
+    <None Include="Resources\bottom pannel selected 2 72x50.jpg" />
+    <None Include="Resources\bottom pannel selected 72x50.jpg" />
+    <None Include="Resources\bottom pannel 480x50.png" />
+    <None Include="Resources\bottom pannel 72x50.png" />
     <None Include="Resources\delete_garbage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

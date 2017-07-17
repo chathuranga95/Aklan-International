@@ -26,7 +26,7 @@ namespace Aklan_International
         {
             if (cmbWorkerName.Text.Trim() == "")
             {
-                MessageBox.Show("Choose your name");
+                MessageBox.Show("Choose Your Name.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -39,7 +39,7 @@ namespace Aklan_International
                     {
                         if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
                         {
-                            MessageBox.Show("success...");
+                            MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.Hide();
                             frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(), this, reader.GetString("empID"));
@@ -48,14 +48,14 @@ namespace Aklan_International
                         }
                         else
                         {
-                            MessageBox.Show("Failed...");
+                            MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
 
                 }
                 catch
                 {
-                    //MessageBox.Show(ee.ToString());
+                    MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     throw;
                 }
                 finally
@@ -67,6 +67,11 @@ namespace Aklan_International
 
         private void frmWorkerWindow_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnChangePass, "Change selected Employer's login password");
+            toolTip.SetToolTip(this.btnClear, "Clear text");
+            toolTip.SetToolTip(this.btnLogin, "Login");
+
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             try
             {
@@ -114,7 +119,17 @@ namespace Aklan_International
 
         private void frmWorkerWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            (new frmModeSelect()).Show();
+            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "System Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dlgresult == DialogResult.Yes)
+            {
+
+                (new frmModeSelect()).Show();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+            
         }
     }
 }

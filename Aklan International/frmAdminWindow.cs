@@ -14,6 +14,8 @@ namespace Aklan_International
     {
         string empID;
         string adminName;
+        Image notSelectedButton = Aklan_International.Properties.Resources.adminWinButton5;
+        Image selectedButton = Aklan_International.Properties.Resources.adminWinButtonSelect;
         public frmAdminWindow()
         {
             InitializeComponent();
@@ -45,13 +47,13 @@ namespace Aklan_International
 
             if (matArr[3] > 0 || matArr[4] > 0)
             {
-                frmNewSalesRecord obj = new frmNewSalesRecord();
+                frmNewSalesRecord obj = new frmNewSalesRecord(empID);
                 obj.Show();
 
             }
             else
             {
-                MessageBox.Show("There is no any material in store.");
+                MessageBox.Show("There is no any material in store.","Info",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
 
@@ -71,7 +73,8 @@ namespace Aklan_International
 
         private void btnViewNotif_Click(object sender, EventArgs e)
         {
-
+            frmNotification obj = new frmNotification();
+            obj.Show();
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
@@ -82,12 +85,32 @@ namespace Aklan_International
 
         private void frmAdminWindow_Load(object sender, EventArgs e)
         {
-
+            btnAdmin.PerformClick();
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnViewNotif, "View incoming Notifications");
+            toolTip.SetToolTip(this.btnChangePass, "Change own Login Password");
+            toolTip.SetToolTip(this.btnCreateOrder, "Create a New Order");
+            toolTip.SetToolTip(this.btnCreateSalesOrder, "Add a Sales record");
+            toolTip.SetToolTip(this.btnManageOrder, "View Onging Orders, Set finished Orders");
+            toolTip.SetToolTip(this.btnManageStock, "Add Materials to the Stock");
+            toolTip.SetToolTip(this.btnManageWorkers, "Add, Edit, Delete the Employers");
+            toolTip.SetToolTip(this.btnOrders, "View Order Category Controllers");
+            toolTip.SetToolTip(this.btnSales, "View Sales Category Controllers");
+            toolTip.SetToolTip(this.btnSetJobRates, "Edit the Rates for Jobs");
+            toolTip.SetToolTip(this.btnSetUnitPrice, "Edit item Selling prices");
+            toolTip.SetToolTip(this.btnStock, "View Stock Category Controllers");
+            toolTip.SetToolTip(this.btnViewOrders, "View Current Orders");
+            toolTip.SetToolTip(this.btnViewSales, "View Sales Records");
+            toolTip.SetToolTip(this.btnViewWorkers, "View Employer Details");
+            toolTip.SetToolTip(this.btnWork, "View Work/Employer Category Controllers");
+            toolTip.SetToolTip(this.btnAdmin, "View Admin Category Controllers");
+            toolTip.SetToolTip(this.btnViewStock, "View current Stock status");
         }
 
         private void btnViewOrders_Click(object sender, EventArgs e)
         {
-
+            frmOrderReport obj = new Aklan_International.frmOrderReport();
+            obj.Show();
         }
 
         private void btnManageOrder_Click(object sender, EventArgs e)
@@ -98,28 +121,32 @@ namespace Aklan_International
 
         private void btnViewStock_Click(object sender, EventArgs e)
         {
-
+            frmStockReport obj = new Aklan_International.frmStockReport();
+            obj.Show();
         }
 
         private void btnViewSales_Click(object sender, EventArgs e)
         {
-
+            frmSalesReport obj = new Aklan_International.frmSalesReport();
+            obj.Show();
         }
 
         private void btnViewWorkers_Click(object sender, EventArgs e)
         {
-
+            frmWorkerReport obj = new Aklan_International.frmWorkerReport();
+            obj.Show();
         }
 
         private void btnManageWorkers_Click(object sender, EventArgs e)
         {
-
+            frmManageWorkers obj = new Aklan_International.frmManageWorkers();
+            obj.Show();
         }
 
         private void frmAdminWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             
-            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult dlgresult = MessageBox.Show("Are you sure to exit?", "System Application", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dlgresult == DialogResult.Yes)
             {
                 
@@ -129,6 +156,139 @@ namespace Aklan_International
             {
                 e.Cancel = true;
             }
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            btnAdmin.BackgroundImage = selectedButton;
+
+            btnOrders.BackgroundImage = notSelectedButton;
+            btnStock.BackgroundImage = notSelectedButton;
+            btnSales.BackgroundImage = notSelectedButton;
+            btnWork.BackgroundImage = notSelectedButton;
+
+        
+            gbAdmin.Enabled = true;
+
+            gbOrders.Enabled = false;
+            gbStock.Enabled = false;
+            gbWork.Enabled = false;
+            gbSales.Enabled = false;
+
+            gbAdmin.Visible = true;
+
+            gbOrders.Visible = false;
+            gbStock.Visible = false;
+            gbWork.Visible = false;
+            gbSales.Visible = false;
+
+
+        }
+
+        private void btnOrders_Click(object sender, EventArgs e)
+        {
+            btnOrders.BackgroundImage = selectedButton;
+
+            btnAdmin.BackgroundImage = notSelectedButton;
+            btnStock.BackgroundImage = notSelectedButton;
+            btnSales.BackgroundImage = notSelectedButton;
+            btnWork.BackgroundImage = notSelectedButton;
+
+
+            gbOrders.Enabled = true;
+
+            gbAdmin.Enabled = false;
+            gbStock.Enabled = false;
+            gbWork.Enabled = false;
+            gbSales.Enabled = false;
+
+            gbOrders.Visible = true;
+
+            gbAdmin.Visible = false;
+            gbStock.Visible = false;
+            gbWork.Visible = false;
+            gbSales.Visible = false;
+
+        }
+
+        private void btnStock_Click(object sender, EventArgs e)
+        {
+            btnStock.BackgroundImage = selectedButton;
+
+            btnAdmin.BackgroundImage = notSelectedButton;
+            btnOrders.BackgroundImage = notSelectedButton;
+            btnSales.BackgroundImage = notSelectedButton;
+            btnWork.BackgroundImage = notSelectedButton;
+
+            gbStock.Enabled = true;
+
+            gbAdmin.Enabled = false;
+            gbOrders.Enabled = false;
+            gbWork.Enabled = false;
+            gbSales.Enabled = false;
+
+            gbStock.Visible = true;
+
+            gbAdmin.Visible = false;
+            gbOrders.Visible = false;
+            gbWork.Visible = false;
+            gbSales.Visible = false;
+
+        }
+
+        private void btnWork_Click(object sender, EventArgs e)
+        {
+            btnWork.BackgroundImage = selectedButton;
+
+            btnAdmin.BackgroundImage = notSelectedButton;
+            btnOrders.BackgroundImage = notSelectedButton;
+            btnSales.BackgroundImage = notSelectedButton;
+            btnStock.BackgroundImage = notSelectedButton;
+
+            gbWork.Enabled = true;
+
+            gbAdmin.Enabled = false;
+            gbOrders.Enabled = false;
+            gbStock.Enabled = false;
+            gbSales.Enabled = false;
+
+            gbWork.Visible = true;
+
+            gbAdmin.Visible = false;
+            gbOrders.Visible = false;
+            gbStock.Visible = false;
+            gbSales.Visible = false;
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            btnSales.BackgroundImage = selectedButton;
+
+            btnAdmin.BackgroundImage = notSelectedButton;
+            btnOrders.BackgroundImage = notSelectedButton;
+            btnWork.BackgroundImage = notSelectedButton;
+            btnStock.BackgroundImage = notSelectedButton;
+
+            gbSales.Enabled = true;
+
+            gbAdmin.Enabled = false;
+            gbOrders.Enabled = false;
+            gbStock.Enabled = false;
+            gbWork.Enabled = false;
+
+            gbSales.Visible = true;
+
+            gbAdmin.Visible = false;
+            gbOrders.Visible = false;
+            gbStock.Visible = false;
+            gbWork.Visible = false;
+
+        }
+
+        private void btnViewPayroll_Click(object sender, EventArgs e)
+        {
+            frmSalaryView frmSalary = new frmSalaryView();
+            frmSalary.Show();
         }
     }
 }

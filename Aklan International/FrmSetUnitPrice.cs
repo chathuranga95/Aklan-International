@@ -31,6 +31,9 @@ namespace Aklan_International
 
         private void FrmSetUnitPrice_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnClose, "Cancel operation and close window");
+            toolTip.SetToolTip(this.btnSave, "Save Newly entered Values");
             command = new MySqlCommand("select * from dtunitprices ", con);
             con.Open();
             reader = command.ExecuteReader();

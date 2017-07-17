@@ -80,8 +80,10 @@ namespace Aklan_International
             btnAddWorker.Enabled = false;
             rbMale.Checked = true;
             tbxWorkerID.Text = "";
-            
 
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnAddWorker, "Add Worker with filled details");
+            toolTip.SetToolTip(this.btnCancel, "Cancel this operation and Close this window");
         }
 
         private void rtbxAddress_TextChanged(object sender, EventArgs e)

@@ -44,16 +44,16 @@ namespace Aklan_International
                     conn.Open();
                     if (cmd.ExecuteNonQuery() >= 0)
                     {
-                        MessageBox.Show("Success...");
+                        MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
-                        MessageBox.Show("failed..");
+                        MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Failed...");
+                    MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 finally
                 {
@@ -64,6 +64,10 @@ namespace Aklan_International
 
         private void frmSetJobRates_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnOK, "Set selected job rate");
+            toolTip.SetToolTip(this.btnCancel, "Cancel operation and close this window");
+            toolTip.SetToolTip(this.cmbJob, "Select Job to edit rate");
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             btnOK.Enabled = false;
         }
@@ -71,6 +75,11 @@ namespace Aklan_International
         private void cmbJob_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnOK.Enabled = (cmbJob.Text != "");
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

@@ -120,6 +120,10 @@ namespace Aklan_International
 
         private void frmEditWorkerDetails_Load(object sender, EventArgs e)
         {
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            toolTip.SetToolTip(this.btnCancel, "Cancel operation and close this window");
+            toolTip.SetToolTip(this.btnChangeDetails, "Change details of the current employer ");
+
             lblStatus.Text = "";
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             conn.Open();
