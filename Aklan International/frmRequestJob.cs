@@ -194,5 +194,14 @@ namespace Aklan_International
         {
             refreshInput();
         }
+
+        private void frmRequestJob_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Are You Sure?","Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+            
+        }
     }
 }
