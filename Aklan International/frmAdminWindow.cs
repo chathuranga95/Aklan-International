@@ -47,9 +47,9 @@ namespace Aklan_International
 
             if (matArr[3] > 0 || matArr[4] > 0)
             {
-                frmNewSalesRecord obj = new frmNewSalesRecord(empID);
+                frmNewSalesRecord obj = frmNewSalesRecord.getInstance(empID);
                 obj.Show();
-
+                obj.BringToFront();
             }
             else
             {
@@ -73,8 +73,9 @@ namespace Aklan_International
 
         private void btnViewNotif_Click(object sender, EventArgs e)
         {
-            frmNotification obj = new frmNotification();
+            frmNotification obj = frmNotification.getInstance();
             obj.Show();
+            obj.BringToFront();
         }
 
         private void btnChangePass_Click(object sender, EventArgs e)
@@ -109,8 +110,9 @@ namespace Aklan_International
 
         private void btnViewOrders_Click(object sender, EventArgs e)
         {
-            frmOrderReport obj = new Aklan_International.frmOrderReport();
+            frmOrderReport obj = frmOrderReport.getInstance();
             obj.Show();
+            obj.BringToFront();
         }
 
         private void btnManageOrder_Click(object sender, EventArgs e)
@@ -121,20 +123,23 @@ namespace Aklan_International
 
         private void btnViewStock_Click(object sender, EventArgs e)
         {
-            frmStockReport obj = new Aklan_International.frmStockReport();
+            frmStockReport obj = frmStockReport.getInstance();
             obj.Show();
+            obj.BringToFront();
         }
 
         private void btnViewSales_Click(object sender, EventArgs e)
         {
-            frmSalesReport obj = new Aklan_International.frmSalesReport();
+            frmSalesReport obj = frmSalesReport.getInstance();
             obj.Show();
+            obj.BringToFront();
         }
 
         private void btnViewWorkers_Click(object sender, EventArgs e)
         {
-            frmWorkerReport obj = new Aklan_International.frmWorkerReport();
+            frmWorkerReport obj = frmWorkerReport.getInstance();
             obj.Show();
+            obj.BringToFront();
         }
 
         private void btnManageWorkers_Click(object sender, EventArgs e)

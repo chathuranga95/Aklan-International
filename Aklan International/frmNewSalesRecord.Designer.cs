@@ -138,6 +138,7 @@
             this.tbxTel.Name = "tbxTel";
             this.tbxTel.Size = new System.Drawing.Size(195, 20);
             this.tbxTel.TabIndex = 2;
+            this.tbxTel.TextChanged += new System.EventHandler(this.tbxTel_TextChanged);
             // 
             // label5
             // 
@@ -150,6 +151,8 @@
             // 
             // grd
             // 
+            this.grd.AllowUserToAddRows = false;
+            this.grd.AllowUserToDeleteRows = false;
             this.grd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Type,
@@ -158,6 +161,8 @@
             this.Amount});
             this.grd.Location = new System.Drawing.Point(6, 213);
             this.grd.Name = "grd";
+            this.grd.ReadOnly = true;
+            this.grd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd.Size = new System.Drawing.Size(443, 95);
             this.grd.TabIndex = 14;
             this.grd.TabStop = false;
