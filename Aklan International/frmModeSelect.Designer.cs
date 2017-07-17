@@ -42,7 +42,7 @@
             // 
             // btnWorker
             // 
-            this.btnWorker.BackColor = System.Drawing.Color.Transparent;
+            this.btnWorker.BackColor = System.Drawing.Color.White;
             this.btnWorker.BackgroundImage = global::Aklan_International.Properties.Resources.ModeButton;
             this.btnWorker.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnWorker.FlatAppearance.BorderSize = 0;

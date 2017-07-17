@@ -101,7 +101,7 @@ namespace Aklan_International
         }
 
         private void btnAdmin_Enter(object sender, EventArgs e)
-        {
+       {
             btnAdmin.FlatStyle = FlatStyle.Flat;
             btnAdmin.FlatAppearance.BorderSize = 0;
             Image image = Aklan_International.Properties.Resources.ModeButtonSelected;
