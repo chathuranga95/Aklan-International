@@ -44,7 +44,7 @@
             this.groupBox2.Controls.Add(this.lbxCurrentOrders);
             this.groupBox2.Location = new System.Drawing.Point(9, 8);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(664, 292);
+            this.groupBox2.Size = new System.Drawing.Size(664, 302);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Current Orders";
@@ -53,7 +53,7 @@
             // 
             this.btnMarkOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMarkOrders.BackColor = System.Drawing.Color.White;
-            this.btnMarkOrders.Location = new System.Drawing.Point(564, 241);
+            this.btnMarkOrders.Location = new System.Drawing.Point(564, 251);
             this.btnMarkOrders.Name = "btnMarkOrders";
             this.btnMarkOrders.Size = new System.Drawing.Size(86, 38);
             this.btnMarkOrders.TabIndex = 1;
@@ -78,7 +78,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(684, 311);
+            this.ClientSize = new System.Drawing.Size(684, 321);
             this.Controls.Add(this.groupBox2);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;

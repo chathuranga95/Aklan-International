@@ -28,5 +28,16 @@ namespace Aklan_International
             lblFolded12.Text = "Folded 12 : " + mtarr[3].ToString();
             lblFoldedsingle.Text = "Folded single : " + mtarr[4].ToString();
         }
+
+        private void lblFolded12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }
