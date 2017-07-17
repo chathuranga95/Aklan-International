@@ -48,7 +48,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 32);
+            this.label1.Location = new System.Drawing.Point(22, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 15);
             this.label1.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             this.spnYear.CausesValidation = false;
             this.spnYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spnYear.Location = new System.Drawing.Point(134, 29);
+            this.spnYear.Location = new System.Drawing.Point(129, 29);
             this.spnYear.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -77,7 +77,7 @@
             // 
             this.spnMonth.CausesValidation = false;
             this.spnMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spnMonth.Location = new System.Drawing.Point(203, 29);
+            this.spnMonth.Location = new System.Drawing.Point(198, 29);
             this.spnMonth.Maximum = new decimal(new int[] {
             12,
             0,
@@ -171,6 +171,7 @@
             this.DoubleBuffered = true;
             this.MinimizeBox = false;
             this.Name = "frmSalaryView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Payroll";
             this.Load += new System.EventHandler(this.frmSalaryView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.spnYear)).EndInit();
