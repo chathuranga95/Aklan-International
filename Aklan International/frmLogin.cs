@@ -124,5 +124,10 @@ namespace Aklan_International
                 txtPassword.Focus();
             }
         }
+
+        private void frmLogin_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread();
+        }
     }
 }
