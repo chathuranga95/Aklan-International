@@ -330,6 +330,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database script\dbfile.sql" />
+    <None Include="Resources\password.jpg" />
     <None Include="Resources\SetUnitPrice.png" />
     <None Include="Resources\CreateSalesRec.png" />
     <None Include="Resources\ViewSalesREc.png" />
