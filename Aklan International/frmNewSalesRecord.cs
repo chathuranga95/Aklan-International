@@ -191,7 +191,7 @@ namespace Aklan_International
         {
             if(grd.Rows.Count == 0)
             {
-                MessageBox.Show("please Add order!!");
+                MessageBox.Show("please Add order!!","Info",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
