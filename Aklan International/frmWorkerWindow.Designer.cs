@@ -143,6 +143,7 @@
             this.Name = "frmWorkerWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Worker Window";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmWorkerWindow_FormClosing_1);
             this.Load += new System.EventHandler(this.frmWorkerWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

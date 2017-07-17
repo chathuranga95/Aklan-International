@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRequestJob));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnRequest = new System.Windows.Forms.Button();
@@ -49,10 +50,11 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(25, 37);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(12, 39);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(485, 290);
+            this.tabControl1.Size = new System.Drawing.Size(540, 299);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
@@ -63,36 +65,43 @@
             this.tabPage1.Controls.Add(this.cmbJob);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(477, 264);
+            this.tabPage1.Size = new System.Drawing.Size(532, 270);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Request Job";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // btnRequest
             // 
+            this.btnRequest.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRequest.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnRequest.BackgroundImage")));
             this.btnRequest.Enabled = false;
-            this.btnRequest.Location = new System.Drawing.Point(360, 205);
+            this.btnRequest.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRequest.Location = new System.Drawing.Point(6, 215);
             this.btnRequest.Name = "btnRequest";
-            this.btnRequest.Size = new System.Drawing.Size(75, 23);
+            this.btnRequest.Size = new System.Drawing.Size(110, 50);
             this.btnRequest.TabIndex = 4;
             this.btnRequest.Text = "Request";
-            this.btnRequest.UseVisualStyleBackColor = true;
+            this.btnRequest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRequest.UseVisualStyleBackColor = false;
             this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
             // 
             // spnQty
             // 
-            this.spnQty.Location = new System.Drawing.Point(145, 87);
+            this.spnQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spnQty.Location = new System.Drawing.Point(186, 119);
             this.spnQty.Name = "spnQty";
-            this.spnQty.Size = new System.Drawing.Size(120, 20);
+            this.spnQty.Size = new System.Drawing.Size(195, 29);
             this.spnQty.TabIndex = 3;
+            this.spnQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.spnQty.ValueChanged += new System.EventHandler(this.spnQty_ValueChanged);
             // 
             // cmbJob
             // 
             this.cmbJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJob.FormattingEnabled = true;
             this.cmbJob.Items.AddRange(new object[] {
             "Cutting",
@@ -101,76 +110,93 @@
             "Folding Single",
             "Rimming 12",
             "Rimming Single"});
-            this.cmbJob.Location = new System.Drawing.Point(145, 44);
+            this.cmbJob.Location = new System.Drawing.Point(186, 45);
             this.cmbJob.Name = "cmbJob";
-            this.cmbJob.Size = new System.Drawing.Size(121, 21);
+            this.cmbJob.Size = new System.Drawing.Size(195, 32);
             this.cmbJob.TabIndex = 2;
             this.cmbJob.SelectedIndexChanged += new System.EventHandler(this.cmbMachineType_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 87);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(82, 124);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(23, 13);
+            this.label2.Size = new System.Drawing.Size(38, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "Qty";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(41, 44);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(82, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 13);
+            this.label1.Size = new System.Drawing.Size(98, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select Job";
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.lbxJobs);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(477, 264);
+            this.tabPage2.Size = new System.Drawing.Size(532, 270);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Current Jobs";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // lbxJobs
             // 
+            this.lbxJobs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbxJobs.FormattingEnabled = true;
-            this.lbxJobs.Location = new System.Drawing.Point(15, 19);
+            this.lbxJobs.ItemHeight = 16;
+            this.lbxJobs.Location = new System.Drawing.Point(3, 3);
             this.lbxJobs.Name = "lbxJobs";
-            this.lbxJobs.Size = new System.Drawing.Size(417, 225);
+            this.lbxJobs.Size = new System.Drawing.Size(526, 264);
             this.lbxJobs.TabIndex = 0;
             // 
             // lblWorkerName
             // 
             this.lblWorkerName.AutoSize = true;
-            this.lblWorkerName.Location = new System.Drawing.Point(161, 13);
+            this.lblWorkerName.BackColor = System.Drawing.Color.White;
+            this.lblWorkerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblWorkerName.Location = new System.Drawing.Point(12, 9);
             this.lblWorkerName.Name = "lblWorkerName";
-            this.lblWorkerName.Size = new System.Drawing.Size(35, 13);
+            this.lblWorkerName.Size = new System.Drawing.Size(70, 25);
             this.lblWorkerName.TabIndex = 1;
             this.lblWorkerName.Text = "label3";
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(444, 332);
+            this.btnExit.BackColor = System.Drawing.Color.White;
+            this.btnExit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExit.BackgroundImage")));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(448, 359);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(100, 50);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // frmRequestJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 367);
+            this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(564, 421);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.lblWorkerName);
             this.Controls.Add(this.tabControl1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRequestJob";
             this.Text = "Request Job";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRequestJob_FormClosing);

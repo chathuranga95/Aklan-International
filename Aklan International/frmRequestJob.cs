@@ -26,7 +26,7 @@ namespace Aklan_International
         public frmRequestJob(String workerName, Form frmobj, String empID)
         {
             InitializeComponent();
-            lblWorkerName.Text = "Welcome : " + workerName;
+            lblWorkerName.Text = "Welcome! : " + workerName;
             this.frmobj = frmobj;
             this.empID = empID;
         }
