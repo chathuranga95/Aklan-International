@@ -91,7 +91,7 @@
             // spnQty
             // 
             this.spnQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spnQty.Location = new System.Drawing.Point(258, 119);
+            this.spnQty.Location = new System.Drawing.Point(186, 119);
             this.spnQty.Name = "spnQty";
             this.spnQty.Size = new System.Drawing.Size(195, 29);
             this.spnQty.TabIndex = 3;
@@ -110,7 +110,7 @@
             "Folding Single",
             "Rimming 12",
             "Rimming Single"});
-            this.cmbJob.Location = new System.Drawing.Point(145, 44);
+            this.cmbJob.Location = new System.Drawing.Point(186, 45);
             this.cmbJob.Name = "cmbJob";
             this.cmbJob.Size = new System.Drawing.Size(195, 32);
             this.cmbJob.TabIndex = 2;
