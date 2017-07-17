@@ -132,8 +132,9 @@ namespace Aklan_International
 
         private void btnAbout_Click(object sender, EventArgs e)
         {
-            frmAbout about = new frmAbout();
+            frmAbout about = frmAbout.getInstance();
             about.Show();
+            about.BringToFront();
         }
 
         private void btnAbout_MouseEnter(object sender, EventArgs e)

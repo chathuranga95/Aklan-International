@@ -12,7 +12,16 @@ namespace Aklan_International
 {
     public partial class frmAbout : Form
     {
-        public frmAbout()
+        private static frmAbout instance;
+        public static frmAbout getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmAbout();
+            }
+            return instance;
+        }
+        private frmAbout()
         {
             InitializeComponent();
         }
