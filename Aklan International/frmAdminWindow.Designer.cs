@@ -421,11 +421,11 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 221);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.gbStock);
             this.Controls.Add(this.gbAdmin);
             this.Controls.Add(this.gbWork);
             this.Controls.Add(this.gbOrders);
             this.Controls.Add(this.gbSales);
-            this.Controls.Add(this.gbStock);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;

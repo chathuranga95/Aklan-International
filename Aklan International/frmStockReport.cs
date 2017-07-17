@@ -39,5 +39,17 @@ namespace Aklan_International
             this.Close();
 
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            MaterialUpdate mtup = new MaterialUpdate("a001");
+            int[] mtarr = mtup.retrieveMaterial();
+
+            lblSheets.Text = "Sheets : " + mtarr[0].ToString();
+            lblCutstrip.Text = "Cut Strips : " + mtarr[1].ToString();
+            lblClipcut.Text = "Clip cuts : " + mtarr[2].ToString();
+            lblFolded12.Text = "Folded 12 : " + mtarr[3].ToString();
+            lblFoldedsingle.Text = "Folded single : " + mtarr[4].ToString();
+        }
     }
 }
