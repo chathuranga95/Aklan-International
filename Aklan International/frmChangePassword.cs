@@ -76,6 +76,10 @@ namespace Aklan_International
                 }
                 clearComponents();
             }
+            else
+            {
+                MessageBox.Show("Check Your new password and confirmation!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void clearComponents()

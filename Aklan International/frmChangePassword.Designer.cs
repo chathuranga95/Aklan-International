@@ -53,7 +53,7 @@
             this.txtOldPass.Name = "txtOldPass";
             this.txtOldPass.PasswordChar = '*';
             this.txtOldPass.Size = new System.Drawing.Size(100, 20);
-            this.txtOldPass.TabIndex = 4;
+            this.txtOldPass.TabIndex = 0;
             // 
             // txtNewPass
             // 
@@ -61,7 +61,7 @@
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.PasswordChar = '*';
             this.txtNewPass.Size = new System.Drawing.Size(100, 20);
-            this.txtNewPass.TabIndex = 6;
+            this.txtNewPass.TabIndex = 1;
             // 
             // label3
             // 
@@ -78,7 +78,7 @@
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.PasswordChar = '*';
             this.txtConfirmPass.Size = new System.Drawing.Size(100, 20);
-            this.txtConfirmPass.TabIndex = 8;
+            this.txtConfirmPass.TabIndex = 2;
             // 
             // label4
             // 
@@ -94,7 +94,7 @@
             this.btnChange.Location = new System.Drawing.Point(303, 164);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(75, 23);
-            this.btnChange.TabIndex = 9;
+            this.btnChange.TabIndex = 3;
             this.btnChange.Text = "Change";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
@@ -104,7 +104,7 @@
             this.btnCancel.Location = new System.Drawing.Point(184, 164);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 10;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);

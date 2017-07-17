@@ -61,6 +61,11 @@
             // spnQty
             // 
             this.spnQty.Location = new System.Drawing.Point(190, 55);
+            this.spnQty.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.spnQty.Name = "spnQty";
             this.spnQty.Size = new System.Drawing.Size(120, 20);
             this.spnQty.TabIndex = 1;
