@@ -34,13 +34,19 @@ namespace Aklan_International
             bool res = false;
             try
             {
-                decimal.Parse(rate);
-                res = true;
+
+                if (decimal.Parse(rate) > 0)
+                {
+                    res = true;
+                }
+                else
+                    res = false;
             }
             catch
             {
                 res = false;
             }
+            
             return res;
         }
         private void btnOK_Click(object sender, EventArgs e)
@@ -68,6 +74,10 @@ namespace Aklan_International
                 {
                     conn.Close();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please enter Valid Rate.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
