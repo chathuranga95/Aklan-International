@@ -12,7 +12,7 @@ namespace Aklan_International
         private string customerID;
         private string customerName;
         private String customerContact;
-        private DateTime dateTime;
+        private string dateTime;
         private int singleSheetQty;
         private decimal singleSheetUnitPrice;
         private int dozenSheetQty;
@@ -25,7 +25,7 @@ namespace Aklan_International
 
 
 
-        public Order(int orderID, string customerID, string customerName, string contact, DateTime dateTime, int singleSheetQty, decimal singleSheetUnitPrice, int dozenSheetQty, decimal dozenSheetUnitPrice, decimal amountPaid, string description)
+        public Order(int orderID, string customerID, string customerName, string contact, string dateTime, int singleSheetQty, decimal singleSheetUnitPrice, int dozenSheetQty, decimal dozenSheetUnitPrice, decimal amountPaid, string description)
         {
             this.orderID = orderID;
             this.customerID = customerID;
@@ -80,7 +80,7 @@ namespace Aklan_International
             finished = true;
         }
 
-        public DateTime getDateTime()
+        public string getDateTime()
         {
             return dateTime;
         }
