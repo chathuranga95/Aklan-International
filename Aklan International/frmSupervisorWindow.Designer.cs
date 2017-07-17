@@ -41,23 +41,25 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.btnMarkJobs);
             this.groupBox1.Controls.Add(this.lbxCurrentJobs);
-            this.groupBox1.Location = new System.Drawing.Point(29, 29);
+            this.groupBox1.Location = new System.Drawing.Point(10, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(728, 326);
+            this.groupBox1.Size = new System.Drawing.Size(765, 325);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Current jobs";
             // 
             // btnMarkJobs
             // 
-            this.btnMarkJobs.Location = new System.Drawing.Point(606, 282);
+            this.btnMarkJobs.BackColor = System.Drawing.Color.White;
+            this.btnMarkJobs.Location = new System.Drawing.Point(660, 272);
             this.btnMarkJobs.Name = "btnMarkJobs";
             this.btnMarkJobs.Size = new System.Drawing.Size(86, 38);
             this.btnMarkJobs.TabIndex = 1;
             this.btnMarkJobs.Text = "Mark as Finished";
-            this.btnMarkJobs.UseVisualStyleBackColor = true;
+            this.btnMarkJobs.UseVisualStyleBackColor = false;
             this.btnMarkJobs.Click += new System.EventHandler(this.btnMark_Click);
             // 
             // lbxCurrentJobs
@@ -65,56 +67,65 @@
             this.lbxCurrentJobs.FormattingEnabled = true;
             this.lbxCurrentJobs.Location = new System.Drawing.Point(23, 28);
             this.lbxCurrentJobs.Name = "lbxCurrentJobs";
-            this.lbxCurrentJobs.Size = new System.Drawing.Size(680, 238);
+            this.lbxCurrentJobs.Size = new System.Drawing.Size(725, 238);
             this.lbxCurrentJobs.TabIndex = 0;
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.btnMarkOrders);
             this.groupBox2.Controls.Add(this.lbxCurrentOrders);
-            this.groupBox2.Location = new System.Drawing.Point(29, 376);
+            this.groupBox2.Location = new System.Drawing.Point(10, 344);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(728, 288);
+            this.groupBox2.Size = new System.Drawing.Size(765, 325);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Current Orders";
             // 
             // btnMarkOrders
             // 
-            this.btnMarkOrders.Location = new System.Drawing.Point(564, 218);
+            this.btnMarkOrders.BackColor = System.Drawing.Color.White;
+            this.btnMarkOrders.Location = new System.Drawing.Point(659, 271);
             this.btnMarkOrders.Name = "btnMarkOrders";
             this.btnMarkOrders.Size = new System.Drawing.Size(86, 38);
             this.btnMarkOrders.TabIndex = 1;
             this.btnMarkOrders.Text = "Mark as Finished";
-            this.btnMarkOrders.UseVisualStyleBackColor = true;
+            this.btnMarkOrders.UseVisualStyleBackColor = false;
             this.btnMarkOrders.Click += new System.EventHandler(this.btnMarkOrders_Click);
             // 
             // lbxCurrentOrders
             // 
             this.lbxCurrentOrders.FormattingEnabled = true;
-            this.lbxCurrentOrders.Location = new System.Drawing.Point(23, 32);
+            this.lbxCurrentOrders.Location = new System.Drawing.Point(20, 27);
             this.lbxCurrentOrders.Name = "lbxCurrentOrders";
-            this.lbxCurrentOrders.Size = new System.Drawing.Size(680, 160);
+            this.lbxCurrentOrders.Size = new System.Drawing.Size(725, 238);
             this.lbxCurrentOrders.TabIndex = 0;
             // 
             // btnChangePw
             // 
-            this.btnChangePw.Location = new System.Drawing.Point(29, 683);
+            this.btnChangePw.BackColor = System.Drawing.Color.White;
+            this.btnChangePw.Location = new System.Drawing.Point(10, 675);
             this.btnChangePw.Name = "btnChangePw";
-            this.btnChangePw.Size = new System.Drawing.Size(86, 38);
+            this.btnChangePw.Size = new System.Drawing.Size(114, 24);
             this.btnChangePw.TabIndex = 2;
             this.btnChangePw.Text = "Change Password";
-            this.btnChangePw.UseVisualStyleBackColor = true;
+            this.btnChangePw.UseVisualStyleBackColor = false;
             this.btnChangePw.Click += new System.EventHandler(this.btnChangePw_Click);
             // 
             // frmSupervisorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 733);
+            this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(784, 711);
             this.Controls.Add(this.btnChangePw);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSupervisorWindow";
             this.Text = "Supervisor Window";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSupervisorWindow_FormClosing);
