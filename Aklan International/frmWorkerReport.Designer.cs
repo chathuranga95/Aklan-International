@@ -142,6 +142,7 @@
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.panelWorkReport);
             this.DoubleBuffered = true;
+            this.MinimizeBox = false;
             this.Name = "frmWorkerReport";
             this.Text = "Worker Report";
             this.Load += new System.EventHandler(this.frmWorkerReport_Load);
