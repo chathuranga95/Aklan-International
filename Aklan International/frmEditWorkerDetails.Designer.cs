@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditWorkerDetails));
             this.nudYear = new System.Windows.Forms.NumericUpDown();
             this.dudMonth = new System.Windows.Forms.DomainUpDown();
             this.nudDate = new System.Windows.Forms.NumericUpDown();
@@ -358,7 +359,7 @@
             this.tbxWorkerID.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.tbxWorkerID.Location = new System.Drawing.Point(127, 7);
             this.tbxWorkerID.Name = "tbxWorkerID";
-            this.tbxWorkerID.Size = new System.Drawing.Size(146, 20);
+            this.tbxWorkerID.Size = new System.Drawing.Size(64, 20);
             this.tbxWorkerID.TabIndex = 1;
             this.tbxWorkerID.TextChanged += new System.EventHandler(this.tbxWorkerID_TextChanged);
             // 
@@ -376,7 +377,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblStatus.ForeColor = System.Drawing.Color.Crimson;
-            this.lblStatus.Location = new System.Drawing.Point(277, 9);
+            this.lblStatus.Location = new System.Drawing.Point(199, 10);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(35, 13);
             this.lblStatus.TabIndex = 61;
@@ -386,7 +387,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(324, 421);
             this.Controls.Add(this.lblStatus);

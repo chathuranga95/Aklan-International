@@ -84,7 +84,7 @@ namespace Aklan_International
 
             if (nudYear.Value + 15 >= DateTime.Now.Year)
             {
-                MessageBox.Show("Enter worker's real date of birth.", "Something wrong");
+                MessageBox.Show("Enter worker's real date of birth.", "Something wrong",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             else if(Support.isValidNIC(nicNO)&&isValidTelNO(telNO))
             {
@@ -113,7 +113,7 @@ namespace Aklan_International
                     comm.ExecuteNonQuery();
                     conn.Close();
 
-                    MessageBox.Show("Worker details changed successfully.", "Success");
+                    MessageBox.Show("Worker details changed successfully.", "Success", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Close();
                 }
                 catch
@@ -125,12 +125,12 @@ namespace Aklan_International
             }
             else if(!Support.isValidNIC(nicNO))
             {
-                MessageBox.Show("NIC Number is not valid.","Error");
+                MessageBox.Show("NIC Number is not valid.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 tbxNIC.Focus();
             }
             else
             {
-                MessageBox.Show("Contact Number is not valid.", "Error");
+                MessageBox.Show("Contact Number is not valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tbxContactNumber.Focus();
             }
         }
@@ -216,7 +216,7 @@ namespace Aklan_International
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure?","Cancel", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Are you sure?","Cancel", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 this.Close();

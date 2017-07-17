@@ -128,7 +128,7 @@ namespace Aklan_International
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Are you sure?", "Cancel", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Are you sure?", "Cancel", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
                 this.Close();
@@ -138,7 +138,7 @@ namespace Aklan_International
 
         private void deleteWorker(string empID)
         {
-            DialogResult dr = MessageBox.Show("Are you sure?","Delete Worker", MessageBoxButtons.YesNo);
+            DialogResult dr = MessageBox.Show("Are you sure?","Delete Worker", MessageBoxButtons.YesNo,MessageBoxIcon.Question);
             if (dr == DialogResult.Yes) {
 
                 conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
@@ -151,7 +151,7 @@ namespace Aklan_International
                 cmd.Parameters.AddWithValue("@Yes", "Yes");
                 cmd.ExecuteNonQuery();
                 conn.Close();
-                MessageBox.Show("Worker deleted successfully.","Success");
+                MessageBox.Show("Worker deleted successfully.","Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 this.Close();
 
             }
@@ -175,7 +175,7 @@ namespace Aklan_International
                 {
                     if (reader.GetString("deleted") == "Yes")
                     {
-                        MessageBox.Show("This worker already deleted");
+                        MessageBox.Show("This worker already deleted.","Delete worker",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                     }
                     else
                     {
