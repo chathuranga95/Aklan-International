@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Smart Manager.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Office.Client.Education, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
@@ -339,6 +342,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="database script\dbfile.sql" />
+    <Content Include="Smart Manager.ico" />
     <None Include="Resources\info1600 %281%29.png" />
     <None Include="Resources\Req Job exit 100 new.png" />
     <None Include="Resources\Req Job req 110.png" />
