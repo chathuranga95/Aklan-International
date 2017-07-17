@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCustomerName = new System.Windows.Forms.Label();
             this.lblNIC = new System.Windows.Forms.Label();
             this.lblContactNumber = new System.Windows.Forms.Label();
@@ -59,6 +59,7 @@
             // lblCustomerName
             // 
             this.lblCustomerName.AutoSize = true;
+            this.lblCustomerName.BackColor = System.Drawing.Color.Transparent;
             this.lblCustomerName.Location = new System.Drawing.Point(12, 12);
             this.lblCustomerName.Name = "lblCustomerName";
             this.lblCustomerName.Size = new System.Drawing.Size(82, 13);
@@ -68,6 +69,7 @@
             // lblNIC
             // 
             this.lblNIC.AutoSize = true;
+            this.lblNIC.BackColor = System.Drawing.Color.Transparent;
             this.lblNIC.Location = new System.Drawing.Point(251, 46);
             this.lblNIC.Name = "lblNIC";
             this.lblNIC.Size = new System.Drawing.Size(65, 13);
@@ -78,6 +80,7 @@
             // lblContactNumber
             // 
             this.lblContactNumber.AutoSize = true;
+            this.lblContactNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblContactNumber.Location = new System.Drawing.Point(12, 46);
             this.lblContactNumber.Name = "lblContactNumber";
             this.lblContactNumber.Size = new System.Drawing.Size(84, 13);
@@ -103,38 +106,41 @@
             // 
             // btnCreateOrder
             // 
+            this.btnCreateOrder.BackColor = System.Drawing.Color.White;
             this.btnCreateOrder.Enabled = false;
             this.btnCreateOrder.Location = new System.Drawing.Point(14, 123);
             this.btnCreateOrder.Name = "btnCreateOrder";
             this.btnCreateOrder.Size = new System.Drawing.Size(75, 23);
             this.btnCreateOrder.TabIndex = 8;
             this.btnCreateOrder.Text = "Create Order";
-            this.btnCreateOrder.UseVisualStyleBackColor = true;
+            this.btnCreateOrder.UseVisualStyleBackColor = false;
             this.btnCreateOrder.Click += new System.EventHandler(this.btnCreateOrder_Click);
             // 
             // btnClear
             // 
+            this.btnClear.BackColor = System.Drawing.Color.White;
             this.btnClear.Location = new System.Drawing.Point(352, 123);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 0;
             this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // dgvItems
             // 
             this.dgvItems.AllowUserToResizeColumns = false;
             this.dgvItems.AllowUserToResizeRows = false;
+            this.dgvItems.BackgroundColor = System.Drawing.Color.White;
             this.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colType,
@@ -180,35 +186,38 @@
             // 
             // btnAddItem
             // 
+            this.btnAddItem.BackColor = System.Drawing.Color.White;
             this.btnAddItem.Enabled = false;
             this.btnAddItem.Location = new System.Drawing.Point(14, 405);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(75, 23);
             this.btnAddItem.TabIndex = 9;
             this.btnAddItem.Text = "Add Item";
-            this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.UseVisualStyleBackColor = false;
             this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // btnRemoveItem
             // 
+            this.btnRemoveItem.BackColor = System.Drawing.Color.White;
             this.btnRemoveItem.Enabled = false;
             this.btnRemoveItem.Location = new System.Drawing.Point(92, 405);
             this.btnRemoveItem.Name = "btnRemoveItem";
             this.btnRemoveItem.Size = new System.Drawing.Size(75, 23);
             this.btnRemoveItem.TabIndex = 0;
             this.btnRemoveItem.Text = "Remove";
-            this.btnRemoveItem.UseVisualStyleBackColor = true;
+            this.btnRemoveItem.UseVisualStyleBackColor = false;
             this.btnRemoveItem.Click += new System.EventHandler(this.btnRemoveItem_Click);
             // 
             // btnSubmitOrder
             // 
+            this.btnSubmitOrder.BackColor = System.Drawing.Color.White;
             this.btnSubmitOrder.Enabled = false;
             this.btnSubmitOrder.Location = new System.Drawing.Point(352, 405);
             this.btnSubmitOrder.Name = "btnSubmitOrder";
             this.btnSubmitOrder.Size = new System.Drawing.Size(75, 23);
             this.btnSubmitOrder.TabIndex = 10;
             this.btnSubmitOrder.Text = "Submit";
-            this.btnSubmitOrder.UseVisualStyleBackColor = true;
+            this.btnSubmitOrder.UseVisualStyleBackColor = false;
             this.btnSubmitOrder.Click += new System.EventHandler(this.btnSubmitOrder_Click);
             // 
             // mtbContactNumber
@@ -226,6 +235,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Location = new System.Drawing.Point(220, 303);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(70, 13);
@@ -247,7 +257,8 @@
             // lblDecription
             // 
             this.lblDecription.AutoSize = true;
-            this.lblDecription.Location = new System.Drawing.Point(17, 72);
+            this.lblDecription.BackColor = System.Drawing.Color.Transparent;
+            this.lblDecription.Location = new System.Drawing.Point(12, 72);
             this.lblDecription.Name = "lblDecription";
             this.lblDecription.Size = new System.Drawing.Size(89, 13);
             this.lblDecription.TabIndex = 13;
@@ -265,6 +276,7 @@
             // lblAomuntPaying
             // 
             this.lblAomuntPaying.AutoSize = true;
+            this.lblAomuntPaying.BackColor = System.Drawing.Color.Transparent;
             this.lblAomuntPaying.Location = new System.Drawing.Point(220, 329);
             this.lblAomuntPaying.Name = "lblAomuntPaying";
             this.lblAomuntPaying.Size = new System.Drawing.Size(78, 13);
@@ -296,6 +308,7 @@
             // lblAmountRemaining
             // 
             this.lblAmountRemaining.AutoSize = true;
+            this.lblAmountRemaining.BackColor = System.Drawing.Color.Transparent;
             this.lblAmountRemaining.Location = new System.Drawing.Point(220, 355);
             this.lblAmountRemaining.Name = "lblAmountRemaining";
             this.lblAmountRemaining.Size = new System.Drawing.Size(96, 13);
@@ -306,6 +319,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(439, 440);
             this.Controls.Add(this.lblAmountRemaining);
             this.Controls.Add(this.tbxAmountRemain);
@@ -327,7 +342,12 @@
             this.Controls.Add(this.lblContactNumber);
             this.Controls.Add(this.lblNIC);
             this.Controls.Add(this.lblCustomerName);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCreateOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create New Order";
             this.Load += new System.EventHandler(this.FrmCreateOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();

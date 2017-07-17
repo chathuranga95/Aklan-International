@@ -123,6 +123,7 @@
             this.DoubleBuffered = true;
             this.MinimizeBox = false;
             this.Name = "frmNotification";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Notifications";
             this.Load += new System.EventHandler(this.frmNotification_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdNotify)).EndInit();
