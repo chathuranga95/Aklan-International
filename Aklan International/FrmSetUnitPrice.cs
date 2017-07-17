@@ -14,6 +14,18 @@ namespace Aklan_International
 {
     public partial class FrmSetUnitPrice : Form
     {
+        private static FrmSetUnitPrice instance;
+
+
+
+        public static FrmSetUnitPrice getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmSetUnitPrice();
+            }
+            return instance;
+        }
         private MySqlConnection con;
         private MySqlCommand command;
         private MySqlDataReader reader;

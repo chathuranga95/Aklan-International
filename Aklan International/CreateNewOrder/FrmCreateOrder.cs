@@ -13,6 +13,18 @@ namespace Aklan_International.CreateNewOrder
 {
     public partial class FrmCreateOrder : Form
     {
+        private static FrmCreateOrder instance;
+
+
+
+        public static FrmCreateOrder getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new FrmCreateOrder();
+            }
+            return instance;
+        }
         private Order customerOrder;
         private decimal singleUnitPrice = 0;
         private decimal dozenUnitPrice =0;

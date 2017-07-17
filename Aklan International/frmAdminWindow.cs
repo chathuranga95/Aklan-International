@@ -30,8 +30,9 @@ namespace Aklan_International
 
         private void btnCreateOrder_Click(object sender, EventArgs e)
         {
-            CreateNewOrder.FrmCreateOrder createrOrderFrm = new CreateNewOrder.FrmCreateOrder();
+            CreateNewOrder.FrmCreateOrder createrOrderFrm = CreateNewOrder.FrmCreateOrder.getInstance();
             createrOrderFrm.Show();
+            createrOrderFrm.BringToFront();
         }
 
         private void btnSetJobRates_Click(object sender, EventArgs e)
@@ -60,14 +61,16 @@ namespace Aklan_International
 
         private void btnManageStock_Click(object sender, EventArgs e)
         {
-            frmManageStock obj = new frmManageStock(empID);
+            frmManageStock obj = frmManageStock.getInstance(empID);
             obj.Show();
+            obj.BringToFront();
         }
 
         private void btnSetUnitPrice_Click(object sender, EventArgs e)
         {
-            FrmSetUnitPrice obj = new FrmSetUnitPrice();
+            FrmSetUnitPrice obj =  FrmSetUnitPrice.getInstance();
             obj.Show();
+            obj.BringToFront();
         }
 
 
@@ -192,6 +195,15 @@ namespace Aklan_International
             gbWork.Visible = false;
             gbSales.Visible = false;
 
+            btnAdmin.ForeColor = Color.Black;
+
+            btnOrders.ForeColor = Color.Gray;
+            btnStock.ForeColor = Color.Gray;
+            btnWork.ForeColor = Color.Gray;
+            btnSales.ForeColor = Color.Gray;
+
+
+
 
         }
 
@@ -219,6 +231,13 @@ namespace Aklan_International
             gbWork.Visible = false;
             gbSales.Visible = false;
 
+            btnOrders.ForeColor = Color.Black;
+
+            btnAdmin.ForeColor = Color.Gray;
+            btnStock.ForeColor = Color.Gray;
+            btnWork.ForeColor = Color.Gray;
+            btnSales.ForeColor = Color.Gray;
+
         }
 
         private void btnStock_Click(object sender, EventArgs e)
@@ -244,6 +263,14 @@ namespace Aklan_International
             gbWork.Visible = false;
             gbSales.Visible = false;
 
+            btnStock.ForeColor = Color.Black;
+
+            btnAdmin.ForeColor = Color.Gray;
+            btnOrders.ForeColor = Color.Gray;
+            btnWork.ForeColor = Color.Gray;
+            btnSales.ForeColor = Color.Gray;
+
+
         }
 
         private void btnWork_Click(object sender, EventArgs e)
@@ -268,6 +295,14 @@ namespace Aklan_International
             gbOrders.Visible = false;
             gbStock.Visible = false;
             gbSales.Visible = false;
+
+            btnWork.ForeColor = Color.Black;
+
+            btnAdmin.ForeColor = Color.Gray;
+            btnOrders.ForeColor = Color.Gray;
+            btnStock.ForeColor = Color.Gray;
+            btnSales.ForeColor = Color.Gray;
+
         }
 
         private void btnSales_Click(object sender, EventArgs e)
@@ -292,6 +327,13 @@ namespace Aklan_International
             gbOrders.Visible = false;
             gbStock.Visible = false;
             gbWork.Visible = false;
+
+            btnSales.ForeColor = Color.Black;
+
+            btnAdmin.ForeColor = Color.Gray;
+            btnOrders.ForeColor = Color.Gray;
+            btnStock.ForeColor = Color.Gray;
+            btnWork.ForeColor = Color.Gray;
 
         }
 

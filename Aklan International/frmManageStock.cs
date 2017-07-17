@@ -15,11 +15,21 @@ namespace Aklan_International
     {
         string empID;
         System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
-        public frmManageStock()
+        private static frmManageStock instance;
+
+        public static frmManageStock getInstance(string empID)
+        {
+            if(instance==null || instance.IsDisposed)
+            {
+                instance = new frmManageStock(empID);
+            }
+            return instance;
+        }
+        private frmManageStock()
         {
             InitializeComponent();
         }
-        public frmManageStock(string empID)
+        private frmManageStock(string empID)
         {
             InitializeComponent();
             this.empID = empID;
