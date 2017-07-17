@@ -16,7 +16,7 @@ namespace Aklan_International
         MySqlCommand cmd;
         MySqlConnection conn;
 
-        public static frmSetJobRates instance;
+        private static frmSetJobRates instance;
         public static frmSetJobRates getInstance()
         {
             if (instance == null || instance.IsDisposed)
