@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.grdReport = new System.Windows.Forms.DataGridView();
-            this.btnGenerate = new System.Windows.Forms.Button();
             this.empID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.first_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tel_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.worker_type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.acc_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGenerate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -49,22 +49,10 @@
             this.tel_NO,
             this.worker_type,
             this.acc_NO});
-            this.grdReport.Dock = System.Windows.Forms.DockStyle.Top;
             this.grdReport.Location = new System.Drawing.Point(0, 0);
             this.grdReport.Name = "grdReport";
             this.grdReport.Size = new System.Drawing.Size(641, 150);
             this.grdReport.TabIndex = 0;
-            // 
-            // btnGenerate
-            // 
-            this.btnGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerate.Location = new System.Drawing.Point(480, 183);
-            this.btnGenerate.Name = "btnGenerate";
-            this.btnGenerate.Size = new System.Drawing.Size(140, 43);
-            this.btnGenerate.TabIndex = 1;
-            this.btnGenerate.Text = "Save and Open with Excel\r\n";
-            this.btnGenerate.UseVisualStyleBackColor = true;
-            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // empID
             // 
@@ -101,6 +89,17 @@
             this.acc_NO.HeaderText = "ACC. NO";
             this.acc_NO.Name = "acc_NO";
             this.acc_NO.ReadOnly = true;
+            // 
+            // btnGenerate
+            // 
+            this.btnGenerate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerate.Location = new System.Drawing.Point(480, 183);
+            this.btnGenerate.Name = "btnGenerate";
+            this.btnGenerate.Size = new System.Drawing.Size(140, 43);
+            this.btnGenerate.TabIndex = 1;
+            this.btnGenerate.Text = "Save and Open with Excel\r\n";
+            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
             // frmWorkerReport
             // 
