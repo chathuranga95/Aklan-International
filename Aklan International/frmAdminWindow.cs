@@ -61,8 +61,9 @@ namespace Aklan_International
 
         private void btnManageStock_Click(object sender, EventArgs e)
         {
-            frmManageStock obj = new frmManageStock(empID);
+            frmManageStock obj = frmManageStock.getInstance(empID);
             obj.Show();
+            obj.BringToFront();
         }
 
         private void btnSetUnitPrice_Click(object sender, EventArgs e)
