@@ -78,6 +78,8 @@ namespace Aklan_International
             else
             {
                 MessageBox.Show("Please enter Valid Rate.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtRate.Clear();
+                txtRate.Focus();
             }
         }
 
