@@ -35,28 +35,31 @@ namespace Aklan_International
                     conn.Open();
                     cmd = new MySqlCommand("select * from dtlogin where empName = '" + cmbWorkerName.Text.Trim() + "'", conn);
                     reader = cmd.ExecuteReader();
+                    bool access = false;
                     while (reader.Read())
                     {
                         if (reader.GetString("psw") == txtPassword.Text.Trim() && reader.GetString("empName") == cmbWorkerName.Text.Trim())
                         {
                             MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                            access = true;
                             this.Hide();
                             frmRequestJob obj = new frmRequestJob(cmbWorkerName.Text.Trim(), this, reader.GetString("empID"));
                             obj.Show();
                             clearComponents();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            break;
                         }
                     }
-
+                    if (!access)
+                    {
+                        MessageBox.Show("Invalid Username Or Password!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        clearComponents();
+                    }
                 }
                 catch
                 {
                     MessageBox.Show("Sorry. Operation failed.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    throw;
+                    clearComponents();
+                    //throw;
                 }
                 finally
                 {
@@ -71,7 +74,7 @@ namespace Aklan_International
             toolTip.SetToolTip(this.btnChangePass, "Change selected Employer's login password");
             toolTip.SetToolTip(this.btnClear, "Clear text");
             toolTip.SetToolTip(this.btnLogin, "Login");
-
+            cmbWorkerName.Focus();
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
             try
             {
@@ -130,6 +133,30 @@ namespace Aklan_International
                 e.Cancel = true;
             }
             
+        }
+
+        private void cmbWorkerName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                btnLogin.PerformClick();
+            }
+        }
+
+        private void frmWorkerWindow_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are You Sure?", "Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
         }
     }
 }

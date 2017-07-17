@@ -88,12 +88,12 @@
             this.cmbJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbJob.FormattingEnabled = true;
             this.cmbJob.Items.AddRange(new object[] {
-            "clip cutting",
-            "cutting",
-            "folding 12",
-            "folding single",
-            "rimming single",
-            "rimming 12"});
+            "Clip Cutting",
+            "Cutting",
+            "Folding 12",
+            "Folding Single",
+            "Rimming Single",
+            "Rimming 12"});
             this.cmbJob.Location = new System.Drawing.Point(236, 33);
             this.cmbJob.Name = "cmbJob";
             this.cmbJob.Size = new System.Drawing.Size(199, 24);

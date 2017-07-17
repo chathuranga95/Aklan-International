@@ -26,7 +26,7 @@ namespace Aklan_International
         public frmRequestJob(String workerName, Form frmobj, String empID)
         {
             InitializeComponent();
-            lblWorkerName.Text = "Welcome : " + workerName;
+            lblWorkerName.Text = "Welcome! : " + workerName;
             this.frmobj = frmobj;
             this.empID = empID;
         }
@@ -124,12 +124,12 @@ namespace Aklan_International
             int index = retrieveIndex();
 
             Dictionary<String, String> mydic = new Dictionary<string, string>();
-            mydic.Add("cutting", "sheet");
-            mydic.Add("clip cutting", "cut strip");
-            mydic.Add("folding 12", "clip cut");
-            mydic.Add("folding single", "clip cut");
-            mydic.Add("rimming 12", "folded 12");
-            mydic.Add("rimming single", "folded single");
+            mydic.Add("Cutting", "sheet");
+            mydic.Add("Clip Cutting", "cut strip");
+            mydic.Add("Folding 12", "clip cut");
+            mydic.Add("Folding Single", "clip cut");
+            mydic.Add("Rimming 12", "folded 12");
+            mydic.Add("Rimming Single", "folded single");
             string matType;
             mydic.TryGetValue(cmbJob.Text.Trim(), out matType);
 
@@ -193,6 +193,15 @@ namespace Aklan_International
         private void spnQty_ValueChanged(object sender, EventArgs e)
         {
             refreshInput();
+        }
+
+        private void frmRequestJob_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Are You Sure?","Exit Program", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+            
         }
     }
 }

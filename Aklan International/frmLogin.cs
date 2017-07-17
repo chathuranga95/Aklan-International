@@ -38,6 +38,7 @@ namespace Aklan_International
             else if (txtEmpID.Text.Trim() == "")
             {
                 MessageBox.Show("Type your Employ ID and Password", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtEmpID.Focus();
             }
             else
             {
@@ -76,11 +77,13 @@ namespace Aklan_International
                     else
                     {
                         MessageBox.Show("Invalid Credentials!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        btnClear.PerformClick();
                     }
                 }
                 else
                 {
                     MessageBox.Show("Invalid Credentials!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnClear.PerformClick();
                 }
                 conn.Close();
             }
@@ -120,6 +123,11 @@ namespace Aklan_International
             {
                 txtPassword.Focus();
             }
+        }
+
+        private void frmLogin_FormClosing_1(object sender, FormClosingEventArgs e)
+        {
+            Application.ExitThread();
         }
     }
 }

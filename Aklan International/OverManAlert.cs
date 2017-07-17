@@ -17,16 +17,16 @@ namespace Aklan_International
         MySqlDataReader reader;
 
         bool finished;
-        
+
 
         public OverManAlert()
         {
             conn = new MySqlConnection("server=localhost;user id=root;database=dbcore;pwd=1234;allowuservariables=True");
-            
+
         }
         public static OverManAlert GetInstatance()
         {
-            if(instance == null)
+            if (instance == null)
             {
                 instance = new OverManAlert();
             }
@@ -37,8 +37,8 @@ namespace Aklan_International
             conn.Open();
             cmd = new MySqlCommand("SELECT * from dtcustomer_orders where finished = 'no'", conn);
             reader = cmd.ExecuteReader();
-            while (reader.Read())
             this.count = 0;
+            while (reader.Read())
             {
                 count++;
             }
@@ -51,8 +51,8 @@ namespace Aklan_International
             {
                 finished = false;
             }
-            
-         
+
+
             conn.Close();
             return finished;
         }
@@ -68,24 +68,24 @@ namespace Aklan_International
             }
             else
             {
-                if(count == 1)
+                if (count == 1)
                 {
                     message = this.count.ToString() + " order is still on processing";
-                    
+
                 }
                 else if (count > 1)
                 {
                     message = this.count.ToString() + " order are still on processing";
-                    
+
                 }
                 else
                 {
                     return null;
                 }
-                
+
             }
             return message;
-            
+
         }
     }
 }
