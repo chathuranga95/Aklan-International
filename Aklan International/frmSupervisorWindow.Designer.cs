@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSupervisorWindow));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnMarkJobs = new System.Windows.Forms.Button();
             this.lbxCurrentJobs = new System.Windows.Forms.ListBox();
@@ -124,6 +125,7 @@
             this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSupervisorWindow";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewSalesRecord));
             this.lblCustName = new System.Windows.Forms.Label();
             this.lblTel = new System.Windows.Forms.Label();
             this.tbxCustName = new System.Windows.Forms.TextBox();
@@ -294,6 +295,7 @@
             this.Controls.Add(this.lblCustName);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmNewSalesRecord";

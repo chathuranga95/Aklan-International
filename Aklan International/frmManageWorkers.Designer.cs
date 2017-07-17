@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManageWorkers));
             this.btnNewWorker = new System.Windows.Forms.Button();
             this.btnDeleteWorker = new System.Windows.Forms.Button();
             this.btnEditWorker = new System.Windows.Forms.Button();
@@ -80,6 +81,7 @@
             this.Controls.Add(this.btnDeleteWorker);
             this.Controls.Add(this.btnNewWorker);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmManageWorkers";

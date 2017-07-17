@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSalaryView));
             this.label1 = new System.Windows.Forms.Label();
             this.spnYear = new System.Windows.Forms.NumericUpDown();
             this.spnMonth = new System.Windows.Forms.NumericUpDown();
@@ -169,6 +170,7 @@
             this.Controls.Add(this.spnYear);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "frmSalaryView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmManageOrders));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnMarkOrders = new System.Windows.Forms.Button();
             this.lbxCurrentOrders = new System.Windows.Forms.ListBox();
@@ -82,6 +83,7 @@
             this.Controls.Add(this.groupBox2);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmManageOrders";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Orders";

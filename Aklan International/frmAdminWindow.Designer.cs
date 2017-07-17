@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdminWindow));
             this.gbOrders = new System.Windows.Forms.GroupBox();
             this.btnCreateOrder = new System.Windows.Forms.Button();
             this.btnManageOrder = new System.Windows.Forms.Button();
@@ -438,6 +439,7 @@
             this.Controls.Add(this.gbSales);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmAdminWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

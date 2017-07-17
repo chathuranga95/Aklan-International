@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSalesReport));
             this.btnGenerate = new System.Windows.Forms.Button();
             this.grdReport = new System.Windows.Forms.DataGridView();
             this.Customer = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -140,6 +141,7 @@
             this.Controls.Add(this.panelGridView);
             this.Controls.Add(this.btnGenerate);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSalesReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sales Record";
