@@ -39,6 +39,7 @@ namespace Aklan_International
             this.empID = empID;
             singleQty = 0;
             dozenQty = 0;
+            btnChangePassword.Visible = true;
         }
         public void btnAddState()
         {
@@ -251,6 +252,11 @@ namespace Aklan_International
             conn.Close();
         }
 
-        
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            frmChangePassword frmObj = new frmChangePassword(empID);
+            frmObj.Show();
+
+        }
     }
 }

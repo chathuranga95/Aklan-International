@@ -14,6 +14,8 @@ namespace Aklan_International
     {
         string empID;
         string adminName;
+        Image notSelectedButton = Aklan_International.Properties.Resources.adminWinButton5;
+        Image selectedButton = Aklan_International.Properties.Resources.adminWinButtonSelect;
         public frmAdminWindow()
         {
             InitializeComponent();
@@ -83,6 +85,7 @@ namespace Aklan_International
 
         private void frmAdminWindow_Load(object sender, EventArgs e)
         {
+            btnAdmin.PerformClick();
             System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
             toolTip.SetToolTip(this.btnViewNotif, "View incoming Notifications");
             toolTip.SetToolTip(this.btnChangePass, "Change own Login Password");
@@ -157,6 +160,14 @@ namespace Aklan_International
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
+            btnAdmin.BackgroundImage = selectedButton;
+
+            btnOrders.BackgroundImage = notSelectedButton;
+            btnStock.BackgroundImage = notSelectedButton;
+            btnSales.BackgroundImage = notSelectedButton;
+            btnWork.BackgroundImage = notSelectedButton;
+
+        
             gbAdmin.Enabled = true;
 
             gbOrders.Enabled = false;
@@ -164,40 +175,100 @@ namespace Aklan_International
             gbWork.Enabled = false;
             gbSales.Enabled = false;
 
+            gbAdmin.Visible = true;
+
+            gbOrders.Visible = false;
+            gbStock.Visible = false;
+            gbWork.Visible = false;
+            gbSales.Visible = false;
+
+
         }
 
         private void btnOrders_Click(object sender, EventArgs e)
         {
+            btnOrders.BackgroundImage = selectedButton;
+
+            btnAdmin.BackgroundImage = notSelectedButton;
+            btnStock.BackgroundImage = notSelectedButton;
+            btnSales.BackgroundImage = notSelectedButton;
+            btnWork.BackgroundImage = notSelectedButton;
+
+
             gbOrders.Enabled = true;
 
             gbAdmin.Enabled = false;
             gbStock.Enabled = false;
             gbWork.Enabled = false;
             gbSales.Enabled = false;
+
+            gbOrders.Visible = true;
+
+            gbAdmin.Visible = false;
+            gbStock.Visible = false;
+            gbWork.Visible = false;
+            gbSales.Visible = false;
+
         }
 
         private void btnStock_Click(object sender, EventArgs e)
         {
+            btnStock.BackgroundImage = selectedButton;
+
+            btnAdmin.BackgroundImage = notSelectedButton;
+            btnOrders.BackgroundImage = notSelectedButton;
+            btnSales.BackgroundImage = notSelectedButton;
+            btnWork.BackgroundImage = notSelectedButton;
+
             gbStock.Enabled = true;
 
             gbAdmin.Enabled = false;
             gbOrders.Enabled = false;
             gbWork.Enabled = false;
             gbSales.Enabled = false;
+
+            gbStock.Visible = true;
+
+            gbAdmin.Visible = false;
+            gbOrders.Visible = false;
+            gbWork.Visible = false;
+            gbSales.Visible = false;
+
         }
 
         private void btnWork_Click(object sender, EventArgs e)
         {
+            btnWork.BackgroundImage = selectedButton;
+
+            btnAdmin.BackgroundImage = notSelectedButton;
+            btnOrders.BackgroundImage = notSelectedButton;
+            btnSales.BackgroundImage = notSelectedButton;
+            btnStock.BackgroundImage = notSelectedButton;
+
             gbWork.Enabled = true;
 
             gbAdmin.Enabled = false;
             gbOrders.Enabled = false;
             gbStock.Enabled = false;
             gbSales.Enabled = false;
+
+            gbWork.Visible = true;
+
+            gbAdmin.Visible = false;
+            gbOrders.Visible = false;
+            gbStock.Visible = false;
+            gbSales.Visible = false;
         }
 
         private void btnSales_Click(object sender, EventArgs e)
         {
+            btnSales.BackgroundImage = selectedButton;
+
+            btnAdmin.BackgroundImage = notSelectedButton;
+            btnOrders.BackgroundImage = notSelectedButton;
+            btnWork.BackgroundImage = notSelectedButton;
+            btnStock.BackgroundImage = notSelectedButton;
+
             gbSales.Enabled = true;
 
             gbAdmin.Enabled = false;
@@ -205,6 +276,19 @@ namespace Aklan_International
             gbStock.Enabled = false;
             gbWork.Enabled = false;
 
+            gbSales.Visible = true;
+
+            gbAdmin.Visible = false;
+            gbOrders.Visible = false;
+            gbStock.Visible = false;
+            gbWork.Visible = false;
+
+        }
+
+        private void btnViewPayroll_Click(object sender, EventArgs e)
+        {
+            frmSalaryView frmSalary = new frmSalaryView();
+            frmSalary.Show();
         }
     }
 }

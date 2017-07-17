@@ -48,6 +48,7 @@
             this.btnSubmit = new System.Windows.Forms.Button();
             this.tbxNic = new System.Windows.Forms.TextBox();
             this.tbxUprice = new System.Windows.Forms.TextBox();
+            this.btnChangePassword = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grd)).BeginInit();
             this.SuspendLayout();
             // 
@@ -234,11 +235,23 @@
             this.tbxUprice.Size = new System.Drawing.Size(100, 20);
             this.tbxUprice.TabIndex = 22;
             // 
+            // btnChangePassword
+            // 
+            this.btnChangePassword.Location = new System.Drawing.Point(12, 369);
+            this.btnChangePassword.Name = "btnChangePassword";
+            this.btnChangePassword.Size = new System.Drawing.Size(105, 23);
+            this.btnChangePassword.TabIndex = 23;
+            this.btnChangePassword.Text = "Change Password";
+            this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Visible = false;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
+            // 
             // frmNewSalesRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 404);
+            this.Controls.Add(this.btnChangePassword);
             this.Controls.Add(this.tbxUprice);
             this.Controls.Add(this.tbxNic);
             this.Controls.Add(this.btnAdd);
@@ -287,5 +300,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.TextBox tbxNic;
         private System.Windows.Forms.TextBox tbxUprice;
+        private System.Windows.Forms.Button btnChangePassword;
     }
 }
