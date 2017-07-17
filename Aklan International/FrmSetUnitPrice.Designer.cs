@@ -45,7 +45,7 @@
             // lblSingleSheetStrip
             // 
             this.lblSingleSheetStrip.AutoSize = true;
-            this.lblSingleSheetStrip.Location = new System.Drawing.Point(12, 31);
+            this.lblSingleSheetStrip.Location = new System.Drawing.Point(28, 36);
             this.lblSingleSheetStrip.Name = "lblSingleSheetStrip";
             this.lblSingleSheetStrip.Size = new System.Drawing.Size(85, 13);
             this.lblSingleSheetStrip.TabIndex = 0;
@@ -54,7 +54,7 @@
             // lbl12SheetStrip
             // 
             this.lbl12SheetStrip.AutoSize = true;
-            this.lbl12SheetStrip.Location = new System.Drawing.Point(12, 128);
+            this.lbl12SheetStrip.Location = new System.Drawing.Point(28, 133);
             this.lbl12SheetStrip.Name = "lbl12SheetStrip";
             this.lbl12SheetStrip.Size = new System.Drawing.Size(79, 13);
             this.lbl12SheetStrip.TabIndex = 1;
@@ -63,7 +63,7 @@
             // lblSingleCurrent
             // 
             this.lblSingleCurrent.AutoSize = true;
-            this.lblSingleCurrent.Location = new System.Drawing.Point(49, 57);
+            this.lblSingleCurrent.Location = new System.Drawing.Point(76, 62);
             this.lblSingleCurrent.Name = "lblSingleCurrent";
             this.lblSingleCurrent.Size = new System.Drawing.Size(68, 13);
             this.lblSingleCurrent.TabIndex = 2;
@@ -72,7 +72,7 @@
             // lblSingleNewPrice
             // 
             this.lblSingleNewPrice.AutoSize = true;
-            this.lblSingleNewPrice.Location = new System.Drawing.Point(49, 96);
+            this.lblSingleNewPrice.Location = new System.Drawing.Point(76, 101);
             this.lblSingleNewPrice.Name = "lblSingleNewPrice";
             this.lblSingleNewPrice.Size = new System.Drawing.Size(84, 13);
             this.lblSingleNewPrice.TabIndex = 3;
@@ -81,7 +81,7 @@
             // tbxSingleCurrentPrice
             // 
             this.tbxSingleCurrentPrice.Enabled = false;
-            this.tbxSingleCurrentPrice.Location = new System.Drawing.Point(164, 54);
+            this.tbxSingleCurrentPrice.Location = new System.Drawing.Point(191, 59);
             this.tbxSingleCurrentPrice.Name = "tbxSingleCurrentPrice";
             this.tbxSingleCurrentPrice.ReadOnly = true;
             this.tbxSingleCurrentPrice.Size = new System.Drawing.Size(239, 20);
@@ -90,7 +90,7 @@
             // 
             // tbxSingleNewPrice
             // 
-            this.tbxSingleNewPrice.Location = new System.Drawing.Point(164, 93);
+            this.tbxSingleNewPrice.Location = new System.Drawing.Point(191, 98);
             this.tbxSingleNewPrice.Name = "tbxSingleNewPrice";
             this.tbxSingleNewPrice.Size = new System.Drawing.Size(239, 20);
             this.tbxSingleNewPrice.TabIndex = 5;
@@ -100,7 +100,7 @@
             // lbl12Current
             // 
             this.lbl12Current.AutoSize = true;
-            this.lbl12Current.Location = new System.Drawing.Point(49, 156);
+            this.lbl12Current.Location = new System.Drawing.Point(76, 161);
             this.lbl12Current.Name = "lbl12Current";
             this.lbl12Current.Size = new System.Drawing.Size(68, 13);
             this.lbl12Current.TabIndex = 6;
@@ -109,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(49, 191);
+            this.label1.Location = new System.Drawing.Point(76, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 7;
@@ -118,7 +118,7 @@
             // tbx12Current
             // 
             this.tbx12Current.Enabled = false;
-            this.tbx12Current.Location = new System.Drawing.Point(164, 153);
+            this.tbx12Current.Location = new System.Drawing.Point(191, 158);
             this.tbx12Current.Name = "tbx12Current";
             this.tbx12Current.ReadOnly = true;
             this.tbx12Current.Size = new System.Drawing.Size(239, 20);
@@ -127,7 +127,7 @@
             // 
             // tbx12New
             // 
-            this.tbx12New.Location = new System.Drawing.Point(164, 188);
+            this.tbx12New.Location = new System.Drawing.Point(191, 193);
             this.tbx12New.Name = "tbx12New";
             this.tbx12New.Size = new System.Drawing.Size(239, 20);
             this.tbx12New.TabIndex = 9;
@@ -136,30 +136,32 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.White;
             this.btnSave.Enabled = false;
-            this.btnSave.Location = new System.Drawing.Point(193, 243);
+            this.btnSave.Location = new System.Drawing.Point(220, 264);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 23);
             this.btnSave.TabIndex = 12;
             this.btnSave.Text = "Save Changes";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(301, 243);
+            this.btnClose.BackColor = System.Drawing.Color.White;
+            this.btnClose.Location = new System.Drawing.Point(328, 264);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(102, 23);
             this.btnClose.TabIndex = 13;
             this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmSetUnitPrice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 287);
+            this.ClientSize = new System.Drawing.Size(464, 321);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tbx12New);
