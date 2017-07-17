@@ -42,6 +42,7 @@ namespace Aklan_International
             spnMonth.Value = DateTime.Today.Month;
             spnYear.Value = DateTime.Today.Year;
             conn = new MySqlConnection("Server=localhost;Database=dbcore;Uid=root;Pwd=1234");
+            btnRefresh.PerformClick();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)

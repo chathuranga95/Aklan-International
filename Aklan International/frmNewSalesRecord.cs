@@ -230,13 +230,14 @@ namespace Aklan_International
 
                         conn.Close();
 
-                        tbxCustName.Clear();
-                        tbxNic.Clear();
-                        tbxTel.Clear();
-                        cmbType.Text = null;
-                        singleQty = 0;
-                        dozenQty = 0;
+                        
                     }
+                    tbxCustName.Clear();
+                    tbxNic.Clear();
+                    tbxTel.Clear();
+                    cmbType.Text = null;
+                    singleQty = 0;
+                    dozenQty = 0;
                     grd.Rows.Clear();
                     if (succ)
                         MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);

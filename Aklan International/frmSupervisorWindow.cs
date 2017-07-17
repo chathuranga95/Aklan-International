@@ -30,7 +30,7 @@ namespace Aklan_International
             InitializeComponent();
             this.empID = empID;
         }
-
+        
         private void frmSupervisorWindow_Load(object sender, EventArgs e)
         {
             refreshJobs();
@@ -39,22 +39,8 @@ namespace Aklan_International
             System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
             toolTip.SetToolTip(this.btnMarkJobs, "Make selected Job as Completed");
             toolTip.SetToolTip(this.btnMarkOrders, "Make selected Order as Completed");
-            if (lbxCurrentJobs.Items.Count > 0)
-            {
-                lbxCurrentJobs.SelectedIndex = 0;
-            }
-            else
-            {
-                btnMarkJobs.Enabled = false;
-            }
-            if (lbxCurrentOrders.Items.Count > 0)
-            {
-                lbxCurrentOrders.SelectedIndex = 0;
-            }
-            else
-            {
-                btnMarkOrders.Enabled = false;
-            }
+            
+            
         }
 
         private void refreshJobs()
@@ -92,12 +78,19 @@ namespace Aklan_International
                 {
                     conn.Close();
                 }
-
             }
             lbxCurrentJobs.Items.Clear();
             foreach (Job job in jobList)
             {
-                lbxCurrentJobs.Items.Add("EmpID :" + job.getEmpID() + "     Material Type :" + job.getMatType() + "     Qty :" + job.getQty() + "       Date :" + job.getDate());
+                lbxCurrentJobs.Items.Add("EmpID : " + job.getEmpID() + "       Material Type : " + job.getMatType() + "      Qty : " + job.getQty() + "        Date : " + job.getDate());
+            }
+            if (lbxCurrentJobs.Items.Count > 0)
+            {
+                lbxCurrentJobs.SelectedIndex = 0;
+            }
+            else
+            {
+                btnMarkJobs.Enabled = false;
             }
         }
         private void refreshOrders()
@@ -119,6 +112,15 @@ namespace Aklan_International
             foreach (Order order in orderList)
             {
                 lbxCurrentOrders.Items.Add("OrderID : " + order.getOrderID() + "     Order description : "+order.getDescription());
+            }
+
+            if (lbxCurrentOrders.Items.Count > 0)
+            {
+                lbxCurrentOrders.SelectedIndex = 0;
+            }
+            else
+            {
+                btnMarkOrders.Enabled = false;
             }
         }
 

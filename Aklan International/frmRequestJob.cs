@@ -172,7 +172,7 @@ namespace Aklan_International
                 {
                     //if (reader.GetInt32("index") + 3 >= index)
                     {
-                        lbxJobs.Items.Insert(0, reader.GetString("Qty") + " of " + reader.GetString("matType") + " taken. finish status :" + reader.GetString("finished")); ;
+                        lbxJobs.Items.Insert(0, reader.GetString("Qty") + " of " + reader.GetString("matType") + " taken.  finish status : " + reader.GetString("finished")); ;
                     }
                 }
                 conn.Close();

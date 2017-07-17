@@ -185,7 +185,7 @@
             this.btnSetUnitPrice.Name = "btnSetUnitPrice";
             this.btnSetUnitPrice.Size = new System.Drawing.Size(140, 150);
             this.btnSetUnitPrice.TabIndex = 1;
-            this.btnSetUnitPrice.Text = "Set Unit Plrices";
+            this.btnSetUnitPrice.Text = "Set Unit Prices";
             this.btnSetUnitPrice.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnSetUnitPrice.UseVisualStyleBackColor = false;
             this.btnSetUnitPrice.Click += new System.EventHandler(this.btnSetUnitPrice_Click);
@@ -353,7 +353,7 @@
             this.btnSales.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSales.FlatAppearance.BorderSize = 0;
             this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSales.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSales.Location = new System.Drawing.Point(0, 334);
             this.btnSales.Name = "btnSales";
             this.btnSales.Size = new System.Drawing.Size(165, 74);
@@ -368,7 +368,7 @@
             this.btnWork.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnWork.FlatAppearance.BorderSize = 0;
             this.btnWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWork.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWork.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnWork.Location = new System.Drawing.Point(0, 255);
             this.btnWork.Name = "btnWork";
             this.btnWork.Size = new System.Drawing.Size(165, 74);
@@ -383,7 +383,7 @@
             this.btnStock.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnStock.FlatAppearance.BorderSize = 0;
             this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStock.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStock.Location = new System.Drawing.Point(0, 176);
             this.btnStock.Name = "btnStock";
             this.btnStock.Size = new System.Drawing.Size(165, 74);
@@ -398,7 +398,7 @@
             this.btnOrders.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnOrders.FlatAppearance.BorderSize = 0;
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOrders.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOrders.Location = new System.Drawing.Point(0, 97);
             this.btnOrders.Name = "btnOrders";
             this.btnOrders.Size = new System.Drawing.Size(165, 74);
@@ -413,7 +413,7 @@
             this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdmin.FlatAppearance.BorderSize = 0;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.Font = new System.Drawing.Font("Myriad Pro Light", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmin.Location = new System.Drawing.Point(0, 18);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(165, 74);
