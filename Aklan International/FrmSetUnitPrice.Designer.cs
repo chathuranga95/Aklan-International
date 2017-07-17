@@ -183,7 +183,11 @@
             this.Controls.Add(this.lbl12SheetStrip);
             this.Controls.Add(this.lblSingleSheetStrip);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmSetUnitPrice";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Set Unit Price";
             this.Load += new System.EventHandler(this.FrmSetUnitPrice_Load);
             this.ResumeLayout(false);
