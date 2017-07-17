@@ -75,6 +75,14 @@ namespace Aklan_International
             refreshOrders();
             System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
             toolTip.SetToolTip(this.btnMarkOrders, "Set Selected order as a completed order");
+            if (lbxCurrentOrders.Items.Count > 0)
+            {
+                lbxCurrentOrders.SelectedIndex = 0;
+            }
+            else
+            {
+                btnMarkOrders.Enabled = false;
+            }
         }
     }
 }

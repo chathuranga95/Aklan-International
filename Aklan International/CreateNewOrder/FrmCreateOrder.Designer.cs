@@ -53,6 +53,7 @@
             this.tbxAmountPaying = new System.Windows.Forms.TextBox();
             this.tbxAmountRemain = new System.Windows.Forms.TextBox();
             this.lblAmountRemaining = new System.Windows.Forms.Label();
+            this.btnCancelOrder = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,9 +120,9 @@
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(352, 123);
+            this.btnClear.Location = new System.Drawing.Point(336, 123);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(92, 23);
             this.btnClear.TabIndex = 0;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -129,6 +130,8 @@
             // 
             // dgvItems
             // 
+            this.dgvItems.AllowUserToAddRows = false;
+            this.dgvItems.AllowUserToDeleteRows = false;
             this.dgvItems.AllowUserToResizeColumns = false;
             this.dgvItems.AllowUserToResizeRows = false;
             this.dgvItems.BackgroundColor = System.Drawing.Color.White;
@@ -150,6 +153,7 @@
             this.dgvItems.Enabled = false;
             this.dgvItems.Location = new System.Drawing.Point(15, 152);
             this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
             this.dgvItems.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvItems.RowHeadersVisible = false;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -176,6 +180,7 @@
             // 
             this.colQty.HeaderText = "Quantity";
             this.colQty.Name = "colQty";
+            this.colQty.ReadOnly = true;
             this.colQty.Width = 60;
             // 
             // colTotalAmonut
@@ -215,7 +220,7 @@
             this.btnSubmitOrder.Location = new System.Drawing.Point(352, 405);
             this.btnSubmitOrder.Name = "btnSubmitOrder";
             this.btnSubmitOrder.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmitOrder.TabIndex = 10;
+            this.btnSubmitOrder.TabIndex = 11;
             this.btnSubmitOrder.Text = "Submit";
             this.btnSubmitOrder.UseVisualStyleBackColor = false;
             this.btnSubmitOrder.Click += new System.EventHandler(this.btnSubmitOrder_Click);
@@ -291,7 +296,7 @@
             this.tbxAmountPaying.Location = new System.Drawing.Point(323, 326);
             this.tbxAmountPaying.Name = "tbxAmountPaying";
             this.tbxAmountPaying.Size = new System.Drawing.Size(104, 20);
-            this.tbxAmountPaying.TabIndex = 15;
+            this.tbxAmountPaying.TabIndex = 10;
             this.tbxAmountPaying.Text = "0.00";
             this.tbxAmountPaying.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbxAmountPaying.TextChanged += new System.EventHandler(this.tbxAmountPaying_TextChanged);
@@ -304,6 +309,7 @@
             this.tbxAmountRemain.ReadOnly = true;
             this.tbxAmountRemain.Size = new System.Drawing.Size(104, 20);
             this.tbxAmountRemain.TabIndex = 16;
+            this.tbxAmountRemain.TabStop = false;
             this.tbxAmountRemain.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbxAmountRemain.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
@@ -317,6 +323,19 @@
             this.lblAmountRemaining.TabIndex = 17;
             this.lblAmountRemaining.Text = "Amount Remaining";
             // 
+            // btnCancelOrder
+            // 
+            this.btnCancelOrder.BackColor = System.Drawing.Color.White;
+            this.btnCancelOrder.Enabled = false;
+            this.btnCancelOrder.Location = new System.Drawing.Point(238, 123);
+            this.btnCancelOrder.Name = "btnCancelOrder";
+            this.btnCancelOrder.Size = new System.Drawing.Size(92, 23);
+            this.btnCancelOrder.TabIndex = 18;
+            this.btnCancelOrder.TabStop = false;
+            this.btnCancelOrder.Text = "Cancel Order";
+            this.btnCancelOrder.UseVisualStyleBackColor = false;
+            this.btnCancelOrder.Click += new System.EventHandler(this.btnCancelOrder_Click);
+            // 
             // FrmCreateOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +343,7 @@
             this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(439, 440);
+            this.Controls.Add(this.btnCancelOrder);
             this.Controls.Add(this.lblAmountRemaining);
             this.Controls.Add(this.tbxAmountRemain);
             this.Controls.Add(this.tbxAmountPaying);
@@ -384,5 +404,6 @@
         private System.Windows.Forms.TextBox tbxAmountPaying;
         private System.Windows.Forms.TextBox tbxAmountRemain;
         private System.Windows.Forms.Label lblAmountRemaining;
+        private System.Windows.Forms.Button btnCancelOrder;
     }
 }

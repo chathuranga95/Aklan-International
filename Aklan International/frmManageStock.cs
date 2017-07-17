@@ -14,6 +14,7 @@ namespace Aklan_International
     public partial class frmManageStock : Form
     {
         string empID;
+        System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
         public frmManageStock()
         {
             InitializeComponent();
@@ -26,14 +27,41 @@ namespace Aklan_International
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            MaterialUpdate mtup = new MaterialUpdate(empID);
-            mtup.updateMaterial("sheet", (int)spnQty.Value, empID, false);
-            MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (validateValue(spnQty.Value))
+            {
+                MaterialUpdate mtup = new MaterialUpdate(empID);
+                mtup.updateMaterial("sheet", (int)spnQty.Value, empID, false);
+                MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Please input valid Number for number of sheets", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            
+        }
+
+        private bool validateValue(decimal val)
+        {
+            if (val > 0)
+            {
+                if (val % 1 == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void frmManageStock_Load(object sender, EventArgs e)
         {
-            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+            
             toolTip.SetToolTip(this.btnAdd, "Add "+spnQty.Value.ToString()+" New sheets to the Stock");
         }
 

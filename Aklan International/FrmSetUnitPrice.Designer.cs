@@ -45,6 +45,7 @@
             // lblSingleSheetStrip
             // 
             this.lblSingleSheetStrip.AutoSize = true;
+            this.lblSingleSheetStrip.BackColor = System.Drawing.Color.Transparent;
             this.lblSingleSheetStrip.Location = new System.Drawing.Point(28, 36);
             this.lblSingleSheetStrip.Name = "lblSingleSheetStrip";
             this.lblSingleSheetStrip.Size = new System.Drawing.Size(85, 13);
@@ -54,6 +55,7 @@
             // lbl12SheetStrip
             // 
             this.lbl12SheetStrip.AutoSize = true;
+            this.lbl12SheetStrip.BackColor = System.Drawing.Color.Transparent;
             this.lbl12SheetStrip.Location = new System.Drawing.Point(28, 133);
             this.lbl12SheetStrip.Name = "lbl12SheetStrip";
             this.lbl12SheetStrip.Size = new System.Drawing.Size(79, 13);
@@ -63,6 +65,7 @@
             // lblSingleCurrent
             // 
             this.lblSingleCurrent.AutoSize = true;
+            this.lblSingleCurrent.BackColor = System.Drawing.Color.Transparent;
             this.lblSingleCurrent.Location = new System.Drawing.Point(76, 62);
             this.lblSingleCurrent.Name = "lblSingleCurrent";
             this.lblSingleCurrent.Size = new System.Drawing.Size(68, 13);
@@ -72,6 +75,7 @@
             // lblSingleNewPrice
             // 
             this.lblSingleNewPrice.AutoSize = true;
+            this.lblSingleNewPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblSingleNewPrice.Location = new System.Drawing.Point(76, 101);
             this.lblSingleNewPrice.Name = "lblSingleNewPrice";
             this.lblSingleNewPrice.Size = new System.Drawing.Size(84, 13);
@@ -100,6 +104,7 @@
             // lbl12Current
             // 
             this.lbl12Current.AutoSize = true;
+            this.lbl12Current.BackColor = System.Drawing.Color.Transparent;
             this.lbl12Current.Location = new System.Drawing.Point(76, 161);
             this.lbl12Current.Name = "lbl12Current";
             this.lbl12Current.Size = new System.Drawing.Size(68, 13);
@@ -109,6 +114,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(76, 196);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
@@ -161,6 +167,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(464, 321);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
@@ -174,6 +182,7 @@
             this.Controls.Add(this.lblSingleCurrent);
             this.Controls.Add(this.lbl12SheetStrip);
             this.Controls.Add(this.lblSingleSheetStrip);
+            this.DoubleBuffered = true;
             this.Name = "FrmSetUnitPrice";
             this.Text = "Set Unit Price";
             this.Load += new System.EventHandler(this.FrmSetUnitPrice_Load);
