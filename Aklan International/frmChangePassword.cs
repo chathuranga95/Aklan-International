@@ -19,16 +19,28 @@ namespace Aklan_International
         MySqlDataReader reader;
 
         string workerName;
+
+        public static frmChangePassword instance;
+        public static frmChangePassword getInstance(string wName)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmChangePassword(wName);
+            }
+            return instance;
+        }
         public frmChangePassword()
         {
             InitializeComponent();
         }
-        public frmChangePassword(string wName)
+        private frmChangePassword(string wName)
         {
             InitializeComponent();
             this.Text ="Change Password : " +  wName;
             this.workerName = wName;
         }
+
+        
 
         private void btnChange_Click(object sender, EventArgs e)
         {

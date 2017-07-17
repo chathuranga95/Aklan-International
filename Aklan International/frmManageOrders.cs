@@ -20,11 +20,20 @@ namespace Aklan_International
         MySqlDataReader reader;
         
         ArrayList orderList = new ArrayList();
+        public static frmManageOrders instance;
+        public static frmManageOrders getInstance(string empID)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmManageOrders(empID);
+            }
+            return instance;
+        }
         public frmManageOrders()
         {
             InitializeComponent();
         }
-        public frmManageOrders(string empID)
+        private frmManageOrders(string empID)
         {
             InitializeComponent();
             this.empID = empID;
@@ -41,7 +50,7 @@ namespace Aklan_International
             orderList.Clear();
             while (reader.Read())
             {
-                orderList.Add(new Order(int.Parse(reader.GetString("OrderId")), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetString("CustomerContact"), reader.GetDateTime("OrderDateTime"), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit"), reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid"), reader.GetString("description")));
+                orderList.Add(new Order(int.Parse(reader.GetString("OrderId")), reader.GetString("CustomerId"), reader.GetString("CustomerName"), reader.GetString("CustomerContact"), reader.GetString("OrderDateTime").Trim(), reader.GetInt32("SingleSheetQty"), reader.GetDecimal("SingleSheetUnit"), reader.GetInt32("DozenSheetQty"), reader.GetDecimal("DozenSheetUnit"), reader.GetDecimal("AmountPaid"), reader.GetString("description")));
             }
             conn.Close();
 

@@ -15,8 +15,17 @@ namespace Aklan_International
     {
         MySqlCommand cmd;
         MySqlConnection conn;
-        MySqlDataReader reader;
-        public frmSetJobRates()
+
+        private static frmSetJobRates instance;
+        public static frmSetJobRates getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmSetJobRates();
+            }
+            return instance;
+        }
+        private frmSetJobRates()
         {
             InitializeComponent();
         }
@@ -25,13 +34,19 @@ namespace Aklan_International
             bool res = false;
             try
             {
-                decimal.Parse(rate);
-                res = true;
+
+                if (decimal.Parse(rate) > 0)
+                {
+                    res = true;
+                }
+                else
+                    res = false;
             }
             catch
             {
                 res = false;
             }
+            
             return res;
         }
         private void btnOK_Click(object sender, EventArgs e)
@@ -59,6 +74,10 @@ namespace Aklan_International
                 {
                     conn.Close();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Please enter Valid Rate.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
