@@ -55,6 +55,7 @@
             this.grdNotify.ReadOnly = true;
             this.grdNotify.Size = new System.Drawing.Size(440, 134);
             this.grdNotify.TabIndex = 0;
+            this.grdNotify.TabStop = false;
             this.grdNotify.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdNotify_CellContentClick);
             // 
             // Time

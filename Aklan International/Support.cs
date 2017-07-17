@@ -64,6 +64,17 @@ namespace Aklan_International
             }
             else return false;
         }
+        public static bool isValidTel(String str)
+        {
+            if(Support.isNumeric(str) && str.Length == 10)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
 }

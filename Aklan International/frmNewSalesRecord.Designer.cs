@@ -138,6 +138,7 @@
             this.tbxTel.Name = "tbxTel";
             this.tbxTel.Size = new System.Drawing.Size(195, 20);
             this.tbxTel.TabIndex = 2;
+            this.tbxTel.TextChanged += new System.EventHandler(this.tbxTel_TextChanged);
             // 
             // label5
             // 
@@ -161,6 +162,7 @@
             this.grd.Location = new System.Drawing.Point(6, 213);
             this.grd.Name = "grd";
             this.grd.ReadOnly = true;
+            this.grd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grd.Size = new System.Drawing.Size(443, 95);
             this.grd.TabIndex = 14;
             this.grd.TabStop = false;
@@ -170,7 +172,6 @@
             // 
             this.Type.HeaderText = "Type";
             this.Type.Name = "Type";
-            this.Type.ReadOnly = true;
             this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Type.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -178,7 +179,6 @@
             // 
             this.Qty.HeaderText = "Qty";
             this.Qty.Name = "Qty";
-            this.Qty.ReadOnly = true;
             this.Qty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
@@ -186,13 +186,11 @@
             // 
             this.Unit_Price.HeaderText = "Unit Price";
             this.Unit_Price.Name = "Unit_Price";
-            this.Unit_Price.ReadOnly = true;
             // 
             // Amount
             // 
             this.Amount.HeaderText = "Amount";
             this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
             this.Amount.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Amount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 

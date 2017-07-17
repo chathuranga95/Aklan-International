@@ -14,6 +14,18 @@ namespace Aklan_International
 {
     public partial class frmOrderReport : Form
     {
+        private static frmOrderReport instance;
+
+
+
+        public static frmOrderReport getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmOrderReport();
+            }
+            return instance;
+        }
         public frmOrderReport()
         {
             InitializeComponent();

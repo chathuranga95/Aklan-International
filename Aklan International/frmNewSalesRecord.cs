@@ -13,6 +13,8 @@ namespace Aklan_International
 {
     public partial class frmNewSalesRecord : Form
     {
+        private static frmNewSalesRecord instance;
+
         string empID;
         bool salesmanMode;
         MySqlConnection conn;
@@ -23,7 +25,24 @@ namespace Aklan_International
         int singleQty;
         int dozenQty;
 
-        public frmNewSalesRecord(string empID)
+        public static frmNewSalesRecord getInstance(string empID)
+        {
+            if(instance==null || instance.IsDisposed)
+            {
+                instance = new frmNewSalesRecord(empID);
+            }
+            return instance;
+        }
+        public static frmNewSalesRecord getInstance(string salemanName,string empID)
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmNewSalesRecord(salemanName, empID);
+            }
+            return instance;
+        }
+
+        private frmNewSalesRecord(string empID)
         {
             InitializeComponent();
             this.empID = empID;
@@ -31,7 +50,7 @@ namespace Aklan_International
             singleQty = 0;
             dozenQty = 0;
         }
-        public frmNewSalesRecord(string salesmanName,string empID)
+        private frmNewSalesRecord(string salesmanName,string empID)
         {
             InitializeComponent();
             btnAdd.Enabled = false;
@@ -45,16 +64,30 @@ namespace Aklan_International
         }
         public void btnAddState()
         {
-            if (tbxCustName.Text.Length > 0 &&
-               tbxNic.Text.Length == 10 &&
+            if (tbxCustName.Text.Length > 0 && 
+               Support.isValidNIC(tbxNic.Text.Trim()) &&
                cmbType.Text != "" &&
-               tbxQty.Text.Length > 0 &&
-               tbxUprice.Text.Length > 0)
+               tbxQty.Text.Length > 0)
             {
-                if (tbxNic.Text.Substring(9) == "V" || tbxNic.Text.Substring(9) == "v")
+                tbxTel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                if(tbxTel.Text == "")
                 {
+                    MessageBox.Show(tbxTel.Text);
                     btnAdd.Enabled = true;
                 }
+                else
+                {
+                    if (Support.isValidTel(tbxTel.Text))
+                    {
+                        btnAdd.Enabled = true;
+                    }
+                    else
+                    {
+                        btnAdd.Enabled = false;
+                    }
+                }
+
+                 
             }
             else
             {
@@ -156,55 +189,64 @@ namespace Aklan_International
         string matType = "default value";
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            MaterialUpdate mtup = new MaterialUpdate(empID);
-            int[] mtArr = mtup.retrieveMaterial();
-            
-            if (mtArr[3] >= dozenQty && mtArr[4] > singleQty)
+            if(grd.Rows.Count == 0)
             {
-                //conn = new MySqlConnection("server = localhost; user id = root; database = dbcore; pwd = 1234; allowuservariables = True");
-                int rows = grd.Rows.Count;
-                bool succ = true; ;
-                
-                for (int x = 0; x < rows - 1; x++)
-                {
-                    
-                    if(grd.Rows[x].Cells[0].Value.ToString().Trim() == "Single")
-                    {
-                        matType = "folded single";
-                    }
-                    else if (grd.Rows[x].Cells[0].Value.ToString().Trim() == "12 sheets")
-                    {
-                        matType = "folded 12";
-                    }
-                    
-                    mtup.updateMaterial(matType, int.Parse(grd.Rows[x].Cells[1].Value.ToString()),empID,true);
-                    
-                    conn.Open();
-                    string StrQuery;
-                    StrQuery = "insert into dtsales values('" + tbxCustName.Text.Trim() + "', '" + tbxNic.Text.Trim() + "', '" + tbxTel.Text.Trim() + "', '" + grd.Rows[x].Cells[0].Value.ToString() + "', '" + grd.Rows[x].Cells[1].Value.ToString() + "', '" + grd.Rows[x].Cells[2].Value.ToString() + "', '" + grd.Rows[x].Cells[3].Value.ToString() + "')";
-                    cmd = new MySqlCommand(StrQuery, conn);
-                    if (cmd.ExecuteNonQuery() < 0)
-                    {
-                        succ = false;
-                    }
-                    
-                    conn.Close();
-                    
-                    tbxCustName.Clear();
-                    tbxNic.Clear();
-                    tbxTel.Clear();
-                    cmbType.Text = null;
-                    singleQty = 0;
-                    dozenQty = 0;
-                }
-                grd.Rows.Clear();
-                if(succ)
-                    MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("please Add order!!");
             }
             else
             {
-                MessageBox.Show("Sorry. Not Enough Items in the Stock", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MaterialUpdate mtup = new MaterialUpdate(empID);
+                int[] mtArr = mtup.retrieveMaterial();
+
+                if (mtArr[3] >= dozenQty && mtArr[4] > singleQty)
+                {
+                    //conn = new MySqlConnection("server = localhost; user id = root; database = dbcore; pwd = 1234; allowuservariables = True");
+                    int rows = grd.Rows.Count;
+                    bool succ = true; ;
+
+                    for (int x = 0; x < rows; x++)
+                    {
+
+
+                        if (grd.Rows[x].Cells[0].Value.ToString().Trim() == "Single")
+                        {
+                            matType = "folded single";
+                        }
+                        else if (grd.Rows[x].Cells[0].Value.ToString().Trim() == "12 sheets")
+                        {
+                            matType = "folded 12";
+                        }
+
+                        mtup.updateMaterial(matType, int.Parse(grd.Rows[x].Cells[1].Value.ToString()), empID, true);
+
+                        conn.Open();
+                        string StrQuery;
+                        StrQuery = "insert into dtsales values('" + tbxCustName.Text.Trim() + "', '" + tbxNic.Text.Trim() + "', '" + tbxTel.Text.Trim() + "', '" + grd.Rows[x].Cells[0].Value.ToString() + "', '" + grd.Rows[x].Cells[1].Value.ToString() + "', '" + grd.Rows[x].Cells[2].Value.ToString() + "', '" + grd.Rows[x].Cells[3].Value.ToString() + "')";
+                        cmd = new MySqlCommand(StrQuery, conn);
+                        if (cmd.ExecuteNonQuery() < 0)
+                        {
+                            succ = false;
+                        }
+
+                        conn.Close();
+
+                        tbxCustName.Clear();
+                        tbxNic.Clear();
+                        tbxTel.Clear();
+                        cmbType.Text = null;
+                        singleQty = 0;
+                        dozenQty = 0;
+                    }
+                    grd.Rows.Clear();
+                    if (succ)
+                        MessageBox.Show("Success!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Sorry. Not Enough Items in the Stock", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+            
             
 
 
@@ -259,6 +301,11 @@ namespace Aklan_International
             frmChangePassword obj = frmChangePassword.getInstance(salesmanName);
             obj.Show();
 
+        }
+
+        private void tbxTel_TextChanged(object sender, EventArgs e)
+        {
+            btnAddState();
         }
     }
 }
