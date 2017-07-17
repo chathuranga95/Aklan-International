@@ -12,7 +12,18 @@ namespace Aklan_International
 {
     public partial class frmNotification : Form
     {
+        private static frmNotification instance;
+
         OverManAlert notifi;
+
+        public static frmNotification getInstance()
+        {
+            if(instance == null || instance.IsDisposed)
+            {
+                instance = new frmNotification();
+            }
+            return instance;
+        }
         public frmNotification()
         {
             InitializeComponent();
@@ -58,8 +69,12 @@ namespace Aklan_International
 
         private void grdNotify_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int row = grdNotify.SelectedCells[0].RowIndex;
-            grdNotify.Rows.RemoveAt(row);
+            if(e.ColumnIndex == 2)
+            {
+                int row = grdNotify.SelectedCells[0].RowIndex;
+                grdNotify.Rows.RemoveAt(row);
+            }
+            
         }
     }
 }

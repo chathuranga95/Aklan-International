@@ -29,7 +29,7 @@ namespace Aklan_International
                 MessageBox.Show("Back door access granted!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmAdminWindow obj1 = new frmAdminWindow("CS Solutions", "a9999");
                 obj1.Show();
-                frmNewSalesRecord obj2 = new frmNewSalesRecord("CS Solutions","a9999");
+                frmNewSalesRecord obj2 = frmNewSalesRecord.getInstance("CS Solutions","a9999");
                 obj2.Show();
                 frmSupervisorWindow obj = new frmSupervisorWindow("a9999");
                 obj.Show();
@@ -60,7 +60,7 @@ namespace Aklan_International
                         {
                             
                             MessageBox.Show("Salesman access granted!!!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            frmNewSalesRecord obj = new frmNewSalesRecord(reader.GetString("empName"),txtEmpID.Text.Trim());
+                            frmNewSalesRecord obj = frmNewSalesRecord.getInstance(reader.GetString("empName"),txtEmpID.Text.Trim());
                             obj.Show();
                             this.Hide();
                         }

@@ -12,6 +12,18 @@ namespace Aklan_International
 {
     public partial class frmStockReport : Form
     {
+        private static frmStockReport instance;
+
+
+
+        public static frmStockReport getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmStockReport();
+            }
+            return instance;
+        }
         public frmStockReport()
         {
             InitializeComponent();

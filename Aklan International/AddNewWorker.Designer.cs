@@ -64,7 +64,7 @@
             // 
             // btnAddWorker
             // 
-            this.btnAddWorker.Location = new System.Drawing.Point(12, 394);
+            this.btnAddWorker.Location = new System.Drawing.Point(10, 394);
             this.btnAddWorker.Name = "btnAddWorker";
             this.btnAddWorker.Size = new System.Drawing.Size(75, 23);
             this.btnAddWorker.TabIndex = 15;
@@ -75,7 +75,7 @@
             // rbFemale
             // 
             this.rbFemale.AutoSize = true;
-            this.rbFemale.Location = new System.Drawing.Point(188, 211);
+            this.rbFemale.Location = new System.Drawing.Point(201, 208);
             this.rbFemale.Name = "rbFemale";
             this.rbFemale.Size = new System.Drawing.Size(59, 17);
             this.rbFemale.TabIndex = 8;
@@ -86,7 +86,7 @@
             // rbMale
             // 
             this.rbMale.AutoSize = true;
-            this.rbMale.Location = new System.Drawing.Point(126, 211);
+            this.rbMale.Location = new System.Drawing.Point(125, 208);
             this.rbMale.Name = "rbMale";
             this.rbMale.Size = new System.Drawing.Size(48, 17);
             this.rbMale.TabIndex = 7;
@@ -119,7 +119,7 @@
             this.nudYear.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.nudYear.Location = new System.Drawing.Point(214, 311);
+            this.nudYear.Location = new System.Drawing.Point(213, 311);
             this.nudYear.Maximum = new decimal(new int[] {
             2020,
             0,
@@ -143,7 +143,6 @@
             // 
             // dudMonth
             // 
-            this.dudMonth.AllowDrop = true;
             this.dudMonth.Items.Add("Dec");
             this.dudMonth.Items.Add("Nov");
             this.dudMonth.Items.Add("Oct");
@@ -162,7 +161,6 @@
             this.dudMonth.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dudMonth.Size = new System.Drawing.Size(40, 20);
             this.dudMonth.TabIndex = 11;
-            this.dudMonth.TabStop = false;
             // 
             // nudDate
             // 
@@ -199,7 +197,7 @@
             // 
             // tbxConfirmPassword
             // 
-            this.tbxConfirmPassword.Location = new System.Drawing.Point(125, 142);
+            this.tbxConfirmPassword.Location = new System.Drawing.Point(125, 141);
             this.tbxConfirmPassword.Name = "tbxConfirmPassword";
             this.tbxConfirmPassword.PasswordChar = '*';
             this.tbxConfirmPassword.Size = new System.Drawing.Size(136, 20);
@@ -209,7 +207,7 @@
             // lblConfirmPassword
             // 
             this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(10, 145);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(10, 144);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
             this.lblConfirmPassword.Size = new System.Drawing.Size(91, 13);
             this.lblConfirmPassword.TabIndex = 81;
@@ -218,7 +216,7 @@
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(10, 213);
+            this.lblGender.Location = new System.Drawing.Point(10, 210);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(42, 13);
             this.lblGender.TabIndex = 80;
@@ -226,7 +224,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(186, 394);
+            this.btnCancel.Location = new System.Drawing.Point(185, 394);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 16;
@@ -261,7 +259,7 @@
             // 
             // tbxACNumber
             // 
-            this.tbxACNumber.Location = new System.Drawing.Point(126, 363);
+            this.tbxACNumber.Location = new System.Drawing.Point(125, 363);
             this.tbxACNumber.Name = "tbxACNumber";
             this.tbxACNumber.Size = new System.Drawing.Size(135, 20);
             this.tbxACNumber.TabIndex = 14;
@@ -324,7 +322,7 @@
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
-            this.lblDOB.Location = new System.Drawing.Point(10, 314);
+            this.lblDOB.Location = new System.Drawing.Point(10, 313);
             this.lblDOB.Name = "lblDOB";
             this.lblDOB.Size = new System.Drawing.Size(66, 13);
             this.lblDOB.TabIndex = 73;
@@ -352,7 +350,7 @@
             // 
             this.lblPasswordMaching.AutoSize = true;
             this.lblPasswordMaching.ForeColor = System.Drawing.Color.Red;
-            this.lblPasswordMaching.Location = new System.Drawing.Point(126, 164);
+            this.lblPasswordMaching.Location = new System.Drawing.Point(125, 164);
             this.lblPasswordMaching.Name = "lblPasswordMaching";
             this.lblPasswordMaching.Size = new System.Drawing.Size(35, 13);
             this.lblPasswordMaching.TabIndex = 86;

@@ -13,7 +13,17 @@ namespace Aklan_International
 {
     public partial class frmEditWorkerDetails : Form
     {
-        
+        static frmEditWorkerDetails instance = null;
+        public static frmEditWorkerDetails getInstance()
+        {
+            if (instance == null || instance.IsDisposed)
+            {
+                instance = new frmEditWorkerDetails();
+            }
+            return instance;
+
+        }
+
         MySqlCommand cmd;
         MySqlConnection conn;
         
@@ -24,7 +34,7 @@ namespace Aklan_International
 
         private Boolean isValidTelNO(string telNO)
         {
-            if (telNO.Trim().Length == 13)
+            if (telNO.Trim().Length == 14)
             {
                 return true;
 
@@ -71,7 +81,12 @@ namespace Aklan_International
             }
             
             string dob = nudYear.Value.ToString() + "-" + dudMonth.Text + "-" + nudDate.Value.ToString();
-            if (Support.isValidNIC(nicNO)&&isValidTelNO(telNO))
+
+            if (nudYear.Value + 15 >= DateTime.Now.Year)
+            {
+                MessageBox.Show("Enter worker's real date of birth.", "Something wrong");
+            }
+            else if(Support.isValidNIC(nicNO)&&isValidTelNO(telNO))
             {
                 try
                 {
@@ -111,10 +126,12 @@ namespace Aklan_International
             else if(!Support.isValidNIC(nicNO))
             {
                 MessageBox.Show("NIC Number is not valid.","Error");
+                tbxNIC.Focus();
             }
             else
             {
                 MessageBox.Show("Contact Number is not valid.", "Error");
+                tbxContactNumber.Focus();
             }
         }
 
@@ -149,6 +166,7 @@ namespace Aklan_International
             nudDate.Enabled = false;
             nudYear.Enabled = false;
             dudMonth.Enabled = false;
+            btnChangeDetails.Enabled = false;
             /*try
             {
                 conn.Open();
@@ -404,6 +422,7 @@ namespace Aklan_International
             nudDate.Enabled = false;
             nudYear.Enabled = false;
             dudMonth.Enabled = false;
+            btnChangeDetails.Enabled = false;
 
 
             tbxFirstName.Text = "";
@@ -469,7 +488,9 @@ namespace Aklan_International
                         nudDate.Enabled = true;
                         nudYear.Enabled = true;
                         dudMonth.Enabled = true;
-
+                        btnChangeDetails.Enabled = true;
+                        dudMonth.UpButton();
+                        dudMonth.DownButton();
 
                     }
                     else
