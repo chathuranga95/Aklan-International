@@ -104,7 +104,7 @@
             // btnChangePw
             // 
             this.btnChangePw.BackColor = System.Drawing.Color.White;
-            this.btnChangePw.Location = new System.Drawing.Point(10, 675);
+            this.btnChangePw.Location = new System.Drawing.Point(10, 673);
             this.btnChangePw.Name = "btnChangePw";
             this.btnChangePw.Size = new System.Drawing.Size(114, 24);
             this.btnChangePw.TabIndex = 2;
@@ -118,7 +118,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Aklan_International.Properties.Resources.Admin_Window_2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 711);
+            this.ClientSize = new System.Drawing.Size(784, 701);
             this.Controls.Add(this.btnChangePw);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -127,6 +127,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSupervisorWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supervisor Window";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSupervisorWindow_FormClosing);
             this.Load += new System.EventHandler(this.frmSupervisorWindow_Load);
