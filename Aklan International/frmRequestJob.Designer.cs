@@ -209,6 +209,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmRequestJob";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Request Job";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmRequestJob_FormClosing);
             this.Load += new System.EventHandler(this.frmRequestJob_Load);
