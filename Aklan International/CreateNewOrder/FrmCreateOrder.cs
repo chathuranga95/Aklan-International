@@ -38,6 +38,14 @@ namespace Aklan_International.CreateNewOrder
             InitializeComponent();
             if (materialLow())
                 MessageBox.Show("Sheet Stock is Running Low", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if (unitPricesNotSet())
+            {
+                MessageBox.Show("Unit Prices Not Set!", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                FrmSetUnitPrice frmUnitPrices = FrmSetUnitPrice.getInstance();
+                frmUnitPrices.Show();
+                frmUnitPrices.BringToFront();
+                
+            }
             
         }
 
@@ -329,7 +337,7 @@ namespace Aklan_International.CreateNewOrder
             }
         }
 
-        public bool materialLow()
+        private bool materialLow()
         {
 
             if (materialUpdate.retrieveMaterial()[0] < 10)
@@ -337,6 +345,42 @@ namespace Aklan_International.CreateNewOrder
                 return true;
             }
 
+            else return false;
+        }
+
+        private bool unitPricesNotSet()
+        {
+            decimal[] unitPrices = new decimal[2];
+            MySqlConnection con = Support.setConnection();
+            MySqlCommand command = new MySqlCommand("select * from dtunitprices ", con);
+            con.Open();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            int i = 0;
+            while (reader.Read() && i < 2)
+            {
+
+                try
+                {
+                    decimal iUnitPrice = reader.GetDecimal("unitprice");
+                    unitPrices[i] = iUnitPrice;
+                    Console.WriteLine("Unit Price " + i + "= " + iUnitPrice);
+                    i++;
+                }
+                catch (System.Data.SqlTypes.SqlNullValueException)
+                {
+                    unitPrices[i] = 0;
+                    i++;
+                    continue;
+
+                }
+
+            }
+            con.Close();
+            if (unitPrices[0] == 0 || unitPrices[1] == 0)
+            {
+                return true;
+            }
             else return false;
         }
     }

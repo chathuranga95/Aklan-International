@@ -191,6 +191,7 @@
             this.Name = "FrmSetUnitPrice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Set Unit Price";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FrmSetUnitPrice_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
