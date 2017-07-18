@@ -15,7 +15,9 @@ namespace Aklan_International.CreateNewOrder
     {
         private static FrmCreateOrder instance;
 
+        private FrmInvoice invoiceFrm;
 
+        private MaterialUpdate materialUpdate = new MaterialUpdate("a001");
 
         public static FrmCreateOrder getInstance()
         {
@@ -34,6 +36,8 @@ namespace Aklan_International.CreateNewOrder
         public FrmCreateOrder()
         {
             InitializeComponent();
+            if (materialLow())
+                MessageBox.Show("Sheet Stock is Running Low", "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             
         }
 
@@ -209,6 +213,9 @@ namespace Aklan_International.CreateNewOrder
 
         private void btnSubmitOrder_Click(object sender, EventArgs e)
         {
+            invoiceFrm = new FrmInvoice();
+            invoiceFrm.setDetails(customerOrder.getCustomerName(),customerOrder.getCustomerContact(),customerOrder.getDateTime(),customerOrder.getOrderID(),dgvItems.DataSource);
+            invoiceFrm.Show();
             if (decimal.Parse(tbxAmountPaying.Text) > 0)
             {
                 if (MessageBox.Show("Confirm Submit Order?", "Confirm!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -222,6 +229,7 @@ namespace Aklan_International.CreateNewOrder
                     cmd.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Order Submitted Successfully!", " ", MessageBoxButtons.OK , MessageBoxIcon.Information );
+
                     this.Close();
                 }
             }
@@ -319,6 +327,17 @@ namespace Aklan_International.CreateNewOrder
 
 
             }
+        }
+
+        public bool materialLow()
+        {
+
+            if (materialUpdate.retrieveMaterial()[0] < 10)
+            {
+                return true;
+            }
+
+            else return false;
         }
     }
 }
