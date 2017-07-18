@@ -72,7 +72,6 @@ namespace Aklan_International
                 tbxTel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                 if(tbxTel.Text == "")
                 {
-                    MessageBox.Show(tbxTel.Text);
                     btnAdd.Enabled = true;
                 }
                 else
