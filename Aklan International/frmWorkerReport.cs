@@ -45,10 +45,10 @@ namespace Aklan_International
                 string str = "";
                 for (int i = 0; i < 6; i++)
                 {
-                    str += reader.GetString(i) + ",";
+                    str += reader.GetString(i) + "$";
                 }
 
-                grdReport.Rows.Add(str.Split(','));
+                grdReport.Rows.Add(str.Split('$'));
             }
             conn.Close();
         }
