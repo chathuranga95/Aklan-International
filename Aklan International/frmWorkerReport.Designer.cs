@@ -68,6 +68,7 @@
             this.grdReport.Location = new System.Drawing.Point(0, 0);
             this.grdReport.Name = "grdReport";
             this.grdReport.ReadOnly = true;
+            this.grdReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdReport.Size = new System.Drawing.Size(1019, 216);
             this.grdReport.TabIndex = 0;
             // 

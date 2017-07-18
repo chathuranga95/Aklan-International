@@ -54,6 +54,7 @@
             this.grdNotify.Location = new System.Drawing.Point(12, 17);
             this.grdNotify.Name = "grdNotify";
             this.grdNotify.ReadOnly = true;
+            this.grdNotify.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdNotify.Size = new System.Drawing.Size(440, 134);
             this.grdNotify.TabIndex = 0;
             this.grdNotify.TabStop = false;
