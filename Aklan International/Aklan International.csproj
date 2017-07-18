@@ -76,6 +76,12 @@
     <Compile Include="AddNewWorker.Designer.cs">
       <DependentUpon>AddNewWorker.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateNewOrder\FrmInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewOrder\FrmInvoice.Designer.cs">
+      <DependentUpon>FrmInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +249,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreateNewOrder\FrmCreateOrder.resx">
       <DependentUpon>FrmCreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewOrder\FrmInvoice.resx">
+      <DependentUpon>FrmInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
