@@ -115,7 +115,7 @@
             this.btnViewOrders.Name = "btnViewOrders";
             this.btnViewOrders.Size = new System.Drawing.Size(140, 150);
             this.btnViewOrders.TabIndex = 0;
-            this.btnViewOrders.Text = "View Orders";
+            this.btnViewOrders.Text = "View Finished Orders";
             this.btnViewOrders.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnViewOrders.UseVisualStyleBackColor = false;
             this.btnViewOrders.Click += new System.EventHandler(this.btnViewOrders_Click);

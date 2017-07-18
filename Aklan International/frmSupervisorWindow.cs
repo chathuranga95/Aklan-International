@@ -54,25 +54,29 @@ namespace Aklan_International
             while (reader.Read())
             {
                 empList.Add(reader.GetString(0));
+                
             }
             conn.Close();
+            jobList.Clear();
             foreach (string id in empList)
             {
                 try
                 {
-                    jobList.Clear();
+                    
                     cmd = new MySqlCommand("select * from dt" + id + " where finished='no'", conn);
                     conn.Open();
                     reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
+                        
                         jobList.Add(new Job(id, int.Parse(reader.GetString("index")), reader.GetString("matType"), reader.GetString("job"), int.Parse(reader.GetString("qty")), reader.GetString("finished") == "yes", reader.GetString("date")));
+                        
                     }
 
                 }
-                catch (Exception)
+                catch
                 {
-                    continue;
+                    //continue;
                 }
                 finally
                 {

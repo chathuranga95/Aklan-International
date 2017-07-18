@@ -107,7 +107,7 @@ namespace Aklan_International
             toolTip.SetToolTip(this.btnSetJobRates, "Edit the Rates for Jobs");
             toolTip.SetToolTip(this.btnSetUnitPrice, "Edit item Selling prices");
             toolTip.SetToolTip(this.btnStock, "View Stock Category Controllers");
-            toolTip.SetToolTip(this.btnViewOrders, "View Current Orders");
+            toolTip.SetToolTip(this.btnViewOrders, "View Finished Orders");
             toolTip.SetToolTip(this.btnViewSales, "View Sales Records");
             toolTip.SetToolTip(this.btnViewWorkers, "View Employer Details");
             toolTip.SetToolTip(this.btnWork, "View Work/Employer Category Controllers");
